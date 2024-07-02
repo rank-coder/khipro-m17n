@@ -9,7 +9,8 @@ An m17n version of khipro. To get better prediction &amp; suggestion.
 <br> ক্ষিপ্র কিবোর্ড দ্বিগুণ সুবিধা পাওয়া যাবে যদি typing-booster এর সাথে ব্যবহার করা হয়। উপরের ছবির মতো সাজেশন আসবে; আর 1,2,3,4 বাটন প্রেস করে তৎক্ষণাৎ সেই সাজেশন কমিট করা যাবে।
 <br>
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
-[বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2).pdf](https://github.com/user-attachments/files/16065890/Copy.2.pdf)
+
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/9c7a6f0b-d4d3-4398-b50b-fcb6902c6da1)
 
 ### স্বরবর্ণ ও কারচিহ্ন সংক্রান্ত
 1. যেভাবে টেবিলে দেখানো হয়েছে সেভাবেই কারচিহ্নগুলো লেখা যাবে। যেমন: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো
