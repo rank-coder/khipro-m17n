@@ -43,3 +43,5 @@ khipro-m17n চাইলে টাইপিং বুস্টারের স�
 * Discord: https://discord.gg/GPt6s8cb48
 * বাংলা লোকালাইজেশন কমিউনিটি গ্রুপ: https://t.me/BanglaLocalizationCommunity
 * লিনাক্স বাংলা গ্রুপ: https://t.me/linux_bangla
+# Documentation in English
+Yet to be added.
