@@ -1,5 +1,5 @@
 # khipro-m17n
-An m17n version of khipro. To get better prediction &amp; suggestion.
+An m17n version of khipro. To get better prediction &amp; suggestion. There is another version of Khipro forked from Avro keyboard: https://github.com/rank-coder/ibus-khipro
 # Documentation
 *For English please scroll down.*
 ## পরিচিতি
