@@ -2,7 +2,7 @@
 
 (input-method bn khipro) 
 (description (_ "Aims to be the fastest typing method for Bengali. Please read the README file before using the layout, in order to use it usefully."))
-(title "khipro-bangla")
+(title "ক্ষি")
 (map
 	(shor
 		("o" "অ") ("fuf" "‌ু") ("fuuf" "‌ূ") ("fwf" "‌ৃ") ("fa" "া") ("a" "আ") ("fi" "ি") ("i" "ই") ("fii" "ী") ("ii" "ঈ") ("fu" "ু") ("u" "উ") ("fuu" "ূ") ("uu" "ঊ") ("fw" "ৃ") ("w" "ঋ") ("fe" "ে") ("e" "এ") ("foi" "ৈ") ("oi" "ঐ") ("foo" "ো") ("oo" "ও") ("fou" "ৌ") ("ou" "ঔ") ("fae" "্যা") ("ae" "অ্যা")
