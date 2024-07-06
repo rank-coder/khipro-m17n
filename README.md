@@ -17,7 +17,7 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 <br>
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
 ### ক্ষিপ্র-র ম্যাপিং টেবিল
-<img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/7b42a9b8-0489-4692-a85a-ea0887b3439f" width=80% height=80%>
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/9b741654-fad5-42db-a789-5dabb448db4f)
 
 
 ### স্বরবর্ণ ও কারচিহ্ন সংক্রান্ত
