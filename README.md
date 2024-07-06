@@ -8,7 +8,10 @@ An m17n version of khipro. To get better prediction &amp; suggestion (with typin
 ![ছবি](https://github.com/rank-coder/khipro-m17n/assets/54497225/441be89b-2bba-4886-8f70-cb96745a5f3f)
 <br>
 **ডেমো ভিডিয়ো:** <br>
-https://github.com/rank-coder/khipro-m17n/assets/54497225/4c133b31-0444-42a2-bfe2-8215c2c2524a
+
+
+https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acdb-b30c42b4fd36
+
 
 <br> ক্ষিপ্র কিবোর্ডে দ্বিগুণ সুবিধা পাওয়া যাবে যদি typing-booster এর সাথে ব্যবহার করা হয়। তবে যারা চান তারা টাইপিং বুস্টার ছাড়াও ব্যবহার করতে পারবেন। উপরের ছবির মতো সাজেশন আসবে; সেগুলো সিলেক্ট করার জন্য Tab চেপে চেপে একটা একটা করে সিলেক্ট করা যাবে; কিংবা 1,2,3,4 বাটন প্রেস করে তৎক্ষণাৎ ততো নম্বর সাজেশন কমিট করা যাবে।
 <br>
