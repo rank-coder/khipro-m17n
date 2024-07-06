@@ -1,5 +1,5 @@
 # ক্ষিপ্র khipro-m17n
-An m17n version of khipro. To get better prediction &amp; suggestion (with typing-booster). There is another version of Khipro forked from Avro keyboard: https://github.com/rank-coder/ibus-khipro#readme The Avro fork does not support suggestions yet. So I would recommend you to use this khipro-m17n instead of the previous one.
+An m17n version of khipro. To get better prediction &amp; suggestion (with typing-booster). There was another (experimental) version of Khipro forked from Avro keyboard: https://github.com/rank-coder/ibus-khipro#readme The Avro fork does not support suggestions yet. So I would recommend you to use this khipro-m17n instead of the previous one.
 # Documentation (ডকুমেন্টেশন)
 __***For English please scroll down.***__
 ## পরিচিতি
