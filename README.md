@@ -36,11 +36,11 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 6. র‍্য সাধারণ নিয়মে লিখতে গেলে র্য হয়ে যায়। তাই এর জন্য আলাদা ব্যবস্থা: ry = র‍্য, ryam = র‍্যাম, ryapidf = র‍্যাপিড, ryaqk = র‍্যাংক ইত্যাদি।
 7. ড্ড ও ট্ট এই যুক্তবর্ণ দুটি লিখতে সময় বেশি লাগতে পারে তাই ড্ড <== ddf, ট্ট <== ttf করার অপশন রাখা হয়েছে।
 8. জ্ঞ গুরুত্বপূর্ণ যুক্তবর্ণ হওয়ায় এর জন্য আলাদা ম্যাপিং: gg => জ্ঞ। উদাহরণ: বিজ্ঞান <== biggan. এরকম আরও কিছু যুক্তবর্ণের জন্য স্পেশাল ম্যাপিং আছে (ম্যাপিং টেবিল দ্রষ্টব্য)।
-# ইনস্টলেশন, আপডেট, ও আনইনস্টলেশন
-## m17n ও টাইপিং বুস্টার ইনস্টল করা
+## ইনস্টলেশন, আপডেট, ও আনইনস্টলেশন
+### m17n ও টাইপিং বুস্টার ইনস্টল করা
 khipro-m17n চাইলে টাইপিং বুস্টারের সাথেও ব্যবহার করা যায়; আবার চাইলে টাইপিং বুস্টার ছাড়াও ব্যবহার করা যায়। টাইপিং বুস্টার সহ ব্যবহার করলে ইন্টেলিজেন্ট সাজেশন পাওয়া যাবে। ক্ষিপ্র ইনস্টল করার জন্য আগে m17n ইনস্টল করতে হবে। আমার পরামর্শ থাকবে ibus-m17n প্যাকেজটা ইনস্টল করে নেওয়ার। তবে যারা আইবাস পছন্দই করেন না তারা fcitx এর জন্য আলাদা m17n ইনস্টল করে নিতে পারেন। তবে তাদের ক্ষেত্রে (আইবাস না থাকায়) টাইপিং বুস্টার ব্যবহার সম্ভব হবে না। যাই হোক, m17n ইনস্টল করার পরে প্রথমে উপরে যেই .mim এক্সটেনশনের একটা ফাইল আছে সেটা ডাউনলোড করতে হবে। তারপর, আপনার হোম ডিরেকটরিতে একটা ফোল্ডার বা ডিরেকটরি তৈরি করতে হবে ".m17n.d" এই নামে। যেহেতু ফোল্ডারটির নাম ডট দিয়ে শুরু তাই ফোল্ডারটি হিডেন হয়ে যাবে। তাই হিডেন ফোল্ডার ভিউ অন করার জন্য ctrl+h চাপতে হবে। গ্নোম বা সিনামন না হলে হয়তো অন্য শর্টকাট ব্যবহার করতে হবে। এরপর একটু আগে নামানো .mim ফাইলটি ওই ফোল্ডারে রেখে দিতে হবে।
 এরপর typing-booster ইনস্টল করার পালা। টাইপিং বুস্টার ফেডোরাতে প্রি-ইনস্টল করা থাকে। আপনার ডিস্ট্রোতে ইনস্টল না করা থাকলে ইনস্টল করে নিন। উবুন্টু, মিন্ট, জরিন ওএস ইত্যাদিতে ```sudo apt install ibus-typing-booster``` কমান্ড দিয়ে ইনস্টল করা যাওয়ার কথা। আপনি টাইপিং বুস্টারের ওয়েবসাইট ঘুরে আসতে পারেন: https://mike-fabian.github.io/ibus-typing-booster/
-## টাইপিং বুস্টার কনফিগারেশন
+### টাইপিং বুস্টার কনফিগারেশন
 টাইপিং বুস্টার ইনস্টল করা হয়ে গেলে এরপর কম্পিউটার লগ আউট করে আবার লগ ইন করতে হবে। তারপরে সিস্টেমের ইনপুট মেথড কিংবা কিবোর্ড সংক্রান্ত সেটিংস থেকে টাইপিং বুস্টার সিলেক্ট করতে হবে। যদি আপনার ডিস্ট্রোতে সেটিংস থেকে আইবাসের সেটিংস কনফিগার করা না যায় তবে ibus-preferences থেকে কাজটি করতে হবে। (নিচের ছবি দ্রষ্টব্য) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/f479deda-0f19-4228-9eee-2ee23cf939d7" width=50%> <br>
 এখান থেকে টাইপিং বুস্টারের preferences কিংবা সেটিংসে যেতে হবে। (নিচের ছবি দ্রষ্টব্য) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/8e835083-8605-4686-98bb-5fd563d102fd" width=60%> <br>
 টাইপিং বুস্টারের সেটিংস ওপেন হলে প্রথমেই দেখা যাবে "Dictionaries & Input Methods" ট্যাব। সেখান থেকে বাংলার জন্য একটা ডিকশনারি সিলেক্ট করতে হবে। বাংলার জন্য তিনটা ডিকশনারি পাবেন; যেকোনো একটি সিলেক্ট করলেই হবে। এরপর ইনপুট মেথড হিসেবে ক্ষিপ্রকে সিলেক্ট করতে হবে। (নিচের ছবি দ্রষ্টব্য) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/c2bdb2cf-7d1a-46cd-aced-1a99ffc44ef8" width=40%> <br>
@@ -97,25 +97,25 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 9. Some conjuncts are quite popular. For example: জ্ঞ. To type it quickly, use gg: বিজ্ঞান <== biggan. There are special mappings for some other conjuncts as well (see mapping table).
 
 
-# Installation, update, and uninstallation
-## Pre-requisites
+## Installation, update, and uninstallation
+### Pre-requisites
 The khipro-m17n can also be used either with Typing Booster or it can be used without Typing Booster if desired. Use with Typing Booster to get intelligent suggestions. m17n must be installed first to install Khipro. My suggestion would be to install the ibus-m17n package. But those who don't like ibus can install separate m17n for fcitx. But in their case (because of lack of ibus) it will not be possible to install typing booster. Anyway, after installing m17n, first download the file with .mim extension above. Then, create a folder or directory in your home directory named ".m17n.d". Since the folder name starts with a dot, the folder will be hidden. So press ctrl+h to turn on hidden folder view. (If not GNOME or Cinnamon, you may need to use another shortcut.) Then the .mim file downloaded earlier should be placed in that folder.
 Then it's time to install typing-booster. Typing Booster comes pre-installed in Fedora. Install it if not installed in your distro. In Ubuntu, Mint, Zorin OS, etc., it should be installed with ``sudo apt install ibus-typing-booster'' command. You can visit Typing Booster website: https://mike-fabian.github.io/ibus-typing-booster/
 Once Typing Booster is installed, log out of the computer and log in again. Then select Typing Booster from system input method or keyboard settings. If the ibus settings can't be configured from the settings in your distro, the task must be done from ibus-preferences. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/f479deda-0f19-4228-9eee-2ee23cf939d7" width=50%> <br >
 From here you have to go to preferences or settings of typing booster. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/8e835083-8605-4686-98bb-5fd563d102fd" width=60%> <br >
-## Configuring Typing Booster
+### Configuring Typing Booster
 When you open Typing Booster's settings, you will see the "Dictionaries & Input Methods" tab first. From there you have to select a dictionary for Bengali. You will get three dictionaries for Bengali; Select any one. Then select Khipro as the input method. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/c2bdb2cf-7d1a-46cd-aced-1a99ffc44ef8" width=40%> <br >
 After that go to "Options" tab and from there: Use inline completion, Auto Capitalize, Unicode Symbols & Emoji Prediction, Add a space when committing by mouse click, Off the record mode should be turned off. Everything should be selected for Record Mode. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/78a4096c-f19b-4d77-9136-beb49483daf2" width=40%> <br >
 Next, go to the "Keybindings" tab. There, configure Enter for Commit, the number '1' for Commit-candidate-1. Then '1' should be removed from commit-candidate-1-plus-space. The reason for doing this is that it is not good for bangla to add spaces after committing a suggestion. In Bengali, bibhaktis, or word-duplets may come up which are written without space. Anyway, configure 1 to 4 like this. Do not go more than 4. After editing it will look like the image below: <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/82805019-93a7-4856-82c7-5c498937b053" width=40% > <br>
 Next we work on the "Appearance" tab. Here also all the checkboxes should be unchecked (so that Typing Booster can work faster). Then Candidate window page size should be 4; Because more than four suggestions can actually detract from the focus of writing. After that, the orientation of the Candidate window should be set to Horizontal, in which all the suggestions can be seen by without moving the eyes a lot. Preedit-underline can be "Single"; But it is up to you. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/12ea6d5f-5aad-4e0c-9605-0151746e082e" width=40%> <br >
 
-## Using without Typing Booster
+### Using without Typing Booster
 Those who want to use without Typing Booster can use Khipro without installing Typing Booster.
-## Updated
+### Updated
 Updating is very simple. The version number will be written in the .mim file's name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. Next, log out of the computer and log back in.
-## Uninstalling
+### Uninstalling
 First uninstall Typing Booster, then you can uninstall m17n. However, it is not necessary to uninstall m17n, as it may exist as a dependency for another layouts or methods in your system.
-# Contact
+## Contact
 * Bangla Input Method Project Group: https://t.me/+oXLVpYDtyDNmYzll
 * Discord: https://discord.gg/GPt6s8cb48
 * Bangla Localization Community Group: https://t.me/BanglaLocalizationCommunity
