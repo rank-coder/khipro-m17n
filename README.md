@@ -60,7 +60,7 @@ khipro-m17n চাইলে টাইপিং বুস্টারের স�
 
 ## Introduction
 
-When writing in the phonetic layout of the Avro keyboard, we need to press Shift repeatedly, disrupting the writing flow and continuity. Therefore, the writing speed cannot increase beyond a certain limit. In China's 'Pinyin' Romanization system, case-insensitive phonetic mapping is used. Thus, we are trying to bring similar speed to Bengali Romanization-based typing. Using Pinyin-based input methods, the Chinese are writing their complex language faster than English. The development of the Khipro keyboard is still ongoing. If you have any complaints or suggestions, you can contact us at the link below.
+When writing in the phonetic layout of the Avro keyboard, we need to press Shift repeatedly, disrupting the writing flow and continuity. Therefore, the writing speed cannot increase beyond a certain limit. In China's 'Pinyin' Romanization system, case-insensitive phonetic mapping is used. Thus, we are trying to bring similar speed to Bengali Romanization-based typing. Using Pinyin-based input methods, the Chinese are writing their complex language faster than English. The development of the Khipro keyboard is still ongoing. If you have any complaints or suggestions, you can contact us at the link [below](#Contact).
 
 ## How it works and its features
 <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/441be89b-2bba-4886-8f70-cb96745a5f3f" width=40% height=40%>
@@ -72,46 +72,48 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 
 
 <br>
-The Khipro keyboard provides double benefits if used with typing-booster. However, it can also be used without the typing booster. Suggestions will appear as shown in the image above; to select them, press Tab repeatedly or immediately commit the corresponding number suggestion by pressing 1, 2, 3, or 4. Now, let's look at the mapping of the Khipro keyboard.
+The Khipro keyboard provides double benefits if used with typing-booster. However, it can also be used without the typing booster. Suggestions will appear as shown in the image above; to select them, press Tab repeatedly or by pressing 1, 2, 3, or 4 you can immediately commit the corresponding number suggestion. Now, let's look at the mapping of the Khipro keyboard.
 
 ### Mapping Table of Khipro
 ![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/9b741654-fad5-42db-a789-5dabb448db4f)
 
 ### Vowels and Kar-diacritics
-1. The diacritics can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
-2. Note that ae maps to অ্যা and is placed with vowels. It can be written like this: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা. The ae mapping helps at the start of words: aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড, maepiq => ম্যাপিং.
+1. The kars can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
+2. Note that 'ae' maps to অ্যা and is placed with vowels. It can be written like this: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা. The ae mapping helps at the start of words: aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড, maepiq => ম্যাপিং.
 3. Traditional and modern styles of diacritics: Some consonants use old-style diacritics (ু, ূ, ৃ) ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/c5fd0724-b2c1-4058-a2ce-b9c59c7c4908). To create modern styles, add f to the diacritic. Example: ru => রু, ruf => র‌ু ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/37a339cc-e651-4723-82a1-ff7115078a0b).
 4. At the start of a word, diacritic mappings convert to vowels automatically. To prevent this, start the vowel with f: ami => আমি, fami => ামি.
 5. To use a vowel instead of a diacritic after a consonant, use the separator: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i.
 
 ### Consonants and Conjuncts
 1. Writing two consecutive consonants (if they form a conjunct) automatically places a halant between them. Example: ব্যঞ্জন => bzonjon. To prevent this, use the separator: k;b;r => কবর, or use o: kobor => কবর.
-2. Use rr for repha: গর্ব => gorrb, শরবত => shorbot.
+2. Use rr for reph: গর্ব => gorrb, শরবত => shorbot.
 3. To force a halant at the end of a consonant, use xx: কাট্ => katfxx.
-4. To show a halant without forming a conjunct in the middle of a word, use ` to insert a ZWNJ (zero width non-joiner): জসীম উদ্‌দীন <== josiim ud`diin.
+4. To show a halant without forming a conjunct in the middle of a word, use \` to insert a ZWNJ (zero width non-joiner): জসীম উদ্‌দীন <== josiim ud`diin.
 5. To write the "ya" diacritic (্যা) as a vowel: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা.
-6. Writing "r-y" normally results in র্য, so use ry for র‍্য: ryam = র‍্যাম, ryapidf = র‍্যাপিড.
-7. For quicker input of ড্ড and ট্ট, use ddf and ttf respectively.
-8. For the important conjunct জ্ঞ, use gg: বিজ্ঞান <== biggan. There are special mappings for other conjuncts (see mapping table).
+6. If you try to write র‌্য normally it results in র্য, so use ry for র‍্য: ryam = র‍্যাম, ryapidf = র‍্যাপিড.
+8. For quicker input of ড্ড and ট্ট, use ddf and ttf respectively.
+9. Some conjuncts are quite popular. For example: জ্ঞ. To type it quickly, use gg: বিজ্ঞান <== biggan. There are special mappings for some other conjuncts as well (see mapping table).
 
 
 # Installation, update, and uninstallation
-The khipro-m17n can also be used with a typing booster if desired; Can be used without Typing Booster if desired. Use with Typing Booster to get intelligent suggestions. m17n must be installed first to install qipra. My suggestion would be to install the ibus-m17n package. But those who don't like ibus can install separate m17n for fcitx. But in their case (because of lack of ibus) typing booster will not be possible. Anyway, after installing m17n first download a file with .mim extension above. Then, create a folder or directory in your home directory named ".m17n.d". Since the folder name starts with a dot, the folder will be hidden. So press ctrl+h to turn on hidden folder view. If not GNOME or Cinnamon, you may need to use another shortcut. Then the .mim file downloaded earlier should be placed in that folder.
+## Pre-requisites
+The khipro-m17n can also be used either with Typing Booster or it can be used without Typing Booster if desired. Use with Typing Booster to get intelligent suggestions. m17n must be installed first to install Khipro. My suggestion would be to install the ibus-m17n package. But those who don't like ibus can install separate m17n for fcitx. But in their case (because of lack of ibus) it will not be possible to install typing booster. Anyway, after installing m17n, first download the file with .mim extension above. Then, create a folder or directory in your home directory named ".m17n.d". Since the folder name starts with a dot, the folder will be hidden. So press ctrl+h to turn on hidden folder view. (If not GNOME or Cinnamon, you may need to use another shortcut.) Then the .mim file downloaded earlier should be placed in that folder.
 Then it's time to install typing-booster. Typing Booster comes pre-installed in Fedora. Install it if not installed in your distro. In Ubuntu, Mint, Zorin OS, etc., it should be installed with ``sudo apt install ibus-typing-booster'' command. You can visit Typing Booster website: https://mike-fabian.github.io/ibus-typing-booster/
 Once Typing Booster is installed, log out of the computer and log in again. Then select Typing Booster from system input method or keyboard settings. If the ibus settings can't be configured from the settings in your distro, the task must be done from ibus-preferences. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/f479deda-0f19-4228-9eee-2ee23cf939d7" width=50%> <br >
 From here you have to go to preferences or settings of typing booster. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/8e835083-8605-4686-98bb-5fd563d102fd" width=60%> <br >
-When you open Typing Booster's settings, you will see the "Dictionaries & Input Methods" tab first. From there you have to select a dictionary for Bengali. You will get three dictionaries for Bengali; Select any one. Then select Quick as the input method. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/c2bdb2cf-7d1a-46cd-aced-1a99ffc44ef8" width=40%> <br >
-After that go to "Options" tab and from there Use inline completion, Auto Capitalize, Unicode Symbols & Emoji Prediction, Add a space when committing by mouse click, Off the record mode should be closed. Everything must be selected for Record Mode. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/78a4096c-f19b-4d77-9136-beb49483daf2" width=40%> <br >
-Next, go to the "Keybindings" tab. There, enter for Commit, select 1 on the keyboard for Commit-candidate-1. 1 should be removed from commit-candidate-1-plus-space. The reason for doing this is that it is not good for bangla to add spaces after the suggestion commit. In Bengali, division, or two words may be written in pairs. Anyway do 1 to 4 like this. Do not go more than 4. After editing it will look like below image: <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/82805019-93a7-4856-82c7-5c498937b053" width=40% > <br>
-Next we work on the "Appearance" tab. Here also all the checkboxes should be closed (so that Typing Booster will work faster). Then Candidate window page size should be 4; Because more than four suggestions can actually detract from the focus of writing. After that, the orientation of the Candidate window should be set to Horizontal, in which all the suggestions can be seen by moving the eyes less. Preedit can put underline "Single"; But it is enough to keep one. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/12ea6d5f-5aad-4e0c-9605-0151746e082e" width=40%> <br >
+## Configuring Typing Booster
+When you open Typing Booster's settings, you will see the "Dictionaries & Input Methods" tab first. From there you have to select a dictionary for Bengali. You will get three dictionaries for Bengali; Select any one. Then select Khipro as the input method. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/c2bdb2cf-7d1a-46cd-aced-1a99ffc44ef8" width=40%> <br >
+After that go to "Options" tab and from there: Use inline completion, Auto Capitalize, Unicode Symbols & Emoji Prediction, Add a space when committing by mouse click, Off the record mode should be turned off. Everything should be selected for Record Mode. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/78a4096c-f19b-4d77-9136-beb49483daf2" width=40%> <br >
+Next, go to the "Keybindings" tab. There, configure Enter for Commit, the number '1' for Commit-candidate-1. Then '1' should be removed from commit-candidate-1-plus-space. The reason for doing this is that it is not good for bangla to add spaces after committing a suggestion. In Bengali, bibhaktis, or word-duplets may come up which are written without space. Anyway, configure 1 to 4 like this. Do not go more than 4. After editing it will look like the image below: <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/82805019-93a7-4856-82c7-5c498937b053" width=40% > <br>
+Next we work on the "Appearance" tab. Here also all the checkboxes should be unchecked (so that Typing Booster can work faster). Then Candidate window page size should be 4; Because more than four suggestions can actually detract from the focus of writing. After that, the orientation of the Candidate window should be set to Horizontal, in which all the suggestions can be seen by without moving the eyes a lot. Preedit-underline can be "Single"; But it is up to you. (Note image below) <br> <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/12ea6d5f-5aad-4e0c-9605-0151746e082e" width=40%> <br >
 
-### Using without Typing Booster
-Those who want to use without Typing Booster can use Khipra without installing Typing Booster.
-### Updated
-Updating is very simple. The version number will be written in the .mim file name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. Next, log out of the computer and log in.
-### Uninstalling
-To uninstall typing booster uninstall then m17n. However, it is not necessary to uninstall m17n, as it may exist as a dependency for another layout.
-## Contact
+## Using without Typing Booster
+Those who want to use without Typing Booster can use Khipro without installing Typing Booster.
+## Updated
+Updating is very simple. The version number will be written in the .mim file's name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. Next, log out of the computer and log back in.
+## Uninstalling
+First uninstall Typing Booster, then you can uninstall m17n. However, it is not necessary to uninstall m17n, as it may exist as a dependency for another layouts or methods in your system.
+# Contact
 * Bangla Input Method Project Group: https://t.me/+oXLVpYDtyDNmYzll
 * Discord: https://discord.gg/GPt6s8cb48
 * Bangla Localization Community Group: https://t.me/BanglaLocalizationCommunity
