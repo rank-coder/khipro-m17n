@@ -111,7 +111,7 @@ Next we work on the "Appearance" tab. Here also all the checkboxes should be unc
 
 ### Using without Typing Booster
 Those who want to use without Typing Booster can use Khipro without installing Typing Booster.
-### Updated
+### Updating
 Updating is very simple. The version number will be written in the .mim file's name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. Next, log out of the computer and log back in.
 ### Uninstalling
 First uninstall Typing Booster, then you can uninstall m17n. However, it is not necessary to uninstall m17n, as it may exist as a dependency for another layouts or methods in your system.
