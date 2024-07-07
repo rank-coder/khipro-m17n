@@ -75,7 +75,7 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 The Khipro keyboard provides double benefits if used with typing-booster. However, it can also be used without the typing booster. Suggestions will appear as shown in the image above; to select them, press Tab repeatedly or by pressing 1, 2, 3, or 4 you can immediately commit the corresponding number suggestion. Now, let's look at the mapping of the Khipro keyboard.
 
 ### Mapping Table of Khipro
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/9b741654-fad5-42db-a789-5dabb448db4f)
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2 EN)](https://github.com/rank-coder/khipro-m17n/assets/54497225/0d7e086b-0dbe-4007-97ac-a855181fd113)
 
 ### Vowels and Kar-diacritics
 1. The kars can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
@@ -89,7 +89,7 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 2. Use rr for reph: গর্ব => gorrb, শরবত => shorbot.
 3. To force a halant at the end of a consonant, use xx: কাট্ => katfxx.
 4. To show a halant without forming a conjunct in the middle of a word, use \` to insert a ZWNJ (zero width non-joiner): জসীম উদ্‌দীন <== josiim ud`diin.
-5. To write the "ya" diacritic (্যা) as a vowel: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা.
+5. ্যা is listed and considered as a vowel sign in Khipro for convenience: hae => হ্যা. For just the য phola you can press z: hza => হ্যা.
 6. If you try to write র‌্য normally it results in র্য, so use ry for র‍্য: ryam = র‍্যাম, ryapidf = র‍্যাপিড.
 8. For quicker input of ড্ড and ট্ট, use ddf and ttf respectively.
 9. Some conjuncts are quite popular. For example: জ্ঞ. To type it quickly, use gg: বিজ্ঞান <== biggan. There are special mappings for some other conjuncts as well (see mapping table).
