@@ -17,7 +17,8 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 <br>
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
 ### ক্ষিপ্র-র ম্যাপিং টেবিল
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/9b741654-fad5-42db-a789-5dabb448db4f)
+
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/rank-coder/khipro-m17n/assets/54497225/15f18c2f-5028-45e9-901e-fb1fbcdf8172)
 
 
 ### স্বরবর্ণ ও কারচিহ্ন সংক্রান্ত
@@ -77,7 +78,8 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 The Khipro keyboard provides double benefits if used with typing-booster. However, it can also be used without the typing booster. Suggestions will appear as shown in the image above; to select them, press Tab repeatedly or by pressing 1, 2, 3, or 4 you can immediately commit the corresponding number suggestion. Now, let's look at the mapping of the Khipro keyboard.
 
 ### Mapping Table of Khipro
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2 EN)](https://github.com/rank-coder/khipro-m17n/assets/54497225/0d7e086b-0dbe-4007-97ac-a855181fd113)
+
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2 EN)](https://github.com/rank-coder/khipro-m17n/assets/54497225/00703327-239f-4bb3-a7cb-bc858aaabc3a)
 
 
 ### Vowels and Kar-diacritics
