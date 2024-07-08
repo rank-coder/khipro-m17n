@@ -79,6 +79,7 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 ### Mapping Table of Khipro
 ![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2 EN)](https://github.com/rank-coder/khipro-m17n/assets/54497225/0d7e086b-0dbe-4007-97ac-a855181fd113)
 
+
 ### Vowels and Kar-diacritics
 1. The kars can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
 2. Note that 'ae' maps to অ্যা and is placed with vowels. It can be written like this: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা. The ae mapping helps at the start of words: aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড, maepiq => ম্যাপিং.
