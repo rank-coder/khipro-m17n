@@ -53,7 +53,11 @@ sudo rm /usr/share/m17n/bn-khipro*.mim; cd ~/; rm -rf khipro-m17n; git clone htt
 ### টাইপিং বুস্টার ছাড়া ব্যবহার করা
 যারা টাইপিং বুস্টার ছাড়া ব্যবহার করতে চান তারা টাইপিং বুস্টার ইনস্টল না করে ক্ষিপ্র ব্যবহার করতে পারেন।
 ### আপডেট করা
-আপডেট করাটা খুবই সোজা। .mim ফাইলের নামে ভার্শন নম্বর লেখা থাকবে। ভার্শন নম্বর দেখে নিশ্চিত করুন নতুন ভার্শন এসেছে কি-না। নতুন করে .mim ফাইল ডাউনলোড করে জায়গা মতো রেখে দিন। এরপর, কম্পিউটার লগআউট করে লগইন করুন।
+আপডেট করাটা খুবই সোজা। .mim ফাইলের নামে ভার্শন নম্বর লেখা থাকবে। ভার্শন নম্বর দেখে নিশ্চিত করুন নতুন ভার্শন এসেছে কি-না। নতুন করে .mim ফাইল ডাউনলোড করে জায়গা মতো রেখে দিন। এটা একটা কমান্ডেই করা যায়:
+```
+sudo rm /usr/share/m17n/bn-khipro*.mim; cd ~/; rm -rf khipro-m17n; git clone https://github.com/rank-coder/khipro-m17n.git; cd ~/khipro-m17n; sudo cp bn-khipro*.mim /usr/share/m17n/
+```
+এরপর, কম্পিউটার লগআউট করে লগইন করুন।
 ### আনইনস্টল করা
 আনইনস্টল করার জন্য টাইপিং বুস্টার আনইনস্টল করে তারপরে m17n আনইনস্টল করতে হবে। তবে m17n আনইনস্টল করাটা জরুরি নয়, কারণ সেটি অন্য কোনো লেআউটের জন্য ডিপেন্ডেন্সি হিসেবে থাকতে পারে।
 ## যোগাযোগ
@@ -120,7 +124,11 @@ Next we work on the "Appearance" tab. Here also all the checkboxes should be unc
 ### Using without Typing Booster
 Those who want to use without Typing Booster can use Khipro without installing Typing Booster.
 ### Updating
-Updating is very simple. The version number will be written in the .mim file's name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. Next, log out of the computer and log back in.
+Updating is very simple. The version number will be written in the .mim file's name. Check the version number to confirm if there is a new version or not. Download the new .mim file and keep it in place. This can by done in a single comand:
+```
+sudo rm /usr/share/m17n/bn-khipro*.mim; cd ~/; rm -rf khipro-m17n; git clone https://github.com/rank-coder/khipro-m17n.git; cd ~/khipro-m17n; sudo cp bn-khipro*.mim /usr/share/m17n/
+```
+Next, log out of the computer and log back in.
 ### Uninstalling
 First uninstall Typing Booster, then you can uninstall m17n. However, it is not necessary to uninstall m17n, as it may exist as a dependency for another layouts or methods in your system.
 ## Contact
