@@ -1,5 +1,3 @@
-;; Version "13" 
-
 (input-method bn khipro) 
 (description (_ "Aims to be the fastest typing method for Bengali. Please read the README file before using the layout, in order to use it usefully."))
 (title "ক্ষি")
