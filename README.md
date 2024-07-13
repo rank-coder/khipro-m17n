@@ -1,6 +1,6 @@
 # ক্ষিপ্র khipro-m17n
 
-![khipro-m17n](https://socialify.git.ci/rank-coder/khipro-m17n/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FSharafatKarim%2Fkhipro-m17n%2Fmain%2Fkhipro_logo.png&name=1&pattern=Brick%20Wall&pulls=1&stargazers=1&theme=Auto)
+![khipro-m17n](https://socialify.git.ci/rank-coder/khipro-m17n/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FSharafatKarim%2Fkhipro-m17n%2Fmain%2Fkhipro_logo.png&name=1&pattern=Diagonal%20Stripes&pulls=1&stargazers=1&theme=Auto)
 
 An m17n version of khipro. To get better prediction &amp; suggestion (with typing-booster). There was another (experimental) version of Khipro forked from Avro keyboard: https://github.com/rank-coder/ibus-khipro#readme The Avro fork does not support suggestions yet. So I would recommend you to use this khipro-m17n instead of the previous one.
 
