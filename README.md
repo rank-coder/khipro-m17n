@@ -22,7 +22,8 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
 ### ক্ষিপ্র-র ম্যাপিং টেবিল
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/c1d586ad-eaef-41ff-8d31-c3e2ec014143)
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/5d52cecc-5de4-467c-8ffc-144ec3f1daa9)
+
 
 
 ### স্বরবর্ণ ও কারচিহ্ন সংক্রান্ত
@@ -89,8 +90,9 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 
 ### Mapping Table of Khipro
 
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/b1722de9-42c4-49c0-b018-bbeb8823f8c2)
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2 EN)](https://github.com/user-attachments/assets/67e75ec1-4c86-4577-931e-a2a8281cde39)
+
 
 ### Vowels and Kar-diacritics
 1. The kars can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
