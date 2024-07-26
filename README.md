@@ -34,8 +34,8 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 5. কোনো ব্যঞ্জনের পরে কারচিহ্নের বদলে স্বরবর্ণ ব্যবহার করতে চাইলে পৃথায়ক ব্যবহার করে কাজটি করা যাবে: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i
 ### ব্যঞ্জনবর্ণ ও যুক্তবর্ণ সংক্রান্ত
 1. পরপর দুটো ব্যঞ্জনবর্ণ লিখলে (সেগুলো দিয়ে যুক্তবর্ণ সম্ভব হলে) তাদের মাঝে অটো একটা হসন্ত বসে যাবে। যেমন: ব্যঞ্জন => bzonjon, ব্যঞ্জন । এই হসন্ত বসাটা রোধ করতে চাইলে পৃথায়ক ব্যবহার করা যাবে। যেমন: k;b;r => কবর। কিংবা, o ব্যবহার করেও একই কাজ করা যাবে: kobor => কবর
-3. শব্দের শেষে ব্যঞ্জনবর্ণ এলে সেটার শেষে জোর করে হসন্ত যুক্ত করতে চাইলে xx ব্যবহার করতে হবে: কাট্ => katfxx
-4. শব্দের মাঝে যুক্তবর্ণ তৈরি না করে হসন্ত দেখাতে চাইলে \` চেপে zwnj (zero width non-joiner) ব্যবহার করা যেতে পারে। তবে এর একটা শর্টকাট আছে xxx লিখলে হসন্ত পরের ব্যঞ্জনের সাথে যুক্ত হবে না। যেমন: জসীম উদ্‌দীন <== josiim udxxxdiin অথবা josiim udxx`diin
+3. শব্দের শেষে ব্যঞ্জনবর্ণ এলে সেটার শেষে জোর করে হসন্ত যুক্ত করতে চাইলে qq অথবা xx ব্যবহার করতে হবে: কাট্ => katfqq, katfxx
+4. শব্দের মাঝে যুক্তবর্ণ তৈরি না করে হসন্ত দেখাতে চাইলে \` চেপে zwnj (zero width non-joiner) ব্যবহার করা যেতে পারে। তবে এর একটা শর্টকাট আছে xx দিয়ে হসন্ত লিখলে সেই হসন্ত পরের ব্যঞ্জনের সাথে যুক্ত হবে না। যেমন: জসীম উদ্‌দীন <== josiim udxxdiin
 5. য-ফলা া-কারকে (্যা) স্বরধ্বনি হিসেবে স্বরবর্ণের মধ্যে উল্লেখ করা হয়েছে। সেটা এভাবে লেখা যাবে: hae => হ্যা। তবে শুধু য-ফলা লেখার জন্য z চেপে লেখার ব্যবস্থা করা হয়েছে। যেমন: hza => হ্যা। প্রশ্ন আসতে পারে আলাদা ae = অ্যা এর লাভ কী? এটার লাভ পাওয়া যাবে শব্দের শুরুতে। aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড।
 6. র‍্য সাধারণ নিয়মে লিখতে গেলে র্য হয়ে যায়। তাই এর জন্য আলাদা ব্যবস্থা: ry = র‍্য, ryam = র‍্যাম, ryapidf = র‍্যাপিড, ryaqk = র‍্যাংক ইত্যাদি।
 7. ড্ড ও ট্ট এই যুক্তবর্ণ দুটি লিখতে সময় বেশি লাগতে পারে তাই ড্ড <== ddf, ট্ট <== ttf করার অপশন রাখা হয়েছে।
@@ -101,8 +101,8 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 
 ### Consonants and Conjuncts
 1. Writing two consecutive consonants (if they form a conjunct) automatically places a halant between them. Example: ব্যঞ্জন => bzonjon. To prevent this, use the separator: k;b;r => কবর, or use o: kobor => কবর.
-3. To force a halant at the end of a consonant, use xx: কাট্ => katfxx.
-4. To show a halant without forming a conjunct in the middle of a word, use \` to insert a ZWNJ (zero width non-joiner). Note that there is a shortcut "xxx" to force halant to not form conjunct with the next consonant: জসীম উদ্‌দীন <== josiim udxxxdiin or josiim udxx`diin.
+3. To force a halant at the end of a consonant, use qq or xx: কাট্ => katfxx.
+4. To show a halant without forming a conjunct in the middle of a word, use \` to insert a ZWNJ (zero width non-joiner). Note that there is a shortcut "xx" to show halant without forming conjunct with the next consonant: জসীম উদ্‌দীন <== josiim udxxdiin
 5. ্যা is listed and considered as a vowel sign in Khipro for convenience: hae => হ্যা. For just the য phola you can press z: hza => হ্যা.
 6. If you try to write র‌্য normally it results in র্য, so use ry for র‍্য: ryam = র‍্যাম, ryapidf = র‍্যাপিড.
 8. For quicker input of ড্ড and ট্ট, use ddf and ttf respectively.
