@@ -22,17 +22,17 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
 ### ক্ষিপ্র-র ম্যাপিং টেবিল
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/5d52cecc-5de4-467c-8ffc-144ec3f1daa9)
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/c4325cdb-b1bc-45ad-acd4-f99f67d46c40)
 
 
 
 ### স্বরবর্ণ ও কারচিহ্ন সংক্রান্ত
 1. যেভাবে টেবিলে দেখানো হয়েছে সেভাবেই কারচিহ্নগুলো লেখা যাবে। যেমন: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো
 2. লক্ষণীয় যে ae দিয়ে অ্যা ম্যাপ করা হয়েছে এবং এটিকে স্বরবর্ণের সাথে রাখা হয়েছে। সেটা এভাবে লেখা যাবে: hae => হ্যা। তবে শুধু য-ফলা লেখার জন্য z চেপে লেখার ব্যবস্থা করা হয়েছে। যেমন: hza => হ্যা। প্রশ্ন আসতে পারে আলাদা ae = অ্যা এর লাভ কী? এটার লাভ পাওয়া যাবে শব্দের শুরুতে। aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড, maepiq => ম্যাপিং
-3. ঐতিহ্যবাহী ও আধুনিক স্টাইলের কারচিহ্ন: কিছু কিছু ব্যঞ্জনে পুরাতন স্টাইলের ু, ূ, ৃ কার যুক্ত হয়। চিত্র: ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/c5fd0724-b2c1-4058-a2ce-b9c59c7c4908)  আপনি চাইলে আধুনিক স্টাইলের কারচিহ্ন বানাতে পারবেন সেই কারচিহ্নর শেষে f যোগ করার মাধ্যমে। তখন এরকম কারচিহ্ন দেখা যাবে: ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/37a339cc-e651-4723-82a1-ff7115078a0b)
-উদাহরণ: ru => রু, ruf => র‌ু 
+3. ঐতিহ্যবাহী ও আধুনিক স্টাইলের কারচিহ্ন: কিছু কিছু ব্যঞ্জনে পুরাতন স্টাইলের ু, ূ, ৃ কার যুক্ত হয়। চিত্র: ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/c5fd0724-b2c1-4058-a2ce-b9c59c7c4908)  আপনি চাইলে আধুনিক স্টাইলের কারচিহ্ন বানাতে পারবেন সেই কারচিহ্নর শেষে ff যোগ করার মাধ্যমে। তখন এরকম কারচিহ্ন দেখা যাবে: ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/37a339cc-e651-4723-82a1-ff7115078a0b)
+উদাহরণ: ru => রু, ruff => র‌ু 
 4. শব্দের শুরুতে স্বরচিহ্নের ম্যাপিংভুক্ত কিছু লিখলে সেটা অটো স্বরবর্ণে পরিণত হবে। যদি কোনো কারণে এই আচরণ রোধ করতে চাই তবে স্বরটি f দিয়ে শুরু করলেই স্বরচিহ্ন আসবে। যেমন: ami => আমি, fami => ামি (কখনো ভুলে কোথাও কারচিহ্ন ছুটে গেলে সেই শব্দটা না মুছেই কারচিহ্ন দিতে এই ফিচারটা কাজে লাগবে।)
-5. কোনো ব্যঞ্জনের পরে কারচিহ্নের বদলে স্বরবর্ণ ব্যবহার করতে চাইলে পৃথায়ক ব্যবহার করে কাজটি করা যাবে: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i
+5. কোনো ব্যঞ্জনের পরে কারচিহ্নের বদলে স্বরবর্ণ ব্যবহার করতে চাইলে ঐ এবং ঔ বাদে বাকি স্বরবর্ণগুলোর ক্ষেত্রে সাথে f যোগ করে কারচিহ্নকে স্বরবর্ণ বানানো যাবে। যেমন: pinifn = পিনইন, kurafn = কুরআন, hoofya = হওয়া; oi এবং ou একটু বিশেষভাবে কাজ করবে: zotoif = যতই, boif = বই, nou = নৌ, bouf = বউ। তবে পৃথায়ক ব্যবহার করেও কাজটি করা যাবে: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i
 ### ব্যঞ্জনবর্ণ ও যুক্তবর্ণ সংক্রান্ত
 1. পরপর দুটো ব্যঞ্জনবর্ণ লিখলে (সেগুলো দিয়ে যুক্তবর্ণ সম্ভব হলে) তাদের মাঝে অটো একটা হসন্ত বসে যাবে। যেমন: ব্যঞ্জন => bzonjon, ব্যঞ্জন । এই হসন্ত বসাটা রোধ করতে চাইলে পৃথায়ক ব্যবহার করা যাবে। যেমন: k;b;r => কবর। কিংবা, o ব্যবহার করেও একই কাজ করা যাবে: kobor => কবর
 3. শব্দের শেষে ব্যঞ্জনবর্ণ এলে সেটার শেষে জোর করে হসন্ত যুক্ত করতে চাইলে qq অথবা xx ব্যবহার করতে হবে: কাট্ => katfqq, katfxx
@@ -90,16 +90,16 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 
 ### Mapping Table of Khipro
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/b1722de9-42c4-49c0-b018-bbeb8823f8c2)
+![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/8c8163f3-f554-4091-a755-57df77eeba00)
 
 
 
 ### Vowels and Kar-diacritics
 1. The kars can be written as shown in the table. For example: ka => কা, kae => ক্যা, maepiq => ম্যাপিং, kii => কী, kw => কৃ, kv => কো, koo => কো.
 2. Note that 'ae' maps to অ্যা and is placed with vowels. It can be written like this: hae => হ্যা. For just the "ya" sound, press z: hza => হ্যা. The ae mapping helps at the start of words: aekauntf => অ্যাকাউন্ট, aesidf => অ্যাসিড, maepiq => ম্যাপিং.
-3. Traditional and modern styles of diacritics: Some consonants use old-style diacritics (ু, ূ, ৃ) ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/c5fd0724-b2c1-4058-a2ce-b9c59c7c4908). To create modern styles, add f to the diacritic. Example: ru => রু, ruf => র‌ু ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/37a339cc-e651-4723-82a1-ff7115078a0b).
+3. Traditional and modern styles of diacritics: Some consonants use old-style diacritics (ু, ূ, ৃ) ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/c5fd0724-b2c1-4058-a2ce-b9c59c7c4908). To create modern styles, add ff to the diacritic. Example: ru => রু, ruff => র‌ু ![ছবি](https://github.com/rank-coder/ibus-khipro/assets/54497225/37a339cc-e651-4723-82a1-ff7115078a0b).
 4. At the start of a word, diacritic mappings convert to vowels automatically. To prevent this, start the vowel with f: ami => আমি, fami => ামি.
-5. To use a vowel instead of a diacritic after a consonant, use the separator: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i.
+5. To use a vowel instead of a diacritic after a consonant, example: pinifn = পিনইন, kurafn = কুরআন, hoofya = হওয়া; oi & ou works a bit specially: zotoif = যতই, boif = বই, nou = নৌ, bouf = বউ। However you can use the separator: হওয়া <== h;ooya, পিনইন <== pin;in, কুরআন <== kur;an, বই <== b;i.
 
 ### Consonants and Conjuncts
 1. Writing two consecutive consonants (if they form a conjunct) automatically places a halant between them. Example: ব্যঞ্জন => bzonjon. To prevent this, use the separator: k;b;r => কবর, or use o: kobor => কবর.
