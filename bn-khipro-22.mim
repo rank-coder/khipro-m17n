@@ -42,10 +42,10 @@
 ("ksh" "কশ") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cnf" "চণ") ("jn" "জন") ("jnf" "জণ") ("tft" "টত") ("dfd" "ডদ") ("nft" "ণত") ("nfd" "ণদ") ("lt" "লত") ("sft" "ষত")
 	)
 	(reph
-("r" "র") 
+		("rr" "র্") 
 	)
 	(phola
-	("r" "র") ("z" "য")
+		("r" "র") ("z" "য")
 	)
 	(kar
 		("o" "") ("a" "া") ("i" "ি") ("ii" "ী") ("u" "ু") ("uu" "ূ") ("w" "ৃ") ("e" "ে") ("oi" "ৈ") ("oo" "ো") ("ou" "ৌ") ("ae" "্যা") ("uff" "‌ু") ("uuff" "‌ূ") ("wff" "‌ৃ") ("of" "অ") ("af" "আ") ("if" "ই") ("iif" "ঈ") ("uf" "উ") ("uuf" "ঊ") ("wf" "ঋ") ("ef" "এ") ("oif" "ই") ("oof" "ও") ("ouf" "উ") ("aef" "অ্যা") 
@@ -94,10 +94,10 @@
 	(reph-state
 		(prithayok (shift init))
 		(juktoborno
-			(move @<) (move @+) (insert ?্) (move @>) (shift byanjon-state)
+			(shift byanjon-state)
 		)
 		(byanjon
-			(move @<) (move @+) (insert ?্) (move @>) (shift byanjon-state)
+			(shift byanjon-state)
 		)
 		(ae (shift shor-state))
 		(kar (shift shor-state))
