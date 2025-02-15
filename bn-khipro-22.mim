@@ -62,6 +62,9 @@
 	(prithayok
 		(";" "") (";;" ";")
 	)
+	(ae
+		("ae" "‌্যা")
+	)
 )
 
 (state
@@ -96,6 +99,7 @@
 		(byanjon
 			(move @<) (move @+) (insert ?্) (move @>) (shift byanjon-state)
 		)
+		(ae (shift shor-state))
 		(kar (shift shor-state))
 		(nil (shift init))
 	)
