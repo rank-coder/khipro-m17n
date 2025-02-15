@@ -93,13 +93,13 @@
 	)
 	(reph-state
 		(prithayok (shift init))
+		(ae (shift shor-state))
 		(juktoborno
 			(shift byanjon-state)
 		)
 		(byanjon
 			(shift byanjon-state)
 		)
-		(ae (shift shor-state))
 		(kar (shift shor-state))
 		(nil (shift init))
 	)
