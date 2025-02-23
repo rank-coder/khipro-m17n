@@ -27,6 +27,8 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 
 ### Mapping Table of Khipro
 
+[Click here for HTML version](https://rank-coder.github.io/khipro-m17n/mapping-table.html)
+
 ![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/8c8163f3-f554-4091-a755-57df77eeba00)
 
 
