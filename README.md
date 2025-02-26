@@ -95,7 +95,6 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 | addfa, adfdfa | আড্ডা | doirghz | দৈর্ঘ্য | udxxdiin | উদ‌্দীন |
 | udgiironf | উদ‌্গীরণ | brahmonf | ব্রাহ্মণ | kkhrortz | ক্ষ্রর্ত্য |
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/c4325cdb-b1bc-45ad-acd4-f99f67d46c40)
 
 
 
