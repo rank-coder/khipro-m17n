@@ -35,7 +35,7 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 |--------|--------|--------|--------|--------|--------|
 | o | (অ কার) | ; | separator and/or conjuct preventor | f{কার} | prevents auto vowel forming |
 | {কার}ff | modern style vowel signs | {ব্যঞ্জন}oif | {ব্যঞ্জন} ই | {ব্যঞ্জন}ouf | {ব্যঞ্জন} উ |
-| {ব্যঞ্জন}{কার}f | স্বরবর্ণ (except ঐ, ঔ) |  |  |  |  |
+| {ব্যঞ্জন}{কার}f | {ব্যঞ্জন}{স্বরবর্ণ} (except ঐ, ঔ) |  |  |  |  |
 
 #### Vowel Signs
 
