@@ -29,7 +29,74 @@ The Khipro keyboard provides double benefits if used with typing-booster. Howeve
 
 [Click here for HTML version](https://rank-coder.github.io/khipro-m17n/mapping-table.html)
 
-![বাংলা ইনপুট মেথড ক্ষিপ্র (Copy 2)](https://github.com/user-attachments/assets/8c8163f3-f554-4091-a755-57df77eeba00)
+#### Vowel Letters & Vowel Signs
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| o | (অ কার) | ; | separator and/or conjuct preventor | f{কার} | prevents auto vowel forming |
+| {কার}ff | modern style vowel signs | {ব্যঞ্জন}oif | {ব্যঞ্জন} ই | {ব্যঞ্জন}ouf | {ব্যঞ্জন} উ |
+| {কার}f | স্বরবর্ণ (except ঐ, ঔ) |  |  |  |  |
+
+#### Vowel Signs
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| a | া | i | ি | ii | ী |
+| u | ু | uu | ূ | w | ৃ |
+| e | ে | oi | ৈ | oo | ো |
+| ou | ৌ | ae | ্যা | aef | অ্যা |
+
+#### Consonant Letters
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| k | ক | kh | খ | g | গ |
+| gh | ঘ | ng | ঙ | c | চ |
+| ch | ছ | j | জ | jh | ঝ |
+| nff | ঞ | tf | ট | tff | ঠ |
+| df | ড | dff | ঢ | nf | ণ |
+| t | ত | th | থ | d | দ |
+| dh | ধ | n | ন | p | প |
+| ph | ফ | b | ব | bh, v | ভ |
+| m | ম | z | য | r | র |
+| l | ল | sh | শ | sf | ষ |
+| s | স | h | হ | y | য় |
+| rf | ড় | rff | ঢ় |  |  |
+
+#### Diacritics and Misc.
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| tq | ৎ | x | ঃ | q | ং |
+| / | ঁ | . | । | .. | . |
+| ... | ... | ;; | ; | // | / |
+| .{সংখ্যা} | .{সংখ্যা} | $ | ৳ |  |  |
+
+#### Some Conjunct Shortcuts
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| ry | র‌্য | ttf | ট্ট | ddf | ড্ড |
+| kkh, ksf | ক্ষ | gg, jnff | জ্ঞ | ggg | গ্গ |
+| sfk | ষ্ক | sftf | ষ্ট | sftff | ষ্ঠ |
+| sfn, sfnf | ষ্ণ | sfp | ষ্প | sfph | ষ্ফ |
+| nc | ঞ্চ | nch | ঞ্ছ | nj | ঞ্জ |
+| njh | ঞ্ঝ | qq | ◌্ হসন্ত | xx | ◌্{zwnj} |
+| ` | [zwnj] | `` | [zwj] |  |  |
+
+#### Examples
+
+| Input | Output | Input | Output | Input | Output |
+|--------|--------|--------|--------|--------|--------|
+| k;b;r | কবর | kobor | কবর | som aj | সম আজ |
+| som faj | সম াজ | somaj | সমাজ | hwdoy | হৃদয় |
+| hwffdoy | হ‌ৃদয় | aekauntf | অ্যাকাউন্ট | boi | বৈ |
+| boif, bif, b;i, bo;i | বই | bzonjon | ব্যঞ্জন | kkhoma, ksfoma | ক্ষমা |
+| twsfna | তৃষ্ণা | biggan, bijnffan | বিজ্ঞান | onogggol | অনগ্গল |
+| katqq, katxx | কাত্ | ryam | র‌্যাম | rik;sha, riksha | রিকশা |
+| addfa, adfdfa | আড্ডা | doirghz | দৈর্ঘ্য | udxxdiin | উদ‌্দীন |
+| udgiironf | উদ‌্গীরণ | brahmonf | ব্রাহ্মণ | kkhrortz | ক্ষ্রর্ত্য |
+
 
 
 
