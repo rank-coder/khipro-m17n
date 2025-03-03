@@ -68,7 +68,7 @@ https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acd
 | df | ড | dff | ঢ | nf | ণ |
 | t | ত | th | থ | d | দ |
 | dh | ধ | n | ন | p | প |
-| ph | ফ | b | ব | bh, v | ভ |
+| ph | ফ | b | ব | v | ভ |
 | m | ম | z | য | r | র |
 | l | ল | sh | শ | sf | ষ |
 | s | স | h | হ | y | য় |
