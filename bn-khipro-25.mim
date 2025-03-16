@@ -1,3 +1,12 @@
+;; Readme portion starts:
+;; If you want to understand how this layout (or any m17n layout) works, read the documentation of m17n project: https://www.nongnu.org/m17n/manual-en/index.html
+;;
+;; If you just want to copy the behavior of khipro layout you can clearly see the mappings below in this file. It won't be hard to understand.
+;; Inside the (map ) tag all the mappings are put. And after mapping you'll see the (state ) tag which defines the states. m17n layout works with various states...
+;; For example, if the last typed entity is a consonant, I have coded the state to switch to "byanjon-state". Based on the states I could control its behavior. For example when in byanjon-state,
+;; typing a, i, u etc. will print karcinho intead of the shoroborno.
+;; Readme portion ends.
+
 (input-method bn khipro) 
 (description (_ "Aims to be the fastest typing method for Bengali. Please read the README file before using the layout, in order to use it usefully."))
 (title "ক্ষি")
