@@ -15,9 +15,7 @@
 <img src="https://github.com/rank-coder/khipro-m17n/assets/54497225/441be89b-2bba-4886-8f70-cb96745a5f3f" width=40% height=40%>
 <br>
 <b>ডেমো ভিডিয়ো:</b> <br>
-
-
-https://github.com/rank-coder/khipro-m17n/assets/54497225/97614f62-a96d-412e-acdb-b30c42b4fd36
+[Screencast From 2025-03-19 22-43-44.webm](https://github.com/user-attachments/assets/4a5df5ce-fdca-437d-9157-5873429dcb5c)
 
 
 <br> ক্ষিপ্র কিবোর্ডে দ্বিগুণ সুবিধা পাওয়া যাবে যদি typing-booster এর সাথে ব্যবহার করা হয়। তবে যারা চান তারা টাইপিং বুস্টার ছাড়াও ব্যবহার করতে পারবেন। উপরের ছবির মতো সাজেশন আসবে; সেগুলো সিলেক্ট করার জন্য কিবোর্ড শর্টকাট ব্যবহার করে ততক্ষণাৎ নম্বর অনুযায়ী সাজেশন কমিট করা যাবে।
