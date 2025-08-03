@@ -22,7 +22,7 @@
 <br> ক্ষিপ্র কিবোর্ডে দ্বিগুণ সুবিধা পাওয়া যাবে যদি typing-booster এর সাথে ব্যবহার করা হয়। তবে যারা চান তারা টাইপিং বুস্টার ছাড়াও ব্যবহার করতে পারবেন। উপরের ছবির মতো সাজেশন আসবে; সেগুলো সিলেক্ট করার জন্য কিবোর্ড শর্টকাট ব্যবহার করে ততক্ষণাৎ নম্বর অনুযায়ী সাজেশন কমিট করা যাবে।
 <br>
 এবার দেখে নিই ক্ষিপ্র কিবোর্ডের ম্যাপিংটা কী রকম। <br> <br>
-লিংকস:
+লিংকস ⬇️
 # [ক্ষিপ্র ম্যাপিং ও সিনট্যাক্স [Khipro Mapping & Syntax]](https://github.com/rank-coder/khipro-m17n/wiki/%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BF%E0%A6%AA%E0%A7%8D%E0%A6%B0-%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AA%E0%A6%BF%E0%A6%82-%E0%A6%93-%E0%A6%B8%E0%A6%BF%E0%A6%A8%E0%A6%9F%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%B8-%5BKhipro-Mapping-&-Syntax%5D)
 # [ইনস্টলেশন, আপডেট, ও আনইনস্টলেশন [Installation, Updating, and Uninstallation]](https://github.com/rank-coder/khipro-m17n/wiki/%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8,-%E0%A6%86%E0%A6%AA%E0%A6%A1%E0%A7%87%E0%A6%9F,-%E0%A6%93-%E0%A6%86%E0%A6%A8%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8)
 
