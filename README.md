@@ -6,10 +6,10 @@
 ![khipro-m17n](https://socialify.git.ci/rank-coder/khipro-m17n/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FSharafatKarim%2Fkhipro-m17n%2Fmain%2Fkhipro_logo.png&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 এটি ক্ষিপ্র-র m17n ভার্শন। Typing-booster এর সাথে ব্যবহার করলে আরো ভালো প্রেডিকশন ও সাজেশন পাওয়া যাবে।
-লিনাক্সে: khipro-m17n সরাসরি ব্যবহার করা যায়। ibus অথবা fcitx ব্যবহার করে khipro-m17n ব্যবহার করা যায়। লিনাক্সে ব্যবহার করার বিস্তারিত বর্ণনা এই ডকুমেন্টেশনে আছে।
-উইন্ডোজে: khipro-কে Borno Kyboard এর নতুন ভ্যারিয়েন্ট - Borno (Native) এর মাধ্যমে ব্যবহার করা যাচ্ছে। 
-অ্যান্ড্রয়েডে: Borno Android app ব্যবহার করে খুব শীঘ্রই ক্ষিপ্র অ্যান্ড্রয়েডেও ব্যবহার করা যাবে।
-আরও সহজে বুঝতে আমাদের ওয়েবসাইট ভিজিট করুন: ক্ষিপ্র-র ওয়েবসাইট: https://KhiproKeyboard.github.io
+* লিনাক্সে: khipro-m17n সরাসরি ব্যবহার করা যায়। ibus অথবা fcitx ব্যবহার করে khipro-m17n ব্যবহার করা যায়। লিনাক্সে ব্যবহার করার বিস্তারিত বর্ণনা এই ডকুমেন্টেশনে আছে।
+* উইন্ডোজে: khipro-কে Borno Kyboard এর নতুন ভ্যারিয়েন্ট - Borno (Native) এর মাধ্যমে ব্যবহার করা যাচ্ছে। 
+* অ্যান্ড্রয়েডে: Borno Android app ব্যবহার করে খুব শীঘ্রই ক্ষিপ্র অ্যান্ড্রয়েডেও ব্যবহার করা যাবে।
+* আরও সহজে বুঝতে আমাদের ওয়েবসাইট ভিজিট করুন: ক্ষিপ্র-র ওয়েবসাইট: https://KhiproKeyboard.github.io
 
 # ডকুমেন্টেশন
 
