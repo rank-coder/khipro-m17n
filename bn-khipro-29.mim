@@ -86,7 +86,7 @@
 		("nft" "ণত") ("nfd" "ণদ") ("lt" "লত") ("sft" "ষত") ("nfth" "ণথ") ("nfdh" "ণধ") ("sfth" "ষথ")
 		("ktff" "কঠ") ("ktfh" "কঠ") ("ptff" "পঠ") ("ptfh" "পঠ") ("ltff" "লঠ") ("ltfh" "লঠ") ("stff" "সঠ") ("stfh" "সঠ") 
 		("dfdff" "ডঢ") ("dfdfh" "ডঢ") ("ndff" "নঢ") ("ndfh" "নঢ") 
-		("ktfrf" "ক্টড়") ("ktfrff" "ক্টঢ়") ("kth" "") ("ktrf" "ক্তড়") ("ktrff" "ক্তঢ়") ("krf" "কড়") ("krff" "কঢ়") ("khrf" "খড়") ("khrff" "খঢ়") ("gggh" "জ্ঞঘ") ("gdff" "গঢ") ("gdfh" "গঢ") ("gdhrf" "গ্ধড়") 
+		("ktfrf" "ক্টড়") ("ktfrff" "ক্টঢ়") ("kth" "কথ") ("ktrf" "ক্তড়") ("ktrff" "ক্তঢ়") ("krf" "কড়") ("krff" "কঢ়") ("khrf" "খড়") ("khrff" "খঢ়") ("gggh" "জ্ঞঘ") ("gdff" "গঢ") ("gdfh" "গঢ") ("gdhrf" "গ্ধড়") 
 		("gdhrff" "গ্ধঢ়") ("grf" "গড়") ("grff" "গঢ়") ("ghrf" "ঘড়") ("ghrff" "ঘঢ়") ("ngkth" "ঙ্কথ") ("ngkrf" "ঙ্কড়") ("ngkrff" "ঙ্কঢ়") ("ngghrf" "ঙ্ঘড়") ("ngghrff" "ঙ্ঘঢ়") ("cchrf" "চ্ছড়") ("cchrff" "চ্ছঢ়") 
 		("tfrf" "টড়") ("tfrff" "টঢ়") ("dfrf" "ডড়") ("dfrff" "ডঢ়") ("rfgh" "ড়ঘ") ("dffrf" "ঢড়") ("dfhrf" "ঢড়") ("dffrff" "ঢঢ়") ("dfhrff" "ঢঢ়") ("nfdfrf" "ণ্ডড়") ("nfdfrff" "ণ্ডঢ়") ("trf" "তড়") ("trff" "তঢ়") ("thrf" "থড়") ("thrff" "থঢ়") 
 		("dvrf" "দ্ভড়") ("dvrff" "দ্ভঢ়") ("drf" "দড়") ("drff" "দঢ়") ("dhrf" "ধড়") ("dhrff" "ধঢ়") ("ntfrf" "ন্টড়") ("ntfrff" "ন্টঢ়") ("ndfrf" "ন্ডড়") ("ndfrff" "ন্ডঢ়") ("ntrf" "ন্তড়") ("ntrff" "ন্তঢ়") ("nthrf" "ন্থড়") 
