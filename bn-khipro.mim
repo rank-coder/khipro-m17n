@@ -8,7 +8,7 @@
 ;; Readme portion ends.
 
 (input-method bn khipro) 
-(description (_ "Aims to be the fastest typing method for Bengali. Please read the README file before using the layout, in order to use it usefully.
+(description (_ "Aims to be the fastest typing method for Bengali. Please read the guidelines at our website before using the layout, in order to find it useful.
 Website for khipro keyboard: https://KhiproKeyboard.github.io
 Author: Nafi <https://github.com/rank-coder>
 Team: Contributors in github.com/khipro-m17n 
