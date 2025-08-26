@@ -31,7 +31,7 @@
 # [ইনস্টলেশন, আপডেট, ও আনইনস্টলেশন [Installation, Updating, and Uninstallation]](https://github.com/rank-coder/khipro-m17n/wiki/%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8,-%E0%A6%86%E0%A6%AA%E0%A6%A1%E0%A7%87%E0%A6%9F,-%E0%A6%93-%E0%A6%86%E0%A6%A8%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8)
 
 # যোগাযোগ
-1. Bangla Input Method Project Group: https://t.me/+oXLVpYDtyDNmYzll
+1. Khipro: Bangla Input Method Project Group: https://t.me/KhiproKeyboard
 2. Discord: https://discord.gg/GPt6s8cb48
 3. Bangla Localization Community Group: https://t.me/BanglaLocalizationCommunity
 4. Linux Bangla Group: https://t.me/linux_bangla
