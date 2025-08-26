@@ -28,10 +28,7 @@ Development of the Khipro keyboard is still ongoing. If you have complaints or s
 <br> You’ll get double the benefit if you use Khipro Keyboard with Typing-booster. However, you may also use it without Typing-booster. As shown in the picture above, suggestions will appear; by using keyboard shortcuts, you can instantly commit the suggestion corresponding to its number.  
 <br>
 Now let’s look at the mapping of the Khipro keyboard. <br> <br>
-Links ⬇️  
-# [Khipro Mapping & Syntax](https://github.com/rank-coder/khipro-m17n/wiki/%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BF%E0%A6%AA%E0%A7%8D%E0%A6%B0-%E0%A6%AE%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%AA%E0%A6%BF%E0%A6%82-%E0%A6%93-%E0%A6%B8%E0%A6%BF%E0%A6%A8%E0%A6%9F%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%B8-%5BKhipro-Mapping-&-Syntax%5D)  
-# [Installation, Updating, and Uninstallation](https://github.com/rank-coder/khipro-m17n/wiki/%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8,-%E0%A6%86%E0%A6%AA%E0%A6%A1%E0%A7%87%E0%A6%9F,-%E0%A6%93-%E0%A6%86%E0%A6%A8%E0%A6%87%E0%A6%A8%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A6%B2%E0%A7%87%E0%A6%B6%E0%A6%A8)  
-
+Check out the full table of maping and comprehensive documentation or our website: https://KhiproKeyboard.github.io
 # Contact
 1. Khipro: Bangla Input Method Project Group: https://t.me/KhiproKeyboard  
 2. Discord: https://discord.gg/GPt6s8cb48  
