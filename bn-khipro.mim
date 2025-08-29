@@ -31,9 +31,9 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("fou" "ৌ") ("ou" "ঔ") 
 		("fae" "্যা") ("ae" "অ্যা") 
 
-		("wa" "ওয়া") ("fwa" "োয়া")
-		("wae" "ওয়্যা")
-		("we" "ওয়ে") ("fwe" "োয়ে")
+		("wa" "ওয়া") ("fwa" "োয়া")
+		("wae" "ওয়্যা")
+		("we" "ওয়ে") ("fwe" "োয়ে")
 
 		("ngo" "ঙ") ("nga" "ঙা") ("ngi" "ঙি") ("ngii" "ঙী") ("ngu" "ঙু") ("nguff" "ঙ") ("nguu" "ঙূ") ("nguuff" "ঙ") ("ngq" "ঙৃ") ("nge" "ঙে") ("ngoi" "ঙৈ")     
 		("ngw" "ঙো") ("ngou" "ঙৌ") ("ngae" "ঙ্যা")
@@ -123,9 +123,9 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("ae" "্যা") ("aef" "অ্যা")
 		("uff" "‌ু") ("uuff" "‌ূ") ("qff" "‌ৃ") 
 
-		("we" "োয়ে") ("wef" "ওয়ে")
-		("waf" "ওয়া") ("wa" "োয়া")
-		("wae" "ওয়্যা")
+		("we" "োয়ে") ("wef" "ওয়ে")
+		("waf" "ওয়া") ("wa" "োয়া")
+		("wae" "ওয়্যা")
 
 	)
 	(ongko
