@@ -54,7 +54,6 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("z" "য") ("l" "ল") ("sh" "শ") ("sf" "ষ") ("s" "স") ("h" "হ") 
 		("y" "য়") ("rf" "ড়") ("rff" "ঢ়")
 		(",," "়")
-		("zz" "যয") 
 	)
 	(juktoborno
 		("rz" "র‍্য")
@@ -83,7 +82,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("phr" "ফ্র") ("phl" "ফ্ল")
 		("bj" "ব্জ") ("bd" "ব্দ") ("bdh" "ব্ধ") ("bb" "ব্ব") ("bz" "ব্য") ("br" "ব্র") ("bl" "ব্ল") ("vb" "ভ্ব") ("vz" "ভ্য") ("vr" "ভ্র") ("vl" "ভ্ল")
 		("mn" "ম্ন") ("mp" "ম্প") ("mpr" "ম্প্র") ("mph" "ম্ফ") ("mb" "ম্ব") ("mbr" "ম্ব্র") ("mv" "ম্ভ") ("mvr" "ম্ভ্র") ("mm" "ম্ম") ("mz" "ম্য") ("mr" "ম্র") ("ml" "ম্ল")
-		("zz" "য্য")
+		("zz" "যয")
 		("lk" "ল্ক") ("lkz" "ল্ক্য") ("lg" "ল্গ") ("ltf" "ল্ট") ("ldf" "ল্ড") ("lp" "ল্প") ("lph" "ল্ফ") ("lb" "ল্ব") ("lv" "ল্‌ভ") ("lm" "ল্ম") ("lz" "ল্য") ("ll" "ল্ল")
 		("shc" "শ্চ") ("shch" "শ্ছ") ("shn" "শ্ন") ("shb" "শ্ব") ("shm" "শ্ম") ("shz" "শ্য") ("shr" "শ্র") ("shl" "শ্ল")
 		("sfk" "ষ্ক") ("sfkr" "ষ্ক্র") ("sftf" "ষ্ট") ("sftfz" "ষ্ট্য") ("sftfr" "ষ্ট্র") ("sftff" "ষ্ঠ") ("sftfh" "ষ্ঠ") ("sftffz" "ষ্ঠ্য") ("sftfhz" "ষ্ঠ্য") ("sfnf" "ষ্ণ") ("sfn" "ষ্ণ") ("sfp" "ষ্প") ("sfpr" "ষ্প্র") ("sfph" "ষ্ফ") ("sfb" "ষ্ব") 
@@ -106,7 +105,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("srf" "সড়") ("srff" "সঢ়") ("hrf" "হড়") ("hrff" "হঢ়") ("ldh" "লধ") ("ngksh" "ঙ্কশ") ("tfth" "টথ") ("dfdh" "ডধ") ("lth" "লথ")
 		("kkf" "কক্ষ") ("lkf" "লক্ষ") ("sfkf" "ষক্ষ") ("skf" "সক্ষ") ("kkkh" "কক্ষ") ("lkkh" "লক্ষ") ("sfkkh" "ষক্ষ") ("skkh" "সক্ষ") ("kksf" "কক্ষ") ("lksf" "লক্ষ") ("sfksf" "ষক্ষ") ("sksf" "সক্ষ")
 		("cr" "চর") ("chr" "ছর") ("jr" "জর") ("jhr" "ঝর") ("nffr" "ঞর") ("tffr" "ঠর") ("tfhr" "ঠর") ("dffr" "ঢর") ("dfhr" "ঢর") ("nfr" "ণর") ("thr" "থর") ("nr" "নর") ("zr" "যর") ("lr" "লর") ("sfr" "ষর") ("yr" "য়র") ("rfr" "ড়র") ("rffr" "ঢ়র") 
-		("nffz" "ঞয") ("rfz" "ড়য") ("rffz" "ঢ়য") ("zz" "যয") 
+		("nffz" "ঞয") ("rfz" "ড়য") ("rffz" "ঢ়য")
 
 
 	)
@@ -114,7 +113,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("rr" "র্")  ("r" "র")
 	)
 	(phola
-		("r" "র") ("z" "য") ("zz" "যয")
+		("r" "র") ("z" "য")
 	)
 	(kar
 		("o" "") ("of" "অ")
