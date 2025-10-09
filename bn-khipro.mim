@@ -54,6 +54,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("z" "য") ("l" "ল") ("sh" "শ") ("sf" "ষ") ("s" "স") ("h" "হ") 
 		("y" "য়") ("rf" "ড়") ("rff" "ঢ়")
 		(",," "়")
+		("zz" "যয") 
 	)
 	(juktoborno
 		("rz" "র‍্য")
