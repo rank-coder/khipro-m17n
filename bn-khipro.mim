@@ -113,7 +113,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("rr" "র্")  ("r" "র")
 	)
 	(phola
-		("r" "র") ("z" "য")
+		("r" "র") ("z" "য") ("zz" "যয")
 	)
 	(kar
 		("o" "") ("of" "অ")
