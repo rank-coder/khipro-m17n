@@ -46,7 +46,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 
 	)
 	(byanjon
-		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") 
+		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ngf" "ঙ")
 		("c" "চ") ("ch" "ছ") ("j" "জ") ("jh" "ঝ") ("nff" "ঞ") 
 		("tf" "ট") ("tff" "ঠ") ("tfh" "ঠ") ("df" "ড") ("dff" "ঢ") ("dfh" "ঢ") ("nf" "ণ") 
 		("t" "ত") ("th" "থ") ("d" "দ") ("dh" "ধ") ("n" "ন") 
