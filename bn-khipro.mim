@@ -152,6 +152,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 	(biram
 		("." "।") ("..." "...") (".." ".") ("$" "৳") ("$f" "₹") (",,," ",,") (".f" "॥") (".ff" "৺") 
 		("+" "+") ("-" "-") ("+f" "×") ("-f" "÷") ("$$" "$")
+		("=f" "≠")
 	)
 	(prithayok
 		(";" "") (";;" ";")
