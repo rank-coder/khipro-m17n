@@ -102,7 +102,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 																					("ngfkth" "ঙ্কথ") ("ngfkrf" "ঙ্কড়") ("ngfkrff" "ঙ্কঢ়") ("ngfghrf" "ঙ্ঘড়") ("ngfghrff" "ঙ্ঘঢ়")
 		("tfrf" "টড়") ("tfrff" "টঢ়") ("dfrf" "ডড়") ("dfrff" "ডঢ়") ("rfgh" "ড়ঘ") ("dffrf" "ঢড়") ("dfhrf" "ঢড়") ("dffrff" "ঢঢ়") ("dfhrff" "ঢঢ়") ("nfdfrf" "ণ্ডড়") ("nfdfrff" "ণ্ডঢ়") ("trf" "তড়") ("trff" "তঢ়") ("thrf" "থড়") ("thrff" "থঢ়") 
 		("dvrf" "দ্ভড়") ("dvrff" "দ্ভঢ়") ("drf" "দড়") ("drff" "দঢ়") ("dhrf" "ধড়") ("dhrff" "ধঢ়") ("ntfrf" "ন্টড়") ("ntfrff" "ন্টঢ়") ("ndfrf" "ন্ডড়") ("ndfrff" "ন্ডঢ়") ("ntrf" "ন্তড়") ("ntrff" "ন্তঢ়") ("nthrf" "ন্থড়") 
-		("nstf" "নস্ট") ("nsp" "নস্প") ("nsk" "নস্ক") ("nggg" "ংজ্ঞ") 
+		("nstf" "নস্ট") ("nst" "নস্ত")  ("nsp" "নস্প") ("nsk" "নস্ক") ("nggg" "ংজ্ঞ") 
 		("nthrff" "ন্থঢ়") ("ndrf" "ন্দড়") ("ndrff" "ন্দঢ়") ("ndhrf" "ন্ধড়") ("ndhrff" "ন্ধঢ়") ("pth" "পথ") ("pph" "পফ") ("prf" "পড়") ("prff" "পঢ়") ("phrf" "ফড়") ("phrff" "ফঢ়") ("bjh" "বঝ") ("brf" "বড়") ("brff" "বঢ়") 
 		("vrf" "ভড়") ("vrff" "ভঢ়") ("mprf" "ম্পড়") ("mprff" "ম্পঢ়") ("mbrf" "ম্বড়") ("mbrff" "ম্বঢ়") ("mvrf" "ম্ভড়") ("mvrff" "ম্ভঢ়") ("mrf" "মড়") ("mrff" "মঢ়") ("lkh" "লখ") ("lgh" "লঘ") ("shrf" "শড়") ("shrff" "শঢ়") ("sfkh" "ষখ")
 		("sfkrf" "ষ্কড়") ("sfkrff" "ষ্কঢ়") ("sftfrf" "ষ্টড়") ("sftfrff" "ষ্টঢ়") ("sfprf" "ষ্পড়") ("sfprff" "ষ্পঢ়") ("skrf" "স্কড়") ("skrff" "স্কঢ়") ("stfrf" "স্টড়") ("stfrff" "স্টঢ়") ("strf" "স্তড়") ("strff" "স্তঢ়") ("sprf" "স্পড়") ("sprff" "স্পঢ়") 
