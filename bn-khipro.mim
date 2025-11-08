@@ -180,7 +180,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(ongko )
 		(biram )
 		(reph  (shift reph-state))
-		(juktoborno (shift byanjon-state))
+		(juktoborno (commit) (shift byanjon-state))
 		(byanjon (shift byanjon-state))
 	)
 	(shor-state
@@ -192,7 +192,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(ongko  (shift init))
 		(biram  (shift init))
 		(reph  (shift reph-state))
-		(juktoborno  (shift byanjon-state))
+		(juktoborno (commit) (shift byanjon-state))
 		(byanjon (shift byanjon-state))
 	)
 	(reph-state
@@ -200,7 +200,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(diacritic  (shift shor-state))
 		(ng (shift shor-state))
 		(ae  (shift shor-state))
-		(juktoborno  (shift byanjon-state))
+		(juktoborno (commit) (shift byanjon-state))
 		(byanjon  (shift byanjon-state))
 		(kar  (shift shor-state))
 		(nil  (shift init))
