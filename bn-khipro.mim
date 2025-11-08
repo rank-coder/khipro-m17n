@@ -41,7 +41,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("ngw" "ঙো") ("ngou" "ঙৌ") ("ngae" "ঙ্যা")
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
 		("ngwf" "ঙও") ("ngouf" "ঙউ") ("ngaef" "ঙঅ্যা")
-		("rng" "রং") ("cng" "চং") ("ng" "ং")
+		("cng" "চং")
 
 		
 	)
@@ -112,7 +112,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("lks" "ল্কস") 
 		("kkf" "কক্ষ") ("lkf" "লক্ষ") ("sfkf" "ষক্ষ") ("skf" "সক্ষ") ("kkkh" "কক্ষ") ("lkkh" "লক্ষ") ("sfkkh" "ষক্ষ") ("skkh" "সক্ষ") ("kksf" "কক্ষ") ("lksf" "লক্ষ") ("sfksf" "ষক্ষ") ("sksf" "সক্ষ")
 		("yr" "য়র")
-		("rn" "রন") ("rnf" "রণ") ("rnff" "রঞ") 
+		
 
 
 	)
@@ -151,7 +151,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("O" "o") ("P" "p") ("Q" "q") ("R" "r") ("S" "s") ("T" "t") ("U" "u") ("V" "v") ("W" "w") ("X" "x") ("Y" "y") ("Z" "z")
 	)
 	(diacritic
-		("qq" "্") ("xx" "্‌") ("t/" "ৎ") ("x" "ঃ") ("/" "ঁ") ("//" "/") 
+		("qq" "্") ("xx" "্‌") ("t/" "ৎ") ("x" "ঃ") ("/" "ঁ") ("//" "/") ("ng" "ং")
 		("`" "`") ("``" "‌") ("```" "``")
 		("~" "~") ("~~" "‍") ("~~~" "~~")
 	)
