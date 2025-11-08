@@ -194,6 +194,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 	)
 	(reph-state
 		(prithayok (shift init))
+		(diacritic (shift shor-state))
 		(ae (shift shor-state))
 		(juktoborno
 			(shift byanjon-state)
