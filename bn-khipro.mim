@@ -197,8 +197,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 	)
 	(reph-state
 		(prithayok (shift init))
-		(diacritic  (shift shor-state))
-		(ng  (shift shor-state))
+		(diacritic (commit) (shift shor-state))
+		(ng (commit) (shift shor-state))
 		(ae  (shift shor-state))
 		(juktoborno  (shift byanjon-state))
 		(byanjon  (shift byanjon-state))
@@ -206,8 +206,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(nil  (shift init))
 	)
 	(byanjon-state
-		(diacritic (shift shor-state))
-		(ng  (shift shor-state))
+		(diacritic (commit) (shift shor-state))
+		(ng (commit) (shift shor-state))
 		(prithayok  (shift init))
 		(ongko  (shift init))
 		(biram  (shift init))
