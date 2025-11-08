@@ -35,19 +35,14 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("wae" "ওয়্যা")
 		("we" "ওয়ে") ("fwe" "োয়ে")
 
+		("aa" "ং") 
 
 		("ngo" "ঙ") ("nga" "ঙা") ("ngi" "ঙি") ("ngii" "ঙী") ("ngu" "ঙু") ("nguff" "ঙ‌ু") ("nguu" "ঙূ") ("nguuff" "ঙ‌ূ") ("ngq" "ঙৃ") ("ngqff" "ঙ‌ৃ") ("nge" "ঙে") ("ngoi" "ঙৈ")     
 		("ngw" "ঙো") ("ngou" "ঙৌ") ("ngae" "ঙ্যা")
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
 		("ngwf" "ঙও") ("ngouf" "ঙউ") ("ngaef" "ঙঅ্যা")
 
-		("kng" "কং") ("khng" "খং") ("gng" "") ("ghng" "ঘং") ("ngng" "ঙং") 
-		("cng" "চং") ("chng" "ছং") ("jng" "জং") ("jhng" "ঝং") ("nffng" "ঞং") 
-		("tfng" "টং") ("tffng" "ঠং") ("tfhng" "ঠং")  ("dfng" "ডং") ("dffng" "ঢং") ("dfhng" "ঢং") ("nfng" "ণং") 
-		("tng" "তং") ("thng" "থং") ("dng" "দং") ("dhng" "ধং") ("nng" "নং") 
-		("png" "পং") ("phng" "ফং") ("bng" "বং") ("vng" "ভং") ("mng" "মং")
-		("zng" "যং") ("rng" "রং") ("lng" "লং") 
-		("shng" "শং") ("sng" "সং") ("sfng" "ষং") ("hng" "হং") 
+		
 	)
 	(byanjon
 		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ngf" "ঙ")
@@ -144,7 +139,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("waf" "ওয়া") ("wa" "োয়া")
 		("wae" "ওয়্যা")
 
-		("ng" "ং")
+		("aa" "ং")
 
 	)
 	(ongko
