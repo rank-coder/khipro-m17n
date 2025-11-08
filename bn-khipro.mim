@@ -212,9 +212,9 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(ongko  (shift init))
 		(biram  (shift init))
 		(kar  (shift shor-state))
-		(juktoborno )
+		(juktoborno (commit) )
 		(phola
-			(move @-) (insert ?্) (move @>) (commit)
+			(move @-) (insert ?্) (move @>)
 		)
 		(byanjon )
 	)
