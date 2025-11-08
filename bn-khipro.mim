@@ -174,7 +174,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 (state
 	(init
 		(diacritic (commit) (shift shor-state))
-		(ng (shift shor-state))
+		(ng (commit) (shift shor-state))
 		(shor (commit) (shift shor-state))
 		(prithayok )
 		(ongko )
