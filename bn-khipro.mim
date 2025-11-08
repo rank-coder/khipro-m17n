@@ -216,6 +216,6 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(phola
 			(move @-) (insert ?্) (move @>)
 		)
-		(byanjon)
+		(byanjon (commit))
 	)
 )
