@@ -41,9 +41,13 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
 		("ngwf" "ঙও") ("ngouf" "ঙউ") ("ngaef" "ঙঅ্যা")
 
-		
-		
-
+		("kng" "কং") ("khng" "খং") ("gng" "") ("ghng" "ঘং") ("ngng" "ঙং") 
+		("cng" "চং") ("chng" "ছং") ("jng" "জং") ("jhng" "ঝং") ("nffng" "ঞং") 
+		("tfng" "টং") ("tffng" "ঠং") ("tfhng" "ঠং")  ("dfng" "ডং") ("dffng" "ঢং") ("dfhng" "ঢং") ("nfng" "ণং") 
+		("tng" "তং") ("thng" "থং") ("dng" "দং") ("dhng" "ধং") ("nng" "নং") 
+		("png" "পং") ("phng" "ফং") ("bng" "বং") ("vng" "ভং") ("mng" "মং")
+		("zng" "যং") ("rng" "রং") ("lng" "লং") 
+		("shng" "শং") ("sng" "সং") ("sfng" "ষং") ("hng" "হং") 
 	)
 	(byanjon
 		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ngf" "ঙ")
@@ -92,7 +96,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("spl" "স্প্ল") ("sph" "স্ফ") ("sb" "স্ব") ("sm" "স্ম") ("sz" "স্য") ("sr" "স্র") ("sl" "স্ল")
 		("hn" "হ্ন") ("hnf" "হ্ণ") ("hb" "হ্ব") ("hm" "হ্ম") ("hz" "হ্য") ("hr" "হ্র") ("hl" "হ্ল")
 ;; oshomvob juktoborno
-		("ksh" "কশ") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cng" "চং") ("cnf" "চণ") ("jn" "জন") ("jng" "জং")  ("jnf" "জণ") ("tft" "টত") ("dfd" "ডদ") 
+		("ksh" "কশ") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cnf" "চণ") ("jn" "জন") ("jnf" "জণ") ("tft" "টত") ("dfd" "ডদ") 
 																		("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
 		("nft" "ণত") ("nfd" "ণদ") ("lt" "লত") ("sft" "ষত") ("nfth" "ণথ") ("nfdh" "ণধ") ("sfth" "ষথ")
 		("ktff" "কঠ") ("ktfh" "কঠ") ("ptff" "পঠ") ("ptfh" "পঠ") ("ltff" "লঠ") ("ltfh" "লঠ") ("stff" "সঠ") ("stfh" "সঠ") 
@@ -102,7 +106,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 																					("ngfkth" "ঙ্কথ") ("ngfkrf" "ঙ্কড়") ("ngfkrff" "ঙ্কঢ়") ("ngfghrf" "ঙ্ঘড়") ("ngfghrff" "ঙ্ঘঢ়")
 		("tfrf" "টড়") ("tfrff" "টঢ়") ("dfrf" "ডড়") ("dfrff" "ডঢ়") ("rfgh" "ড়ঘ") ("dffrf" "ঢড়") ("dfhrf" "ঢড়") ("dffrff" "ঢঢ়") ("dfhrff" "ঢঢ়") ("nfdfrf" "ণ্ডড়") ("nfdfrff" "ণ্ডঢ়") ("trf" "তড়") ("trff" "তঢ়") ("thrf" "থড়") ("thrff" "থঢ়") 
 		("dvrf" "দ্ভড়") ("dvrff" "দ্ভঢ়") ("drf" "দড়") ("drff" "দঢ়") ("dhrf" "ধড়") ("dhrff" "ধঢ়") ("ntfrf" "ন্টড়") ("ntfrff" "ন্টঢ়") ("ndfrf" "ন্ডড়") ("ndfrff" "ন্ডঢ়") ("ntrf" "ন্তড়") ("ntrff" "ন্তঢ়") ("nthrf" "ন্থড়") 
-		("nstf" "নস্ট") ("nst" "নস্ত")  ("nsp" "নস্প") ("nsk" "নস্ক") ("nggg" "ংজ্ঞ") 
+		("nstf" "নস্ট") ("nst" "নস্ত") ("nsk" "নস্ক") 
 		("nthrff" "ন্থঢ়") ("ndrf" "ন্দড়") ("ndrff" "ন্দঢ়") ("ndhrf" "ন্ধড়") ("ndhrff" "ন্ধঢ়") ("pth" "পথ") ("pph" "পফ") ("prf" "পড়") ("prff" "পঢ়") ("phrf" "ফড়") ("phrff" "ফঢ়") ("bjh" "বঝ") ("brf" "বড়") ("brff" "বঢ়") 
 		("vrf" "ভড়") ("vrff" "ভঢ়") ("mprf" "ম্পড়") ("mprff" "ম্পঢ়") ("mbrf" "ম্বড়") ("mbrff" "ম্বঢ়") ("mvrf" "ম্ভড়") ("mvrff" "ম্ভঢ়") ("mrf" "মড়") ("mrff" "মঢ়") ("lkh" "লখ") ("lgh" "লঘ") ("shrf" "শড়") ("shrff" "শঢ়") ("sfkh" "ষখ")
 		("sfkrf" "ষ্কড়") ("sfkrff" "ষ্কঢ়") ("sftfrf" "ষ্টড়") ("sftfrff" "ষ্টঢ়") ("sfprf" "ষ্পড়") ("sfprff" "ষ্পঢ়") ("skrf" "স্কড়") ("skrff" "স্কঢ়") ("stfrf" "স্টড়") ("stfrff" "স্টঢ়") ("strf" "স্তড়") ("strff" "স্তঢ়") ("sprf" "স্পড়") ("sprff" "স্পঢ়") 
