@@ -181,7 +181,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(biram (commit))
 		(reph (commit) (shift reph-state))
 		(juktoborno (commit) (shift byanjon-state))
-		(byanjon (commit) (shift byanjon-state))
+		(byanjon (shift byanjon-state))
 	)
 	(shor-state
 		(diacritic (commit))
@@ -193,7 +193,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(biram (commit) (shift init))
 		(reph (commit) (shift reph-state))
 		(juktoborno (commit) (shift byanjon-state))
-		(byanjon (commit) (shift byanjon-state))
+		(byanjon (shift byanjon-state))
 	)
 	(reph-state
 		(prithayok (commit) (shift init))
