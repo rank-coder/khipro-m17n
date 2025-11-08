@@ -206,7 +206,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(nil (shift init))
 	)
 	(byanjon-state
-		(diacritic (shift shor-state))
+		(diacritic (commit) (shift shor-state))
 		(prithayok (shift init))
 		(ongko (shift init)
 		)
