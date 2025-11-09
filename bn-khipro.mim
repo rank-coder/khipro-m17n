@@ -1,4 +1,4 @@
-;; bn-khipro.mim | A fix-phonetic keayboard layout or an input method concept for Bengali. Aims to be the fastest typing method for Bengali.
+;; bn-khipro.mim | A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
 ;;	MIT License
 ;;	
 ;;	Copyright (c) 2024 rank_coder
