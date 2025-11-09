@@ -128,6 +128,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 	)
 	(kar
 		("o" "") ("of" "অ")
+		("oof" "ঽ")
 		("a" "া") ("af" "আ")
 		("i" "ি") ("if" "ই")
 		("ii" "ী") ("iif" "ঈ")
