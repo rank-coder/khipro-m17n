@@ -213,7 +213,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(prithayok  (shift shor-state))
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
-		(kar (commit) (shift shor-state))
+		(kar (shift shor-state))
 		(juktoborno )
 		(phola
 			(move @-) (insert ?্) (move @>)
