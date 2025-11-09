@@ -215,7 +215,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 		(kar (commit) (shift shor-state))
 		(juktoborno )
 		(phola
-			(move @-) (insert ?্) (commit) (move @>)
+			(move @-) (insert ?্) (move @>)
 		)
 		(byanjon )
 	)
