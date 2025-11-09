@@ -23,20 +23,21 @@
 
 (input-method bn khipro) 
 (description "
-	A fix-phonetic keayboard layout or an input method concept for Bengali. Aims to be the fastest typing method for Bengali. 
-	Key charecteristics of this layout:
-		1. Despite being somewhat close to phonetic it provides the absolute flexibility and control of typing offered by any fixed keyboard layout
-		2. Removes the need of the SHIFT key while typing
-		3. Uses modifier technique to type various characters without using shift
-		4. Houses all the needed characters and even some less used characters right at the fingertips within the central keyboard area
-		5. Using key sequences allows the layout to house various extra character withing the layout which were otherwise impossible in fixed layouts
-	Please read the guidelines on our website before using the layout, in order to harness its full potential.
-	WEBSITE of khipro keyboard: <https://khiprokeyboard.github.io>
-	Author: Nafi <https://github.com/rank-coder>
-	Team:
-		Contributors of the github repository <https://github.com/rank-coder/khipro-m17n> 
-		and,
-		The organization members of <https://github.com/KhiproKeyboard> github organization.
+	A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
+
+Key Characteristics:
+
+	1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being somewhat phonetic.
+	2. Removes the need for the SHIFT key entirely.
+	3. Uses a modifier technique to type various characters without using SHIFT.
+	4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
+	5. Utilizes key sequences to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+
+Please read the guidelines on our website to harness the layout's full potential.
+
+	* Website: <https://khiprokeyboard.github.io>
+	* Author: Nafi [<https://github.com/rank-coder>]
+	* Contributors: Members of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and the [<https://github.com/KhiproKeyboard>] organization.
 ")
 (title "ক্ষিপ্র")
 (map
