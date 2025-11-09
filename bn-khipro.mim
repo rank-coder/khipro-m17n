@@ -202,7 +202,7 @@ Please read the guidelines on our website to harness the layout's full potential
 	(init
 		(diacritic (commit) (shift shor-state))
 		(ng (commit) (shift shor-state))
-		(shor (commit) (shift shor-state))
+		(shor (shift shor-state))
 		(prithayok (shift shor-state))
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
@@ -213,7 +213,7 @@ Please read the guidelines on our website to harness the layout's full potential
 	(shor-state
 		(diacritic (commit) )
 		(ng (commit) )
-		(shor (commit) )
+		(shor )
 		(biram )
 		(prithayok )
 		(ongko )
