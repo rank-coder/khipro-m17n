@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # KhiproKeyboard Installer Script
-# This script installs KhiproKeyboard for either IBus or Fcitx5
+# This script installs KhiproKeyboard for IBus and Fcitx5
 
 set -e  # Exit on any error
 
@@ -48,7 +48,7 @@ read -p "Install stable release from the main branch? (Y/n): " branch_choice
 branch_choice=${branch_choice:-Y}
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
-    print_status "You can check the list of available branches here: https://github.com/rank-coder/khipro-m17n"
+    print_status "Available branches: main, beta, dev (or any custom branch)"
     read -p "Enter the branch name you want to install: " branch_name
     if [ -z "$branch_name" ]; then
         print_warning "No branch specified. Using 'main' branch."
@@ -60,27 +60,6 @@ else
     branch_name="main"
     print_status "Using stable release (main branch)"
 fi
-
-# Input method selection
-print_status "Select your input method framework:"
-echo "1) IBus"
-echo "2) Fcitx5"
-read -p "Enter your choice (1 or 2): " im_choice
-
-case $im_choice in
-    1)
-        im_framework="ibus"
-        print_status "Selected: IBus"
-        ;;
-    2)
-        im_framework="fcitx5"
-        print_status "Selected: Fcitx5"
-        ;;
-    *)
-        print_error "Invalid choice. Please run the script again and select 1 or 2."
-        exit 1
-        ;;
-esac
 
 # Installation process begins
 print_status "Starting KhiproKeyboard installation..."
@@ -138,24 +117,12 @@ echo ""
 print_success "KhiproKeyboard installation completed!"
 echo ""
 print_status "Next steps:"
-echo "1. Restart your input method framework:"
-if [ "$im_framework" = "ibus" ]; then
-    echo "   Run this command in your terminal: ibus restart"
-else
-    echo "   Run this command in your terminal: fcitx5 restart"  
-fi
+echo "1. Log out and log back in to restart your input method framework"
 echo "2. Add KhiproKeyboard to your input method:"
-if [ "$im_framework" = "ibus" ]; then
-    echo "   - Open IBus Preferences"
-    echo "   - Add input method: Bengali -> Khipro"
-else
-    echo "   - Open Fcitx5 Configuration" 
-    echo "   - Add Khipro keyboard"
-fi
+echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro"
+echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro keyboard"
 echo "3. Switch to KhiproKeyboard using your input method switcher"
 echo ""
 print_status "If you encounter any issues, please visit:"
-echo "https://t.me/KhiproKeyboard"
-echo ""
-echo "Log out kore abar Login korun"
-echo ""
+echo "https://github.com/rank-coder/khipro-m17n"
+echo "If you don't have ibus-m17n or fcitx5-m17n installed please install it before installing khipro-m17n"
