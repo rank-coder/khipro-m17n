@@ -35,7 +35,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("wae" "ওয়্যা")
 		("we" "ওয়ে") ("fwe" "োয়ে")
 
-		("ee" "ং") ("eee" "এং") ("eef" "এএ")
+		("oo" "ং") 
+		;; ("eee" "এং") ("eef" "এএ")
 
 		("cng" "চং")
 
@@ -144,7 +145,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("waf" "ওয়া") ("wa" "োয়া")
 		("wae" "ওয়্যা")
 
-		("ee" "ং") ("eee" "েং") ("eef" "েএ") 
+		("oo" "ং") 
+		;; ("eee" "েং") ("eef" "েএ") 
 
 	)
 	(ongko
