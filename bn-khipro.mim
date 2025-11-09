@@ -41,30 +41,29 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 (title "ক্ষিপ্র")
 (map
 	(shor
-		("o" "অ") 
-		("oof" "ঽ")
-		("fuf" "‌ু") ("fuuf" "‌ূ") ("fqf" "‌ৃ") 
-		("fa" "া") ("a" "আ") 
-		("fi" "ি") ("i" "ই") 
-		("fii" "ী") ("ii" "ঈ") 
-		("fu" "ু") ("u" "উ") 
-		("fuu" "ূ") ("uu" "ঊ") 
-		("fq" "ৃ") ("q" "ঋ") 
-		("fe" "ে") ("e" "এ") 
-		("foi" "ৈ") ("oi" "ঐ")    
-		("fw" "ো") ("w" "ও")     
-		("fou" "ৌ") ("ou" "ঔ") 
-		("fae" "্যা") ("ae" "অ্যা") 
-
-		("wa" "ওয়া") ("fwa" "োয়া")
-		("wae" "ওয়্যা")
-		("we" "ওয়ে") ("fwe" "োয়ে")
-
-		("oo" "ং") ("ooo" "অং")
-
+		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("oi" "ঐ") ("w" "ও") ("ou" "ঔ") ("ae" "অ্যা") 
+		("wa" "ওয়া") ("wae" "ওয়্যা") ("we" "ওয়ে") 
+		("ooo" "অং")
 		("cng" "চং")
-
+		("oof" "ঽ")
 		
+	)
+	(fkar
+		("fuf" "‌ু") ("fuuf" "‌ূ") ("fqf" "‌ৃ") 
+		("fa" "া")
+		("fi" "ি") 
+		("fii" "ী") 
+		("fu" "ু") 
+		("fuu" "ূ") 
+		("fq" "ৃ") 
+		("fe" "ে") 
+		("foi" "ৈ") 
+		("fw" "ো") 
+		("fou" "ৌ") 
+		("fae" "্যা")
+		("fwa" "োয়া")
+		("fwe" "োয়ে")
+		("oo" "ং") 
 	)
 	(byanjon
 		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ngf" "ঙ")
@@ -201,7 +200,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(init
 		(diacritic (commit) (shift shor-state))
 		(ng (commit) (shift shor-state))
-		(shor (commit) (shift shor-state))
+		(shor (shift shor-state))
+		(fkar (commit) (shift shor-state))
 		(prithayok (shift shor-state))
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
@@ -212,7 +212,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(shor-state
 		(diacritic (commit) )
 		(ng (commit) )
-		(shor (commit) )
+		(shor )
+		(fkar (commit))
 		(biram )
 		(prithayok )
 		(ongko )
