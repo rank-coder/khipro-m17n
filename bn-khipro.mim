@@ -1,19 +1,43 @@
-;; Readme portion starts:
-;; If you want to understand how this layout (or any m17n layout) works, read the documentation of m17n project: https://www.nongnu.org/m17n/manual-en/index.html
-;;
-;; If you just want to copy the behavior of khipro layout you can clearly see the mappings below in this file. It won't be hard to understand.
-;; Inside the (map ) tag all the mappings are put. And after mapping you'll see the (state ) tag which defines the states. m17n layout works with various states...
-;; For example, if the last typed entity is a consonant, I have coded the state to switch to "byanjon-state". Based on the states I could control its behavior. For example when in byanjon-state,
-;; typing a, i, u etc. will print karcinho intead of the shoroborno.
-;; Readme portion ends.
+;; bn-khipro.mim | A fix-phonetic keayboard layout or an input method concept for Bengali. Aims to be the fastest typing method for Bengali.
+;;	MIT License
+;;	
+;;	Copyright (c) 2024 rank_coder
+;;	
+;;	Permission is hereby granted, free of charge, to any person obtaining a copy
+;;	of this software and associated documentation files (the "Software"), to deal
+;;	in the Software without restriction, including without limitation the rights
+;;	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+;;	copies of the Software, and to permit persons to whom the Software is
+;;	furnished to do so, subject to the following conditions:
+;;	
+;;	The above copyright notice and this permission notice shall be included in all
+;;	copies or substantial portions of the Software.
+;;	
+;;	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;;	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+;;	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+;;	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+;;	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+;;	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+;;	SOFTWARE.
 
 (input-method bn khipro) 
-(description (_ "Aims to be the fastest typing method for Bengali. Please read the guidelines at our website before using the layout, in order to find it useful.
-Website for khipro keyboard: https://KhiproKeyboard.github.io
-Author: Nafi <https://github.com/rank-coder>
-Team: Contributors in github.com/khipro-m17n 
-and Organization Members of https://github.com/KhiproKeyboard
-"))
+(description "
+	A fix-phonetic keayboard layout or an input method concept for Bengali. Aims to be the fastest typing method for Bengali. 
+	Key charecteristics of this layout:
+		1. Despite being somewhat close to phonetic it provides the absolute flexibility and control of typing offered by any fixed keyboard layout
+		2. Removes the need of the SHIFT key while typing
+		3. Uses modifier technique to type various characters without using shift
+		4. Houses all the needed characters and even some less used characters right at the fingertips within the central keyboard area
+		5. Using key sequences allows the layout to house various extra character withing the layout which were otherwise impossible in fixed layouts
+	Please read the guidelines on our website before using the layout, in order to harness its full potential.
+	WEBSITE of khipro keyboard: <https://khiprokeyboard.github.io>
+	Author: Nafi <https://github.com/rank-coder>
+	Team:
+		Contributors of the github repository <https://github.com/rank-coder/khipro-m17n> 
+		and,
+		The organization members of <https://github.com/KhiproKeyboard> github organization.
+")
 (title "ক্ষিপ্র")
 (map
 	(shor
