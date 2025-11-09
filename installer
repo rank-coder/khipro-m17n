@@ -35,26 +35,58 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
+# Function to get user input with timeout (for non-interactive shells)
+get_input() {
+    local prompt="$1"
+    local default_value="$2"
+    
+    # Try to read from the terminal, fallback to default if non-interactive
+    if [ -t 0 ]; then
+        read -p "$prompt" input
+        echo "${input:-$default_value}"
+    else
+        # Non-interactive shell, use default
+        echo "$default_value"
+    fi
+}
+
 # Welcome message
 echo "=========================================="
 echo "    KhiproKeyboard Installer"
 echo "=========================================="
 echo ""
 
+# Check if we're in an interactive shell
+if [ ! -t 0 ]; then
+    print_warning "Running in non-interactive mode. Using default options."
+    print_warning "For full interactive mode, download the script first:"
+    print_warning "curl -sSL https://raw.githubusercontent.com/rank-coder/khipro-m17n/main/installer -o installer && sudo bash installer"
+    echo ""
+fi
+
 # Branch selection
 print_status "Checking installation branch..."
-read -p "Install stable release from the main branch? (Y/n): " branch_choice
-
-branch_choice=${branch_choice:-Y}  # Default to Y if empty
+if [ -t 0 ]; then
+    read -p "Install stable release from the main branch? (Y/n): " branch_choice
+    branch_choice=${branch_choice:-Y}
+else
+    branch_choice="Y"
+    print_status "Using default: main branch"
+fi
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
-    print_status "Available branches: main, beta, dev (or any custom branch)"
-    read -p "Enter the branch name you want to install: " branch_name
-    if [ -z "$branch_name" ]; then
-        print_warning "No branch specified. Using 'main' branch."
-        branch_name="main"
+    if [ -t 0 ]; then
+        print_status "Available branches: main, beta, dev (or any custom branch)"
+        read -p "Enter the branch name you want to install: " branch_name
+        if [ -z "$branch_name" ]; then
+            print_warning "No branch specified. Using 'main' branch."
+            branch_name="main"
+        else
+            print_status "Will install from branch: $branch_name"
+        fi
     else
-        print_status "Will install from branch: $branch_name"
+        print_error "Cannot select custom branch in non-interactive mode. Using main branch."
+        branch_name="main"
     fi
 else
     branch_name="main"
@@ -65,7 +97,24 @@ fi
 print_status "Select your input method framework:"
 echo "1) IBus"
 echo "2) Fcitx5"
-read -p "Enter your choice (1 or 2): " im_choice
+
+if [ -t 0 ]; then
+    read -p "Enter your choice (1 or 2): " im_choice
+else
+    # In non-interactive mode, we need to detect which one is available
+    print_status "Auto-detecting input method framework..."
+    if command -v ibus >/dev/null 2>&1; then
+        im_choice="1"
+        print_status "Detected IBus, selecting option 1"
+    elif command -v fcitx5 >/dev/null 2>&1; then
+        im_choice="2" 
+        print_status "Detected Fcitx5, selecting option 2"
+    else
+        print_error "Cannot auto-detect input method framework."
+        print_error "Please run interactively: sudo bash installer"
+        exit 1
+    fi
+fi
 
 case $im_choice in
     1)
@@ -77,7 +126,12 @@ case $im_choice in
         print_status "Selected: Fcitx5"
         ;;
     *)
-        print_error "Invalid choice. Please run the script again and select 1 or 2."
+        print_error "Invalid choice. Please select 1 or 2."
+        if [ -t 0 ]; then
+            print_error "Please run the script again and select 1 or 2."
+        else
+            print_error "Please run interactively: sudo bash installer"
+        fi
         exit 1
         ;;
 esac
@@ -87,8 +141,8 @@ print_status "Starting KhiproKeyboard installation..."
 
 # Remove existing files
 print_status "Cleaning up previous installations..."
-sudo rm -f /usr/share/m17n/bn-khipro*.mim
-sudo rm -rf ~/khipro-m17n
+sudo rm -f /usr/share/m17n/bn-khipro*.mim 2>/dev/null || true
+sudo rm -rf ~/khipro-m17n 2>/dev/null || true
 
 # Clone repository
 print_status "Downloading KhiproKeyboard from GitHub..."
