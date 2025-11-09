@@ -48,7 +48,7 @@ read -p "Install stable release from the main branch? (Y/n): " branch_choice
 branch_choice=${branch_choice:-Y}
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
-    print_status "Available branches: main, beta, dev (or any custom branch)"
+    print_status "Check Available branches on: https://github.com/rank-coder/khipro-m17n"
     read -p "Enter the branch name you want to install: " branch_name
     if [ -z "$branch_name" ]; then
         print_warning "No branch specified. Using 'main' branch."
@@ -121,8 +121,9 @@ echo "1. Log out and log back in to restart your input method framework"
 echo "2. Add KhiproKeyboard to your input method:"
 echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro"
 echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro keyboard"
+echo "If you don't have ibus-m17n or fcitx5-m17n installed please install it before installing khipro-m17n"
 echo "3. Switch to KhiproKeyboard using your input method switcher"
 echo ""
 print_status "If you encounter any issues, please visit:"
-echo "https://github.com/rank-coder/khipro-m17n"
-echo "If you don't have ibus-m17n or fcitx5-m17n installed please install it before installing khipro-m17n"
+echo "https://t.me/KhiproKeyboard"
+echo "Computer Log out kore Login korun"
