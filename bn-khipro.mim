@@ -18,7 +18,7 @@ and Organization Members of https://github.com/KhiproKeyboard
 (map
 	(shor
 		("o" "অ") 
-		;; ("oo" "ঽ")
+		("oof" "ঽ")
 		("fuf" "‌ু") ("fuuf" "‌ূ") ("fqf" "‌ৃ") 
 		("fa" "া") ("a" "আ") 
 		("fi" "ি") ("i" "ই") 
@@ -37,7 +37,6 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("we" "ওয়ে") ("fwe" "োয়ে")
 
 		("oo" "ং") ("ooo" "অং")
-		;; ("eef" "এএ")
 
 		("cng" "চং")
 
@@ -147,7 +146,6 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("wae" "ওয়্যা")
 
 		("oo" "ং") 
-		;; ("eee" "েং") ("eef" "েএ") 
 
 	)
 	(ongko
