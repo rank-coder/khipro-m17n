@@ -29,30 +29,24 @@ print_warning() {
     echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
-# Function to check if running with sudo
-check_sudo() {
-    if [ "$EUID" -ne 0 ]; then 
-        print_error "This script must be run with sudo privileges"
-        print_status "Please run: sudo bash $0"
-        exit 1
-    fi
-}
-
 # Display banner
 echo "================================================"
 echo "     KhiproKeyboard Installation Script"
 echo "================================================"
 echo ""
 
-# Check for sudo privileges
-check_sudo
+# Check if sudo is available
+if ! command -v sudo &> /dev/null; then
+    print_error "sudo is not installed. Please install sudo first."
+    exit 1
+fi
 
 # Ask user for input method framework
 echo "Which input method framework are you using?"
 echo "1) ibus"
 echo "2) fcitx5"
 echo ""
-read -p "Enter your choice (1 or 2): " choice </dev/tty
+read -p "Enter your choice (1 or 2): " choice
 
 case $choice in
     1)
@@ -72,28 +66,14 @@ esac
 print_success "Selected input method: $INPUT_METHOD"
 echo ""
 
-# Step 1: Remove old installation
-print_status "Removing old KhiproKeyboard installation files..."
-sudo rm -f /usr/share/m17n/bn-khipro*.mim 2>/dev/null || true
-print_success "Old installation files removed"
-echo ""
-
-# Step 2: Clean up old repository
-print_status "Cleaning up old repository if exists..."
-cd ~/
-sudo rm -rf khipro-m17n 2>/dev/null || true
-print_success "Old repository cleaned up"
-echo ""
-
-# Step 3: Ask about branch selection
-echo ""
-read -p "Install stable release from the main branch? (Y/n): " branch_choice </dev/tty
+# Step 1: Ask about branch selection
+read -p "Install stable release from the main branch? (Y/n): " branch_choice
 
 case $branch_choice in
     [Nn]*)
         echo ""
         print_status "Available branches can be found at: https://github.com/rank-coder/khipro-m17n/branches"
-        read -p "Enter the branch name you want to install: " branch_name </dev/tty
+        read -p "Enter the branch name you want to install: " branch_name
         
         if [ -z "$branch_name" ]; then
             print_error "Branch name cannot be empty"
@@ -110,9 +90,24 @@ case $branch_choice in
 esac
 echo ""
 
+# Step 2: Remove old installation (requires sudo)
+print_status "Removing old KhiproKeyboard installation files..."
+print_warning "You may be prompted for your password for sudo access"
+sudo rm -f /usr/share/m17n/bn-khipro*.mim 2>/dev/null || true
+print_success "Old installation files removed"
+echo ""
+
+# Step 3: Clean up old repository
+print_status "Cleaning up old repository if exists..."
+rm -rf ~/khipro-m17n 2>/dev/null || true
+print_success "Old repository cleaned up"
+echo ""
+
 # Step 4: Clone the repository
 print_status "Downloading KhiproKeyboard from GitHub..."
 print_status "Repository: https://github.com/rank-coder/khipro-m17n.git"
+
+cd ~/
 
 if [ -n "$BRANCH_FLAG" ]; then
     if git clone $BRANCH_FLAG https://github.com/rank-coder/khipro-m17n.git; then
@@ -137,7 +132,7 @@ cd ~/khipro-m17n
 print_success "Changed directory to $(pwd)"
 echo ""
 
-# Step 6: Copy .mim files
+# Step 6: Copy .mim files (requires sudo)
 print_status "Installing keyboard layout files (.mim)..."
 if sudo cp bn-khipro*.mim /usr/share/m17n/; then
     print_success "Keyboard layout files installed to /usr/share/m17n/"
@@ -147,7 +142,7 @@ else
 fi
 echo ""
 
-# Step 7: Copy icon file
+# Step 7: Copy icon file (requires sudo)
 print_status "Installing keyboard icon..."
 if sudo cp bn-khipro.png /usr/share/m17n/icons/; then
     print_success "Keyboard icon installed to /usr/share/m17n/icons/"
