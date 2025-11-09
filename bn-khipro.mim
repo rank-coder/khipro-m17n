@@ -17,7 +17,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 (title "ক্ষি")
 (map
 	(shor
-		("o" "অ") ("oo" "ঽ")
+		("o" "অ") 
+		;; ("oo" "ঽ")
 		("fuf" "‌ু") ("fuuf" "‌ূ") ("fqf" "‌ৃ") 
 		("fa" "া") ("a" "আ") 
 		("fi" "ি") ("i" "ই") 
