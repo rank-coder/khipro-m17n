@@ -52,7 +52,7 @@ echo "Which input method framework are you using?"
 echo "1) ibus"
 echo "2) fcitx5"
 echo ""
-read -p "Enter your choice (1 or 2): " choice
+read -p "Enter your choice (1 or 2): " choice </dev/tty
 
 case $choice in
     1)
@@ -87,13 +87,13 @@ echo ""
 
 # Step 3: Ask about branch selection
 echo ""
-read -p "Install stable release from the main branch? (Y/n): " branch_choice
+read -p "Install stable release from the main branch? (Y/n): " branch_choice </dev/tty
 
 case $branch_choice in
     [Nn]*)
         echo ""
         print_status "Available branches can be found at: https://github.com/rank-coder/khipro-m17n/branches"
-        read -p "Enter the branch name you want to install: " branch_name
+        read -p "Enter the branch name you want to install: " branch_name </dev/tty
         
         if [ -z "$branch_name" ]; then
             print_error "Branch name cannot be empty"
