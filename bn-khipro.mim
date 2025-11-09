@@ -36,8 +36,8 @@ and Organization Members of https://github.com/KhiproKeyboard
 		("wae" "ওয়্যা")
 		("we" "ওয়ে") ("fwe" "োয়ে")
 
-		("oo" "ং") 
-		;; ("eee" "এং") ("eef" "এএ")
+		("oo" "ং") ("ooo" "অং")
+		;; ("eef" "এএ")
 
 		("cng" "চং")
 
