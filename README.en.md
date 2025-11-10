@@ -10,8 +10,8 @@
 This is the **m17n version** of Khipro. When used with Typing-booster, it provides better prediction and suggestions.  
 
 * **On Linux:** khipro-m17n can be used directly. It works through ibus or fcitx. Detailed instructions for Linux use are included in this documentation.  
-* **On Windows:** Khipro can be used via a new variant of Borno Keyboard—**Borno (Native)**. You can get early access to it in [Borno’s support group (Telegram)](https://t.me/codepotro).  
-* **On Android:** Khipro will soon be available via the Borno Android app. Keep an eye on the Borno support group for updates.  
+* **On Windows:** The two new variants of the Borno keyboard — [Borno Native](https://codepotro.com/borno/) and [Borno Drops](https://codepotro.com/borno-drops/) — come with the Khipro layout built-in.  
+* **On Android:** The Khipro layout is available in [HeliBoard](https://github.com/Helium314/HeliBoard/). It will also be available in the Borno Android app soon.  
 * To understand more easily, visit our website: Khipro’s website → https://KhiproKeyboard.github.io  
 
 # Documentation  
