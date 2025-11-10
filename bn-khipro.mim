@@ -137,7 +137,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 	)
 	(ng
-		("ng" "ং")
+		("ng" "ং") ("cng" "চং")
 		("ngo" "ঙ") ("nga" "ঙা") ("ngi" "ঙি") ("ngii" "ঙী") ("ngu" "ঙু") ("nguff" "ঙ‌ু") ("nguu" "ঙূ") ("nguuff" "ঙ‌ূ") ("ngq" "ঙৃ") ("ngqff" "ঙ‌ৃ") ("nge" "ঙে") ("ngoi" "ঙৈ")     
 		("ngw" "ঙো") ("ngou" "ঙৌ") ("ngae" "ঙ্যা")
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
