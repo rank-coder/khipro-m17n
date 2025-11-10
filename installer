@@ -29,6 +29,38 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+# Function to detect distribution
+detect_distro() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        echo "$ID"
+    elif command -v lsb_release &> /dev/null; then
+        lsb_release -is | tr '[:upper:]' '[:lower:]'
+    else
+        echo "unknown"
+    fi
+}
+
+# Function to check if command exists
+command_exists() {
+    command -v "$1" &> /dev/null
+}
+
+# Function to check if package is installed (for Debian/Ubuntu)
+check_package_debian() {
+    dpkg -l "$1" 2>/dev/null | grep -q '^ii'
+}
+
+# Function to check if package is installed (for Fedora/RHEL)
+check_package_fedora() {
+    rpm -q "$1" &> /dev/null
+}
+
+# Function to check if package is installed (for Arch)
+check_package_arch() {
+    pacman -Q "$1" &> /dev/null
+}
+
 # Welcome message
 echo "=========================================="
 echo "    KhiproKeyboard Installer"
@@ -40,6 +72,137 @@ if [ "$EUID" -ne 0 ]; then
     print_error "This script requires sudo privileges for installation."
     print_status "Please run with: sudo bash installer"
     exit 1
+fi
+
+# Check if Git is installed
+print_status "Checking for Git..."
+if ! command_exists git; then
+    print_error "Git is not installed but required to download KhiproKeyboard."
+    distro=$(detect_distro)
+    case $distro in
+        ubuntu|debian)
+            print_status "To install Git on Ubuntu/Debian:"
+            echo "  sudo apt update && sudo apt install git"
+            ;;
+        fedora|rhel|centos)
+            print_status "To install Git on Fedora/RHEL/CentOS:"
+            echo "  sudo dnf install git"
+            ;;
+        arch|manjaro)
+            print_status "To install Git on Arch/Manjaro:"
+            echo "  sudo pacman -S git"
+            ;;
+        *)
+            print_status "Please install Git using your distribution's package manager."
+            ;;
+    esac
+    exit 1
+else
+    print_success "Git is installed"
+fi
+
+# Check for input method frameworks and their m17n support
+print_status "Checking input method frameworks and m17n support..."
+
+ibus_installed=false
+fcitx_installed=false
+missing_packages=()
+
+# Check IBus
+if command_exists ibus; then
+    ibus_installed=true
+    print_status "IBus is installed"
+    
+    # Check for ibus-m17n
+    if ! check_package_debian "ibus-m17n" 2>/dev/null && \
+       ! check_package_fedora "ibus-m17n" 2>/dev/null && \
+       ! check_package_arch "ibus-m17n" 2>/dev/null; then
+        missing_packages+=("ibus-m17n")
+        print_warning "ibus-m17n is not installed (required for IBus users)"
+    else
+        print_success "ibus-m17n is installed"
+    fi
+fi
+
+# Check Fcitx5
+if command_exists fcitx5; then
+    fcitx_installed=true
+    print_status "Fcitx5 is installed"
+    
+    # Check for fcitx5-m17n
+    if ! check_package_debian "fcitx5-m17n" 2>/dev/null && \
+       ! check_package_fedora "fcitx5-m17n" 2>/dev/null && \
+       ! check_package_arch "fcitx5-m17n" 2>/dev/null; then
+        missing_packages+=("fcitx5-m17n")
+        print_warning "fcitx5-m17n is not installed (required for Fcitx5 users)"
+    else
+        print_success "fcitx5-m17n is installed"
+    fi
+fi
+
+# Check if any input method is installed
+if [ "$ibus_installed" = false ] && [ "$fcitx_installed" = false ]; then
+    print_error "No input method framework found!"
+    print_status "You need to install either IBus or Fcitx5 to use KhiproKeyboard."
+    distro=$(detect_distro)
+    case $distro in
+        ubuntu|debian)
+            print_status "To install IBus: sudo apt install ibus ibus-m17n"
+            print_status "To install Fcitx5: sudo apt install fcitx5 fcitx5-m17n"
+            ;;
+        fedora|rhel|centos)
+            print_status "To install IBus: sudo dnf install ibus ibus-m17n"
+            print_status "To install Fcitx5: sudo dnf install fcitx5 fcitx5-m17n"
+            ;;
+        arch|manjaro)
+            print_status "To install IBus: sudo pacman -S ibus ibus-m17n"
+            print_status "To install Fcitx5: sudo pacman -S fcitx5 fcitx5-m17n"
+            ;;
+        *)
+            print_status "Please install IBus or Fcitx5 with m17n support using your distribution's package manager."
+            ;;
+    esac
+    exit 1
+fi
+
+# Warn about missing m17n packages
+if [ ${#missing_packages[@]} -gt 0 ]; then
+    echo ""
+    print_warning "Some required m17n packages are missing:"
+    for pkg in "${missing_packages[@]}"; do
+        echo "  - $pkg"
+    done
+    
+    distro=$(detect_distro)
+    case $distro in
+        ubuntu|debian)
+            print_status "To install missing packages on Ubuntu/Debian:"
+            echo "  sudo apt update && sudo apt install ${missing_packages[*]}"
+            ;;
+        fedora|rhel|centos)
+            print_status "To install missing packages on Fedora/RHEL/CentOS:"
+            echo "  sudo dnf install ${missing_packages[*]}"
+            ;;
+        arch|manjaro)
+            print_status "To install missing packages on Arch/Manjaro:"
+            echo "  sudo pacman -S ${missing_packages[*]}"
+            ;;
+        *)
+            print_status "Please install the missing packages using your distribution's package manager:"
+            echo "  ${missing_packages[*]}"
+            ;;
+    esac
+    
+    echo ""
+    read -p "Do you want to continue with installation anyway? (y/N): " continue_choice
+    continue_choice=${continue_choice:-N}
+    if [[ ! $continue_choice =~ ^[Yy]$ ]]; then
+        print_status "Installation cancelled. Please install the required packages first."
+        exit 1
+    fi
+    print_warning "Continuing installation without required m17n packages..."
+    print_warning "KhiproKeyboard may not work until you install the missing packages."
+    echo ""
 fi
 
 # Branch selection
@@ -119,10 +282,24 @@ echo ""
 print_status "Next steps:"
 echo "1. Log out and log back in to restart your input method framework"
 echo "2. Add KhiproKeyboard to your input method:"
-echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro"
-echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro keyboard"
-echo "If you don't have ibus-m17n or fcitx5-m17n installed please install it before installing khipro-m17n"
-echo "3. Switch to KhiproKeyboard using your input method switcher"
+
+if [ "$ibus_installed" = true ]; then
+    echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro"
+fi
+
+if [ "$fcitx_installed" = true ]; then
+    echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro keyboard"
+fi
+
+# Show missing packages reminder if any
+if [ ${#missing_packages[@]} -gt 0 ]; then
+    echo ""
+    print_warning "REMEMBER: You need to install these packages for KhiproKeyboard to work:"
+    for pkg in "${missing_packages[@]}"; do
+        echo "   - $pkg"
+    done
+fi
+
 echo ""
 print_status "If you encounter any issues, please visit:"
 echo "https://t.me/KhiproKeyboard"
