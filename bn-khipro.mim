@@ -196,6 +196,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(prithayok
 		(";" "") (";;" ";")
 	)
+;;	The following AE has an AE kar with a preceeding non joiner
 	(ae
 		("ae" "‍্যা")
 	)
