@@ -142,6 +142,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("ngw" "ঙো") ("ngou" "ঙৌ") ("ngae" "ঙ্যা")
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
 		("ngwf" "ঙও") ("ngouf" "ঙউ") ("ngaef" "ঙঅ্যা")
+
+		("cngo" "ঙ") ("cnga" "ঙা") ("cngi" "ঙি") ("cngii" "ঙী") ("cngu" "ঙু") ("cnguff" "ঙ‌ু") ("cnguu" "ঙূ") ("cnguuff" "ঙ‌ূ") ("cngq" "ঙৃ") ("cngqff" "ঙ‌ৃ") ("cnge" "ঙে") ("cngoi" "ঙৈ")     
+		("cngw" "ঙো") ("cngou" "ঙৌ") ("cngae" "ঙ্যা")
+		("cngof" "ঙঅ") ("cngaf" "ঙআ") ("cngif" "ঙই") ("cngiif" "ঙঈ") ("cnguf" "ঙউ") ("cnguuf" "ঙঊ") ("cngqf" "ঙঋ") ("cngef" "ঙএ") ("cngoif" "ঙই")     
+		("cngwf" "ঙও") ("cngouf" "ঙউ") ("cngaef" "ঙঅ্যা")
 	)
 	(reph
 		("rr" "র্")  ("r" "র")
