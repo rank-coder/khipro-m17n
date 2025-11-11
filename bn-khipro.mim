@@ -143,6 +143,16 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("ngof" "ঙঅ") ("ngaf" "ঙআ") ("ngif" "ঙই") ("ngiif" "ঙঈ") ("nguf" "ঙউ") ("nguuf" "ঙঊ") ("ngqf" "ঙঋ") ("ngef" "ঙএ") ("ngoif" "ঙই")     
 		("ngwf" "ঙও") ("ngouf" "ঙউ") ("ngaef" "ঙঅ্যা")
 
+		("gngo" "গঙ") ("gnga" "গঙা") ("gngi" "গঙি") ("gngii" "গঙী") ("gngu" "গঙু") ("gnguff" "গঙ‌ু") ("gnguu" "গঙূ") ("gnguuff" "গঙ‌ূ") ("gngq" "গঙৃ") ("gngqff" "গঙ‌ৃ") ("gnge" "গঙে") ("gngoi" "গঙৈ")     
+		("gngw" "গঙো") ("gngou" "গঙৌ") ("gngae" "গঙ্যা")
+		("gngof" "গঙঅ") ("gngaf" "গঙআ") ("gngif" "গঙই") ("gngiif" "গঙঈ") ("gnguf" "গঙউ") ("gnguuf" "গঙঊ") ("gngqf" "গঙঋ") ("gngef" "গঙএ") ("gngoif" "গঙই")     
+		("gngwf" "গঙও") ("gngouf" "গঙউ") ("gngaef" "গঙঅ্যা")
+
+		("ghngo" "ঘঙ") ("ghnga" "ঘঙা") ("ghngi" "ঘঙি") ("ghngii" "ঘঙী") ("ghngu" "ঘঙু") ("ghnguff" "ঘঙ‌ু") ("ghnguu" "ঘঙূ") ("ghnguuff" "ঘঙ‌ূ") ("ghngq" "ঘঙৃ") ("ghngqff" "ঘঙ‌ৃ") ("ghnge" "ঘঙে") ("ghngoi" "ঘঙৈ")     
+		("ghngw" "ঘঙো") ("ghngou" "ঘঙৌ") ("ghngae" "ঘঙ্যা")
+		("ghngof" "ঘঙঅ") ("ghngaf" "ঘঙআ") ("ghngif" "ঘঙই") ("ghngiif" "ঘঙঈ") ("ghnguf" "ঘঙউ") ("ghnguuf" "ঘঙঊ") ("ghngqf" "ঘঙঋ") ("ghngef" "ঘঙএ") ("ghngoif" "ঘঙই")     
+		("ghngwf" "ঘঙও") ("ghngouf" "ঘঙউ") ("ghngaef" "ঘঙঅ্যা")
+
 		("cngo" "চঙ") ("cnga" "চঙা") ("cngi" "চঙি") ("cngii" "চঙী") ("cngu" "চঙু") ("cnguff" "চঙ‌ু") ("cnguu" "চঙূ") ("cnguuff" "চঙ‌ূ") ("cngq" "চঙৃ") ("cngqff" "চঙ‌ৃ") ("cnge" "চঙে") ("cngoi" "চঙৈ")     
 		("cngw" "চঙো") ("cngou" "চঙৌ") ("cngae" "চঙ্যা")
 		("cngof" "চঙঅ") ("cngaf" "চঙআ") ("cngif" "চঙই") ("cngiif" "চঙঈ") ("cnguf" "চঙউ") ("cnguuf" "চঙঊ") ("cngqf" "চঙঋ") ("cngef" "চঙএ") ("cngoif" "চঙই")     
@@ -152,6 +162,71 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("jngw" "জঙো") ("jngou" "জঙৌ") ("jngae" "জঙ্যা")
 		("jngof" "জঙঅ") ("jngaf" "জঙআ") ("jngif" "জঙই") ("jngiif" "জঙঈ") ("jnguf" "জঙউ") ("jnguuf" "জঙঊ") ("jngqf" "জঙঋ") ("jngef" "জঙএ") ("jngoif" "জঙই")     
 		("jngwf" "জঙও") ("jngouf" "জঙউ") ("jngaef" "জঙঅ্যা")
+
+		("nngo" "নঙ") ("nnga" "নঙা") ("nngi" "নঙি") ("nngii" "নঙী") ("nngu" "নঙু") ("nnguff" "নঙ‌ু") ("nnguu" "নঙূ") ("nnguuff" "নঙ‌ূ") ("nngq" "নঙৃ") ("nngqff" "নঙ‌ৃ") ("nnge" "নঙে") ("nngoi" "নঙৈ")     
+		("nngw" "নঙো") ("nngou" "নঙৌ") ("nngae" "নঙ্যা")
+		("nngof" "নঙঅ") ("nngaf" "নঙআ") ("nngif" "নঙই") ("nngiif" "নঙঈ") ("nnguf" "নঙউ") ("nnguuf" "নঙঊ") ("nngqf" "নঙঋ") ("nngef" "নঙএ") ("nngoif" "নঙই")     
+		("nngwf" "নঙও") ("nngouf" "নঙউ") ("nngaef" "নঙঅ্যা")
+
+		("nfngo" "ণঙ") ("nfnga" "ণঙা") ("nfngi" "ণঙি") ("nfngii" "ণঙী") ("nfngu" "ণঙু") ("nfnguff" "ণঙ‌ু") ("nfnguu" "ণঙূ") ("nfnguuff" "ণঙ‌ূ") ("nfngq" "ণঙৃ") ("nfngqff" "ণঙ‌ৃ") ("nfnge" "ণঙে") ("nfngoi" "ণঙৈ")     
+		("nfngw" "ণঙো") ("nfngou" "ণঙৌ") ("nfngae" "ণঙ্যা")
+		("nfngof" "ণঙঅ") ("nfngaf" "ণঙআ") ("nfngif" "ণঙই") ("nfngiif" "ণঙঈ") ("nfnguf" "ণঙউ") ("nfnguuf" "ণঙঊ") ("nfngqf" "ণঙঋ") ("nfngef" "ণঙএ") ("nfngoif" "ণঙই")     
+		("nfngwf" "ণঙও") ("nfngouf" "ণঙউ") ("nfngaef" "ণঙঅ্যা")
+
+		("tngo" "তঙ") ("tnga" "তঙা") ("tngi" "তঙি") ("tngii" "তঙী") ("tngu" "তঙু") ("tnguff" "তঙ‌ু") ("tnguu" "তঙূ") ("tnguuff" "তঙ‌ূ") ("tngq" "তঙৃ") ("tngqff" "তঙ‌ৃ") ("tnge" "তঙে") ("tngoi" "তঙৈ")     
+		("tngw" "তঙো") ("tngou" "তঙৌ") ("tngae" "তঙ্যা")
+		("tngof" "তঙঅ") ("tngaf" "তঙআ") ("tngif" "তঙই") ("tngiif" "তঙঈ") ("tnguf" "তঙউ") ("tnguuf" "তঙঊ") ("tngqf" "তঙঋ") ("tngef" "তঙএ") ("tngoif" "তঙই")     
+		("tngwf" "তঙও") ("tngouf" "তঙউ") ("tngaef" "তঙঅ্যা")
+
+		("dhngo" "ধঙ") ("dhnga" "ধঙা") ("dhngi" "ধঙি") ("dhngii" "ধঙী") ("dhngu" "ধঙু") ("dhnguff" "ধঙ‌ু") ("dhnguu" "ধঙূ") ("dhnguuff" "ধঙ‌ূ") ("dhngq" "ধঙৃ") ("dhngqff" "ধঙ‌ৃ") ("dhnge" "ধঙে") ("dhngoi" "ধঙৈ")     
+		("dhngw" "ধঙো") ("dhngou" "ধঙৌ") ("dhngae" "ধঙ্যা")
+		("dhngof" "ধঙঅ") ("dhngaf" "ধঙআ") ("dhngif" "ধঙই") ("dhngiif" "ধঙঈ") ("dhnguf" "ধঙউ") ("dhnguuf" "ধঙঊ") ("dhngqf" "ধঙঋ") ("dhngef" "ধঙএ") ("dhngoif" "ধঙই")     
+		("dhngwf" "ধঙও") ("dhngouf" "ধঙউ") ("dhngaef" "ধঙঅ্যা")
+
+		("pngo" "পঙ") ("pnga" "পঙা") ("pngi" "পঙি") ("pngii" "পঙী") ("pngu" "পঙু") ("pnguff" "পঙ‌ু") ("pnguu" "পঙূ") ("pnguuff" "পঙ‌ূ") ("pngq" "পঙৃ") ("pngqff" "পঙ‌ৃ") ("pnge" "পঙে") ("pngoi" "পঙৈ")     
+		("pngw" "পঙো") ("pngou" "পঙৌ") ("pngae" "পঙ্যা")
+		("pngof" "পঙঅ") ("pngaf" "পঙআ") ("pngif" "পঙই") ("pngiif" "পঙঈ") ("pnguf" "পঙউ") ("pnguuf" "পঙঊ") ("pngqf" "পঙঋ") ("pngef" "পঙএ") ("pngoif" "পঙই")     
+		("pngwf" "পঙও") ("pngouf" "পঙউ") ("pngaef" "পঙঅ্যা")
+
+		("mngo" "মঙ") ("mnga" "মঙা") ("mngi" "মঙি") ("mngii" "মঙী") ("mngu" "মঙু") ("mnguff" "মঙ‌ু") ("mnguu" "মঙূ") ("mnguuff" "মঙ‌ূ") ("mngq" "মঙৃ") ("mngqff" "মঙ‌ৃ") ("mnge" "মঙে") ("mngoi" "মঙৈ")     
+		("mngw" "মঙো") ("mngou" "মঙৌ") ("mngae" "মঙ্যা")
+		("mngof" "মঙঅ") ("mngaf" "মঙআ") ("mngif" "মঙই") ("mngiif" "মঙঈ") ("mnguf" "মঙউ") ("mnguuf" "মঙঊ") ("mngqf" "মঙঋ") ("mngef" "মঙএ") ("mngoif" "মঙই")     
+		("mngwf" "মঙও") ("mngouf" "মঙউ") ("mngaef" "মঙঅ্যা")
+
+		("shngo" "শঙ") ("shnga" "শঙা") ("shngi" "শঙি") ("shngii" "শঙী") ("shngu" "শঙু") ("shnguff" "শঙ‌ু") ("shnguu" "শঙূ") ("shnguuff" "শঙ‌ূ") ("shngq" "শঙৃ") ("shngqff" "শঙ‌ৃ") ("shnge" "শঙে") ("shngoi" "শঙৈ")     
+		("shngw" "শঙো") ("shngou" "শঙৌ") ("shngae" "শঙ্যা")
+		("shngof" "শঙঅ") ("shngaf" "শঙআ") ("shngif" "শঙই") ("shngiif" "শঙঈ") ("shnguf" "শঙউ") ("shnguuf" "শঙঊ") ("shngqf" "শঙঋ") ("shngef" "শঙএ") ("shngoif" "শঙই")     
+		("shngwf" "শঙও") ("shngouf" "শঙউ") ("shngaef" "শঙঅ্যা")
+
+		("sfngo" "ষঙ") ("sfnga" "ষঙা") ("sfngi" "ষঙি") ("sfngii" "ষঙী") ("sfngu" "ষঙু") ("sfnguff" "ষঙ‌ু") ("sfnguu" "ষঙূ") ("sfnguuff" "ষঙ‌ূ") ("sfngq" "ষঙৃ") ("sfngqff" "ষঙ‌ৃ") ("sfnge" "ষঙে") ("sfngoi" "ষঙৈ")     
+		("sfngw" "ষঙো") ("sfngou" "ষঙৌ") ("sfngae" "ষঙ্যা")
+		("sfngof" "ষঙঅ") ("sfngaf" "ষঙআ") ("sfngif" "ষঙই") ("sfngiif" "ষঙঈ") ("sfnguf" "ষঙউ") ("sfnguuf" "ষঙঊ") ("sfngqf" "ষঙঋ") ("sfngef" "ষঙএ") ("sfngoif" "ষঙই")     
+		("sfngwf" "ষঙও") ("sfngouf" "ষঙউ") ("sfngaef" "ষঙঅ্যা")
+
+		("sngo" "সঙ") ("snga" "সঙা") ("sngi" "সঙি") ("sngii" "সঙী") ("sngu" "সঙু") ("snguff" "সঙ‌ু") ("snguu" "সঙূ") ("snguuff" "সঙ‌ূ") ("sngq" "সঙৃ") ("sngqff" "সঙ‌ৃ") ("snge" "সঙে") ("sngoi" "সঙৈ")     
+		("sngw" "সঙো") ("sngou" "সঙৌ") ("sngae" "সঙ্যা")
+		("sngof" "সঙঅ") ("sngaf" "সঙআ") ("sngif" "সঙই") ("sngiif" "সঙঈ") ("snguf" "সঙউ") ("snguuf" "সঙঊ") ("sngqf" "সঙঋ") ("sngef" "সঙএ") ("sngoif" "সঙই")     
+		("sngwf" "সঙও") ("sngouf" "সঙউ") ("sngaef" "সঙঅ্যা")
+
+		("hngo" "হঙ") ("hnga" "হঙা") ("hngi" "হঙি") ("hngii" "হঙী") ("hngu" "হঙু") ("hnguff" "হঙ‌ু") ("hnguu" "হঙূ") ("hnguuff" "হঙ‌ূ") ("hngq" "হঙৃ") ("hngqff" "হঙ‌ৃ") ("hnge" "হঙে") ("hngoi" "হঙৈ")     
+		("hngw" "হঙো") ("hngou" "হঙৌ") ("hngae" "হঙ্যা")
+		("hngof" "হঙঅ") ("hngaf" "হঙআ") ("hngif" "হঙই") ("hngiif" "হঙঈ") ("hnguf" "হঙউ") ("hnguuf" "হঙঊ") ("hngqf" "হঙঋ") ("hngef" "হঙএ") ("hngoif" "হঙই")     
+		("hngwf" "হঙও") ("hngouf" "হঙউ") ("hngaef" "হঙঅ্যা")
+
+		("kfngo" "ক্ষঙ") ("kfnga" "ক্ষঙা") ("kfngi" "ক্ষঙি") ("kfngii" "ক্ষঙী") ("kfngu" "ক্ষঙু") ("kfnguff" "ক্ষঙ‌ু") ("kfnguu" "ক্ষঙূ") ("kfnguuff" "ক্ষঙ‌ূ") ("kfngq" "ক্ষঙৃ") ("kfngqff" "ক্ষঙ‌ৃ") ("kfnge" "ক্ষঙে") ("kfngoi" "ক্ষঙৈ")     
+		("kfngw" "ক্ষঙো") ("kfngou" "ক্ষঙৌ") ("kfngae" "ক্ষঙ্যা")
+		("kfngof" "ক্ষঙঅ") ("kfngaf" "ক্ষঙআ") ("kfngif" "ক্ষঙই") ("kfngiif" "ক্ষঙঈ") ("kfnguf" "ক্ষঙউ") ("kfnguuf" "ক্ষঙঊ") ("kfngqf" "ক্ষঙঋ") ("kfngef" "ক্ষঙএ") ("kfngoif" "ক্ষঙই")     
+		("kfngwf" "ক্ষঙও") ("kfngouf" "ক্ষঙউ") ("kfngaef" "ক্ষঙঅ্যা")
+
+		("kkhngo" "ক্ষঙ") ("kkhnga" "ক্ষঙা") ("kkhngi" "ক্ষঙি") ("kkhngii" "ক্ষঙী") ("kkhngu" "ক্ষঙু") ("kkhnguff" "ক্ষঙ‌ু") ("kkhnguu" "ক্ষঙূ") ("kkhnguuff" "ক্ষঙ‌ূ") ("kkhngq" "ক্ষঙৃ") ("kkhngqff" "ক্ষঙ‌ৃ") ("kkhnge" "ক্ষঙে") ("kkhngoi" "ক্ষঙৈ")     
+		("kkhngw" "ক্ষঙো") ("kkhngou" "ক্ষঙৌ") ("kkhngae" "ক্ষঙ্যা")
+		("kkhngof" "ক্ষঙঅ") ("kkhngaf" "ক্ষঙআ") ("kkhngif" "ক্ষঙই") ("kkhngiif" "ক্ষঙঈ") ("kkhnguf" "ক্ষঙউ") ("kkhnguuf" "ক্ষঙঊ") ("kkhngqf" "ক্ষঙঋ") ("kkhngef" "ক্ষঙএ") ("kkhngoif" "ক্ষঙই")     
+		("kkhngwf" "ক্ষঙও") ("kkhngouf" "ক্ষঙউ") ("kkhngaef" "ক্ষঙঅ্যা")
+
+		("ksfngo" "ক্ষঙ") ("ksfnga" "ক্ষঙা") ("ksfngi" "ক্ষঙি") ("ksfngii" "ক্ষঙী") ("ksfngu" "ক্ষঙু") ("ksfnguff" "ক্ষঙ‌ু") ("ksfnguu" "ক্ষঙূ") ("ksfnguuff" "ক্ষঙ‌ূ") ("ksfngq" "ক্ষঙৃ") ("ksfngqff" "ক্ষঙ‌ৃ") ("ksfnge" "ক্ষঙে") ("ksfngoi" "ক্ষঙৈ")     
+		("ksfngw" "ক্ষঙো") ("ksfngou" "ক্ষঙৌ") ("ksfngae" "ক্ষঙ্যা")
+		("ksfngof" "ক্ষঙঅ") ("ksfngaf" "ক্ষঙআ") ("ksfngif" "ক্ষঙই") ("ksfngiif" "ক্ষঙঈ") ("ksfnguf" "ক্ষঙউ") ("ksfnguuf" "ক্ষঙঊ") ("ksfngqf" "ক্ষঙঋ") ("ksfngef" "ক্ষঙএ") ("ksfngoif" "ক্ষঙই")     
+		("ksfngwf" "ক্ষঙও") ("ksfngouf" "ক্ষঙউ") ("ksfngaef" "ক্ষঙঅ্যা")
 	)
 	(reph
 		("rr" "র্")  ("r" "র")
