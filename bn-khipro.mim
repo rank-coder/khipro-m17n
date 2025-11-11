@@ -87,7 +87,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("ngk" "ঙ্ক") ("ngkt" "ঙ্‌ক্ত") ("ngkz" "ঙ্ক্য") ("ngkr" "ঙ্ক্র") ("ngkf" "ঙ্ক্ষ") ("ngkkh" "ঙ্ক্ষ") ("ngksf" "ঙ্ক্ষ") ("ngkh" "ঙ্খ") ("ngg" "ঙ্গ") ("nggz" "ঙ্গ্য") ("nggh" "ঙ্ঘ") ("ngghz" "ঙ্ঘ্য") ("ngghr" "ঙ্ঘ্র") ("ngm" "ঙ্ম")
 		("ngfk" "ঙ্ক") ("ngfkt" "ঙ্‌ক্ত") ("ngfkz" "ঙ্ক্য") ("ngfkr" "ঙ্ক্র") ("ngfkf" "ঙ্ক্ষ") ("ngfkkh" "ঙ্ক্ষ") ("ngfksf" "ঙ্ক্ষ") ("ngfkh" "ঙ্খ") ("ngfg" "ঙ্গ") ("ngfgz" "ঙ্গ্য") ("ngfgh" "ঙ্ঘ") ("ngfghz" "ঙ্ঘ্য") ("ngfghr" "ঙ্ঘ্র") ("ngfm" "ঙ্ম")
 		("cc" "চ্চ") ("cch" "চ্ছ") ("cchb" "চ্ছ্ব") ("cchr" "চ্ছ্র") ("cnff" "চ্ঞ") ("cb" "চ্ব") ("cz" "চ্য")
-		("jj" "জ্জ") ("jjb" "জ্জ্ব") ("jjh" "জ্ঝ") ("gg" "জ্ঞ") ("jb" "জ্ব") ("jz" "জ্য") ("jr" "জ্র")
+		("jj" "জ্জ") ("jjb" "জ্জ্ব") ("jjh" "জ্ঝ") ("gg" "জ্ঞ") ("jnff" "জ্ঞ") ("jb" "জ্ব") ("jz" "জ্য") ("jr" "জ্র")
 		("nc" "ঞ্চ") ("nffc" "ঞ্চ") ("nj" "ঞ্জ") ("nffj" "ঞ্জ") ("njh" "ঞ্ঝ") ("nffjh" "ঞ্ঝ") ("nch" "ঞ্ছ") ("nffch" "ঞ্ছ")
 		("ttf" "ট্ট") ("tftf" "ট্ট") ("tfb" "ট্ব") ("tfm" "ট্ম") ("tfz" "ট্য") ("tfr" "ট্র")
 		("ddf" "ড্ড") ("dfdf" "ড্ড") ("dfb" "ড্ব") ("dfz" "ড্য") ("dfr" "ড্র") ("rfg" "ড়্‌গ")
@@ -112,7 +112,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("spl" "স্প্ল") ("sph" "স্ফ") ("sb" "স্ব") ("sm" "স্ম") ("sz" "স্য") ("sr" "স্র") ("sl" "স্ল")
 		("hn" "হ্ন") ("hnf" "হ্ণ") ("hb" "হ্ব") ("hm" "হ্ম") ("hz" "হ্য") ("hr" "হ্র") ("hl" "হ্ল")
 ;; oshomvob juktoborno
-		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cngf" "চঙ") ("cnf" "চণ") ("tft" "টত") ("dfd" "ডদ") 
+		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cngf" "চঙ") ("cnz" "চন্য") ("cnf" "চণ") ("jn" "জন") ("jnf" "জণ") ("jnz" "জন্য") ("jng" "জং") ("jnff" "জ্ঞ") ("tft" "টত") ("dfd" "ডদ") 
 																		("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
 		("nft" "ণত") ("nfd" "ণদ") ("lt" "লত") ("sft" "ষত") ("nfth" "ণথ") ("nfdh" "ণধ") ("sfth" "ষথ")
 		("ktff" "কঠ") ("ktfh" "কঠ") ("ptff" "পঠ") ("ptfh" "পঠ") ("ltff" "লঠ") ("ltfh" "লঠ") ("stff" "সঠ") ("stfh" "সঠ") 
@@ -147,6 +147,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("cngw" "চঙো") ("cngou" "চঙৌ") ("cngae" "চঙ্যা")
 		("cngof" "চঙঅ") ("cngaf" "চঙআ") ("cngif" "চঙই") ("cngiif" "চঙঈ") ("cnguf" "চঙউ") ("cnguuf" "চঙঊ") ("cngqf" "চঙঋ") ("cngef" "চঙএ") ("cngoif" "চঙই")     
 		("cngwf" "চঙও") ("cngouf" "চঙউ") ("cngaef" "চঙঅ্যা")
+
+		("jngo" "জঙ") ("jnga" "জঙা") ("jngi" "জঙি") ("jngii" "জঙী") ("jngu" "জঙু") ("jnguff" "জঙ‌ু") ("jnguu" "জঙূ") ("jnguuff" "জঙ‌ূ") ("jngq" "জঙৃ") ("jngqff" "জঙ‌ৃ") ("jnge" "জঙে") ("jngoi" "জঙৈ")     
+		("jngw" "জঙো") ("jngou" "জঙৌ") ("jngae" "জঙ্যা")
+		("jngof" "জঙঅ") ("jngaf" "জঙআ") ("jngif" "জঙই") ("jngiif" "জঙঈ") ("jnguf" "জঙউ") ("jnguuf" "জঙঊ") ("jngqf" "জঙঋ") ("jngef" "জঙএ") ("jngoif" "জঙই")     
+		("jngwf" "জঙও") ("jngouf" "জঙউ") ("jngaef" "জঙঅ্যা")
 	)
 	(reph
 		("rr" "র্")  ("r" "র")
