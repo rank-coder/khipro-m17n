@@ -112,8 +112,26 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("spl" "স্প্ল") ("sph" "স্ফ") ("sb" "স্ব") ("sm" "স্ম") ("sz" "স্য") ("sr" "স্র") ("sl" "স্ল")
 		("hn" "হ্ন") ("hnf" "হ্ণ") ("hb" "হ্ব") ("hm" "হ্ম") ("hz" "হ্য") ("hr" "হ্র") ("hl" "হ্ল")
 ;; oshomvob juktoborno
-		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("cn" "চন") ("cngf" "চঙ") ("cnz" "চন্য") ("cnf" "চণ") ("cnm" "চন্ম") ("jn" "জন") ("jnf" "জণ") ("jnz" "জন্য") ("jnm" "জন্ম") ("tft" "টত") ("dfd" "ডদ") 
-																		("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
+		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
+		
+		("cn" "চন") ("cngf" "চঙ") ("cnz" "চন্য") ("cnf" "চণ") ("cnm" "চন্ম") 
+		("cngk" "চঙ্ক") ("cngkt" "চঙ্‌ক্ত") ("cngkz" "চঙ্ক্য") ("cngkr" "চঙ্ক্র") ("cngkf" "চঙ্ক্ষ") ("cngkkh" "চঙ্ক্ষ") ("cngksf" "চঙ্ক্ষ") ("cngkh" "চঙ্খ") ("cngg" "চঙ্গ") ("cnggz" "চঙ্গ্য") ("cnggh" "চঙ্ঘ") ("cngghz" "চঙ্ঘ্য") ("cngghr" "চঙ্ঘ্র") ("cngm" "চঙ্ম")
+		("cngfk" "চঙ্ক") ("cngfkt" "চঙ্‌ক্ত") ("cngfkz" "চঙ্ক্য") ("cngfkr" "চঙ্ক্র") ("cngfkf" "চঙ্ক্ষ") ("cngfkkh" "চঙ্ক্ষ") ("cngfksf" "চঙ্ক্ষ") ("cngfkh" "চঙ্খ") ("cngfg" "চঙ্গ") ("cngfgz" "চঙ্গ্য") ("cngfgh" "চঙ্ঘ") ("cngfghz" "চঙ্ঘ্য") ("cngfghr" "চঙ্ঘ্র") ("cngfm" "চঙ্ম")
+		("cnc" "চঞ্চ") ("cnffc" "চঞ্চ") ("cnj" "চঞ্জ") ("cnffj" "চঞ্জ") ("cnjh" "চঞ্ঝ") ("cnffjh" "চঞ্ঝ") ("cnch" "চঞ্ছ") ("cnffch" "চঞ্ছ")
+		("cnftf" "চণ্ট") ("cnftff" "চণ্ঠ") ("cnftfh" "চণ্ঠ") ("cnftffz" "চণ্ঠ্য") ("cnftfhz" "চণ্ঠ্য") ("cnfdf" "চণ্ড") ("cnfdfz" "চণ্ড্য") ("cnfdfr" "চণ্ড্র") ("cnfdff" "চণ্ঢ") ("cnfdfh" "চণ্ঢ") ("cnfnf" "চণ্ণ") ("cnfn" "চণ্ণ") ("cnfb" "চণ্ব") ("cnfm" "চণ্ম") ("cnfz" "চণ্য")
+		("cntf" "চন্ট") ("cntfr" "চন্ট্র") ("cntff" "চন্ঠ") ("cntfh" "চন্ঠ") ("cndf" "চন্ড") ("cndfr" "চন্ড্র") ("cnt" "চন্ত") ("cntb" "চন্ত্ব") ("cntr" "চন্ত্র") ("cntrz" "চন্ত্র্য") ("cnth" "চন্থ") ("cnthr" "চন্থ্র") ("cnd" "চন্দ") ("cndb" "চন্দ্ব") ("cndz" "চন্দ্য") 
+		("cndr" "চন্দ্র") ("cndh" "চন্ধ") ("cndhz" "চন্ধ্য") ("cndhr" "চন্ধ্র") ("cnn" "চন্ন") ("cnb" "চন্ব") ("cnm" "চন্ম") ("cnz" "চন্য") ("cns" "চন্স")
+
+		("jn" "জন") ("jnf" "জণ") ("jnz" "জন্য") ("jnm" "জন্ম")
+		("jngk" "জঙ্ক") ("jngkt" "জঙ্‌ক্ত") ("jngkz" "জঙ্ক্য") ("jngkr" "জঙ্ক্র") ("jngkf" "জঙ্ক্ষ") ("jngkkh" "জঙ্ক্ষ") ("jngksf" "জঙ্ক্ষ") ("jngkh" "জঙ্খ") ("jngg" "জঙ্গ") ("jnggz" "জঙ্গ্য") ("jnggh" "জঙ্ঘ") ("jngghz" "জঙ্ঘ্য") ("jngghr" "জঙ্ঘ্র") ("jngm" "জঙ্ম")
+		("jngfk" "জঙ্ক") ("jngfkt" "জঙ্‌ক্ত") ("jngfkz" "জঙ্ক্য") ("jngfkr" "জঙ্ক্র") ("jngfkf" "জঙ্ক্ষ") ("jngfkkh" "জঙ্ক্ষ") ("jngfksf" "জঙ্ক্ষ") ("jngfkh" "জঙ্খ") ("jngfg" "জঙ্গ") ("jngfgz" "জঙ্গ্য") ("jngfgh" "জঙ্ঘ") ("jngfghz" "জঙ্ঘ্য") ("jngfghr" "জঙ্ঘ্র") ("jngfm" "জঙ্ম")
+		("jnc" "জঞ্চ") ("jnffc" "জঞ্চ") ("jnj" "জঞ্জ") ("jnffj" "জঞ্জ") ("jnjh" "জঞ্ঝ") ("jnffjh" "জঞ্ঝ") ("jnch" "জঞ্ছ") ("jnffch" "জঞ্ছ")
+		("jnftf" "জণ্ট") ("jnftff" "জণ্ঠ") ("jnftfh" "জণ্ঠ") ("jnftffz" "জণ্ঠ্য") ("jnftfhz" "জণ্ঠ্য") ("jnfdf" "জণ্ড") ("jnfdfz" "জণ্ড্য") ("jnfdfr" "জণ্ড্র") ("jnfdff" "জণ্ঢ") ("jnfdfh" "জণ্ঢ") ("jnfnf" "জণ্ণ") ("jnfn" "জণ্ণ") ("jnfb" "জণ্ব") ("jnfm" "জণ্ম") ("jnfz" "জণ্য")
+		("jntf" "জন্ট") ("jntfr" "জন্ট্র") ("jntff" "জন্ঠ") ("jntfh" "জন্ঠ") ("jndf" "জন্ড") ("jndfr" "জন্ড্র") ("jnt" "জন্ত") ("jntb" "জন্ত্ব") ("jntr" "জন্ত্র") ("jntrz" "জন্ত্র্য") ("jnth" "জন্থ") ("jnthr" "জন্থ্র") ("jnd" "জন্দ") ("jndb" "জন্দ্ব") ("jndz" "জন্দ্য") 
+		("jndr" "জন্দ্র") ("jndh" "জন্ধ") ("jndhz" "জন্ধ্য") ("jndhr" "জন্ধ্র") ("jnn" "জন্ন") ("jnb" "জন্ব") ("jnm" "জন্ম") ("jnz" "জন্য") ("jns" "জন্স")
+
+		("tft" "টত") ("dfd" "ডদ") 
+		
 		("nft" "ণত") ("nfd" "ণদ") ("lt" "লত") ("sft" "ষত") ("nfth" "ণথ") ("nfdh" "ণধ") ("sfth" "ষথ")
 		("ktff" "কঠ") ("ktfh" "কঠ") ("ptff" "পঠ") ("ptfh" "পঠ") ("ltff" "লঠ") ("ltfh" "লঠ") ("stff" "সঠ") ("stfh" "সঠ") 
 		("dfdff" "ডঢ") ("dfdfh" "ডঢ") ("ndff" "নঢ") ("ndfh" "নঢ") 
