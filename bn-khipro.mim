@@ -187,6 +187,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("lks" "ল্কস") 
 		("kkf" "কক্ষ") ("lkf" "লক্ষ") ("sfkf" "ষক্ষ") ("skf" "সক্ষ") ("kkkh" "কক্ষ") ("lkkh" "লক্ষ") ("sfkkh" "ষক্ষ") ("skkh" "সক্ষ") ("kksf" "কক্ষ") ("lksf" "লক্ষ") ("sfksf" "ষক্ষ") ("sksf" "সক্ষ")
 		("yr" "য়র")
+        ("gnj" "গঞ্জ") ("pnj" "পঞ্জ") ("mnj" "মঞ্জ") ("snj" "সঞ্জ")
+        ("gndf" "গন্ড") ("mndf" "মন্ড") ("hndf" "হন্ড")
+        ("tnt" "তন্ত") ("tntr" "তন্ত্র") ("mnt" "মন্ত") ("mntr" "মন্ত্র") ("snt" "সন্ত") ("sntr" "সন্ত্র") ("hnt" "হন্ত")
+        ("tnd" "তন্দ") ("dhnd" "ধন্দ") ("nnd" "নন্দ") ("mnd" "মন্দ") ("snd" "সন্দ") ("hnd" "হন্দ")
+        ("gndh" "গন্ধ") ("gndhz" "গন্ধ্য") ("dhndh" "ধন্ধ") ("nndh" "নন্ধ") ("sndh" "সন্ধ") ("sndhz" "সন্ধ্য")
 		
 
 
