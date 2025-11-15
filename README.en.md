@@ -38,6 +38,7 @@ Detailed mapping and documentation are available on our website: https://KhiproK
 
 ## Khipro Phonetic Mapping Table
 <table border="0.5" cellspacing="0" cellpadding="4">
+<tr><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th></tr>
     <tr>
       <td>ক</td>
       <td>k</td>
