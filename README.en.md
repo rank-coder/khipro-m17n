@@ -37,258 +37,29 @@ Now let’s take a look at the keyboard mapping of Khipro.
 Detailed mapping and documentation are available on our website: https://KhiproKeyboard.github.io/docs  
 
 ## Khipro Phonetic Mapping Table
-<table border="0.5" cellspacing="0" cellpadding="4">
-<tr><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th></tr>
-    <tr>
-      <td>ক</td>
-      <td>k</td>
-      <td>ট</td>
-      <td>tf</td>
-      <td>প</td>
-      <td>p</td>
-      <td>স</td>
-      <td>s</td>
-      <td>আ, া</td>
-      <td>a</td>
-      <td>অ্যা, ্যা</td>
-      <td>ae</td>
-      <td>রেফ</td>
-      <td>rr</td>
-    </tr>
-    <tr>
-      <td>খ</td>
-      <td>kh</td>
-      <td>ঠ</td>
-      <td>tff, tfh</td>
-      <td>ফ</td>
-      <td>ph</td>
-      <td>হ</td>
-      <td>h</td>
-      <td>ই, ি</td>
-      <td>i</td>
-      <td>ওয়া, োয়া</td>
-      <td>wa</td>
-      <td>হসন্ত</td>
-      <td>qq</td>
-    </tr>
-    <tr>
-      <td>গ</td>
-      <td>g</td>
-      <td>ড</td>
-      <td>df</td>
-      <td>ব</td>
-      <td>b</td>
-      <td>ড়</td>
-      <td>rf</td>
-      <td>ঈ, ী</td>
-      <td>ii</td>
-      <td>ওয়ে, োয়ে</td>
-      <td>we</td>
-      <td>নুকতা</td>
-      <td>,,</td>
-    </tr>
-    <tr>
-      <td>ঘ</td>
-      <td>gh</td>
-      <td>ঢ</td>
-      <td>dff, dfh</td>
-      <td>ভ</td>
-      <td>v</td>
-      <td>ঢ়</td>
-      <td>rff</td>
-      <td>উ, ু</td>
-      <td>u</td>
-      <td>ওয়্যা</td>
-      <td>wae</td>
-      <td>পৃথায়ক</td>
-      <td>;</td>
-    </tr>
-    <tr>
-      <td>ঙ</td>
-      <td>ngf, ng</td>
-      <td>ণ</td>
-      <td>nf</td>
-      <td>ম</td>
-      <td>m</td>
-      <td>য়</td>
-      <td>y</td>
-      <td>ঊ, ূ</td>
-      <td>uu</td>
-      <td>ক্ষ</td>
-      <td>kf, kkh, ksf</td>
-      <td>দাঁড়ি</td>
-      <td>.</td>
-    </tr>
-    <tr>
-      <td>চ</td>
-      <td>c</td>
-      <td>ত</td>
-      <td>t</td>
-      <td>য</td>
-      <td>z</td>
-      <td>ৎ</td>
-      <td>t/</td>
-      <td>ঋ, ৃ</td>
-      <td>q</td>
-      <td>জ্ঞ</td>
-      <td>gg</td>
-      <td>টাকা, ৳</td>
-      <td>$</td>
-    </tr>
-    <tr>
-      <td>ছ</td>
-      <td>ch</td>
-      <td>থ</td>
-      <td>th</td>
-      <td>র</td>
-      <td>r</td>
-      <td>ং</td>
-      <td>oo, ng</td>
-      <td>এ, ে</td>
-      <td>e</td>
-      <td>ঞ্জ</td>
-      <td>nj</td>
-      <td>রুপি, ₹</td>
-      <td>$f</td>
-    </tr>
-    <tr>
-      <td>জ</td>
-      <td>j</td>
-      <td>দ</td>
-      <td>d</td>
-      <td>ল</td>
-      <td>l</td>
-      <td>ঃ</td>
-      <td>x</td>
-      <td>ঐ, ৈ</td>
-      <td>oi</td>
-      <td>ব-ফলা</td>
-      <td>b</td>
-      <td>ডট</td>
-      <td>..</td>
-    </tr>
-    <tr>
-      <td>ঝ</td>
-      <td>jh</td>
-      <td>ধ</td>
-      <td>dh</td>
-      <td>শ</td>
-      <td>sh</td>
-      <td>ঁ</td>
-      <td>/</td>
-      <td>ও, ো</td>
-      <td>w</td>
-      <td>য-ফলা</td>
-      <td>z</td>
-      <td>স্ল্যাশ</td>
-      <td>//</td>
-    </tr>
-    <tr>
-      <td>ঞ</td>
-      <td>nff, n</td>
-      <td>ন</td>
-      <td>n</td>
-      <td>ষ</td>
-      <td>sf</td>
-      <td>অ</td>
-      <td>o</td>
-      <td>ঔ, ৌ</td>
-      <td>ou</td>
-      <td>র-ফলা</td>
-      <td>r</td>
-      <td>সেমিকোলন</td>
-      <td>;;</td>
-    </tr>
-  </table>
+| Letter | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| ক | k | ট | tf | প | p | স | s | আ, া | a | অ্যা, ্যা | ae | রেফ | rr |
+| খ | kh | ঠ | tff, tfh | ফ | ph | হ | h | ই, ি | i | ওয়া, োয়া | wa | হসন্ত | qq |
+| গ | g | ড | df | ব | b | ড় | rf | ঈ, ী | ii | ওয়ে, োয়ে | we | নুকতা | ,, |
+| ঘ | gh | ঢ | dff, dfh | ভ | v | ঢ় | rff | উ, ু | u | ওয়্যা | wae | পৃথায়ক | ; |
+| ঙ | ngf, ng | ণ | nf | ম | m | য় | y | ঊ, ূ | uu | ক্ষ | kf, kkh, ksf | দাঁড়ি | . |
+| চ | c | ত | t | য | z | ৎ | t/ | ঋ, ৃ | q | জ্ঞ | gg | টাকা | $ |
+| ছ | ch | থ | th | র | r | ং | oo, ng | এ, ে | e | ঞ্জ | nj | রুপি | $f |
+| জ | j | দ | d | ল | l | ঃ | x | ঐ, ৈ | oi | ব-ফলা | b | ডট | .. |
+| ঝ | jh | ধ | dh | শ | sh | ঁ | / | ও, ো | w | য-ফলা | z | স্ল্যাশ | // |
+| ঞ | nff, n | ন | n | ষ | sf | অ | o | ঔ, ৌ | ou | র-ফলা | r | সেমিকোলন | ;; |
   
 ## Short Mapping Table (For Avro, Borno Phonetic Users)
-<table border="0.5" cellspacing="0" cellpadding="4">
-    <tr><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th></tr>
-    <tr>
-      <td>ট</td>
-      <td>tf</td>
-      <td>ফ</td>
-      <td>ph</td>
-      <td>ৎ</td>
-      <td>t/</td>
-      <td>অ্যা</td>
-      <td>ae, aef</td>
-      <td>ব-ফলা</td>
-      <td>b</td>
-    </tr>
-    <tr>
-      <td>ঠ</td>
-      <td>tff, tfh</td>
-      <td>ষ</td>
-      <td>sf</td>
-      <td>ঈ, ী</td>
-      <td>ii</td>
-      <td>ওয়া, োয়া</td>
-      <td>wa</td>
-      <td>য-ফলা</td>
-      <td>z</td>
-    </tr>
-    <tr>
-      <td>ড</td>
-      <td>df</td>
-      <td>ড়</td>
-      <td>rf</td>
-      <td>ঊ, ূ</td>
-      <td>uu</td>
-      <td>ওয়ে, োয়ে</td>
-      <td>we</td>
-      <td>পৃথায়ক</td>
-      <td>;</td>
-    </tr>
-    <tr>
-      <td>ঢ</td>
-      <td>dff, dfh</td>
-      <td>ঢ়</td>
-      <td>rff</td>
-      <td>ঐ, ৈ</td>
-      <td>oi</td>
-      <td>ওয়্যা</td>
-      <td>wae</td>
-      <td>কোলন</td>
-      <td>:</td>
-    </tr>
-    <tr>
-      <td>ণ</td>
-      <td>nf</td>
-      <td>ঁ</td>
-      <td>/</td>
-      <td>ও, ো</td>
-      <td>w</td>
-      <td>ট্ট</td>
-      <td>ttf</td>
-      <td>সেমিকোলন</td>
-      <td>;;</td>
-    </tr>
-    <tr>
-      <td>ঞ</td>
-      <td>nff, n</td>
-      <td>ঃ</td>
-      <td>x</td>
-      <td>ঔ, ৌ</td>
-      <td>ou</td>
-      <td>ড্ড</td>
-      <td>ddf</td>
-      <td>স্ল্যাশ</td>
-      <td>//</td>
-    </tr>
-    <tr>
-      <td>ঙ</td>
-      <td>ngf, ng</td>
-      <td>ং</td>
-      <td>oo, ng</td>
-      <td>ঋ, ৃ</td>
-      <td>q</td>
-      <td>ক্ষ</td>
-      <td>kf, kkh, ksf</td>
-      <td>ডট</td>
-      <td>..</td>
-    </tr>
-  </table>
+| Letter | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping | Letter  | Mapping |
+| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
+| ট | tf | ফ | ph | ৎ | t/ | অ্যা | ae, aef | ব-ফলা | b |
+| ঠ | tff, tfh | ষ | sf | ঈ, ী | ii | ওয়া, োয়া | wa | য-ফলা | z |
+| ড | df | ড় | rf | ঊ, ূ | uu | ওয়ে, োয়ে | we | পৃথায়ক | ; |
+| ঢ | dff, dfh | ঢ় | rff | ঐ, ৈ | oi | ওয়্যা | wae | কোলন | : |
+| ণ | nf | ঁ | / | ও, ো | w | ট্ট | ttf | সেমিকোলন | ;; |
+| ঞ | nff, n | ঃ | x | ঔ, ৌ | ou | ড্ড | ddf | স্ল্যাশ | // |
+| ঙ | ngf, ng | ং | oo, ng | ঋ, ৃ | q | ক্ষ | kf, kkh, ksf | ডট | .. |
 
 ## Examples
 অক্ষর \= `okfor` `okf;r`, উৎস \= `ut/s`  
