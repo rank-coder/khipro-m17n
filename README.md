@@ -294,7 +294,7 @@
 অক্ষর \= `okfor` `okf;r`, উৎস \= `ut/s`  
 কলম \= `kolom` `k;l;m`, তাঁর \= `ta/r`  
 বৈ \= `boi`, বই \= `b;i`, বৌ \= `bou`, বউ \= `b;u`  
-ব্যাংক \= `baeng;k` `bzaook`  
+ব্যাংক \= `baeng;k` `baeook` `bzaook`  
 শৃঙ্খলা \= `shqngkhola` `shqngfkh;la`  
 অ্যাপ \= `aep`, হোয়াটসঅ্যাপ \= `hwatfsaefp`  
 বিজ্ঞান \= `biggan`, অঞ্চল \= `oncol`, ব্যঞ্জন \= `bznjon`
