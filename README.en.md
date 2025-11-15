@@ -203,6 +203,7 @@ Detailed mapping and documentation are available on our website: https://KhiproK
   
 ## Short Mapping Table (For Avro, Borno Phonetic Users)
 <table border="0.5" cellspacing="0" cellpadding="4">
+    <tr><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th><th>output</th><th>input</th></tr>
     <tr>
       <td>ট</td>
       <td>tf</td>
