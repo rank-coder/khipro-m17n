@@ -38,6 +38,7 @@
 
 ## ক্ষিপ্র ফোনেটিক ম্যাপিং টেবিল
 <table border="0.5" cellspacing="0" cellpadding="4">
+    <tr><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th><th>আউটপুট</th><th>ইনপুট</th></tr>
     <tr>
       <td>ক</td>
       <td>k</td>
