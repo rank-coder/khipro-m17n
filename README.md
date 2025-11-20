@@ -37,29 +37,36 @@
 আমাদের ওয়েবসাইটে বিস্তারিত ম্যাপিং ও ডকুমেন্টেশন রয়েছে। https://KhiproKeyboard.github.io/docs
 
 ## ক্ষিপ্র ফোনেটিক ম্যাপিং টেবিল
-| বর্ণ | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| ক | k | ট | tf | প | p | স | s | আ, া | a | অ্যা, ্যা | ae | রেফ | rr |
-| খ | kh | ঠ | tff, tfh | ফ | ph | হ | h | ই, ি | i | ওয়া, োয়া | wa | হসন্ত | qq |
-| গ | g | ড | df | ব | b | ড় | rf | ঈ, ী | ii | ওয়ে, োয়ে | we | নুকতা | ,, |
-| ঘ | gh | ঢ | dff, dfh | ভ | v | ঢ় | rff | উ, ু | u | ওয়্যা | wae | পৃথায়ক | ; |
-| ঙ | ngf, ng | ণ | nf | ম | m | য় | y | ঊ, ূ | uu | ক্ষ | kf, kkh, ksf | দাঁড়ি | . |
-| চ | c | ত | t | য | z | ৎ | t/ | ঋ, ৃ | q | জ্ঞ | gg | টাকা | $ |
-| ছ | ch | থ | th | র | r | ং | oo, ng | এ, ে | e | ঞ্জ | nj | রুপি | $f |
-| জ | j | দ | d | ল | l | ঃ | x | ঐ, ৈ | oi | ব-ফলা | b | ডট | .. |
-| ঝ | jh | ধ | dh | শ | sh | ঁ | / | ও, ো | w | য-ফলা | z | স্ল্যাশ | // |
-| ঞ | nff, n | ন | n | ষ | sf | অ | o | ঔ, ৌ | ou | র-ফলা | r | সেমিকোলন | ;; |
+<table>
+  <tr><td>ক</td><td>খ</td><td>গ</td><td>ঘ</td><td>ঙ</td><td>চ</td><td>ছ</td><td>জ</td><td>ঝ</td><td>ঞ</td></tr>
+  <tr><td>k</td><td>kh</td><td>g</td><td>gh</td><td>ngf, ng</td><td>c</td><td>ch</td><td>j</td><td>jh</td><td>nff, n</td></tr>
+  <tr><td>ট</td><td>ঠ</td><td>ড</td><td>ঢ</td><td>ণ</td><td>ত</td><td>থ</td><td>দ</td><td>ধ</td><td>ন</td></tr>
+  <tr><td>tf</td><td>tff</td><td>df</td><td>dff</td><td>nf</td><td>t</td><td>th</td><td>d</td><td>dh</td><td>n</td></tr>
+  <tr><td>প</td><td>ফ</td><td>ব</td><td>ভ</td><td>ম</td><td>য</td><td>র</td><td>ল</td><td>শ</td><td>ষ</td></tr>
+  <tr><td>p</td><td>ph</td><td>b</td><td>v</td><td>m</td><td>z</td><td>r</td><td>l</td><td>sh</td><td>sf</td></tr>
+  <tr><td>স</td><td>হ</td><td>ড়</td><td>ঢ়</td><td>য়</td><td>ৎ</td><td>ং</td><td>ঃ</td><td>ঁ</td><td>অ</td></tr>
+  <tr><td>s</td><td>h</td><td>rf</td><td>rff</td><td>y</td><td>t/</td><td>oo, ng</td><td>x</td><td>/</td><td>o</td></tr>
+  <tr><td>আ, া</td><td>ই, ি</td><td>ঈ, ী</td><td>উ, ু</td><td>ঊ, ূ</td><td>ঋ, ৃ</td><td>এ, ে</td><td>ঐ, ৈ</td><td>ও, ো</td><td>ঔ, ৌ</td></tr>
+  <tr><td>a</td><td>i</td><td>ii</td><td>u</td><td>uu</td><td>q</td><td>e</td><td>oi</td><td>w</td><td>ou</td></tr>
+  <tr><td>অ্যা, ্যা</td><td>ওয়া, োয়া</td><td>ওয়ে, োয়ে</td><td>ওয়্যা</td><td>ক্ষ</td><td>জ্ঞ</td><td>ঞ্জ</td><td>ব-ফলা</td><td>য-ফলা</td><td>র-ফলা</td></tr>
+  <tr><td>ae, aef</td><td>wa</td><td>we</td><td>wae</td><td>kf, kkf, ksf</td><td>gg</td><td>nj</td><td>b</td><td>z</td><td>r</td></tr>
+  <tr><td>রেফ</td><td>হসন্ত</td><td>নুকতা</td><td>হসন্ত+ZWNJ</td><td>পৃথায়ক</td><td>দাঁড়ি</td><td>টাকা</td><td>ডট</td><td>স্ল্যাশ</td><td>সেমিকোলন</td></tr>
+  <tr><td>rr</td><td>qq</td><td>,,</td><td>xx</td><td>;</td><td>.</td><td>$</td><td>..</td><td>//</td><td>;;</td></tr>
+</table>
   
 ## সংক্ষিপ্ত ম্যাপিং টেবিল (অভ্র, বর্ণ ফোনেটিক ইউজারদের জন্য)
-| বর্ণ | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং | বর্ণ  | ম্যাপিং |
-| :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| ট | tf | ফ | ph | ৎ | t/ | অ্যা | ae, aef | ব-ফলা | b |
-| ঠ | tff, tfh | ষ | sf | ঈ, ী | ii | ওয়া, োয়া | wa | য-ফলা | z |
-| ড | df | ড় | rf | ঊ, ূ | uu | ওয়ে, োয়ে | we | পৃথায়ক | ; |
-| ঢ | dff, dfh | ঢ় | rff | ঐ, ৈ | oi | ওয়্যা | wae | কোলন | : |
-| ণ | nf | ঁ | / | ও, ো | w | ট্ট | ttf | সেমিকোলন | ;; |
-| ঞ | nff, n | ঃ | x | ঔ, ৌ | ou | ড্ড | ddf | স্ল্যাশ | // |
-| ঙ | ngf, ng | ং | oo, ng | ঋ, ৃ | q | ক্ষ | kf, kkh, ksf | ডট | .. |
+<table>
+  <tr><td>ট</td><td>ঠ</td><td>ড</td><td>ঢ</td><td>ণ</td><td>ঞ</td><td>ঙ</td></tr>
+  <tr><td>tf</td><td>tff</td><td>df</td><td>dff</td><td>nf</td><td>nff</td><td>ngf, ng</td></tr>
+  <tr><td>ফ</td><td>ষ</td><td>ড়</td><td>ঢ়</td><td>ং</td><td>ঃ</td><td>ঁ</td></tr>
+  <tr><td>ph</td><td>sf</td><td>rf</td><td>rff</td><td>oo, ng</td><td>x</td><td>/</td></tr>
+  <tr><td>ৎ</td><td>ঈ, ী</td><td>ঊ, ূ</td><td>ঐ, ৈ</td><td>ও, ো</td><td>ঔ, ৌ</td><td>ঋ, ৃ</td></tr>
+  <tr><td>t/</td><td>ii</td><td>uu</td><td>oi</td><td>w</td><td>ou</td><td>q</td></tr>
+  <tr><td>অ্যা, ্যা</td><td>ওয়া, োয়া</td><td>ওয়ে, োয়ে</td><td>ওয়্যা</td><td>ট্ট</td><td>ড্ড</td><td>ক্ষ</td></tr>
+  <tr><td>ae, aef</td><td>wa</td><td>we</td><td>wae</td><td>ttf</td><td>ddf</td><td>kf, kkh, ksf</td></tr>
+  <tr><td>ব-ফলা</td><td>য-ফলা</td><td>পৃথায়ক</td><td>কোলন</td><td>ডট</td><td>স্ল্যাশ</td><td>সেমিকোলন</td></tr>
+  <tr><td>b</td><td>z</td><td>;</td><td>:</td><td>..</td><td>//</td><td>;;</td></tr>
+</table>
 
 ## উদাহরণ
 অক্ষর \= `okfor` `okf;r`, উৎস \= `ut/s`  
