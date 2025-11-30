@@ -225,20 +225,45 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     else
         echo ""
         print_success "Available branches:"
-        echo "$branches" | nl -w2 -s'. '
+        
+        # Store branches in an array for number selection
+        branches_array=()
+        counter=1
+        while IFS= read -r branch; do
+            echo " $counter. $branch"
+            branches_array+=("$branch")
+            ((counter++))
+        done <<< "$branches"
         echo ""
     fi
     
-    read -p "Enter the branch name you want to install: " branch_name
-    if [ -z "$branch_name" ]; then
+    read -p "Enter the branch name or number: " branch_input
+    if [ -z "$branch_input" ]; then
         print_warning "No branch specified. Using 'main' branch."
         branch_name="main"
     else
-        # Verify the branch exists
-        if echo "$branches" | grep -q "^${branch_name}$"; then
-            print_success "Branch '$branch_name' found!"
+        # Check if input is a number
+        if [[ "$branch_input" =~ ^[0-9]+$ ]]; then
+            # User entered a number
+            index=$((branch_input - 1))
+            if [ $index -ge 0 ] && [ $index -lt ${#branches_array[@]} ]; then
+                branch_name="${branches_array[$index]}"
+                print_success "Selected branch: $branch_name"
+            else
+                print_error "Invalid number. Please select a number between 1 and ${#branches_array[@]}."
+                exit 1
+            fi
         else
-            print_warning "Branch '$branch_name' not found in the list, but will attempt to use it anyway."
+            # User entered a branch name
+            branch_name="$branch_input"
+            # Verify the branch exists if we have the list
+            if [ -n "$branches" ]; then
+                if echo "$branches" | grep -q "^${branch_name}$"; then
+                    print_success "Branch '$branch_name' found!"
+                else
+                    print_warning "Branch '$branch_name' not found in the list, but will attempt to use it anyway."
+                fi
+            fi
         fi
         print_status "Will install from branch: $branch_name"
     fi
