@@ -211,12 +211,35 @@ read -p "Install stable release from the main branch? (Y/n): " branch_choice
 branch_choice=${branch_choice:-Y}
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
-    print_status "Check Available branches on: https://github.com/rank-coder/khipro-m17n"
+    print_status "Fetching available branches from GitHub..."
+    
+    # Get list of branches from remote repository
+    branches=$(git ls-remote --heads https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | \
+               awk '{print $2}' | \
+               sed 's#refs/heads/##' | \
+               sort)
+    
+    if [ -z "$branches" ]; then
+        print_warning "Could not fetch branch list. Please check your internet connection."
+        print_status "You can view branches at: https://github.com/rank-coder/khipro-m17n/branches"
+    else
+        echo ""
+        print_success "Available branches:"
+        echo "$branches" | nl -w2 -s'. '
+        echo ""
+    fi
+    
     read -p "Enter the branch name you want to install: " branch_name
     if [ -z "$branch_name" ]; then
         print_warning "No branch specified. Using 'main' branch."
         branch_name="main"
     else
+        # Verify the branch exists
+        if echo "$branches" | grep -q "^${branch_name}$"; then
+            print_success "Branch '$branch_name' found!"
+        else
+            print_warning "Branch '$branch_name' not found in the list, but will attempt to use it anyway."
+        fi
         print_status "Will install from branch: $branch_name"
     fi
 else
