@@ -470,6 +470,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ae  (shift shor-state))
 		(juktoborno  (shift byanjon-state))
 		(byanjon  (shift byanjon-state))
+		(reph)
 		(kar  (shift shor-state))
 		(nil  (shift shor-state))
 	)
