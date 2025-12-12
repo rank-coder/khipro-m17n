@@ -113,7 +113,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("spl" "স্প্ল") ("sph" "স্ফ") ("sb" "স্ব") ("sm" "স্ম") ("sz" "স্য") ("sr" "স্র") ("sl" "স্ল")
 		("hn" "হ্ন") ("hnf" "হ্ণ") ("hb" "হ্ব") ("hm" "হ্ম") ("hz" "হ্য") ("hr" "হ্র") ("hl" "হ্ল")
 ;; oshomvob juktoborno
-		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
+		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("gnff" "গঞ") ("ghnff" "ঘঞ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") ("ngfkk" "ঙ্কক") ("ngfks" "ঙ্কস")
 		
 		("cn" "চন") 
 			("cnf" "চণ") ("cnz" "চন্য") ("cnm" "চন্ম")
@@ -148,7 +148,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			("jnthrff" "জন্থঢ়") ("jndrf" "জন্দড়") ("jndrff" "জন্দঢ়") ("jndhrf" "জন্ধড়") ("jndhrff" "জন্ধঢ়")
 			("jngksh" "জঙ্কশ") ("jngfksh" "জঙ্কশ")
 
-		("ghnf" "ঘণ")
+		("ghnf" "ঘণ") ("ghnfz" "ঘণ্য") ("ghnftf" "ঘণ্ট")
 
 		("tft" "টত") ("dfd" "ডদ") 
 		
