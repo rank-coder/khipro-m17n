@@ -45,7 +45,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("wa" "ওয়া") ("wae" "ওয়্যা") ("we" "ওয়ে") 
 		("ooo" "অং")
 		
-		("oof" "ঽ")
+		("off" "ঽ")
 		
 	)
 	(fkar
@@ -409,7 +409,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(kar
 		("o" "") ("of" "অ")
-		("oof" "ঽ")
+		("off" "ঽ")
 		("a" "া") ("af" "আ")
 		("i" "ি") ("if" "ই")
 		("ii" "ী") ("iif" "ঈ")
