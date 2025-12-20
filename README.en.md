@@ -1,7 +1,7 @@
 [বাংলায় পড়ুন](README.md)
 
 ## Our Website  
-### https://KhiproKeyboard.github.io  
+### https://KhiproTeam.github.io/Khipro/  
 
 # Khipro khipro-m17n  
 

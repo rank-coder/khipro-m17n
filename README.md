@@ -1,6 +1,6 @@
 [Read in English](README.en.md)
 ## আমাদের ওয়েবসাইট (Website):
-### https://KhiproKeyboard.github.io
+### https://KhiproTeam.github.io/Khipro/
 
 # ক্ষিপ্র khipro-m17n
 
