@@ -41,7 +41,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 (title "ক্ষিপ্র")
 (map
 	(shor
-		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("iif" "ইই") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("wi" "ঐ") ("wif" "ওই") ("w" "ও") ("wu" "ঔ") ("wuf" "ওউ") ("ae" "অ্যা") 
+		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("wi" "ঐ") ("w" "ও") ("wu" "ঔ") ("ae" "অ্যা") 
 		("wa" "ওয়া") ("wae" "ওয়্যা") ("we" "ওয়ে") 
 		("ooo" "অং")
 		
@@ -57,7 +57,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("uuf" "ূ") 
 		("qf" "ৃ") 
 		("ef" "ে") 
-		("wif" "ৈ") 
+		("wif" "ৈ")
 		("wf" "ো") 
 		("wuf" "ৌ") 
 		("aef" "্যা")
@@ -206,9 +206,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("uu" "ূ") ("uuf" "ঊ")
 		("q" "ৃ") ("qf" "ঋ")
 		("e" "ে") ("ef" "এ")
-		("wi" "ৈ") ("wif" "োই")
+		("wi" "ৈ") ("wif" "োই") ("wiff" "ওই")
 		("w" "ো") ("wf" "ও")     
-		("wu" "ৌ") ("wuf" "োউ")
+		("wu" "ৌ") ("wuf" "োউ") ("wuff" "ওউ")
 		("ae" "্যা") ("aef" "অ্যা")
 		("uff" "‌ু") ("uuff" "‌ূ") ("qff" "‌ৃ") 
 
