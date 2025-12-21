@@ -206,9 +206,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("uu" "ূ") ("uuf" "ঊ")
 		("q" "ৃ") ("qf" "ঋ")
 		("e" "ে") ("ef" "এ")
-		("wi" "ৈ") ("wif" "োই") ("wiff" "ওই")
+		("wi" "ৈ") ("wif" "োই")
 		("w" "ো") ("wf" "ও")     
-		("wu" "ৌ") ("wuf" "োউ") ("wuff" "ওউ")
+		("wu" "ৌ") ("wuf" "োউ")
 		("ae" "্যা") ("aef" "অ্যা")
 		("uff" "‌ু") ("uuff" "‌ূ") ("qff" "‌ৃ") 
 
