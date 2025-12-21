@@ -93,7 +93,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("ttf" "ট্ট") ("tftf" "ট্ট") ("tfb" "ট্ব") ("tfm" "ট্ম") ("tfz" "ট্য") ("tfr" "ট্র")
 		("ddf" "ড্ড") ("dfdf" "ড্ড") ("dfb" "ড্ব") ("dfz" "ড্য") ("dfr" "ড্র") ("rfg" "ড়্‌গ")
 		("dffz" "ঢ্য") ("dffr" "ঢ্র")
-		("nftf" "ণ্ট") ("nftff" "ণ্ঠ") ("nftffz" "ণ্ঠ্য") ("nfdf" "ণ্ড") ("nfdfz" "ণ্ড্য") ("nfdfr" "ণ্ড্র") ("nfdff" "ণ্ঢ") ("nfnf" "ণ্ণ") ("nfn" "ণ্ণ") ("nfb" "ণ্ব") ("nfm" "ণ্ম") ("nfz" "ণ্য")
+		("nftf" "ণ্ট") ("nftff" "ণ্ঠ") ("nftffz" "ণ্ঠ্য") ("nfdf" "ণ্ড") ("nfdfz" "ণ্ড্য") ("nfdfr" "ণ্ড্র") ("nfdff" "ণ্ঢ") ("nfnf" "ণ্ণ") ("nfn" "ণ্ণ") ("nnf" "ণ্ণ") ("nfb" "ণ্ব") ("nfm" "ণ্ম") ("nfz" "ণ্য")
 		("tt" "ত্ত") ("ttb" "ত্ত্ব") ("ttz" "ত্ত্য") ("tth" "ত্থ") ("tn" "ত্ন") ("tb" "ত্ব") ("tm" "ত্ম") ("tmz" "ত্ম্য") ("tz" "ত্য") ("tr" "ত্র") ("trz" "ত্র্য")
 		("thb" "থ্ব") ("thz" "থ্য") ("thr" "থ্র")
 		("dg" "দ্‌গ") ("dgh" "দ্‌ঘ") ("dd" "দ্দ") ("ddb" "দ্দ্ব") ("ddh" "দ্ধ") ("db" "দ্ব") ("dv" "দ্ভ") ("dvr" "দ্ভ্র") ("dm" "দ্ম") ("dz" "দ্য") ("dr" "দ্র") ("drz" "দ্র্য")
@@ -115,6 +115,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; oshomvob juktoborno
 		("ksh" "কশ") ("kks" "কক্স")  ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("gnff" "গঞ") ("ghnff" "ঘঞ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") 
 		
+		("tnf" "তণ") ("dhnf" "ধণ") ("pnf" "পণ") ("snf" "সণ") ("shnf" "শণ") ("mnf" "মণ")
+
 		("cn" "চন") 
 			("cnf" "চণ") ("cnz" "চন্য") ("cnm" "চন্ম")
 			("cnc" "চঞ্চ") ("cnffc" "চঞ্চ") ("cnj" "চঞ্জ") ("cnffj" "চঞ্জ") ("cnjh" "চঞ্ঝ") ("cnffjh" "চঞ্ঝ") ("cnch" "চঞ্ছ") ("cnffch" "চঞ্ছ")
