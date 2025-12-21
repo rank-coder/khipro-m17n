@@ -41,7 +41,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 (title "ক্ষিপ্র")
 (map
 	(shor
-		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("wi" "ঐ") ("w" "ও") ("wu" "ঔ") ("ae" "অ্যা") 
+		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("iif" "ইই") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("wi" "ঐ") ("wif" "ওই") ("w" "ও") ("wu" "ঔ") ("wuf" "ওউ") ("ae" "অ্যা") 
 		("wa" "ওয়া") ("wae" "ওয়্যা") ("we" "ওয়ে") 
 		("ooo" "অং")
 		
@@ -49,20 +49,20 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		
 	)
 	(fkar
-		("fuf" "‌ু") ("fuuf" "‌ূ") ("fqf" "‌ৃ") 
-		("fa" "া")
-		("fi" "ি") 
-		("fii" "ী") 
-		("fu" "ু") 
-		("fuu" "ূ") 
-		("fq" "ৃ") 
-		("fe" "ে") 
-		("fwi" "ৈ") 
-		("fw" "ো") 
-		("fwu" "ৌ") 
-		("fae" "্যা")
-		("fwa" "োয়া")
-		("fwe" "োয়ে")
+		("uff" "‌ু") ("uuff" "‌ূ") ("qff" "‌ৃ") 
+		("af" "া")
+		("if" "ি") 
+		("iif" "ী") 
+		("uf" "ু") 
+		("uuf" "ূ") 
+		("qf" "ৃ") 
+		("ef" "ে") 
+		("wif" "ৈ") 
+		("wf" "ো") 
+		("wuf" "ৌ") 
+		("aef" "্যা")
+		("waf" "োয়া")
+		("wef" "োয়ে")
 		("oo" "ং") 
 	)
 	(byanjon
