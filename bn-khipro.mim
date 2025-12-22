@@ -438,6 +438,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			("nfn/" "ণন")
 				("nfn/tf" "ণন্ট") ("nfn/tfr" "ণন্ট্র") ("nfn/tff" "ণন্ঠ") ("nfn/df" "ণন্ড") ("nfn/dfr" "ণন্ড্র") ("nfn/t" "ণন্ত") ("nfn/tb" "ণন্ত্ব") ("nfn/tr" "ণন্ত্র") ("nfn/trz" "ণন্ত্র্য") ("nfn/th" "ণন্থ") ("nfn/thr" "ণন্থ্র") ("nfn/d" "ণন্দ") ("nfn/db" "ণন্দ্ব") ("nfn/dz" "ণন্দ্য") ("nfn/dr" "ণন্দ্র") ("nfn/dh" "ণন্ধ") ("nfn/dhz" "ণন্ধ্য") ("nfn/dhr" "ণন্ধ্র") ("nfn/n" "ণন্ন") ("nfn/b" "ণন্ব") ("nfn/m" "ণন্ম") ("nfn/z" "ণন্য") ("nfn/s" "ণন্স")
 			
+			("nnf/" "নণ")
+				("nnf/tf" "ণন্ট") ("nnf/tfr" "ণন্ট্র") ("nnf/tff" "ণন্ঠ") ("nnf/df" "ণন্ড") ("nnf/dfr" "ণন্ড্র") ("nnf/t" "ণন্ত") ("nnf/tb" "ণন্ত্ব") ("nnf/tr" "ণন্ত্র") ("nnf/trz" "ণন্ত্র্য") ("nnf/th" "ণন্থ") ("nnf/thr" "ণন্থ্র") ("nnf/d" "ণন্দ") ("nnf/db" "ণন্দ্ব") ("nnf/dz" "ণন্দ্য") ("nnf/dr" "ণন্দ্র") ("nnf/dh" "ণন্ধ") ("nnf/dhz" "ণন্ধ্য") ("nnf/dhr" "ণন্ধ্র") ("nnf/n" "ণন্ন") ("nnf/b" "ণন্ব") ("nnf/m" "ণন্ম") ("nnf/z" "ণন্য") ("nnf/s" "ণন্স")
+			
 			("nfb/" "ণব")
 				("nfb/j" "ণব্জ") ("nfb/d" "ণব্দ") ("nfb/dh" "ণব্ধ") ("nfb/b" "ণব্ব") ("nfb/z" "ণব্য") ("nfb/r" "ণব্র") ("nfb/l" "ণব্ল")
 			
