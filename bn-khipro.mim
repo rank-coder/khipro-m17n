@@ -43,7 +43,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(shor
 		("o" "অ") ("a" "আ") ("i" "ই") ("ii" "ঈ") ("u" "উ") ("uu" "ঊ") ("q" "ঋ") ("e" "এ") ("wi" "ঐ") ("w" "ও") ("wu" "ঔ") ("ae" "অ্যা") 
 		("wa" "ওয়া") ("wae" "ওয়্যা") ("we" "ওয়ে") 
-		("ooo" "অং")
+		("ooo" "অঃ")
 		
 		("off" "ঽ")
 		
@@ -64,7 +64,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("aef" "্যা")
 		("waf" "োয়া")
 		("wef" "োয়ে")
-		("oo" "ং") 
+		("oo" "ঃ") 
 	)
 	(byanjon
 		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ng" "ঙ")
@@ -825,7 +825,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("waf" "ওয়া") ("wa" "োয়া")
 		("wae" "ওয়্যা")
 
-		("oo" "ং") 
+		("oo" "ঃ") 
 
 	)
 	(ongko
@@ -835,7 +835,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("O" "o") ("P" "p") ("Q" "q") ("R" "r") ("S" "s") ("T" "t") ("U" "u") ("V" "v") ("W" "w") ("X" "x") ("Y" "y") ("Z" "z")
 	)
 	(diacritic
-		("qq" "্") ("xx" "্‌") ("t/" "ৎ") ("x" "ঃ") ("/" "ঁ") ("//" "/") ("t//" "ত/")
+		("qq" "্") ("xx" "্‌") ("t/" "ৎ") ("x" "ং") ("/" "ঁ") ("//" "/") ("t//" "ত/")
 		("`" "`") ("``" "‌") ("```" "``")
 		("``f" "‍")
 
