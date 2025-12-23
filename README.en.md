@@ -336,7 +336,7 @@ Detailed mapping and documentation are available on our website: https://KhiproK
 বিজ্ঞান \= `biggan`, অঞ্চল \= `oncol`, ব্যঞ্জন \= `bznjon`  
 
 # Contact  
-1. **Khipro: Bangla Input Method Project Group:** https://t.me/KhiproKeyboard  
+1. **Khipro: Bangla Input Method Project Group:** https://t.me/KhiproChat  
 2. **Discord:** https://discord.gg/GPt6s8cb48  
 3. **Bangla Localization Community Group:** https://t.me/BanglaLocalizationCommunity  
 4. **Linux Bangla Group:** https://t.me/linux_bangla  

@@ -350,6 +350,6 @@ fi
 
 echo ""
 print_status "If you encounter any issues, please visit:"
-echo "  Our telegram group    ::    https://t.me/KhiproKeyboard"
+echo "  Our telegram group    ::    https://t.me/KhiproChat"
 echo ""
 print_warning "COMPUTER LOG OUT KORE LOG-IN KORUN"
