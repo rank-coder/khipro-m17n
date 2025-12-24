@@ -13,7 +13,8 @@ This is the **m17n version** of Khipro. When used with Typing-booster, it provid
 * **On Windows:** The two new variants of the Borno keyboard — [Borno Native](https://codepotro.com/borno/) and [Borno Drops](https://codepotro.com/borno-drops/) — come with the Khipro layout built-in.  
 * **On Android:** The Khipro layout is available in [HeliBoard](https://github.com/Helium314/HeliBoard/). It will also be available in the Borno Android app soon.  
 
-CAUTION: This project is powered by github 🌟s. Go ahead and *star* it please!
+> [!NOTE]
+> This project is powered by github 🌟s. Go ahead and *star* it please!
 
 # Documentation  
 
