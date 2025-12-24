@@ -934,7 +934,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(ng )
 	(reph
-		("rr" "র্")  ("r" "র")
+		("rr" "র্")  ("r" "র") ("rr/" "রর")
 	)
 	(phola
 		("r" "র") ("z" "য")
@@ -975,7 +975,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 		;; স্ল্যাশযুক্ত যুক্তবর্ণ ----------------------------------------------
 
-			("rz//" "র‍্য/")
+			("rz//" "র‍্য/") ("rr//" "রর/")
 
 			("kk//" "ক্ক/") ("ktf//" "ক্ট/") ("kt//" "ক্ত/") ("kb//" "ক্ব/") ("km//" "ক্ম/") ("kz//" "ক্য/") ("kr//" "ক্র/") ("kl//" "ক্ল/") ("kf//" "ক্ষ/") ("ksf//" "ক্ষ/") ("kkh//" "ক্ষ/") ("ks//" "ক্স/")
 
