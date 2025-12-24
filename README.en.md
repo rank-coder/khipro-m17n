@@ -12,7 +12,7 @@ This is the **m17n version** of Khipro. When used with Typing-booster, it provid
 * **On Linux:** khipro-m17n can be used directly. It works through ibus or fcitx. Detailed instructions for Linux use are included in this documentation.  
 * **On Windows:** The two new variants of the Borno keyboard — [Borno Native](https://codepotro.com/borno/) and [Borno Drops](https://codepotro.com/borno-drops/) — come with the Khipro layout built-in.  
 * **On Android:** The Khipro layout is available in [HeliBoard](https://github.com/Helium314/HeliBoard/). It will also be available in the Borno Android app soon.  
-* To understand more easily, visit our website: Khipro’s website → https://KhiproKeyboard.github.io  
+
 
 # Documentation  
 
@@ -34,7 +34,7 @@ On Linux, with Typing-booster, Khipro becomes even faster, as it provides predic
 
 <br> Khipro keyboard provides double benefits if used with Typing-booster. However, it can also be used without Typing-booster. Suggestions will appear as shown above; they can be instantly committed by using keyboard shortcuts according to the number of the suggestion. <br>  
 Now let’s take a look at the keyboard mapping of Khipro.    
-Detailed mapping and documentation are available on our website: https://KhiproKeyboard.github.io/docs  
+Detailed mapping and documentation are available on our website: https://KhiproTeam.github.io/khipro/docs  
 
 ## Khipro Phonetic Mapping Table
 <table>
@@ -337,6 +337,7 @@ Detailed mapping and documentation are available on our website: https://KhiproK
 
 # Contact  
 1. **Khipro: Bangla Input Method Project Group:** https://t.me/KhiproChat  
-2. **Discord:** https://discord.gg/GPt6s8cb48  
-3. **Bangla Localization Community Group:** https://t.me/BanglaLocalizationCommunity  
-4. **Linux Bangla Group:** https://t.me/linux_bangla  
+2. **Khipro Tips Telegram Channel** https://t.me/KhiproTips
+3. **Discord:** https://discord.gg/GPt6s8cb48  
+4. **Bangla Localization Community Group:** https://t.me/BanglaLocalizationCommunity  
+5. **Linux Bangla Group:** https://t.me/linux_bangla  
