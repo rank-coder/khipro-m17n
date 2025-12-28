@@ -142,7 +142,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			("ksh" "কশ") ("kks" "ক্কস") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("gnff" "গঞ") ("ghnff" "ঘঞ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") 
 			
 			("cn" "চন") 
-				("cnf" "চণ") ("cnz" "চন্য") ("cnm" "চন্ম")
+				("cnf" "চণ")
 				("cnc" "চঞ্চ") ("cnffc" "চঞ্চ") ("cnj" "চঞ্জ") ("cnffj" "চঞ্জ") ("cnjh" "চঞ্ঝ") ("cnffjh" "চঞ্ঝ") ("cnch" "চঞ্ছ") ("cnffch" "চঞ্ছ")
 				("cnftf" "চণ্ট") ("cnftff" "চণ্ঠ") ("cnftffz" "চণ্ঠ্য") ("cnfdf" "চণ্ড") ("cnfdfz" "চণ্ড্য") ("cnfdfr" "চণ্ড্র") ("cnfdff" "চণ্ঢ") ("cnfnf" "চণ্ণ") ("cnfn" "চণ্ণ") ("cnfb" "চণ্ব") ("cnfm" "চণ্ম") ("cnfz" "চণ্য")
 				("cntf" "চন্ট") ("cntfr" "চন্ট্র") ("cntff" "চন্ঠ") ("cndf" "চন্ড") ("cndfr" "চন্ড্র") ("cnt" "চন্ত") ("cntb" "চন্ত্ব") ("cntr" "চন্ত্র") ("cntrz" "চন্ত্র্য") ("cnth" "চন্থ") ("cnthr" "চন্থ্র") ("cnd" "চন্দ") ("cndb" "চন্দ্ব") ("cndz" "চন্দ্য") 
@@ -159,7 +159,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 
 			("jn" "জন") 
-				("jnf" "জণ") ("jnz" "জন্য") ("jnm" "জন্ম")
+				("jnf" "জণ")
 				("jnc" "জঞ্চ") ("jnffc" "জঞ্চ") ("jnj" "জঞ্জ") ("jnffj" "জঞ্জ") ("jnjh" "জঞ্ঝ") ("jnffjh" "জঞ্ঝ") ("jnch" "জঞ্ছ") ("jnffch" "জঞ্ছ")
 				("jnftf" "জণ্ট") ("jnftff" "জণ্ঠ") ("jnftffz" "জণ্ঠ্য") ("jnfdf" "জণ্ড") ("jnfdfz" "জণ্ড্য") ("jnfdfr" "জণ্ড্র") ("jnfdff" "জণ্ঢ") ("jnfnf" "জণ্ণ") ("jnfn" "জণ্ণ") ("jnfb" "জণ্ব") ("jnfm" "জণ্ম") ("jnfz" "জণ্য")
 				("jntf" "জন্ট") ("jntfr" "জন্ট্র") ("jntff" "জন্ঠ") ("jndf" "জন্ড") ("jndfr" "জন্ড্র") ("jnt" "জন্ত") ("jntb" "জন্ত্ব") ("jntr" "জন্ত্র") ("jntrz" "জন্ত্র্য") ("jnth" "জন্থ") ("jnthr" "জন্থ্র") ("jnd" "জন্দ") ("jndb" "জন্দ্ব") ("jndz" "জন্দ্য") 
@@ -548,7 +548,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				("dd/g" "দদ্‌গ") ("dd/gh" "দদ্‌ঘ") ("dd/d" "দদ্দ") ("dd/db" "দদ্দ্ব") ("dd/dh" "দদ্ধ") ("dd/b" "দদ্ব") ("dd/v" "দদ্ভ") ("dd/vr" "দদ্ভ্র") ("dd/m" "দদ্ম") ("dd/z" "দদ্য") ("dd/r" "দদ্র") ("dd/rz" "দদ্র্য")
 					("dd/h" "দধ")
 					("dd/f" "দড")
-					("dd/f" "দঢ")
+					("dd/ff" "দঢ")
 			
 			("ddh/" "দধ")
 				("ddh/n" "দধ্ন") ("ddh/b" "দধ্ব") ("ddh/m" "দধ্ম") ("ddh/z" "দধ্য") ("ddh/r" "দধ্র")
@@ -612,7 +612,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				("nd/g" "নদ্‌গ") ("nd/gh" "নদ্‌ঘ") ("nd/d" "নদ্দ") ("nd/db" "নদ্দ্ব") ("nd/dh" "নদ্ধ") ("nd/b" "নদ্ব") ("nd/v" "নদ্ভ") ("nd/vr" "নদ্ভ্র") ("nd/m" "নদ্ম") ("nd/z" "নদ্য") ("nd/r" "নদ্র") ("nd/rz" "নদ্র্য")
 					("nd/h" "নধ")
 					("nd/f" "নড")
-					("nd/f" "নঢ")
+					("nd/ff" "নঢ")
 			
 			("ndh/" "নধ")
 				("ndh/n" "নধ্ন") ("ndh/b" "নধ্ব") ("ndh/m" "নধ্ম") ("ndh/z" "নধ্য") ("ndh/r" "নধ্র")
@@ -687,7 +687,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				("bd/g" "বদ্‌গ") ("bd/gh" "বদ্‌ঘ") ("bd/d" "বদ্দ") ("bd/db" "বদ্দ্ব") ("bd/dh" "বদ্ধ") ("bd/b" "বদ্ব") ("bd/v" "বদ্ভ") ("bd/vr" "বদ্ভ্র") ("bd/m" "বদ্ম") ("bd/z" "বদ্য") ("bd/r" "বদ্র") ("bd/rz" "বদ্র্য")
 					("bd/h" "বধ")
 					("bd/f" "বড")
-					("bd/f" "বঢ")
+					("bd/ff" "বঢ")
 			
 			("bdh/" "বধ")
 				("bdh/n" "বধ্ন") ("bdh/b" "বধ্ব") ("bdh/m" "বধ্ম") ("bdh/z" "বধ্য") ("bdh/r" "বধ্র")
