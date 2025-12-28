@@ -364,7 +364,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				("cz/z" "চয্য")
 			
 			("jj/" "জজ")
-				("jj/j" "জজ্জ") ("jj/jb" "জজ্জ্ব") ("jj/jh" "জজ্ঝ") ("gg" "জজ্ঞ") ("jj/nff" "জজ্ঞ") ("jj/b" "জজ্ব") ("jj/z" "জজ্য") ("jj/r" "জজ্র")
+				("jj/j" "জজ্জ") ("jj/jb" "জজ্জ্ব") ("jj/jh" "জজ্ঝ") ("jj/nff" "জজ্ঞ") ("jj/b" "জজ্ব") ("jj/z" "জজ্য") ("jj/r" "জজ্র")
 					("jj/h" "জঝ")
 			
 			("jjh/" "জঝ")
@@ -396,11 +396,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					("nffc/h" "ঞছ")
 			
 			("nj/" "নজ")
-				("nj/j" "নজ্জ") ("nj/jb" "নজ্জ্ব") ("nj/jh" "নজ্ঝ") ("gg" "নজ্ঞ") ("nj/nff" "নজ্ঞ") ("nj/b" "নজ্ব") ("nj/z" "নজ্য") ("nj/r" "নজ্র")
+				("nj/j" "নজ্জ") ("nj/jb" "নজ্জ্ব") ("nj/jh" "নজ্ঝ") ("nj/nff" "নজ্ঞ") ("nj/b" "নজ্ব") ("nj/z" "নজ্য") ("nj/r" "নজ্র")
 					("nj/h" "নঝ")
 			
 			("nffj/" "ঞজ")
-				("nffj/j" "ঞজ্জ") ("nffj/jb" "ঞজ্জ্ব") ("nffj/jh" "ঞজ্ঝ") ("gg" "ঞজ্ঞ") ("nffj/nff" "ঞজ্ঞ") ("nffj/b" "ঞজ্ব") ("nffj/z" "ঞজ্য") ("nffj/r" "ঞজ্র")
+				("nffj/j" "ঞজ্জ") ("nffj/jb" "ঞজ্জ্ব") ("nffj/jh" "ঞজ্ঝ") ("nffj/nff" "ঞজ্ঞ") ("nffj/b" "ঞজ্ব") ("nffj/z" "ঞজ্য") ("nffj/r" "ঞজ্র")
 					("nffj/h" "ঞঝ")
 			
 			("njh/" "নঝ")
@@ -680,7 +680,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				("phl/k" "ফল্ক") ("phl/kz" "ফল্ক্য") ("phl/g" "ফল্গ") ("phl/tf" "ফল্ট") ("phl/df" "ফল্ড") ("phl/p" "ফল্প") ("phl/ph" "ফল্ফ") ("phl/b" "ফল্ব") ("phl/v" "ফল্‌ভ") ("phl/m" "ফল্ম") ("phl/z" "ফল্য") ("phl/l" "ফল্ল")
 			
 			("bj/" "বজ")
-				("bj/j" "বজ্জ") ("bj/jb" "বজ্জ্ব") ("bj/jh" "বজ্ঝ") ("gg" "বজ্ঞ") ("bj/nff" "বজ্ঞ") ("bj/b" "বজ্ব") ("bj/z" "বজ্য") ("bj/r" "বজ্র")
+				("bj/j" "বজ্জ") ("bj/jb" "বজ্জ্ব") ("bj/jh" "বজ্ঝ") ("bj/nff" "বজ্ঞ") ("bj/b" "বজ্ব") ("bj/z" "বজ্য") ("bj/r" "বজ্র")
 					("bj/h" "বঝ")
 			
 			("bd/" "বদ")
