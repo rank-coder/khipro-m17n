@@ -43,14 +43,7 @@
 ## [লাইভ ডেমো](https://khiproteam.github.io/khipro/quickstart/#libh-tipn-dm)
 ক্ষিপ্র ইনস্টল করা ছাড়াই টেস্টিং করতে [এখানে ক্লিক করুন](https://khiproteam.github.io/khipro/quickstart/#libh-tipn-dm)।
 
-## টাইপিংয়ের কিছু উদাহরণ
-অক্ষর \= `okfor` `okf;r`, উৎস \= `ut/s`  
-কলম \= `kolom` `k;l;m`, তাঁর \= `ta/r`  
-বৈ \= `boi`, বই \= `b;i`, বৌ \= `bou`, বউ \= `b;u`  
-ব্যাংক \= `baeng;k` `baeook` `bzaook`  
-শৃঙ্খলা \= `shqngkhola` `shqngfkh;la`  
-অ্যাপ \= `aep`, হোয়াটসঅ্যাপ \= `hwatfsaefp`  
-বিজ্ঞান \= `biggan`, অঞ্চল \= `oncol`, ব্যঞ্জন \= `bznjon`
+
 
 # যোগাযোগ
 1. ক্ষিপ্র টেলিগ্রাম গ্রুপ: https://t.me/KhiproChat

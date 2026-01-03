@@ -43,14 +43,7 @@ Visit https://KhiproTeam.github.io/khipro/quickstart
 ## [Live Demo](https://khiproteam.github.io/khipro/quickstart/#libh-tipn-dm)
 Try Khipro without installation: [Click Here](https://khiproteam.github.io/khipro/quickstart/#libh-tipn-dm).
 
-## Typing Examples
-অক্ষর \= `okfor` `okf;r`, উৎস \= `ut/s`  
-কলম \= `kolom` `k;l;m`, তাঁর \= `ta/r`  
-বৈ \= `boi`, বই \= `b;i`, বৌ \= `bou`, বউ \= `b;u`  
-ব্যাংক \= `baeng;k` `baeook` `bzaook`  
-শৃঙ্খলা \= `shqngkhola` `shqngfkh;la`  
-অ্যাপ \= `aep`, হোয়াটসঅ্যাপ \= `hwatfsaefp`  
-বিজ্ঞান \= `biggan`, অঞ্চল \= `oncol`, ব্যঞ্জন \= `bznjon`
+
 
 # Contact
 1. Khipro Telegram Group: https://t.me/KhiproChat
