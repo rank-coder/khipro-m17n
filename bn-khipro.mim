@@ -340,7 +340,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(juktoborno-state
 		(deleter
-			(move @-) (delete @- DELETER) (move @>) (set DELETER 0)
+			(!= DELETER 0) (move @-) (delete @- DELETER) (move @>) (set DELETER 0)
 		)
 		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
