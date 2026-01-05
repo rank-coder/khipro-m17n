@@ -1102,6 +1102,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(ae
 		("ae" "‍্যা")
 	)
+	(backspace
+  		( (BackSpace) (undo) )
+  	)
 )
 
 (state
@@ -1116,6 +1119,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(reph (shift reph-state))
 		(juktoborno  (shift byanjon-state))
 		(byanjon (shift byanjon-state))
+		(backspace)
 	)
 	(shor-state
 		(diacritic (commit) )
@@ -1129,6 +1133,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(reph (shift reph-state))
 		(juktoborno (shift byanjon-state))
 		(byanjon (shift byanjon-state))
+		(backspace)
 	)
 	(reph-state
 		(prithayok (shift shor-state))
@@ -1139,6 +1144,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon  (shift byanjon-state))
 		(reph)
 		(kar  (shift shor-state))
+		(backspace)
 		(nil  (shift shor-state))
 	)
 	(byanjon-state
@@ -1153,5 +1159,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(move @-) (insert ?্) (move @>)
 		)
 		(byanjon )
+		(backspace)
 	)
 )
