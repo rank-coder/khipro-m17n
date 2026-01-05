@@ -139,7 +139,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		
 		;; অসম্ভব যুক্তবর্ণ -----------------------------------------------------
 
-			("ksh" (set DELETER 0) "কশ") ("kks" "ক্কস") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("gnff" "গঞ") ("ghnff" "ঘঞ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") 
+			("ksh" "কশ") ("kks" "ক্কস") ("nsh" "নশ") ("psh" "পশ") ("ld" "লদ") ("gd" "গদ") ("gnff" "গঞ") ("ghnff" "ঘঞ") ("ngkk" "ঙ্কক") ("ngks" "ঙ্কস") 
 			
 			("cn" "চন") 
 				("cnf" "চণ")
