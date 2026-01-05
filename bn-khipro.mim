@@ -67,75 +67,75 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("oo" "ঃ") 
 	)
 	(byanjon
-		("k" "ক") ("kh" "খ") ("g" "গ") ("gh" "ঘ") ("ng" "ঙ")
-		("c" "চ") ("ch" "ছ") ("j" "জ") ("jh" "ঝ") ("nff" "ঞ") 
+		("k" "ক") ("kh" "খ") ("kh/" "কহ") ("g" "গ") ("gh" "ঘ") ("gh/" "গহ") ("ng" "ঙ") ("ng/" "নগ")
+		("c" "চ") ("ch" "ছ") ("ch/" "চহ") ("j" "জ") ("jh" "ঝ") ("jh/" "জহ") ("nff" "ঞ") 
 		("tf" "ট") ("tff" "ঠ") ("df" "ড") ("dff" "ঢ") ("nf" "ণ") 
-		("t" "ত") ("th" "থ") ("d" "দ") ("dh" "ধ") ("n" "ন") 
-		("p" "প") ("ph" "ফ") ("b" "ব") ("v" "ভ") ("m" "ম") 
-		("z" "য") ("l" "ল") ("sh" "শ") ("sf" "ষ") ("s" "স") ("h" "হ") 
+		("t" "ত") ("th" "থ") ("th/" "তহ") ("d" "দ") ("dh" "ধ") ("dh/" "দহ") ("n" "ন") 
+		("p" "প") ("ph" "ফ") ("ph/" "পহ") ("b" "ব") ("v" "ভ") ("m" "ম") 
+		("z" "য") ("l" "ল") ("sh" "শ") ("sh/" "সহ") ("sf" "ষ") ("s" "স") ("h" "হ") 
 		("y" "য়") ("rf" "ড়") ("rff" "ঢ়")
 		(",," "়")
 	)
 	(juktoborno
-		("rz" "র‍্য")
+		("rz" (set DELETER 2) "র‍্য")
 
-		("kk" (set DELETER 1) "ক্ক") ("ktf" "ক্ট") ("ktfr" "ক্ট্র") ("kt" "ক্ত") ("ktr" "ক্ত্র") ("kb" "ক্ব") ("km" "ক্ম") ("kz" "ক্য") ("kr" "ক্র") ("kl" "ক্ল") ("kf" "ক্ষ") ("ksf" "ক্ষ") ("kkh" "ক্ষ") ("kfnf" "ক্ষ্ণ") ("kfn" "ক্ষ্ণ") ("ksfnf" "ক্ষ্ণ") ("ksfn" "ক্ষ্ণ") ("kkhn" "ক্ষ্ণ") ("kkhnf" "ক্ষ্ণ") ("kfb" "ক্ষ্ব") ("ksfb" "ক্ষ্ব") ("kkhb" "ক্ষ্ব") ("kfm" "ক্ষ্ম") ("kkhm" "ক্ষ্ম") ("ksfm" "ক্ষ্ম") ("kfz" "ক্ষ্য") ("ksfz" "ক্ষ্য") ("kkhz" "ক্ষ্য") ("ks" "ক্স")
+		("kk" (set DELETER 1) "ক্ক") ("ktf" (set DELETER 1) "ক্ট") ("ktfr" (set DELETER 1) "ক্ট্র") ("kt" (set DELETER 1) "ক্ত") ("ktr" (set DELETER 1) "ক্ত্র") ("kb" (set DELETER 1) "ক্ব") ("km" (set DELETER 1) "ক্ম") ("kz" (set DELETER 1) "ক্য") ("kr" (set DELETER 1) "ক্র") ("kl" (set DELETER 1) "ক্ল") ("kf" (set DELETER 1) "ক্ষ") ("ksf" (set DELETER 1) "ক্ষ") ("kkh" (set DELETER 1) "ক্ষ") ("kfnf" (set DELETER 1) "ক্ষ্ণ") ("kfn" (set DELETER 1) "ক্ষ্ণ") ("ksfnf" (set DELETER 1) "ক্ষ্ণ") ("ksfn" (set DELETER 1) "ক্ষ্ণ") ("kkhn" (set DELETER 1) "ক্ষ্ণ") ("kkhnf" (set DELETER 1) "ক্ষ্ণ") ("kfb" (set DELETER 1) "ক্ষ্ব") ("ksfb" (set DELETER 1) "ক্ষ্ব") ("kkhb" (set DELETER 1) "ক্ষ্ব") ("kfm" (set DELETER 1) "ক্ষ্ম") ("kkhm" (set DELETER 1) "ক্ষ্ম") ("ksfm" (set DELETER 1) "ক্ষ্ম") ("kfz" (set DELETER 1) "ক্ষ্য") ("ksfz" (set DELETER 1) "ক্ষ্য") ("kkhz" (set DELETER 1) "ক্ষ্য") ("ks" (set DELETER 1) "ক্স")
 
-		("khz" "খ্য") ("khr" "খ্র")
+		("khz" (set DELETER 1) "খ্য") ("khr" (set DELETER 1) "খ্র")
 
-		("ggg" "গ্গ") ("gnf" "গ্‌ণ") ("gdh" "গ্ধ") ("gdhz" "গ্ধ্য") ("gdhr" "গ্ধ্র") ("gn" "গ্ন") ("gnz" "গ্ন্য") ("gb" "গ্ব") ("gm" "গ্ম") ("gz" "গ্য") ("gr" "গ্র") ("grz" "গ্র্য") ("gl" "গ্ল")
+		("ggg" (set DELETER 1) "গ্গ") ("gnf" (set DELETER 2) "গ্‌ণ") ("gdh" (set DELETER 1) "গ্ধ") ("gdhz" (set DELETER 1) "গ্ধ্য") ("gdhr" (set DELETER 1) "গ্ধ্র") ("gn" (set DELETER 1) "গ্ন") ("gnz" (set DELETER 1) "গ্ন্য") ("gb" (set DELETER 1) "গ্ব") ("gm" (set DELETER 1) "গ্ম") ("gz" (set DELETER 1) "গ্য") ("gr" (set DELETER 1) "গ্র") ("grz" (set DELETER 1) "গ্র্য") ("gl" (set DELETER 1) "গ্ল")
 
-		("ghn" "ঘ্ন") ("ghr" "ঘ্র") ("ghz" "ঘ্য")
+		("ghn" (set DELETER 1) "ঘ্ন") ("ghr" (set DELETER 1) "ঘ্র") ("ghz" (set DELETER 1) "ঘ্য")
 
-		("ngk" "ঙ্ক") ("ngkt" "ঙ্‌ক্ত") ("ngkz" "ঙ্ক্য") ("ngkr" "ঙ্ক্র") ("ngkf" "ঙ্ক্ষ") ("ngkkh" "ঙ্ক্ষ") ("ngksf" "ঙ্ক্ষ") ("ngkh" "ঙ্খ") ("ngg" "ঙ্গ") ("nggz" "ঙ্গ্য") ("nggh" "ঙ্ঘ") ("ngghz" "ঙ্ঘ্য") ("ngghr" "ঙ্ঘ্র") ("ngm" "ঙ্ম")
+		("ngk" (set DELETER 1) "ঙ্ক") ("ngkt" (set DELETER 1) "ঙ্‌ক্ত") ("ngkz" (set DELETER 1) "ঙ্ক্য") ("ngkr" (set DELETER 1) "ঙ্ক্র") ("ngkf" (set DELETER 1) "ঙ্ক্ষ") ("ngkkh" (set DELETER 1) "ঙ্ক্ষ") ("ngksf" (set DELETER 1) "ঙ্ক্ষ") ("ngkh" (set DELETER 1) "ঙ্খ") ("ngg" (set DELETER 1) "ঙ্গ") ("nggz" (set DELETER 1) "ঙ্গ্য") ("nggh" (set DELETER 1) "ঙ্ঘ") ("ngghz" (set DELETER 1) "ঙ্ঘ্য") ("ngghr" (set DELETER 1) "ঙ্ঘ্র") ("ngm" (set DELETER 1) "ঙ্ম")
 
-		("cc" "চ্চ") ("cch" "চ্ছ") ("cchb" "চ্ছ্ব") ("cchr" "চ্ছ্র") ("cnff" "চ্ঞ") ("cb" "চ্ব") ("cz" "চ্য")
+		("cc" (set DELETER 1) "চ্চ") ("cch" (set DELETER 1) "চ্ছ") ("cchb" (set DELETER 1) "চ্ছ্ব") ("cchr" (set DELETER 1) "চ্ছ্র") ("cnff" (set DELETER 1) "চ্ঞ") ("cb" (set DELETER 1) "চ্ব") ("cz" (set DELETER 1) "চ্য")
 
-		("jj" "জ্জ") ("jjb" "জ্জ্ব") ("jjh" "জ্ঝ") ("gg" "জ্ঞ") ("jnff" "জ্ঞ") ("jb" "জ্ব") ("jz" "জ্য") ("jr" "জ্র")
+		("jj" (set DELETER 1) "জ্জ") ("jjb" (set DELETER 1) "জ্জ্ব") ("jjh" (set DELETER 1) "জ্ঝ") ("gg" (set DELETER 1) "জ্ঞ") ("jnff" (set DELETER 1) "জ্ঞ") ("jb" (set DELETER 1) "জ্ব") ("jz" (set DELETER 1) "জ্য") ("jr" (set DELETER 1) "জ্র")
 
-		("nc" "ঞ্চ") ("nffc" "ঞ্চ") ("nj" "ঞ্জ") ("nffj" "ঞ্জ") ("njh" "ঞ্ঝ") ("nffjh" "ঞ্ঝ") ("nch" "ঞ্ছ") ("nffch" "ঞ্ছ")
+		("nc" (set DELETER 1) "ঞ্চ") ("nffc" (set DELETER 1) "ঞ্চ") ("nj" (set DELETER 1) "ঞ্জ") ("nffj" (set DELETER 1) "ঞ্জ") ("njh" (set DELETER 1) "ঞ্ঝ") ("nffjh" (set DELETER 1) "ঞ্ঝ") ("nch" (set DELETER 1) "ঞ্ছ") ("nffch" (set DELETER 1) "ঞ্ছ")
 
-		("ttf" "ট্ট") ("tftf" "ট্ট") ("tfb" "ট্ব") ("tfm" "ট্ম") ("tfz" "ট্য") ("tfr" "ট্র")
+		("ttf" (set DELETER 1) "ট্ট") ("tftf" (set DELETER 1) "ট্ট") ("tfb" (set DELETER 1) "ট্ব") ("tfm" (set DELETER 1) "ট্ম") ("tfz" (set DELETER 1) "ট্য") ("tfr" (set DELETER 1) "ট্র")
 
-		("ddf" "ড্ড") ("dfdf" "ড্ড") ("dfb" "ড্ব") ("dfz" "ড্য") ("dfr" "ড্র") 
+		("ddf" (set DELETER 1) "ড্ড") ("dfdf" (set DELETER 1) "ড্ড") ("dfb" (set DELETER 1) "ড্ব") ("dfz" (set DELETER 1) "ড্য") ("dfr" (set DELETER 1) "ড্র") 
 		
-		("rfg" "ড়্‌গ")
+		("rfg" (set DELETER 2) "ড়্‌গ")
 
-		("dffz" "ঢ্য") ("dffr" "ঢ্র")
+		("dffz" (set DELETER 1) "ঢ্য") ("dffr" (set DELETER 1) "ঢ্র")
     
-		("nftf" "ণ্ট") ("nftff" "ণ্ঠ") ("nftffz" "ণ্ঠ্য") ("nfdf" "ণ্ড") ("nfdfz" "ণ্ড্য") ("nfdfr" "ণ্ড্র") ("nfdff" "ণ্ঢ") ("nfnf" "ণ্ণ") ("nfn" "ণ্ণ") ("nnf" "ণ্ণ") ("nfb" "ণ্ব") ("nfm" "ণ্ম") ("nfz" "ণ্য")
+		("nftf" (set DELETER 1) "ণ্ট") ("nftff" (set DELETER 1) "ণ্ঠ") ("nftffz" (set DELETER 1) "ণ্ঠ্য") ("nfdf" (set DELETER 1) "ণ্ড") ("nfdfz" (set DELETER 1) "ণ্ড্য") ("nfdfr" (set DELETER 1) "ণ্ড্র") ("nfdff" (set DELETER 1) "ণ্ঢ") ("nfnf" (set DELETER 1) "ণ্ণ") ("nfn" (set DELETER 1) "ণ্ণ") ("nnf" (set DELETER 1) "ণ্ণ") ("nfb" (set DELETER 1) "ণ্ব") ("nfm" (set DELETER 1) "ণ্ম") ("nfz" (set DELETER 1) "ণ্য")
 		
-    	("tt" "ত্ত") ("ttb" "ত্ত্ব") ("ttz" "ত্ত্য") ("tth" "ত্থ") ("tn" "ত্ন") ("tb" "ত্ব") ("tm" "ত্ম") ("tmz" "ত্ম্য") ("tz" "ত্য") ("tr" "ত্র") ("trz" "ত্র্য")
+    	("tt" (set DELETER 1) "ত্ত") ("ttb" (set DELETER 1) "ত্ত্ব") ("ttz" (set DELETER 1) "ত্ত্য") ("tth" (set DELETER 1) "ত্থ") ("tn" (set DELETER 1) "ত্ন") ("tb" (set DELETER 1) "ত্ব") ("tm" (set DELETER 1) "ত্ম") ("tmz" (set DELETER 1) "ত্ম্য") ("tz" (set DELETER 1) "ত্য") ("tr" (set DELETER 1) "ত্র") ("trz" (set DELETER 1) "ত্র্য")
 
-		("thb" "থ্ব") ("thz" "থ্য") ("thr" "থ্র")
+		("thb" (set DELETER 1) "থ্ব") ("thz" (set DELETER 1) "থ্য") ("thr" (set DELETER 1) "থ্র")
 
-		("dg" "দ্‌গ") ("dgh" "দ্‌ঘ") ("dd" "দ্দ") ("ddb" "দ্দ্ব") ("ddh" "দ্ধ") ("db" "দ্ব") ("dv" "দ্ভ") ("dvr" "দ্ভ্র") ("dm" "দ্ম") ("dz" "দ্য") ("dr" "দ্র") ("drz" "দ্র্য")
+		("dg" (set DELETER 2) "দ্‌গ") ("dgh" (set DELETER 2) "দ্‌ঘ") ("dd" (set DELETER 1) "দ্দ") ("ddb" (set DELETER 1) "দ্দ্ব") ("ddh" (set DELETER 1) "দ্ধ") ("db" (set DELETER 1) "দ্ব") ("dv" (set DELETER 1) "দ্ভ") ("dvr" (set DELETER 1) "দ্ভ্র") ("dm" (set DELETER 1) "দ্ম") ("dz" (set DELETER 1) "দ্য") ("dr" (set DELETER 1) "দ্র") ("drz" (set DELETER 1) "দ্র্য")
 
-		("dhn" "ধ্ন") ("dhb" "ধ্ব") ("dhm" "ধ্ম") ("dhz" "ধ্য") ("dhr" "ধ্র")
+		("dhn" (set DELETER 1) "ধ্ন") ("dhb" (set DELETER 1) "ধ্ব") ("dhm" (set DELETER 1) "ধ্ম") ("dhz" (set DELETER 1) "ধ্য") ("dhr" (set DELETER 1) "ধ্র")
 
-		("ntf" "ন্ট") ("ntfr" "ন্ট্র") ("ntff" "ন্ঠ") ("ndf" "ন্ড") ("ndfr" "ন্ড্র") ("nt" "ন্ত") ("ntb" "ন্ত্ব") ("ntr" "ন্ত্র") ("ntrz" "ন্ত্র্য") ("nth" "ন্থ") ("nthr" "ন্থ্র") ("nd" "ন্দ") ("ndb" "ন্দ্ব") ("ndz" "ন্দ্য") ("ndr" "ন্দ্র") ("ndh" "ন্ধ") ("ndhz" "ন্ধ্য") ("ndhr" "ন্ধ্র") ("nn" "ন্ন") ("nb" "ন্ব") ("nm" "ন্ম") ("nz" "ন্য") ("ns" "ন্স")
+		("ntf" (set DELETER 1) "ন্ট") ("ntfr" (set DELETER 1) "ন্ট্র") ("ntff" (set DELETER 1) "ন্ঠ") ("ndf" (set DELETER 1) "ন্ড") ("ndfr" (set DELETER 1) "ন্ড্র") ("nt" (set DELETER 1) "ন্ত") ("ntb" (set DELETER 1) "ন্ত্ব") ("ntr" (set DELETER 1) "ন্ত্র") ("ntrz" (set DELETER 1) "ন্ত্র্য") ("nth" (set DELETER 1) "ন্থ") ("nthr" (set DELETER 1) "ন্থ্র") ("nd" (set DELETER 1) "ন্দ") ("ndb" (set DELETER 1) "ন্দ্ব") ("ndz" (set DELETER 1) "ন্দ্য") ("ndr" (set DELETER 1) "ন্দ্র") ("ndh" (set DELETER 1) "ন্ধ") ("ndhz" (set DELETER 1) "ন্ধ্য") ("ndhr" (set DELETER 1) "ন্ধ্র") ("nn" (set DELETER 1) "ন্ন") ("nb" (set DELETER 1) "ন্ব") ("nm" (set DELETER 1) "ন্ম") ("nz" (set DELETER 1) "ন্য") ("ns" (set DELETER 1) "ন্স")
 
-		("ptf" "প্ট") ("pt" "প্ত") ("pn" "প্ন") ("pp" "প্প") ("pz" "প্য") ("pr" "প্র") ("pl" "প্ল") ("ps" "প্স")
+		("ptf" (set DELETER 1) "প্ট") ("pt" (set DELETER 1) "প্ত") ("pn" (set DELETER 1) "প্ন") ("pp" (set DELETER 1) "প্প") ("pz" (set DELETER 1) "প্য") ("pr" (set DELETER 1) "প্র") ("pl" (set DELETER 1) "প্ল") ("ps" (set DELETER 1) "প্স")
 
-		("phr" "ফ্র") ("phl" "ফ্ল")
+		("phr" (set DELETER 1) "ফ্র") ("phl" (set DELETER 1) "ফ্ল")
 
-		("bj" "ব্জ") ("bd" "ব্দ") ("bdh" "ব্ধ") ("bb" "ব্ব") ("bz" "ব্য") ("br" "ব্র") ("bl" "ব্ল")
+		("bj" (set DELETER 1) "ব্জ") ("bd" (set DELETER 1) "ব্দ") ("bdh" (set DELETER 1) "ব্ধ") ("bb" (set DELETER 1) "ব্ব") ("bz" (set DELETER 1) "ব্য") ("br" (set DELETER 1) "ব্র") ("bl" (set DELETER 1) "ব্ল")
 		 
-		("vb" "ভ্ব") ("vz" "ভ্য") ("vr" "ভ্র") ("vl" "ভ্ল")
+		("vb" (set DELETER 1) "ভ্ব") ("vz" (set DELETER 1) "ভ্য") ("vr" (set DELETER 1) "ভ্র") ("vl" (set DELETER 1) "ভ্ল")
 
-		("mn" "ম্ন") ("mp" "ম্প") ("mpr" "ম্প্র") ("mph" "ম্ফ") ("mb" "ম্ব") ("mbr" "ম্ব্র") ("mv" "ম্ভ") ("mvr" "ম্ভ্র") ("mm" "ম্ম") ("mz" "ম্য") ("mr" "ম্র") ("ml" "ম্ল")
+		("mn" (set DELETER 1) "ম্ন") ("mp" (set DELETER 1) "ম্প") ("mpr" (set DELETER 1) "ম্প্র") ("mph" (set DELETER 1) "ম্ফ") ("mb" (set DELETER 1) "ম্ব") ("mbr" (set DELETER 1) "ম্ব্র") ("mv" (set DELETER 1) "ম্ভ") ("mvr" (set DELETER 1) "ম্ভ্র") ("mm" (set DELETER 1) "ম্ম") ("mz" (set DELETER 1) "ম্য") ("mr" (set DELETER 1) "ম্র") ("ml" (set DELETER 1) "ম্ল")
 		
-		("zz" "য্য")
+		("zz" (set DELETER 1) "য্য")
 
-		("lk" "ল্ক") ("lkz" "ল্ক্য") ("lg" "ল্গ") ("ltf" "ল্ট") ("ldf" "ল্ড") ("lp" "ল্প") ("lph" "ল্ফ") ("lb" "ল্ব") ("lv" "ল্‌ভ") ("lm" "ল্ম") ("lz" "ল্য") ("ll" "ল্ল")
+		("lk" (set DELETER 1) "ল্ক") ("lkz" (set DELETER 1) "ল্ক্য") ("lg" (set DELETER 1) "ল্গ") ("ltf" (set DELETER 1) "ল্ট") ("ldf" (set DELETER 1) "ল্ড") ("lp" (set DELETER 1) "ল্প") ("lph" (set DELETER 1) "ল্ফ") ("lb" (set DELETER 1) "ল্ব") ("lv" (set DELETER 2) "ল্‌ভ") ("lm" (set DELETER 1) "ল্ম") ("lz" (set DELETER 1) "ল্য") ("ll" (set DELETER 1) "ল্ল")
 
-		("shc" "শ্চ") ("shch" "শ্ছ") ("shn" "শ্ন") ("shb" "শ্ব") ("shm" "শ্ম") ("shz" "শ্য") ("shr" "শ্র") ("shl" "শ্ল")
+		("shc" (set DELETER 1) "শ্চ") ("shch" (set DELETER 1) "শ্ছ") ("shn" (set DELETER 1) "শ্ন") ("shb" (set DELETER 1) "শ্ব") ("shm" (set DELETER 1) "শ্ম") ("shz" (set DELETER 1) "শ্য") ("shr" (set DELETER 1) "শ্র") ("shl" (set DELETER 1) "শ্ল")
 
-		("sfk" "ষ্ক") ("sfkr" "ষ্ক্র") ("sftf" "ষ্ট") ("sftfz" "ষ্ট্য") ("sftfr" "ষ্ট্র") ("sftff" "ষ্ঠ") ("sftffz" "ষ্ঠ্য") ("sfnf" "ষ্ণ") ("sfn" "ষ্ণ") ("sfp" "ষ্প") ("sfpr" "ষ্প্র") ("sfph" "ষ্ফ") ("sfb" "ষ্ব") ("sfm" "ষ্ম") ("sfz" "ষ্য")
+		("sfk" (set DELETER 1) "ষ্ক") ("sfkr" (set DELETER 1) "ষ্ক্র") ("sftf" (set DELETER 1) "ষ্ট") ("sftfz" (set DELETER 1) "ষ্ট্য") ("sftfr" (set DELETER 1) "ষ্ট্র") ("sftff" (set DELETER 1) "ষ্ঠ") ("sftffz" (set DELETER 1) "ষ্ঠ্য") ("sfnf" (set DELETER 1) "ষ্ণ") ("sfn" (set DELETER 1) "ষ্ণ") ("sfp" (set DELETER 1) "ষ্প") ("sfpr" (set DELETER 1) "ষ্প্র") ("sfph" (set DELETER 1) "ষ্ফ") ("sfb" (set DELETER 1) "ষ্ব") ("sfm" (set DELETER 1) "ষ্ম") ("sfz" (set DELETER 1) "ষ্য")
 
-		("sk" "স্ক") ("skr" "স্ক্র") ("skh" "স্খ") ("stf" "স্ট") ("stfr" "স্ট্র") ("st" "স্ত") ("stb" "স্ত্ব") ("stz" "স্ত্য") ("str" "স্ত্র") ("sth" "স্থ") ("sthz" "স্থ্য") ("sn" "স্ন") ("sp" "স্প") ("spr" "স্প্র") ("spl" "স্প্ল") ("sph" "স্ফ") ("sb" "স্ব") ("sm" "স্ম") ("sz" "স্য") ("sr" "স্র") ("sl" "স্ল")
+		("sk" (set DELETER 1) "স্ক") ("skr" (set DELETER 1) "স্ক্র") ("skh" (set DELETER 1) "স্খ") ("stf" (set DELETER 1) "স্ট") ("stfr" (set DELETER 1) "স্ট্র") ("st" (set DELETER 1) "স্ত") ("stb" (set DELETER 1) "স্ত্ব") ("stz" (set DELETER 1) "স্ত্য") ("str" (set DELETER 1) "স্ত্র") ("sth" (set DELETER 1) "স্থ") ("sthz" (set DELETER 1) "স্থ্য") ("sn" (set DELETER 1) "স্ন") ("sp" (set DELETER 1) "স্প") ("spr" (set DELETER 1) "স্প্র") ("spl" (set DELETER 1) "স্প্ল") ("sph" (set DELETER 1) "স্ফ") ("sb" (set DELETER 1) "স্ব") ("sm" (set DELETER 1) "স্ম") ("sz" (set DELETER 1) "স্য") ("sr" (set DELETER 1) "স্র") ("sl" (set DELETER 1) "স্ল")
 
-		("hn" "হ্ন") ("hnf" "হ্ণ") ("hb" "হ্ব") ("hm" "হ্ম") ("hz" "হ্য") ("hr" "হ্র") ("hl" "হ্ল")
+		("hn" (set DELETER 1) "হ্ন") ("hnf" (set DELETER 1) "হ্ণ") ("hb" (set DELETER 1) "হ্ব") ("hm" (set DELETER 1) "হ্ম") ("hz" (set DELETER 1) "হ্য") ("hr" (set DELETER 1) "হ্র") ("hl" (set DELETER 1) "হ্ল")
 		
 		;; অসম্ভব যুক্তবর্ণ -----------------------------------------------------
 
@@ -143,38 +143,38 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			
 			("cn" "চন") 
 				("cnf" "চণ")
-				("cnc" "চঞ্চ") ("cnffc" "চঞ্চ") ("cnj" "চঞ্জ") ("cnffj" "চঞ্জ") ("cnjh" "চঞ্ঝ") ("cnffjh" "চঞ্ঝ") ("cnch" "চঞ্ছ") ("cnffch" "চঞ্ছ")
-				("cnftf" "চণ্ট") ("cnftff" "চণ্ঠ") ("cnftffz" "চণ্ঠ্য") ("cnfdf" "চণ্ড") ("cnfdfz" "চণ্ড্য") ("cnfdfr" "চণ্ড্র") ("cnfdff" "চণ্ঢ") ("cnfnf" "চণ্ণ") ("cnfn" "চণ্ণ") ("cnfb" "চণ্ব") ("cnfm" "চণ্ম") ("cnfz" "চণ্য")
-				("cntf" "চন্ট") ("cntfr" "চন্ট্র") ("cntff" "চন্ঠ") ("cndf" "চন্ড") ("cndfr" "চন্ড্র") ("cnt" "চন্ত") ("cntb" "চন্ত্ব") ("cntr" "চন্ত্র") ("cntrz" "চন্ত্র্য") ("cnth" "চন্থ") ("cnthr" "চন্থ্র") ("cnd" "চন্দ") ("cndb" "চন্দ্ব") ("cndz" "চন্দ্য") 
-				("cndr" "চন্দ্র") ("cndh" "চন্ধ") ("cndhz" "চন্ধ্য") ("cndhr" "চন্ধ্র") ("cnn" "চন্ন") ("cnb" "চন্ব") ("cnm" "চন্ম") ("cnz" "চন্য") ("cns" "চন্স")
+				("cnc" (set DELETER 1) "চঞ্চ") ("cnffc" (set DELETER 1) "চঞ্চ") ("cnj" (set DELETER 1) "চঞ্জ") ("cnffj" (set DELETER 1) "চঞ্জ") ("cnjh" (set DELETER 1) "চঞ্ঝ") ("cnffjh" (set DELETER 1) "চঞ্ঝ") ("cnch" (set DELETER 1) "চঞ্ছ") ("cnffch" (set DELETER 1) "চঞ্ছ")
+				("cnftf" (set DELETER 1) "চণ্ট") ("cnftff" (set DELETER 1) "চণ্ঠ") ("cnftffz" (set DELETER 1) "চণ্ঠ্য") ("cnfdf" (set DELETER 1) "চণ্ড") ("cnfdfz" (set DELETER 1) "চণ্ড্য") ("cnfdfr" (set DELETER 1) "চণ্ড্র") ("cnfdff" (set DELETER 1) "চণ্ঢ") ("cnfnf" (set DELETER 1) "চণ্ণ") ("cnfn" (set DELETER 1) "চণ্ণ") ("cnfb" (set DELETER 1) "চণ্ব") ("cnfm" (set DELETER 1) "চণ্ম") ("cnfz" (set DELETER 1) "চণ্য")
+				("cntf" (set DELETER 1) "চন্ট") ("cntfr" (set DELETER 1) "চন্ট্র") ("cntff" (set DELETER 1) "চন্ঠ") ("cndf" (set DELETER 1) "চন্ড") ("cndfr" (set DELETER 1) "চন্ড্র") ("cnt" (set DELETER 1) "চন্ত") ("cntb" (set DELETER 1) "চন্ত্ব") ("cntr" (set DELETER 1) "চন্ত্র") ("cntrz" (set DELETER 1) "চন্ত্র্য") ("cnth" (set DELETER 1) "চন্থ") ("cnthr" (set DELETER 1) "চন্থ্র") ("cnd" (set DELETER 1) "চন্দ") ("cndb" (set DELETER 1) "চন্দ্ব") ("cndz" (set DELETER 1) "চন্দ্য") 
+				("cndr" (set DELETER 1) "চন্দ্র") ("cndh" (set DELETER 1) "চন্ধ") ("cndhz" (set DELETER 1) "চন্ধ্য") ("cndhr" (set DELETER 1) "চন্ধ্র") ("cnn" (set DELETER 1) "চন্ন") ("cnb" (set DELETER 1) "চন্ব") ("cnm" (set DELETER 1) "চন্ম") ("cnz" (set DELETER 1) "চন্য") ("cns" (set DELETER 1) "চন্স")
 				("cnsh" "চনশ")
 				
 				("cnft" "চণত") ("cnfd" "চণদ") ("cnfth" "চণথ") ("cnfdh" "চণধ")
 				("cndff" "চনঢ")
 				("cnfdfrf" "চণ্ডড়") ("cnfdfrff" "চণ্ডঢ়")
 				("cntfrf" "চন্টড়") ("cntfrff" "চন্টঢ়") ("cndfrf" "চন্ডড়") ("cndfrff" "চন্ডঢ়") ("cntrf" "চন্তড়") ("cntrff" "চন্তঢ়") ("cnthrf" "চন্থড়") 
-				("cnstf" "চনস্ট") ("cnst" "চনস্ত") ("cnsk" "চনস্ক") 
+				("cnstf" (set DELETER 1) "চনস্ট") ("cnst" (set DELETER 1) "চনস্ত") ("cnsk" (set DELETER 1) "চনস্ক") 
 				("cnthrff" "চন্থঢ়") ("cndrf" "চন্দড়") ("cndrff" "চন্দঢ়") ("cndhrf" "চন্ধড়") ("cndhrff" "চন্ধঢ়")
 				
 
 
 			("jn" "জন") 
 				("jnf" "জণ")
-				("jnc" "জঞ্চ") ("jnffc" "জঞ্চ") ("jnj" "জঞ্জ") ("jnffj" "জঞ্জ") ("jnjh" "জঞ্ঝ") ("jnffjh" "জঞ্ঝ") ("jnch" "জঞ্ছ") ("jnffch" "জঞ্ছ")
-				("jnftf" "জণ্ট") ("jnftff" "জণ্ঠ") ("jnftffz" "জণ্ঠ্য") ("jnfdf" "জণ্ড") ("jnfdfz" "জণ্ড্য") ("jnfdfr" "জণ্ড্র") ("jnfdff" "জণ্ঢ") ("jnfnf" "জণ্ণ") ("jnfn" "জণ্ণ") ("jnfb" "জণ্ব") ("jnfm" "জণ্ম") ("jnfz" "জণ্য")
-				("jntf" "জন্ট") ("jntfr" "জন্ট্র") ("jntff" "জন্ঠ") ("jndf" "জন্ড") ("jndfr" "জন্ড্র") ("jnt" "জন্ত") ("jntb" "জন্ত্ব") ("jntr" "জন্ত্র") ("jntrz" "জন্ত্র্য") ("jnth" "জন্থ") ("jnthr" "জন্থ্র") ("jnd" "জন্দ") ("jndb" "জন্দ্ব") ("jndz" "জন্দ্য") 
-				("jndr" "জন্দ্র") ("jndh" "জন্ধ") ("jndhz" "জন্ধ্য") ("jndhr" "জন্ধ্র") ("jnn" "জন্ন") ("jnb" "জন্ব") ("jnm" "জন্ম") ("jnz" "জন্য") ("jns" "জন্স")
+				("jnc" (set DELETER 1) "জঞ্চ") ("jnffc" (set DELETER 1) "জঞ্চ") ("jnj" (set DELETER 1) "জঞ্জ") ("jnffj" (set DELETER 1) "জঞ্জ") ("jnjh" (set DELETER 1) "জঞ্ঝ") ("jnffjh" (set DELETER 1) "জঞ্ঝ") ("jnch" (set DELETER 1) "জঞ্ছ") ("jnffch" (set DELETER 1) "জঞ্ছ")
+				("jnftf" (set DELETER 1) "জণ্ট") ("jnftff" (set DELETER 1) "জণ্ঠ") ("jnftffz" (set DELETER 1) "জণ্ঠ্য") ("jnfdf" (set DELETER 1) "জণ্ড") ("jnfdfz" (set DELETER 1) "জণ্ড্য") ("jnfdfr" (set DELETER 1) "জণ্ড্র") ("jnfdff" (set DELETER 1) "জণ্ঢ") ("jnfnf" (set DELETER 1) "জণ্ণ") ("jnfn" (set DELETER 1) "জণ্ণ") ("jnfb" (set DELETER 1) "জণ্ব") ("jnfm" (set DELETER 1) "জণ্ম") ("jnfz" (set DELETER 1) "জণ্য")
+				("jntf" (set DELETER 1) "জন্ট") ("jntfr" (set DELETER 1) "জন্ট্র") ("jntff" (set DELETER 1) "জন্ঠ") ("jndf" (set DELETER 1) "জন্ড") ("jndfr" (set DELETER 1) "জন্ড্র") ("jnt" (set DELETER 1) "জন্ত") ("jntb" (set DELETER 1) "জন্ত্ব") ("jntr" (set DELETER 1) "জন্ত্র") ("jntrz" (set DELETER 1) "জন্ত্র্য") ("jnth" (set DELETER 1) "জন্থ") ("jnthr" (set DELETER 1) "জন্থ্র") ("jnd" (set DELETER 1) "জন্দ") ("jndb" (set DELETER 1) "জন্দ্ব") ("jndz" (set DELETER 1) "জন্দ্য") 
+				("jndr" (set DELETER 1) "জন্দ্র") ("jndh" (set DELETER 1) "জন্ধ") ("jndhz" (set DELETER 1) "জন্ধ্য") ("jndhr" (set DELETER 1) "জন্ধ্র") ("jnn" (set DELETER 1) "জন্ন") ("jnb" (set DELETER 1) "জন্ব") ("jnm" (set DELETER 1) "জন্ম") ("jnz" (set DELETER 1) "জন্য") ("jns" (set DELETER 1) "জন্স")
 				("jnsh" "জনশ")
 				
 				("jnft" "জণত") ("jnfd" "জণদ") ("jnfth" "জণথ") ("jnfdh" "জণধ")
 				("jndff" "জনঢ")
 				("jnfdfrf" "জণ্ডড়") ("jnfdfrff" "জণ্ডঢ়")
 				("jntfrf" "জন্টড়") ("jntfrff" "জন্টঢ়") ("jndfrf" "জন্ডড়") ("jndfrff" "জন্ডঢ়") ("jntrf" "জন্তড়") ("jntrff" "জন্তঢ়") ("jnthrf" "জন্থড়") 
-				("jnstf" "জনস্ট") ("jnst" "জনস্ত") ("jnsk" "জনস্ক") 
+				("jnstf" (set DELETER 1) "জনস্ট") ("jnst" (set DELETER 1) "জনস্ত") ("jnsk" (set DELETER 1) "জনস্ক") 
 				("jnthrff" "জন্থঢ়") ("jndrf" "জন্দড়") ("jndrff" "জন্দঢ়") ("jndhrf" "জন্ধড়") ("jndhrff" "জন্ধঢ়")
 				
 
-			("ghnf" "ঘণ") ("ghnfz" "ঘণ্য") ("ghnftf" "ঘণ্ট")
+			("ghnf" "ঘণ") ("ghnfz" (set DELETER 1) "ঘণ্য") ("ghnftf" (set DELETER 1) "ঘণ্ট")
 
 			("tft" "টত") ("dfd" "ডদ") 
 			
@@ -185,7 +185,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			("ktff" "কঠ") ("ptff" "পঠ") ("ltff" "লঠ") ("stff" "সঠ") 
 			("dfdff" "ডঢ") 
 			("ndff" "নঢ") 
-			("ktfrf" "ক্টড়") ("ktfrff" "ক্টঢ়") ("kth" "কথ") ("ktrf" "ক্তড়") ("ktrff" "ক্তঢ়") ("krf" "কড়") ("krff" "কঢ়") ("khrf" "খড়") ("khrfg" "খড়্‌গ") ("khrff" "খঢ়") ("gggh" "জ্ঞঘ") ("gdff" "গঢ") ("gdhrf" "গ্ধড়") 
+			("ktfrf" "ক্টড়") ("ktfrff" "ক্টঢ়") ("kth" "কথ") ("ktrf" "ক্তড়") ("ktrff" "ক্তঢ়") ("krf" "কড়") ("krff" "কঢ়") ("khrf" "খড়") ("khrfg" (set DELETER 2) "খড়্‌গ") ("khrff" "খঢ়") ("gggh" "জ্ঞঘ") ("gdff" "গঢ") ("gdhrf" "গ্ধড়") 
 			("gdhrff" "গ্ধঢ়") ("grf" "গড়") ("grff" "গঢ়") ("ghrf" "ঘড়") ("ghrff" "ঘঢ়") 
 			
 			("cchrf" "চ্ছড়") ("cchrff" "চ্ছঢ়") 
@@ -195,27 +195,27 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			("trf" "তড়") ("trff" "তঢ়") ("thrf" "থড়") ("thrff" "থঢ়") 
 			("dvrf" "দ্ভড়") ("dvrff" "দ্ভঢ়") ("drf" "দড়") ("drff" "দঢ়") ("dhrf" "ধড়") ("dhrff" "ধঢ়") 
 			("ntfrf" "ন্টড়") ("ntfrff" "ন্টঢ়") ("ndfrf" "ন্ডড়") ("ndfrff" "ন্ডঢ়") ("ntrf" "ন্তড়") ("ntrff" "ন্তঢ়") ("nthrf" "ন্থড়") 
-			("nstf" "নস্ট") ("nst" "নস্ত") ("nsk" "নস্ক") 
+			("nstf" (set DELETER 1) "নস্ট") ("nst" (set DELETER 1) "নস্ত") ("nsk" (set DELETER 1) "নস্ক") 
 			("nthrff" "ন্থঢ়") ("ndrf" "ন্দড়") ("ndrff" "ন্দঢ়") ("ndhrf" "ন্ধড়") ("ndhrff" "ন্ধঢ়") 
 			("pth" "পথ") ("pph" "পফ") ("prf" "পড়") ("prff" "পঢ়") ("phrf" "ফড়") ("phrff" "ফঢ়") ("bjh" "বঝ") ("brf" "বড়") ("brff" "বঢ়") 
-			("mpl" "মপ্ল") 
+			("mpl" (set DELETER 1) "মপ্ল") 
 			("vrf" "ভড়") ("vrff" "ভঢ়") ("mprf" "ম্পড়") ("mprff" "ম্পঢ়") ("mbrf" "ম্বড়") ("mbrff" "ম্বঢ়") ("mvrf" "ম্ভড়") ("mvrff" "ম্ভঢ়") ("mrf" "মড়") ("mrff" "মঢ়") ("lkh" "লখ") ("lgh" "লঘ") ("shrf" "শড়") ("shrff" "শঢ়") 
 			("sfkh" "ষখ") ("sfkrf" "ষ্কড়") ("sfkrff" "ষ্কঢ়") ("sftfrf" "ষ্টড়") ("sftfrff" "ষ্টঢ়") ("sfprf" "ষ্পড়") ("sfprff" "ষ্পঢ়") ("skrf" "স্কড়") ("skrff" "স্কঢ়") ("stfrf" "স্টড়") ("stfrff" "স্টঢ়") ("strf" "স্তড়") ("strff" "স্তঢ়") ("sprf" "স্পড়") ("sprff" "স্পঢ়") 
 			("srf" "সড়") ("srff" "সঢ়") ("hrf" "হড়") ("hrff" "হঢ়") ("ldh" "লধ") 
 			("tfth" "টথ") ("dfdh" "ডধ") ("lth" "লথ")
 			
 			("lks" "ল্কস") 
-			("kkf" "কক্ষ") ("lkf" "লক্ষ") ("sfkf" "ষক্ষ") ("skf" "সক্ষ") ("kkkh" "কক্ষ") ("lkkh" "লক্ষ") ("sfkkh" "ষক্ষ") ("skkh" "সক্ষ") ("kksf" "কক্ষ") ("lksf" "লক্ষ") ("sfksf" "ষক্ষ") ("sksf" "সক্ষ")
-			("yr" "য়র") ("yrz" "য়র‍্য")
-			("gnj" "গঞ্জ") ("pnj" "পঞ্জ") ("mnj" "মঞ্জ") ("snj" "সঞ্জ")
-			("gndf" "গন্ড") ("mndf" "মন্ড")
-			("tnt" "তন্ত") ("tntr" "তন্ত্র") ("mnt" "মন্ত") ("mntr" "মন্ত্র") ("snt" "সন্ত") ("sntr" "সন্ত্র") ("hnt" "হন্ত")
-			("tnd" "তন্দ") ("nnd" "নন্দ") ("mnd" "মন্দ") ("snd" "সন্দ")
-			("gndh" "গন্ধ") ("gndhz" "গন্ধ্য") ("sndh" "সন্ধ") ("sndhz" "সন্ধ্য")
+			("kkf" (set DELETER 1) "কক্ষ") ("lkf" (set DELETER 1) "লক্ষ") ("sfkf" (set DELETER 1) "ষক্ষ") ("skf" (set DELETER 1) "সক্ষ") ("kkkh" (set DELETER 1) "কক্ষ") ("lkkh" (set DELETER 1) "লক্ষ") ("sfkkh" (set DELETER 1) "ষক্ষ") ("skkh" (set DELETER 1) "সক্ষ") ("kksf" (set DELETER 1) "কক্ষ") ("lksf" (set DELETER 1) "লক্ষ") ("sfksf" (set DELETER 1) "ষক্ষ") ("sksf" (set DELETER 1) "সক্ষ")
+			("yr" "য়র") ("yrz" (set DELETER 2) "য়র‍্য")
+			("gnj" (set DELETER 1) "গঞ্জ") ("pnj" (set DELETER 1) "পঞ্জ") ("mnj" (set DELETER 1) "মঞ্জ") ("snj" (set DELETER 1) "সঞ্জ")
+			("gndf" (set DELETER 1) "গন্ড") ("mndf" (set DELETER 1) "মন্ড")
+			("tnt" (set DELETER 1) "তন্ত") ("tntr" (set DELETER 1) "তন্ত্র") ("mnt" (set DELETER 1) "মন্ত") ("mntr" (set DELETER 1) "মন্ত্র") ("snt" (set DELETER 1) "সন্ত") ("sntr" (set DELETER 1) "সন্ত্র") ("hnt" (set DELETER 1) "হন্ত")
+			("tnd" (set DELETER 1) "তন্দ") ("nnd" (set DELETER 1) "নন্দ") ("mnd" (set DELETER 1) "মন্দ") ("snd" (set DELETER 1) "সন্দ")
+			("gndh" (set DELETER 1) "গন্ধ") ("gndhz" (set DELETER 1) "গন্ধ্য") ("sndh" (set DELETER 1) "সন্ধ") ("sndhz" (set DELETER 1) "সন্ধ্য")
 			("tnf" "তণ") ("dhnf" "ধণ") ("pnf" "পণ") ("mnf" "মণ") ("snf" "সণ") ("shnf" "শণ") 
 
 		;; র ফলা যুক্ত অতিরিক্ত
-			("ngr" "ঙ্র") ("cr" "চ্র") ("chr" "ছ্র") ("jhr" "ঝ্র") ("nffr" "ঞর") ("tffr" "ঠ্র") ("nfr" "ণ্র") ("nr" "ন্র") ("zr" "য্র") ("lr" "ল্র") ("sfr" "ষ্র") ("rfr" "ড়র") ("rffr" "ঢ়র")
+			("ngr" (set DELETER 1) "ঙ্র") ("cr" (set DELETER 1) "চ্র") ("chr" (set DELETER 1) "ছ্র") ("jhr" (set DELETER 1) "ঝ্র") ("nffr" "ঞর") ("tffr" (set DELETER 1) "ঠ্র") ("nfr" (set DELETER 1) "ণ্র") ("nr" (set DELETER 1) "ন্র") ("zr" (set DELETER 1) "য্র") ("lr" (set DELETER 1) "ল্র") ("sfr" (set DELETER 1) "ষ্র") ("rfr" "ড়র") ("rffr" "ঢ়র")
 
 	
 			
@@ -262,6 +262,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("`" "`") ("``" "‌") ("```" "``")
 		("``f" "‍")
 
+		;; স্ল্যাশযুক্ত ব্যঞ্জন
+			("kh//" "খ/") ("gh//" "ঘ/") ("ng//" "ঙ/") ("ch//" "ছ/") ("jh//" "ঝ/") ("th//" "থ/") ("dh//" "ধ/") ("ph//" "ফ/") ("sh//" "শ/")
+
 	)
 	(biram
 		("." "।") ("..." "...") (".." ".") ("$" "৳") ("$f" "₹") (",,," ",,") (".f" "॥") (".ff" "৺") 
@@ -285,7 +288,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 (state
 	(init
-		(set DELETER 0)
+		
 		(diacritic (commit) (shift shor-state))
 		(ng (commit) (shift shor-state))
 		(shor (shift shor-state))
@@ -296,7 +299,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(reph (shift reph-state))
 		(juktoborno  (shift juktoborno-state))
 		(byanjon (shift byanjon-state))
-		(backspace)
+		(set DELETER 0)
 	)
 	(shor-state
 		(diacritic  )
