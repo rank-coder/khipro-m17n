@@ -337,6 +337,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(juktoborno  (shift juktoborno-state))
 		(phola
 			(move @-) (insert ?্) (move @>)
+			(shift juktoborno-state)
 		)
 		(byanjon )
 		(backspace)
