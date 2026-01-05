@@ -344,7 +344,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(juktoborno-state
 		(deleter
 			(cond
-				((!= DELETER 0) (move @-) (delete @- DELETER) (move @>) (set DELETER 0))
+				((= DELETER 1) (move @-) (delete @-) (move @>) (set DELETER 0))
+				((= DELETER 2) (move @-) (delete @-) (delete @-) (move @>) (set DELETER 0))
 			)
 		)
 		(diacritic  (shift shor-state))
