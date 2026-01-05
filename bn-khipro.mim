@@ -285,6 +285,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 (state
 	(init
+		(set DELETER 0)
 		(diacritic (commit) (shift shor-state))
 		(ng (commit) (shift shor-state))
 		(shor (shift shor-state))
