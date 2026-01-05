@@ -79,7 +79,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(juktoborno
 		("rz" "র‍্য")
 
-		("kk" "ক্ক") ("ktf" "ক্ট") ("ktfr" "ক্ট্র") ("kt" "ক্ত") ("ktr" "ক্ত্র") ("kb" "ক্ব") ("km" "ক্ম") ("kz" "ক্য") ("kr" "ক্র") ("kl" "ক্ল") ("kf" "ক্ষ") ("ksf" "ক্ষ") ("kkh" "ক্ষ") ("kfnf" "ক্ষ্ণ") ("kfn" "ক্ষ্ণ") ("ksfnf" "ক্ষ্ণ") ("ksfn" "ক্ষ্ণ") ("kkhn" "ক্ষ্ণ") ("kkhnf" "ক্ষ্ণ") ("kfb" "ক্ষ্ব") ("ksfb" "ক্ষ্ব") ("kkhb" "ক্ষ্ব") ("kfm" "ক্ষ্ম") ("kkhm" "ক্ষ্ম") ("ksfm" "ক্ষ্ম") ("kfz" "ক্ষ্য") ("ksfz" "ক্ষ্য") ("kkhz" "ক্ষ্য") ("ks" "ক্স")
+		("kk" (set DELETER 1) "ক্ক") ("ktf" "ক্ট") ("ktfr" "ক্ট্র") ("kt" "ক্ত") ("ktr" "ক্ত্র") ("kb" "ক্ব") ("km" "ক্ম") ("kz" "ক্য") ("kr" "ক্র") ("kl" "ক্ল") ("kf" "ক্ষ") ("ksf" "ক্ষ") ("kkh" "ক্ষ") ("kfnf" "ক্ষ্ণ") ("kfn" "ক্ষ্ণ") ("ksfnf" "ক্ষ্ণ") ("ksfn" "ক্ষ্ণ") ("kkhn" "ক্ষ্ণ") ("kkhnf" "ক্ষ্ণ") ("kfb" "ক্ষ্ব") ("ksfb" "ক্ষ্ব") ("kkhb" "ক্ষ্ব") ("kfm" "ক্ষ্ম") ("kkhm" "ক্ষ্ম") ("ksfm" "ক্ষ্ম") ("kfz" "ক্ষ্য") ("ksfz" "ক্ষ্য") ("kkhz" "ক্ষ্য") ("ks" "ক্স")
 
 		("khz" "খ্য") ("khr" "খ্র")
 
@@ -271,6 +271,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(prithayok
 		(";" "") (";;" ";")
 	)
+	(deleter
+		("/")
+	)
 ;;	The following AE has an AE kar with a preceding joiner
 	(ae
 		("ae" "‍্যা")
@@ -290,7 +293,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(reph (shift reph-state))
-		(juktoborno  (shift byanjon-state))
+		(juktoborno  (shift juktoborno-state))
 		(byanjon (shift byanjon-state))
 		(backspace)
 	)
@@ -304,8 +307,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko )
 		(biram )
 		(reph (shift reph-state))
-		(juktoborno (shift byanjon-state))
-		(byanjon (shift byanjon-state))
+		(juktoborno  (shift juktoborno-state))
+		(byanjon  (shift byanjon-state))
 		(backspace)
 	)
 	(reph-state
@@ -313,7 +316,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
 		(ae  (shift shor-state))
-		(juktoborno  (shift byanjon-state))
+		(juktoborno  (shift juktoborno-state))
 		(byanjon  (shift byanjon-state))
 		(reph)
 		(kar  (shift shor-state))
@@ -327,11 +330,29 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
+		(juktoborno  (shift juktoborno-state))
+		(phola
+			(move @-) (insert ?্) (move @>)
+		)
+		(byanjon )
+		(backspace)
+	)
+	(juktoborno-state
+		(deleter
+			(move @-) (delete @- DELETER)
+		)
+		(diacritic  (shift shor-state))
+		(ng  (shift shor-state))
+		(prithayok  (shift shor-state))
+		(ongko  (shift shor-state))
+		(biram  (shift shor-state))
+		(kar (shift shor-state))
 		(juktoborno )
 		(phola
 			(move @-) (insert ?্) (move @>)
 		)
 		(byanjon )
 		(backspace)
+
 	)
 )
