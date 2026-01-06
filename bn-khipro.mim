@@ -293,7 +293,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ng (commit) (shift shor-state))
 		(shor (shift shor-state))
 		(fkar (commit) (shift shor-state))
-		(prithayok (delete @-) (shift prithayok-state))
+		(prithayok (shift prithayok-state) (delete @-))
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(reph (shift reph-state))
