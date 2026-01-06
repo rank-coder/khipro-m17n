@@ -272,7 +272,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("=" "=")("=f" "≠")
 	)
 	(prithayok
-		(";" (insert " ")(delete @-)) (";;" ";")
+		(";" (insert ".")(delete @-)) (";;" ";")
 	)
 	(deleter
 		("/" "")
