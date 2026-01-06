@@ -347,7 +347,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(cond
 				((= DELETER 1) (move @-) (delete @-) (move @>) (set DELETER 0))
 				((= DELETER 2) (move @-) (delete @-) (delete @-) (move @>) (set DELETER 0))
-				((=DELETER 3) (delete @-) (delete @-) (delete @-) (insert ALTERNATE) (set ALTERNATE ""))
+				((= DELETER 3) (delete @-) (delete @-) (delete @-) (insert ALTERNATE) (set ALTERNATE ""))
 			)
 		)
 		(diacritic  (shift shor-state))
