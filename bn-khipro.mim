@@ -93,7 +93,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 		("jj" (set DELETER 1) "জ্জ") ("jjb" (set DELETER 1) "জ্জ্ব") ("jjh" (set DELETER 1) "জ্ঝ") ("gg" (set DELETER 1) "জ্ঞ") ("jnff" (set DELETER 1) "জ্ঞ") ("jb" (set DELETER 1) "জ্ব") ("jz" (set DELETER 1) "জ্য") ("jr" (set DELETER 1) "জ্র")
 
-		("nc" (set DELETER 3) (set MYVAR "test") "ঞ্চ") ("nffc" (set DELETER 1) "ঞ্চ") ("nj" (set DELETER 1) "ঞ্জ") ("nffj" (set DELETER 1) "ঞ্জ") ("njh" (set DELETER 1) "ঞ্ঝ") ("nffjh" (set DELETER 1) "ঞ্ঝ") ("nch" (set DELETER 1) "ঞ্ছ") ("nffch" (set DELETER 1) "ঞ্ছ")
+		("nc" (set DELETER 3) "ঞ্চ") ("nffc" (set DELETER 1) "ঞ্চ") ("nj" (set DELETER 1) "ঞ্জ") ("nffj" (set DELETER 1) "ঞ্জ") ("njh" (set DELETER 1) "ঞ্ঝ") ("nffjh" (set DELETER 1) "ঞ্ঝ") ("nch" (set DELETER 1) "ঞ্ছ") ("nffch" (set DELETER 1) "ঞ্ছ")
 
 		("ttf" (set DELETER 1) "ট্ট") ("tftf" (set DELETER 1) "ট্ট") ("tfb" (set DELETER 1) "ট্ব") ("tfm" (set DELETER 1) "ট্ম") ("tfz" (set DELETER 1) "ট্য") ("tfr" (set DELETER 1) "ট্র")
 
