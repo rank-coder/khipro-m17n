@@ -21,7 +21,7 @@
 ;;	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;;	SOFTWARE.
 
-(input-method bn khipro-devel) 
+(input-method bn khipro) 
 (description "
 	A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
 
