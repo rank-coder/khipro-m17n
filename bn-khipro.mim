@@ -252,7 +252,7 @@ Variable values guide:
 
 (state
 	(init
-		(general)
 		(set STATE 0)
+		(general commit)
 	)
 )
