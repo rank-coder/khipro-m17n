@@ -37,8 +37,221 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	* Website: <https://khiprokeyboard.github.io>
 	* Author: Nafi [<https://github.com/rank-coder>]
 	* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/KhiproKeyboard>] organization.
+
+
+Variable values guide:
+	STATE (0,init), (1,shor), (2,byanjon), (3,juktorno)
+
 ")
 (title "ক্ষিপ্র")
-(map)
+(map
+	(general
+		("o"
+			(cond
+				((= STATE 0) "অ")
+				((= STATE 1) "অ")
+				((= STATE 2) "")
+				((= STATE 3) "")
+			)
+			(set STATE 1)
+		)
+		("a" 
+			(cond
+				((= STATE 0) "আ")
+				((= STATE 1) "আ")
+				((= STATE 2) "া")
+				((= STATE 3) "া") 
+			)
+			(set STATE 1)
+		)
+		("i" 
+			(cond
+				((= STATE 0) "ই")
+				((= STATE 1) "ই")
+				((= STATE 2) "ি")
+				((= STATE 3) "ি") 
+			)
+			(set STATE 1)
+		)
+		("ii"
+			(cond
+				((= STATE 0) "ঈ")
+				((= STATE 1) "ঈ")
+				((= STATE 2) "ী")
+				((= STATE 3) "ী") 
+			)
+			(set STATE 1)
+		)
+		("u" 
+			(cond
+				((= STATE 0) "উ")
+				((= STATE 1) "উ")
+				((= STATE 2) "ু")
+				((= STATE 3) "ু") 
+			)
+			(set STATE 1)
+		)
+		("uu" 
+			(cond
+				((= STATE 0) "ঊ")
+				((= STATE 1) "ঊ")
+				((= STATE 2) "ূ")
+				((= STATE 3) "ূ") 
+			)
+			(set STATE 1)
+		)
+		("q" 
+			(cond
+				((= STATE 0) "ঋ")
+				((= STATE 1) "ঋ")
+				((= STATE 2) "ৃ")
+				((= STATE 3) "ৃ") 
+			)
+			(set STATE 1)
+		)
+		("e" 
+			(cond
+				((= STATE 0) "এ")
+				((= STATE 1) "এ")
+				((= STATE 2) "ে")
+				((= STATE 3) "ে") 
+			)
+			(set STATE 1)
+		)
+		("wi" 
+			(cond
+				((= STATE 0) "ঐ")
+				((= STATE 1) "ঐ")
+				((= STATE 2) "ৈ")
+				((= STATE 3) "ৈ") 
+			)
+			(set STATE 1)
+		)
+		("w" 
+			(cond
+				((= STATE 0) "ও")
+				((= STATE 1) "ও")
+				((= STATE 2) "ো")
+				((= STATE 3) "ো") 
+			)
+			(set STATE 1)
+		)
+		("wu" 
+			(cond
+				((= STATE 0) "ঔ")
+				((= STATE 1) "ঔ")
+				((= STATE 2) "ৌ")
+				((= STATE 3) "ৌ") 
+			)
+			(set STATE 1)
+		)
+		("ae" 
+			(cond
+				((= STATE 0) "অ্যা")
+				((= STATE 1) "অ্যা")
+				((= STATE 2) "্যা")
+				((= STATE 3) "্যা") 
+			)
+			(set STATE 1)
+		) 
+		("wa" 
+			(cond
+				((= STATE 0) "ওয়া")
+				((= STATE 1) "ওয়া")
+				((= STATE 2) "োয়া")
+				((= STATE 3) "োয়া") 
+			)
+			(set STATE 1)
+		)
+		("wae" 
+			(cond
+				((= STATE 0) "ওয়্যা")
+				((= STATE 1) "ওয়্যা")
+				((= STATE 2) "ওয়্যা")
+				((= STATE 3) "ওয়্যা") 
+			)
+			(set STATE 1)
+		)
+		("we" 
+			(cond
+				((= STATE 0) "ওয়ে")
+				((= STATE 1) "ওয়ে")
+				((= STATE 2) "োয়ে")
+				((= STATE 3) "োয়ে") 
+			)
+			(set STATE 1)
+		) 
 
-(state)
+		;; fkar
+		("uff" "‌ু")
+		("uuff" "‌ূ")
+		("qff" "‌ৃ") 
+		("of" "")
+		("af" "া")
+		("if" "ি") 
+		("iif" "ী") 
+		("uf" "ু") 
+		("uuf" "ূ") 
+		("qf" "ৃ") 
+		("ef" "ে") 
+		("wif" "ৈ")
+		("wf" "ো") 
+		("wuf" "ৌ") 
+		("aef" "্যা")
+		("waf" "োয়া")
+		("wef" "োয়ে")	
+
+		;; byanjon
+		("k" "ক" (set STATE 2))
+		("kh" "খ" (set STATE 2))
+		("kh/" "কহ" (set STATE 2))
+		("g" "গ" (set STATE 2))
+		("gh" "ঘ" (set STATE 2))
+		("gh/" "গহ" (set STATE 2))
+		("ng" "ঙ" (set STATE 2))
+		("ng/" "নগ" (set STATE 2))
+		("c" "চ" (set STATE 2))
+		("ch" "ছ" (set STATE 2))
+		("ch/" "চহ" (set STATE 2))
+		("j" "জ" (set STATE 2))
+		("jh" "ঝ" (set STATE 2))
+		("jh/" "জহ" (set STATE 2))
+		("nff" "ঞ" (set STATE 2)) 
+		("tf" "ট" (set STATE 2))
+		("tff" "ঠ" (set STATE 2))
+		("df" "ড" (set STATE 2))
+		("dff" "ঢ" (set STATE 2))
+		("nf" "ণ" (set STATE 2)) 
+		("t" "ত" (set STATE 2))
+		("th" "থ" (set STATE 2))
+		("th/" "তহ" (set STATE 2))
+		("d" "দ" (set STATE 2))
+		("dh" "ধ" (set STATE 2))
+		("dh/" "দহ" (set STATE 2))
+		("n" "ন" (set STATE 2)) 
+		("p" "প" (set STATE 2))
+		("ph" "ফ" (set STATE 2))
+		("ph/" "পহ" (set STATE 2))
+		("b" "ব" (set STATE 2))
+		("v" "ভ" (set STATE 2))
+		("m" "ম" (set STATE 2)) 
+		("z" "য" (set STATE 2))
+		("l" "ল" (set STATE 2))
+		("sh" "শ" (set STATE 2))
+		("sh/" "সহ" (set STATE 2))
+		("sf" "ষ" (set STATE 2))
+		("s" "স" (set STATE 2))
+		("h" "হ" (set STATE 2)) 
+		("y" "য়" (set STATE 2))
+		("rf" "ড়" (set STATE 2))
+		("rff" "ঢ়" (set STATE 2))
+		(",," "়" (set STATE 2))
+	)
+)	
+
+(state
+	(init
+		(set STATE 0)
+		(general)
+	)
+)
