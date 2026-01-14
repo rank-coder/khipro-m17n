@@ -46,6 +46,7 @@ Variable values guide:
 (title "ক্ষিপ্র")
 (map
 	(general
+		(set STATE 0)
 		("o"
 			(cond
 				((= STATE 0) "অ")
