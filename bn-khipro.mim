@@ -917,8 +917,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("ae" "‍্যা")
 	)
 	(backspace
-  		( (BackSpace)  (undo) )
-  	)
+		( (BackSpace)  (undo) )
+	)
 )
 
 (state
