@@ -251,7 +251,6 @@ Variable values guide:
 
 (state
 	(init
-		(set STATE 0)
 		(general)
 	)
 )
