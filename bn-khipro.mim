@@ -352,7 +352,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram  (shift shor-state))
 		(kar 
 			(cond
-				( ($ (= PCID 27) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") )  
+				( ($ (= PCID 27) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) )  
 			)
 			(shift shor-state)
 		)
