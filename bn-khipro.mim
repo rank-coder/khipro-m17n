@@ -155,6 +155,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(set ALTERNATE 4) "ঞ্ঝ")
 		("nch" (set DELETER 3)
 			(set ALTERNATE 5) "ঞ্ছ")
+		
+		("ttf" (set DELETER 1) "ট্ট")
+		("ddf" (set DELETER 1) "ড্ড")
+
 
 	)
 	(ng )
