@@ -352,7 +352,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram  (shift shor-state))
 		(kar 
 			(cond
-				( ($ (= PCID )(= KAR 1)) (delete @-) (delete @-) (delete @-) (delete @-) (insert "র‍্যা") )  
+				( ($ (= PCID 27) (= KAR 1)) (delete @-) (delete @-) (delete @-) (delete @-) (insert "র‍্যা") )  
 			)
 			(shift shor-state)
 		)
