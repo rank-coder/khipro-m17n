@@ -128,36 +128,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(",," (set CID 36) "়")
 	)
 	(juktoborno 
-		("kf" (set DELETER 1) "ক্ষ")
-		("kkh" (set DELETER 3)
-			(set ALTERNATE 2) "ক্ষ")
-		("kfnf" (set DELETER 1) "ক্ষ্ণ")
-		("kfn" (set DELETER 1) "ক্ষ্ণ")
-		("ksfn" (set DELETER 1) "ক্ষ্ণ")
-		("kkhn" (set DELETER 1) "ক্ষ্ণ")
-		("kkhnf" (set DELETER 1) "ক্ষ্ণ")
-		("kfb" (set DELETER 1) "ক্ষ্ব")
-		("kkhb" (set DELETER 1) "ক্ষ্ব")
-		("kfm" (set DELETER 1) "ক্ষ্ম")
-		("kkhm" (set DELETER 1) "ক্ষ্ম")
-		("kfz" (set DELETER 1) "ক্ষ্য")
-		("kkhz" (set DELETER 1) "ক্ষ্য")
-
-		("ggg" (set DELETER 1) "গ্গ")
-
-		("gg" (set DELETER 1) "জ্ঞ")
-
-		("nc" (set DELETER 3)
-			(set ALTERNATE 1) "ঞ্চ")
-		("nj" (set DELETER 3)
-			(set ALTERNATE 3) "ঞ্জ")
-		("njh" (set DELETER 3)
-			(set ALTERNATE 4) "ঞ্ঝ")
-		("nch" (set DELETER 3)
-			(set ALTERNATE 5) "ঞ্ছ")
 		
-		("ttf" (set DELETER 1) "ট্ট")
-		("ddf" (set DELETER 1) "ড্ড")
 
 
 	)
