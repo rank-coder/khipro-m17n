@@ -352,10 +352,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
 		(juktoborno  (shift juktoborno-state))
-		(phola
-			(move @-)  (insert ?্)  (move @>)
-			(shift juktoborno-state)
-		)
+		
 		(byanjon 
 			(cond
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 46) (insert "র‍্য") (shift juktoborno-state))
@@ -374,6 +371,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					)
 				)
 			)
+		)
+		(phola
+			(move @-)  (insert ?্)  (move @>)
+			(shift juktoborno-state)
 		)
 		(backspace)
 	)
