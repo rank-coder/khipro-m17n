@@ -72,13 +72,11 @@ if [ "$EUID" -eq 0 ]; then
     INSTALL_DIR="/usr/share/m17n"
     ICON_DIR="/usr/share/m17n/icons"
     PRIV_SUFFIX=""
-    PRIV_TITLE=""
     print_status "Running as root. Installing system-wide to $INSTALL_DIR"
 else
     INSTALL_DIR="$HOME/.m17n.d"
     ICON_DIR="$HOME/.m17n.d"
     PRIV_SUFFIX="Local"
-    PRIV_TITLE=" (Local)"
     print_status "Running as user. Installing to $INSTALL_DIR"
     
     # Create user directories if they don't exist
@@ -374,16 +372,13 @@ fi
 # Determine final suffixes
 if [ "$branch_name" = "main" ]; then
     BRANCH_SUFFIX=""
-    BRANCH_TITLE=""
 else
     # Capitalize first letter of branch name
     capitalized_branch="$(tr '[:lower:]' '[:upper:]' <<< ${branch_name:0:1})${branch_name:1}"
     BRANCH_SUFFIX="${capitalized_branch}"
-    BRANCH_TITLE=" (${branch_name})"
 fi
 
 FILE_SUFFIX="${BRANCH_SUFFIX}${PRIV_SUFFIX}"
-TITLE_SUFFIX="${BRANCH_TITLE}${PRIV_TITLE}"
 
 # Installation process begins
 print_status "Starting KhiproKeyboard installation..."
@@ -427,7 +422,6 @@ cp bn-khipro.mim "$TARGET_MIM"
 if [ -n "$FILE_SUFFIX" ]; then
     print_status "Modifying internal name for installation (Suffix: $FILE_SUFFIX)..."
     sed -i "s/(input-method bn khipro)/(input-method bn khipro${FILE_SUFFIX})/" "$TARGET_MIM"
-    sed -i "s/(title \"ক্ষিপ্র\")/(title \"ক্ষিপ্র${TITLE_SUFFIX}\")/" "$TARGET_MIM"
 fi
 
 # Copy icon if it exists
