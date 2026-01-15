@@ -71,12 +71,14 @@ echo ""
 if [ "$EUID" -eq 0 ]; then
     INSTALL_DIR="/usr/share/m17n"
     ICON_DIR="/usr/share/m17n/icons"
-    FILE_SUFFIX=""
+    PRIV_SUFFIX=""
+    PRIV_TITLE=""
     print_status "Running as root. Installing system-wide to $INSTALL_DIR"
 else
     INSTALL_DIR="$HOME/.m17n.d"
     ICON_DIR="$HOME/.m17n.d"
-    FILE_SUFFIX="-local"
+    PRIV_SUFFIX="-local"
+    PRIV_TITLE=" (Local)"
     print_status "Running as user. Installing to $INSTALL_DIR"
     
     # Create user directories if they don't exist
@@ -284,6 +286,18 @@ else
     print_status "Using stable release (main branch)"
 fi
 
+# Determine final suffixes
+if [ "$branch_name" = "main" ]; then
+    BRANCH_SUFFIX=""
+    BRANCH_TITLE=""
+else
+    BRANCH_SUFFIX="-${branch_name}"
+    BRANCH_TITLE=" (${branch_name})"
+fi
+
+FILE_SUFFIX="${BRANCH_SUFFIX}${PRIV_SUFFIX}"
+TITLE_SUFFIX="${BRANCH_TITLE}${PRIV_TITLE}"
+
 # Installation process begins
 print_status "Starting KhiproKeyboard installation..."
 
@@ -322,11 +336,11 @@ fi
 TARGET_MIM="$INSTALL_DIR/bn-khipro${FILE_SUFFIX}.mim"
 cp bn-khipro.mim "$TARGET_MIM"
 
-# If installing locally, modify the internal name and title to avoid conflicts
+# If installing locally or from a branch, modify the internal name and title
 if [ -n "$FILE_SUFFIX" ]; then
-    print_status "Modifying internal name for local installation..."
-    sed -i 's/(input-method bn khipro)/(input-method bn khipro-local)/' "$TARGET_MIM"
-    sed -i 's/(title "ক্ষিপ্র")/(title "ক্ষিপ্র (Local)")/' "$TARGET_MIM"
+    print_status "Modifying internal name for installation (Suffix: $FILE_SUFFIX)..."
+    sed -i "s/(input-method bn khipro)/(input-method bn khipro${FILE_SUFFIX})/" "$TARGET_MIM"
+    sed -i "s/(title \"ক্ষিপ্র\")/(title \"ক্ষিপ্র${TITLE_SUFFIX}\")/" "$TARGET_MIM"
 fi
 
 # Copy icon if it exists
