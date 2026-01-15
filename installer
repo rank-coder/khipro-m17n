@@ -71,10 +71,12 @@ echo ""
 if [ "$EUID" -eq 0 ]; then
     INSTALL_DIR="/usr/share/m17n"
     ICON_DIR="/usr/share/m17n/icons"
+    FILE_SUFFIX=""
     print_status "Running as root. Installing system-wide to $INSTALL_DIR"
 else
     INSTALL_DIR="$HOME/.m17n.d"
     ICON_DIR="$HOME/.m17n.d/icons"
+    FILE_SUFFIX="(local)"
     print_status "Running as user. Installing to $INSTALL_DIR"
     
     # Create user directories if they don't exist
@@ -287,7 +289,7 @@ print_status "Starting KhiproKeyboard installation..."
 
 # Remove existing files
 print_status "Cleaning up previous installations..."
-rm -f "$INSTALL_DIR"/bn-khipro*.mim 2>/dev/null || true
+rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.mim 2>/dev/null || true
 rm -rf /tmp/khipro-m17n 2>/dev/null || true
 
 # Clone repository
@@ -316,13 +318,21 @@ if [ ! -f bn-khipro.mim ]; then
     exit 1
 fi
 
-cp bn-khipro*.mim "$INSTALL_DIR/"
+TARGET_MIM="$INSTALL_DIR/bn-khipro${FILE_SUFFIX}.mim"
+cp bn-khipro.mim "$TARGET_MIM"
+
+# If installing locally, modify the internal name and title to avoid conflicts
+if [ -n "$FILE_SUFFIX" ]; then
+    print_status "Modifying internal name for local installation..."
+    sed -i 's/(input-method bn khipro)/(input-method bn khipro-local)/' "$TARGET_MIM"
+    sed -i 's/(title "ক্ষিপ্র")/(title "ক্ষিপ্র (Local)")/' "$TARGET_MIM"
+fi
 
 # Copy icon if it exists
 if [ -f bn-khipro.png ]; then
     print_status "Installing icon..."
     mkdir -p "$ICON_DIR/"
-    cp bn-khipro.png "$ICON_DIR/"
+    cp bn-khipro.png "$ICON_DIR/bn-khipro${FILE_SUFFIX}.png"
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
