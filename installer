@@ -290,6 +290,7 @@ print_status "Starting KhiproKeyboard installation..."
 # Remove existing files
 print_status "Cleaning up previous installations..."
 rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.mim 2>/dev/null || true
+rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.png 2>/dev/null || true
 rm -rf /tmp/khipro-m17n 2>/dev/null || true
 
 # Clone repository
@@ -333,6 +334,11 @@ if [ -f bn-khipro.png ]; then
     print_status "Installing icon..."
     mkdir -p "$ICON_DIR/"
     cp bn-khipro.png "$ICON_DIR/bn-khipro${FILE_SUFFIX}.png"
+    
+    # For local install, also copy icon to the main m17n directory
+    if [ -n "$FILE_SUFFIX" ]; then
+        cp bn-khipro.png "$INSTALL_DIR/bn-khipro${FILE_SUFFIX}.png"
+    fi
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
