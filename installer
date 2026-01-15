@@ -396,9 +396,16 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             read -p "Select release ($user_options) [Default: 1]: " tag_choice
             tag_choice=${tag_choice:-1}
             
-            if [ "$tag_choice" -eq "$option_next" ] && [ $((start_index + items_per_page)) -lt $total_tags ]; then
-                ((current_page++))
-                continue
+            # Check for "Next Page" option
+            if [ "$tag_choice" -eq "$option_next" ]; then
+                if [ $((start_index + items_per_page)) -lt $total_tags ]; then
+                    ((current_page++))
+                    continue
+                else
+                    print_warning "No more older releases found."
+                    # Loop back to show the same page again or handle gracefully
+                    continue
+                fi
             elif [[ "$tag_choice" =~ ^[1-5]$ ]]; then
                 # Map 1-5 to array index
                 selected_idx=$((tag_choice - 1))
@@ -408,11 +415,13 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
                     break
                 else
                      print_error "Invalid selection. Please try again."
-                     exit 1
+                     # Loop back instead of exiting
+                     continue
                 fi
             else
-                print_error "Invalid input."
-                exit 1
+                print_error "Invalid input. Please enter a valid number."
+                # Loop back instead of exiting
+                continue
             fi
         done
         
