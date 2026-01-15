@@ -396,10 +396,12 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             read -p "Select release ($user_options) [Default: 1]: " tag_choice
             tag_choice=${tag_choice:-1}
             
+            echo "DEBUG: Choice: '$tag_choice', Next: '$option_next', Start: '$start_index', Total: '$total_tags'"
+
             # Check for "Next Page" option
-            if [ "$tag_choice" -eq "$option_next" ]; then
+            if [[ "$tag_choice" -eq "$option_next" ]]; then
                 if [ $((start_index + items_per_page)) -lt $total_tags ]; then
-                    ((current_page++))
+                    current_page=$((current_page + 1))
                     continue
                 else
                     print_warning "No more older releases found."
