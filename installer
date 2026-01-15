@@ -67,11 +67,21 @@ echo "    KhiproKeyboard Installer"
 echo "=========================================="
 echo ""
 
-# Check if running as root for the installation part
-if [ "$EUID" -ne 0 ]; then
-    print_error "This script requires sudo privileges for installation."
-    print_status "Please run with: sudo bash installer"
-    exit 1
+# Determine installation paths based on privileges
+if [ "$EUID" -eq 0 ]; then
+    INSTALL_DIR="/usr/share/m17n"
+    ICON_DIR="/usr/share/m17n/icons"
+    print_status "Running as root. Installing system-wide to $INSTALL_DIR"
+else
+    INSTALL_DIR="$HOME/.m17n.d"
+    ICON_DIR="$HOME/.m17n.d/icons"
+    print_status "Running as user. Installing to $INSTALL_DIR"
+    
+    # Create user directories if they don't exist
+    if [ ! -d "$INSTALL_DIR" ]; then
+        print_status "Creating directory: $INSTALL_DIR"
+        mkdir -p "$INSTALL_DIR"
+    fi
 fi
 
 # Check if Git is installed
@@ -277,7 +287,7 @@ print_status "Starting KhiproKeyboard installation..."
 
 # Remove existing files
 print_status "Cleaning up previous installations..."
-rm -f /usr/share/m17n/bn-khipro*.mim 2>/dev/null || true
+rm -f "$INSTALL_DIR"/bn-khipro*.mim 2>/dev/null || true
 rm -rf /tmp/khipro-m17n 2>/dev/null || true
 
 # Clone repository
@@ -306,13 +316,13 @@ if [ ! -f bn-khipro.mim ]; then
     exit 1
 fi
 
-cp bn-khipro*.mim /usr/share/m17n/
+cp bn-khipro*.mim "$INSTALL_DIR/"
 
 # Copy icon if it exists
 if [ -f bn-khipro.png ]; then
     print_status "Installing icon..."
-    mkdir -p /usr/share/m17n/icons/
-    cp bn-khipro.png /usr/share/m17n/icons/
+    mkdir -p "$ICON_DIR/"
+    cp bn-khipro.png "$ICON_DIR/"
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
