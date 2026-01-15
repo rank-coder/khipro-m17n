@@ -327,7 +327,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram (shift shor-state))
 		(reph (shift reph-state))
 		(juktoborno  (shift juktoborno-state))
-		(byanjon (shift byanjon-state))
+		(byanjon (set PCID CID) (shift byanjon-state))
 		(set DELETER 0)
 	)
 	(prithayok-state
@@ -341,7 +341,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram (shift shor-state))
 		(reph (shift reph-state))
 		(juktoborno  (shift juktoborno-state))
-		(byanjon (shift byanjon-state))
+		(byanjon (set PCID CID) (shift byanjon-state))
 		(set DELETER 0)
 	)
 	(shor-state
@@ -355,7 +355,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram )
 		(reph (shift reph-state))
 		(juktoborno  (shift juktoborno-state))
-		(byanjon  (shift byanjon-state))
+		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
 	(reph-state
@@ -364,7 +364,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ng  (shift shor-state))
 		(ae  (shift shor-state))
 		(juktoborno  (shift juktoborno-state))
-		(byanjon  (shift byanjon-state))
+		(byanjon (set PCID CID) (shift byanjon-state))
 		(reph)
 		(kar  (shift shor-state))
 		(backspace)
