@@ -166,7 +166,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("wf" "ও")     
 		("wu" "ৌ")
 		("wuf" "োউ")
-		("ae" "্যা")
+		("ae" (set KAR 1) "্যা")
 		("aef" "অ্যা")
 		("uff" "‌ু")
 		("uuff" "‌ূ")
@@ -350,7 +350,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(prithayok (delete @-)  (shift prithayok-state))
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
-		(kar (shift shor-state))
+		(kar 
+			(cond
+				( ($ (= PCID )(= KAR 1)) (delete @-) (delete @-) (delete @-) (delete @-) (insert "র‍্যা") )  
+			)
+			(shift shor-state)
+		)
 		(juktoborno  (shift juktoborno-state))
 		
 		(byanjon 
