@@ -135,7 +135,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(ng )
 	(reph
 		("rr" "র্")
-		("r" (set CID 37) "র")
+		("r" (set CID 27) "র")
 		("rr/" "রর")
 	)
 	(phola
@@ -358,7 +358,15 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-) (delete @-) (set CID 38) (insert "ক্ক") (shift juktoborno-state))
-						((= CID 11) (delete @-) (delete @-) (set CID 39) (insert "ক্ট") (shift juktoborno-state))
+						
+						((= CID 2) (delete @-) (delete @-) (set CID 39) (insert "ক্ষ") (shift juktoborno-state))
+						((= CID 11) (delete @-) (delete @-) (set CID 40) (insert "ক্ট") (shift juktoborno-state))
+						((= CID 16) (delete @-) (delete @-) (set CID 41) (insert "ক্ত") (shift juktoborno-state))
+						((= CID 23) (delete @-) (delete @-) (set CID 42) (insert "ক্ব") (shift juktoborno-state))
+						((= CID 25) (delete @-) (delete @-) (set CID 43) (insert "ক্ম") (shift juktoborno-state))
+						((= CID 30) (delete @-) (delete @-) (set CID 39) (insert "ক্ষ") (shift juktoborno-state))
+						((= CID 28) (delete @-) (delete @-) (set CID 44) (insert "ক্ল") (shift juktoborno-state))
+						((= CID 31) (delete @-) (delete @-) (set CID 45) (insert "ক্স") (shift juktoborno-state))
 					)
 				)
 			)
