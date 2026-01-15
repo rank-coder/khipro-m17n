@@ -140,7 +140,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(phola
 		("r" "র")
-		("z" "য")
+		("z" (set CID 26) "য")
 	)
 	(kar
 		("o" "")
@@ -358,12 +358,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(juktoborno  (shift juktoborno-state))
 		(phola
-			(move @-)  (insert ?্)  (move @>)
-			(shift juktoborno-state)
+			(cond 
+				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 37) (insert "র‍্য") (shift juktoborno-state))
+				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (shift juktoborno-state))
+			)
 		)
 		(byanjon 
 			(cond
-				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 46) (insert "র‍্য") (shift juktoborno-state))
+				
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-) (delete @-) (set CID 38) (insert "ক্ক") (shift juktoborno-state))
