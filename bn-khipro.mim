@@ -135,7 +135,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(ng )
 	(reph
 		("rr" "র্")
-		("r" (set CID 27) "র")
+		("r" (set CID 27) (shift byanjon-state) "র")
 		("rr/" "রর")
 	)
 	(phola
@@ -355,6 +355,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(byanjon 
 			(cond
+				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 46) (insert "র‍্য") (shift juktoborno-state))
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-) (delete @-) (set CID 38) (insert "ক্ক") (shift juktoborno-state))
