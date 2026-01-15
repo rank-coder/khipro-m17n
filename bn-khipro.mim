@@ -142,6 +142,20 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("kkhm" (set DELETER 1) "ক্ষ্ম")
 		("kfz" (set DELETER 1) "ক্ষ্য")
 		("kkhz" (set DELETER 1) "ক্ষ্য")
+
+		("ggg" (set DELETER 1) "গ্গ")
+
+		("gg" (set DELETER 1) "জ্ঞ")
+
+		("nc" (set DELETER 3)
+			(set ALTERNATE 1) "ঞ্চ")
+		("nj" (set DELETER 3)
+			(set ALTERNATE 3) "ঞ্জ")
+		("njh" (set DELETER 3)
+			(set ALTERNATE 4) "ঞ্ঝ")
+		("nch" (set DELETER 3)
+			(set ALTERNATE 5) "ঞ্ছ")
+
 	)
 	(ng )
 	(reph
