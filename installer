@@ -75,7 +75,7 @@ if [ "$EUID" -eq 0 ]; then
     print_status "Running as root. Installing system-wide to $INSTALL_DIR"
 else
     INSTALL_DIR="$HOME/.m17n.d"
-    ICON_DIR="$HOME/.m17n.d"
+    ICON_DIR="$HOME/.m17n.d/icons"
     PRIV_SUFFIX="Local"
     print_status "Running as user. Installing to $INSTALL_DIR"
     
