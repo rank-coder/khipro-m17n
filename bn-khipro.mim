@@ -116,6 +116,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম") 
 		("z" (set CID 26) "য")
+		("r" (set CID 27) "র")
 		("l" (set CID 28) "ল")
 		("sh" (set CID 29) "শ")
 		("sh/" (set CID 32) "সহ")
@@ -135,7 +136,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(ng )
 	(reph
 		("rr" "র্")
-		("r" (set CID 27) (shift byanjon-state) "র")
 		("rr/" "রর")
 	)
 	(phola
@@ -335,7 +335,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ng  (shift shor-state))
 		(ae  (shift shor-state))
 		(juktoborno  (shift juktoborno-state))
-		(byanjon (set PCID CID) (shift byanjon-state))
+		(byanjon
+			
+			(shift byanjon-state)
+		)
 		(reph)
 		(kar  (shift shor-state))
 		(backspace)
