@@ -77,7 +77,7 @@ if [ "$EUID" -eq 0 ]; then
 else
     INSTALL_DIR="$HOME/.m17n.d"
     ICON_DIR="$HOME/.m17n.d"
-    PRIV_SUFFIX="-local"
+    PRIV_SUFFIX="Local"
     PRIV_TITLE=" (Local)"
     print_status "Running as user. Installing to $INSTALL_DIR"
     
@@ -376,7 +376,9 @@ if [ "$branch_name" = "main" ]; then
     BRANCH_SUFFIX=""
     BRANCH_TITLE=""
 else
-    BRANCH_SUFFIX="-${branch_name}"
+    # Capitalize first letter of branch name
+    capitalized_branch="$(tr '[:lower:]' '[:upper:]' <<< ${branch_name:0:1})${branch_name:1}"
+    BRANCH_SUFFIX="${capitalized_branch}"
     BRANCH_TITLE=" (${branch_name})"
 fi
 
