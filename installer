@@ -115,6 +115,91 @@ else
     print_success "Git is installed"
 fi
 
+# Main Menu: Install or Uninstall
+echo ""
+echo "What would you like to do?"
+echo "1. Install KhiproKeyboard (Default)"
+echo "2. Uninstall KhiproKeyboard"
+read -p "Enter choice [1/2]: " main_choice
+
+main_choice=${main_choice:-1}
+
+if [ "$main_choice" = "2" ]; then
+    print_status "Uninstallation Mode Selected"
+    
+    # List installed versions
+    if [ ! -d "$INSTALL_DIR" ]; then
+        print_error "Installation directory does not exist: $INSTALL_DIR"
+        exit 1
+    fi
+    
+    # Find installed mim files
+    installed_files=($(find "$INSTALL_DIR" -maxdepth 1 -name "bn-khipro*.mim" | sort))
+    
+    if [ ${#installed_files[@]} -eq 0 ]; then
+        print_warning "No KhiproKeyboard installations found in $INSTALL_DIR"
+        exit 0
+    fi
+    
+    echo ""
+    print_status "Found the following installations:"
+    for i in "${!installed_files[@]}"; do
+        filename=$(basename "${installed_files[$i]}")
+        echo "$((i+1)). $filename"
+    done
+    echo "A. Uninstall ALL versions"
+    echo ""
+    
+    print_warning "Default choice is 'None' (Cancel uninstallation)"
+    read -p "Select number to uninstall (or 'A' for all): " uninstall_choice
+    
+    uninstall_choice=${uninstall_choice}
+    
+    if [ -z "$uninstall_choice" ]; then
+        print_status "Cancelled. Exiting."
+        exit 0
+    fi
+
+    if [[ "$uninstall_choice" =~ ^[Aa]$ ]]; then
+        read -p "Are you sure you want to uninstall ALL versions? (y/N): " confirm_all
+        if [[ "$confirm_all" =~ ^[Yy]$ ]]; then
+            print_status "Removing all KhiproKeyboard files..."
+            rm -f "$INSTALL_DIR"/bn-khipro*.mim
+            rm -f "$ICON_DIR"/bn-khipro*.png
+            # Also clean up from INSTALL_DIR if different/same
+            rm -f "$INSTALL_DIR"/bn-khipro*.png 2>/dev/null || true
+            print_success "All versions uninstalled successfully!"
+        else
+            print_status "Cancelled."
+        fi
+        exit 0
+    elif [[ "$uninstall_choice" =~ ^[0-9]+$ ]]; then
+        index=$((uninstall_choice - 1))
+        if [ $index -ge 0 ] && [ $index -lt ${#installed_files[@]} ]; then
+            file_to_remove="${installed_files[$index]}"
+            base_name=$(basename "$file_to_remove" .mim)
+            
+            print_status "Uninstalling $base_name..."
+            rm -f "$file_to_remove"
+            rm -f "$ICON_DIR/$base_name.png"
+            rm -f "$INSTALL_DIR/$base_name.png" 2>/dev/null || true
+            
+            print_success "Uninstallation of $base_name complete!"
+            
+            # Restart reminder
+            echo ""
+            print_warning "COMPUTER LOG OUT KORE LOG-IN KORUN"
+        else
+            print_error "Invalid selection. Exiting."
+            exit 1
+        fi
+        exit 0
+    else
+        print_status "Invalid input or Cancelled. Exiting."
+        exit 0
+    fi
+fi
+
 # Check for input method frameworks and their m17n support
 print_status "Checking input method frameworks and m17n support..."
 
