@@ -127,6 +127,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("rf" (set CID 34) "ড়")
 		("rff" (set CID 35) "ঢ়")
 		(",," (set CID 36) "়")
+
+		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
+		("kf" (set CID 39) "ক্ষ")
 	)
 	(juktoborno 
 		
@@ -358,6 +361,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(juktoborno  (shift juktoborno-state))
 		(phola
+			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণ, ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। আর যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 37) (insert "র‍্য") (shift juktoborno-state))
 				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (shift juktoborno-state))
@@ -369,7 +373,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-) (delete @-) (set CID 38) (insert "ক্ক") (shift juktoborno-state))
-						
+
 						((= CID 2) (delete @-) (delete @-) (set CID 39) (insert "ক্ষ") (shift juktoborno-state))
 						((= CID 11) (delete @-) (delete @-) (set CID 40) (insert "ক্ট") (shift juktoborno-state))
 						((= CID 16) (delete @-) (delete @-) (set CID 41) (insert "ক্ত") (shift juktoborno-state))
@@ -378,6 +382,33 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 30) (delete @-) (delete @-) (set CID 39) (insert "ক্ষ") (shift juktoborno-state))
 						((= CID 28) (delete @-) (delete @-) (set CID 44) (insert "ক্ল") (shift juktoborno-state))
 						((= CID 31) (delete @-) (delete @-) (set CID 45) (insert "ক্স") (shift juktoborno-state))
+					)
+				)
+				((= PCID 3) 
+					(cond
+						((= CID 15) (delete @-) (delete @-) (set CID 46) (insert "গ্‌ণ") (shift juktoborno-state))
+						((= CID 19) (delete @-) (delete @-) (set CID 47) (insert "গ্ধ") (shift juktoborno-state))
+						;; ক্ষ এর মত গ্ধ কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
+						((= CID 20) (delete @-) (delete @-) (set CID 48) (insert "গ্ন") (shift juktoborno-state))
+						((= CID 23) (delete @-) (delete @-) (set CID 49) (insert "গ্ব") (shift juktoborno-state))
+						;; গ + ব এর দুই রূপই আছে: গ্ব এবং গ্‌ব
+						((= CID 25) (delete @-) (delete @-) (set CID 50) (insert "গ্ম") (shift juktoborno-state))
+						((= CID 28) (delete @-) (delete @-) (set CID 51) (insert "গ্ল") (shift juktoborno-state))
+					)
+				)
+				((= PCID 4)
+					(cond
+						((= CID 20) (delete @-) (delete @-) (set CID 52) (insert "ঘ্ন") (shift juktoborno-state))
+					)
+				)
+				((= PCID 5)
+					(cond
+						((= CID 1) (delete @-) (delete @-) (set CID 53) (insert "ঙ্ক") (shift juktoborno-state))
+						((= CID 2) (delete @-) (delete @-) (set CID 54) (insert "ঙ্খ") (shift juktoborno-state))
+						((= CID 3) (delete @-) (delete @-) (set CID 55) (insert "ঙ্গ") (shift juktoborno-state))
+						((= CID 4) (delete @-) (delete @-) (set CID 56) (insert "ঙ্ঘ") (shift juktoborno-state))
+						((= CID 25) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ম") (shift juktoborno-state))
+						((= CID 39) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ক্ষ") (shift juktoborno-state))
 					)
 				)
 			)
