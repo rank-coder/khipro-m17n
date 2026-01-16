@@ -136,6 +136,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("nj" (set CID 69) "ঞ্জ")
 		("njh" (set CID 70) "ঞ্ঝ")
 		;; ("ttf" (set CID 71) "ট্ট") ;; এটার বিকল্প ব্যবস্থা করা হবে
+		;; ("nnf" (set CID 81) "ণ্ণ") ;; এটার বিকল্প ব্যবস্থা করা হবে
 	)
 	(juktoborno 
 		
@@ -452,6 +453,20 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 13)
 					((= CID 13) (delete @-) (delete @-) (set CID 74) (insert "ড্ড") (shift juktoborno-state))
 					((= CID 23) (delete @-) (delete @-) (set CID 75) (insert "ড্ব") (shift juktoborno-state))
+				)
+				((= PCID 34)
+					((= CID 3) (delete @-) (delete @-) (set CID 76) (insert "ড়্‌গ") (shift juktoborno-state))
+				)
+				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
+				((= PCID 15)
+					((= CID 11) (delete @-) (delete @-) (set CID 77) (insert "ণ্ট") (shift juktoborno-state))
+					((= CID 12) (delete @-) (delete @-) (set CID 78) (insert "ণ্ঠ") (shift juktoborno-state))
+					((= CID 13) (delete @-) (delete @-) (set CID 79) (insert "ণ্ড") (shift juktoborno-state))
+					((= CID 14) (delete @-) (delete @-) (set CID 80) (insert "ণ্ঢ") (shift juktoborno-state))
+					((= CID 15) (delete @-) (delete @-) (set CID 81) (insert "ণ্ণ") (shift juktoborno-state))
+					((= CID 20) (delete @-) (delete @-) (set CID 81) (insert "ণ্ণ") (shift juktoborno-state))
+					((= CID 23) (delete @-) (delete @-) (set CID 82) (insert "ণ্ব") (shift juktoborno-state))
+					((= CID 25) (delete @-) (delete @-) (set CID 83) (insert "ণ্ম") (shift juktoborno-state))
 				)
 			)
 		)
