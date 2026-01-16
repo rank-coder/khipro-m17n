@@ -476,6 +476,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					((= CID 23) (delete @-) (delete @-) (set CID 87) (insert "ত্ব") (shift juktoborno-state))
 					((= CID 25) (delete @-) (delete @-) (set CID 88) (insert "ত্ম") (shift juktoborno-state))
 				)
+				((= PCID 17)
+					((= CID 23) (delete @-) (delete @-) (set CID 89) (insert "থ্ব") (shift juktoborno-state))
+				)
 			)
 		)
 	
