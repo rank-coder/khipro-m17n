@@ -388,10 +388,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 15) (delete @-) (delete @-) (set CID 46) (insert "গ্‌ণ") (shift juktoborno-state))
 						((= CID 19) (delete @-) (delete @-) (set CID 47) (insert "গ্ধ") (shift juktoborno-state))
-						;; ক্ষ এর মত গ্ধ কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
+						;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা -এর ম্যাপিং ব্যতিক্রম নয়।
 						((= CID 20) (delete @-) (delete @-) (set CID 48) (insert "গ্ন") (shift juktoborno-state))
 						((= CID 23) (delete @-) (delete @-) (set CID 49) (insert "গ্ব") (shift juktoborno-state))
-						;; গ + ব এর দুই রূপই আছে: গ্ব এবং গ্‌ব
+						;; গ + ব -এর দুই রূপই আছে: গ্ব এবং গ্‌ব
 						((= CID 25) (delete @-) (delete @-) (set CID 50) (insert "গ্ম") (shift juktoborno-state))
 						((= CID 28) (delete @-) (delete @-) (set CID 51) (insert "গ্ল") (shift juktoborno-state))
 					)
@@ -408,8 +408,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 3) (delete @-) (delete @-) (set CID 55) (insert "ঙ্গ") (shift juktoborno-state))
 						((= CID 4) (delete @-) (delete @-) (set CID 56) (insert "ঙ্ঘ") (shift juktoborno-state))
 						((= CID 25) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ম") (shift juktoborno-state))
-						((= CID 39) (delete @-) (delete @-) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ক্ষ") (shift juktoborno-state))
-						;; এখানে চা‍রবার ডিলিট ‍করার ‍কারণ হলো ঙ + ক্ষ = ৪টা ক্য‍ারাক্টার
+						((= CID 39) (delete @-) (delete @-) (delete @-) (delete @-) (set CID 58) (insert "ঙ্ক্ষ") (shift juktoborno-state))
+						;; এখানে চা‍রবার ডিলিট ‍করার ‍কারণ হলো ঙ + ক্ষ = ৪টা ক্য‍ারেক্টার
 					)
 				)
 			)
