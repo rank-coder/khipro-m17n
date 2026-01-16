@@ -130,6 +130,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
+		("gg" (set CID 65) "জ্ঞ")
+		("nc" (set CID 67) "ঞ্চ")
+		("nch" (set CID 68) "ঞ্ছ")
+		("nj" (set CID 69) "ঞ্জ")
+		("njh" (set CID 70) "ঞ্ঝ")
+		("ttf" (set CID 71) "ট্ট")
 	)
 	(juktoborno 
 		
@@ -419,6 +425,27 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 10) (delete @-) (delete @-) (set CID 61) (insert "চ্ঞ") (shift juktoborno-state))
 						((= CID 23) (delete @-) (delete @-) (set CID 62) (insert "চ্ব") (shift juktoborno-state))
 					)
+				)
+				((= PCID 8)
+					(cond
+						((= CID 8) (delete @-) (delete @-) (set CID 63) (insert "জ্জ") (shift juktoborno-state))
+						((= CID 9) (delete @-) (delete @-) (set CID 64) (insert "জ্ঝ") (shift juktoborno-state))
+						((= CID 10) (delete @-) (delete @-) (set CID 65) (insert "জ্ঞ") (shift juktoborno-state))
+						;; জ্ঞ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো, কারণ এটির একটি ব্যতিক্রমী ম্যাপিং রয়েছে
+						((= CID 23) (delete @-) (delete @-) (set CID 66) (insert "জ্ব") (shift juktoborno-state))
+					)
+				)
+				((= PCID 10)
+					(cond
+						((= CID 6) (delete @-) (delete @-) (set CID 67) (insert "ঞ্চ") (shift juktoborno-state))
+						((= CID 7) (delete @-) (delete @-) (set CID 68) (insert "ঞ্ছ") (shift juktoborno-state))
+						((= CID 8) (delete @-) (delete @-) (set CID 69) (insert "ঞ্জ") (shift juktoborno-state))
+						((= CID 9) (delete @-) (delete @-) (set CID 70) (insert "ঞ্ঝ") (shift juktoborno-state))
+						;; উপরের চারটিকেই ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো, কারণ এগুলোর ব্যতিক্রমী ম্যাপিং রয়েছে
+					)
+				)
+				((= PCID 11)
+					((= CID 11) (delete @-) (delete @-) (set CID 71) (insert "ট্ট") (shift juktoborno-state))
 				)
 			)
 		)
