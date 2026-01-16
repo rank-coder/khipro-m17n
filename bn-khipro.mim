@@ -410,14 +410,13 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 5)
 					(cond
-						((= CID 39) (delete @-) (delete @-) (delete @-) (delete @-) (set CID 58) (insert "ঙ্ক্ষ") (shift juktoborno-state))
-						;; এখানে চারবার ডিলিট করার কারণ হলো ঙক্ষ = ৪টা ক্যারেক্টার
 						((= CID 1) (delete @-) (delete @-) (set CID 53) (insert "ঙ্ক") (shift juktoborno-state))
 						((= CID 2) (delete @-) (delete @-) (set CID 54) (insert "ঙ্খ") (shift juktoborno-state))
 						((= CID 3) (delete @-) (delete @-) (set CID 55) (insert "ঙ্গ") (shift juktoborno-state))
 						((= CID 4) (delete @-) (delete @-) (set CID 56) (insert "ঙ্ঘ") (shift juktoborno-state))
 						((= CID 25) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ম") (shift juktoborno-state))
-						
+						((= CID 39) (delete @-) (delete @-) (delete @-) (delete @-) (set CID 58) (insert "ঙ্ক্ষ") (shift juktoborno-state))
+						;; এখানে চারবার ডিলিট করার কারণ হলো ঙক্ষ = ৪টা ক্যারেক্টার
 					)
 				)
 				((= PCID 6)
