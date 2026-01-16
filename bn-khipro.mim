@@ -135,7 +135,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("nch" (set CID 68) "ঞ্ছ")
 		("nj" (set CID 69) "ঞ্জ")
 		("njh" (set CID 70) "ঞ্ঝ")
-		("ttf" (set CID 71) "ট্ট")
+		;; ("ttf" (set CID 71) "ট্ট") ;; এটার বিকল্প ব্যবস্থা করা হবে
 	)
 	(juktoborno 
 		
@@ -446,6 +446,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 11)
 					((= CID 11) (delete @-) (delete @-) (set CID 71) (insert "ট্ট") (shift juktoborno-state))
+					((= CID 23) (delete @-) (delete @-) (set CID 72) (insert "ট্ব") (shift juktoborno-state))
+					((= CID 25) (delete @-) (delete @-) (set CID 73) (insert "ট্ম") (shift juktoborno-state))
+				)
+				((= PCID 13)
+					((= CID 13) (delete @-) (delete @-) (set CID 74) (insert "ড্ড") (shift juktoborno-state))
+					((= CID 23) (delete @-) (delete @-) (set CID 75) (insert "ড্ব") (shift juktoborno-state))
 				)
 			)
 		)
