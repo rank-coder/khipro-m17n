@@ -409,7 +409,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 4) (delete @-) (delete @-) (set CID 56) (insert "ঙ্ঘ") (shift juktoborno-state))
 						((= CID 25) (delete @-) (delete @-) (set CID 57) (insert "ঙ্ম") (shift juktoborno-state))
 						((= CID 39) (delete @-) (delete @-) (delete @-) (delete @-) (set CID 58) (insert "ঙ্ক্ষ") (shift juktoborno-state))
-						;; এখানে চা‍রবার ডিলিট ‍করার ‍কারণ হলো ঙ + ক্ষ = ৪টা ক্য‍ারেক্টার
+						;; এখানে চারবার ডিলিট করার কারণ হলো ঙ + ক্ষ = ৪টা ক্যারেক্টার
 					)
 				)
 			)
