@@ -468,6 +468,13 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					((= CID 23) (delete @-) (delete @-) (set CID 82) (insert "ণ্ব") (shift juktoborno-state))
 					((= CID 25) (delete @-) (delete @-) (set CID 83) (insert "ণ্ম") (shift juktoborno-state))
 				)
+				((= PCID 16)
+					((= CID 16) (delete @-) (delete @-) (set CID 84) (insert "ত্ত") (shift juktoborno-state))
+					((= CID 11) (delete @-) (delete @-) (set CID 71) (insert "ট্ট") (shift juktoborno-state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে
+					((= CID 20) (delete @-) (delete @-) (set CID 85) (insert "ত্ন") (shift juktoborno-state))
+					((= CID 23) (delete @-) (delete @-) (set CID 86) (insert "ত্ব") (shift juktoborno-state))
+					((= CID 25) (delete @-) (delete @-) (set CID 87) (insert "ত্ম") (shift juktoborno-state))
+				)
 			)
 		)
 	
