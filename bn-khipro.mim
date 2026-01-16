@@ -412,6 +412,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						;; এখানে চারবার ডিলিট করার কারণ হলো ঙ + ক্ষ = ৪টা ক্যারেক্টার
 					)
 				)
+				((= PCID 6)
+					(cond
+						((= CID 6) (delete @-) (delete @-) (set CID 59) (insert "চ্চ") (shift juktoborno-state))
+						((= CID 7) (delete @-) (delete @-) (set CID 60) (insert "চ্ছ") (shift juktoborno-state))
+						((= CID 10) (delete @-) (delete @-) (set CID 61) (insert "চ্ঞ") (shift juktoborno-state))
+						((= CID 23) (delete @-) (delete @-) (set CID 62) (insert "চ্ব") (shift juktoborno-state))
+					)
+				)
 			)
 		)
 	
