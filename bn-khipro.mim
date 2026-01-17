@@ -654,6 +654,17 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						( (& (= CID 3) (! IO 1)) (delete @-4) (set CID 176) (insert "গ্‌গ"))						
 					)
 				)
+				((= PCID 53)
+					(cond
+						((= CID 2) (delete @-4) (set CID 58) (insert "ঙ্ক্ষ"))
+						((= CID 30) (delete @-4) (set CID 58) (insert "ঙ্ক্ষ"))
+					)
+				)
+				((= PCID 60)
+					(cond
+						((= CID 23) (delete @-4) (set CID 176) (insert "চ্ছ্ব"))						
+					)
+				)
 			)
 		)
 		(backspace)
