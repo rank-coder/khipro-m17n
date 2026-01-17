@@ -579,6 +579,16 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 28) (delete @-2) (set CID 141) (insert "ল্ল") (shift juktoborno-state))
 					)
 				)
+				((= PCID 29)
+					(cond
+						((= CID 6) (delete @-2) (set CID 142) (insert "শ্চ") (shift juktoborno-state))
+						((= CID 7) (delete @-2) (set CID 143) (insert "শ্ছ") (shift juktoborno-state))
+						((= CID 20) (delete @-2) (set CID 144) (insert "শ্ন") (shift juktoborno-state))
+						((= CID 23) (delete @-2) (set CID 145) (insert "শ্ব") (shift juktoborno-state))
+						((= CID 25) (delete @-2) (set CID 146) (insert "শ্ম") (shift juktoborno-state))
+						((= CID 28) (delete @-2) (set CID 147) (insert "শ্ল") (shift juktoborno-state))
+					)
+				)
 			)
 		)
 	
