@@ -548,6 +548,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 28) (delete @-2) (set CID 122) (insert "ব্ল") (shift juktoborno-state))
 					)
 				)
+				((= PCID 24)
+					(cond
+						((= CID 23) (delete @-2) (set CID 123) (insert "ভ্ব") (shift juktoborno-state))
+						((= CID 28) (delete @-2) (set CID 124) (insert "ভ্ল") (shift juktoborno-state))
+					)
+				)
 			)
 		)
 	
