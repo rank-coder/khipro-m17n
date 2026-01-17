@@ -347,7 +347,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(biram  (shift shor-state))
 		(kar 
 			(cond
-				( ($ (= PCID 27) (= KAR 1)) (move @-3) (insert "‍") (move @>) )  
+				( ($ (= PCID 27) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) )  
 			)
 			(shift shor-state)
 		)
@@ -355,7 +355,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণ, ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। আর যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			(cond 
-				((& (= PCID 27) (= CID 26)) (delete @-2) (set CID 37) (insert "র‍্য") (shift juktoborno-state))
+				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 37) (insert "র‍্য") (shift juktoborno-state))
 				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (shift juktoborno-state))
 			)
 		)
