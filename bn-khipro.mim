@@ -339,18 +339,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
-	(reph-state
-		(prithayok (delete @-)  (shift prithayok-state))
-		(diacritic  (shift shor-state))
-		(ng  (shift shor-state))
-		(ae  (shift shor-state))
-		(juktoborno  (shift juktoborno-state))
-		(byanjon (set PCID CID) (shift byanjon-state))
-		(reph)
-		(kar  (shift shor-state))
-		(backspace)
-		(nil  (shift shor-state))
-	)
+	
 	(byanjon-state
 		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
