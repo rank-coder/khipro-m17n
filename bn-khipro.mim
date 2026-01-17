@@ -339,7 +339,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
-	
 	(byanjon-state
 		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
