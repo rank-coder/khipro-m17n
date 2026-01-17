@@ -539,6 +539,15 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 28) (delete @-2) (set CID 117) (insert "ফ্ল") (shift juktoborno-state))
 					)
 				)
+				((= PCID 23)
+					(cond
+						((= CID 8) (delete @-2) (set CID 118) (insert "ব্জ") (shift juktoborno-state))
+						((= CID 18) (delete @-2) (set CID 119) (insert "ব্দ") (shift juktoborno-state))
+						((= CID 19) (delete @-2) (set CID 120) (insert "ব্ধ") (shift juktoborno-state))
+						((= CID 23) (delete @-2) (set CID 121) (insert "ব্ব") (shift juktoborno-state))
+						((= CID 28) (delete @-2) (set CID 122) (insert "ব্ল") (shift juktoborno-state))
+					)
+				)
 			)
 		)
 	
