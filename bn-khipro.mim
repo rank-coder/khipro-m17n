@@ -130,11 +130,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
-		("gg" (set CID 65) "জ্ঞ")
-		("nc" (set CID 67) "ঞ্চ")
-		("nch" (set CID 68) "ঞ্ছ")
-		("nj" (set CID 69) "ঞ্জ")
-		("njh" (set CID 70) "ঞ্ঝ")
+		;; ("gg" (set CID 65) "জ্ঞ")
+		;; ("nc" (set CID 67) "ঞ্চ")
+		;; ("nch" (set CID 68) "ঞ্ছ")
+		;; ("nj" (set CID 69) "ঞ্জ")
+		;; ("njh" (set CID 70) "ঞ্ঝ")
 		;; ("ttf" (set CID 71) "ট্ট") ;; এটার বিকল্প ব্যবস্থা করা হবে
 		;; ("nnf" (set CID 81) "ণ্ণ") ;; এটার বিকল্প ব্যবস্থা করা হবে
 	)
@@ -393,12 +393,13 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 3) 
 					(cond
+						((= CID 3) (delete @-2) (set CID 65) (insert "জ্ঞ") (shift juktoborno-state))
 						((= CID 15) (delete @-2) (set CID 46) (insert "গ্‌ণ") (shift juktoborno-state))
 						((= CID 19) (delete @-2) (set CID 47) (insert "গ্ধ") (shift juktoborno-state))
 						;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা -এর ম্যাপিং ব্যতিক্রম নয়।
 						((= CID 20) (delete @-2) (set CID 48) (insert "গ্ন") (shift juktoborno-state))
-						((= CID 23) (delete @-2) (set CID 49) (insert "গ্ব") (shift juktoborno-state))
-						;; গ + ব -এর দুই রূপই আছে: গ্ব এবং গ্‌ব
+						((= CID 23) (delete @-2) (set CID 49) (insert "গ্‌ব") (shift juktoborno-state))
+						;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
 						((= CID 25) (delete @-2) (set CID 50) (insert "গ্ম") (shift juktoborno-state))
 						((= CID 28) (delete @-2) (set CID 51) (insert "গ্ল") (shift juktoborno-state))
 					)
@@ -432,7 +433,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 8) (delete @-2) (set CID 63) (insert "জ্জ") (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set CID 64) (insert "জ্ঝ") (shift juktoborno-state))
 						((= CID 10) (delete @-2) (set CID 65) (insert "জ্ঞ") (shift juktoborno-state))
-						;; জ্ঞ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো, কারণ এটির একটি ব্যতিক্রমী ম্যাপিং রয়েছে
 						((= CID 23) (delete @-2) (set CID 66) (insert "জ্ব") (shift juktoborno-state))
 					)
 				)
@@ -442,7 +442,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 7) (delete @-2) (set CID 68) (insert "ঞ্ছ") (shift juktoborno-state))
 						((= CID 8) (delete @-2) (set CID 69) (insert "ঞ্জ") (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set CID 70) (insert "ঞ্ঝ") (shift juktoborno-state))
-						;; উপরের চারটিকেই ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো, কারণ এগুলোর ব্যতিক্রমী ম্যাপিং রয়েছে
 					)
 				)
 				((= PCID 11)
