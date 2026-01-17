@@ -618,6 +618,15 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 28) (delete @-2) (set CID 166) (insert "স্ল") (shift juktoborno-state))
 					)
 				)
+				((= PCID 32)
+					(cond
+						((= CID 15) (delete @-2) (set CID 168) (insert "হ্ণ") (shift juktoborno-state))
+						((= CID 20) (delete @-2) (set CID 167) (insert "হ্ন") (shift juktoborno-state))
+						((= CID 23) (delete @-2) (set CID 169) (insert "হ্ব") (shift juktoborno-state))
+						((= CID 25) (delete @-2) (set CID 170) (insert "হ্ম") (shift juktoborno-state))
+						((= CID 28) (delete @-2) (set CID 171) (insert "হ্ল") (shift juktoborno-state))
+					)
+				)
 			)
 		)
 	
