@@ -344,8 +344,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণ, ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। আর যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			(cond 
-				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 37) (insert "র‍্য") (shift juktoborno-state))
-				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (shift juktoborno-state))
+				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set CID 37) (insert "র‍্য") (set DELETER 2) (shift juktoborno-state))
+				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (set DELETER 1) (shift juktoborno-state))
 			)
 		)
 		(byanjon 
@@ -637,7 +637,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(kar (shift shor-state))
 		(juktoborno (set PCID CID))
 		(phola
-			(move @-)  (insert ?্)  (move @>)
+			(move @-)  (insert ?্)  (move @>) (set DELETER 1)
 		)
 		(byanjon 
 			(cond
