@@ -457,11 +457,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set CID 75) (insert "ড্ব") (shift juktoborno-state))
 					)
 				)
-				((= PCID 34)
-					(cond
-						((= CID 3) (delete @-2) (set CID 76) (insert "ড়্‌গ") (shift juktoborno-state))
-					)
-				)
 				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
 				((= PCID 15)
 					(cond
@@ -625,6 +620,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set CID 169) (insert "হ্ব") (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set CID 170) (insert "হ্ম") (shift juktoborno-state))
 						((= CID 28) (delete @-2) (set CID 171) (insert "হ্ল") (shift juktoborno-state))
+					)
+				)
+				((= PCID 34)
+					(cond
+						((= CID 3) (delete @-2) (set CID 76) (insert "ড়্‌গ") (shift juktoborno-state))
 					)
 				)
 			)
