@@ -298,7 +298,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 (state
 	(init
-		
+		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set DELETER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		(ng (commit)  (shift shor-state))
 		(shor (shift shor-state))
@@ -309,10 +309,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(reph (shift reph-state))
 		(juktoborno  (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
-		(set DELETER 0)
 	)
 	(prithayok-state
-		
+		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set DELETER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		(ng (commit)  (shift shor-state))
 		(shor (shift shor-state))
@@ -323,9 +322,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(reph (shift byanjon-state))
 		(juktoborno  (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
-		(set DELETER 0)
 	)
 	(shor-state
+		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set DELETER 0)) ;; KAR বাদে অন্য ভারিয়েবল রিসেট করা হলো
 		(diacritic  )
 		(ng  )
 		(shor )
@@ -417,7 +416,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 8) (delete @-2) (set CID 63) (insert "জ্জ") (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set CID 64) (insert "জ্ঝ") (shift juktoborno-state))
-						((= CID 10) (delete @-2) (set CID 65) (insert "জ্ঞ") (shift juktoborno-state))
+						((= CID 10) (delete @-2) (set CID 65) (set IO 1) (insert "জ্ঞ") (shift juktoborno-state)) ;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই
 						((= CID 23) (delete @-2) (set CID 66) (insert "জ্ব") (shift juktoborno-state))
 					)
 				)
@@ -617,6 +616,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					)
 				)
 			)
+			(set PCID CID)
 		)
 	
 		(backspace)
@@ -647,7 +647,24 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(phola
 			(move @-)  (insert ?্)  (move @>)
 		)
-		(byanjon )
+		(byanjon 
+			(cond
+				((= PCID 39)
+					(cond
+						((= CID 15) (delete @-4) (set CID 172) (insert "ক্ষ্ণ"))
+						((= CID 20) (delete @-4) (set CID 173) (insert "ক্ষ্ণ"))
+						((= CID 23) (delete @-4) (set CID 174) (insert "ক্ষ্ব"))
+						((= CID 25) (delete @-4) (set CID 175) (insert "ক্ষ্ম"))
+					)
+				)
+				((= PCID 65)
+					(cond
+						( (& (= CID 3) (! IO 1)) (delete @-4) (set CID 176) (insert "গ্‌গ"))
+						
+					)
+				)
+			)
+		)
 		(backspace)
 
 	)
