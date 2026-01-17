@@ -116,7 +116,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম") 
 		("z" (set CID 26) "য")
-		("r" (set CID 27) "র")
+		("r" "র")
 		("l" (set CID 28) "ল")
 		("sh" (set CID 29) "শ")
 		("sh/" (set CID 32) "সহ")
