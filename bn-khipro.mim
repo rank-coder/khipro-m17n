@@ -506,6 +506,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 20)
 					(cond
+						((= CID 6) (delete @-2) (set CID 67) (insert "ঞ্চ") (shift juktoborno-state))
+						((= CID 7) (delete @-2) (set CID 68) (insert "ঞ্ছ") (shift juktoborno-state))
+						((= CID 8) (delete @-2) (set CID 69) (insert "ঞ্জ") (shift juktoborno-state))
+						((= CID 9) (delete @-2) (set CID 70) (insert "ঞ্ঝ") (shift juktoborno-state))
 						((= CID 11) (delete @-2) (set CID 100) (insert "ন্ট") (shift juktoborno-state))
 						((= CID 12) (delete @-2) (set CID 101) (insert "ন্ঠ") (shift juktoborno-state))
 						((= CID 13) (delete @-2) (set CID 102) (insert "ন্ড") (shift juktoborno-state))
