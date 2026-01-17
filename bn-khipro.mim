@@ -296,7 +296,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(reph (shift reph-state))
-		(juktoborno  (shift juktoborno-state))
+		(juktoborno (set PCID CID) (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(prithayok-state
@@ -309,7 +309,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(reph (shift byanjon-state))
-		(juktoborno  (shift juktoborno-state))
+		(juktoborno (set PCID CID) (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(shor-state
@@ -323,7 +323,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko )
 		(biram )
 		(reph (shift byanjon-state))
-		(juktoborno  (shift juktoborno-state))
+		(juktoborno (set PCID CID) (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
@@ -339,7 +339,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			)
 			(shift shor-state)
 		)
-		(juktoborno  (shift juktoborno-state))
+		(juktoborno (set PCID CID) (shift juktoborno-state))
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণ, ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। আর যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			(cond 
@@ -632,7 +632,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
-		(juktoborno )
+		(juktoborno (set PCID CID))
 		(phola
 			(move @-)  (insert ?্)  (move @>)
 		)
