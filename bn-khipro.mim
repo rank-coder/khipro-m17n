@@ -676,6 +676,16 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-4) (set CID 179) (insert "ত্ত্ব"))						
 					)
 				)
+				((= PCID 92)
+					(cond
+						((= CID 23) (delete @-4) (set CID 180) (insert "দ্দ্ব"))						
+					)
+				)
+				((= PCID 103)
+					(cond
+						((= CID 23) (delete @-4) (set CID 181) (insert "ন্ত্ব"))						
+					)
+				)
 			)
 		)
 		(backspace)
