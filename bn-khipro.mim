@@ -127,6 +127,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("rf" (set CID 34) "ড়")
 		("rff" (set CID 35) "ঢ়")
 		(",," (set CID 36) "়")
+		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
+		("kf" (set CID 39) (set DELETER 1) "ক্ষ")
 	)
 	(juktoborno 
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
@@ -649,8 +651,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 65)
 					(cond
-						( (& (= CID 3) (! IO 1)) (delete @-4) (set CID 176) (insert "গ্‌গ"))
-						
+						( (& (= CID 3) (! IO 1)) (delete @-4) (set CID 176) (insert "গ্‌গ"))						
 					)
 				)
 			)
