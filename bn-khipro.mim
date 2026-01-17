@@ -313,7 +313,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(shor-state
-		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set DELETER 0)) ;; KAR বাদে অন্য ভ্যারিয়েবল রিসেট করা হলো
+		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set DELETER 0))
 		(diacritic  )
 		(ng  )
 		(shor )
