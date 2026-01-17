@@ -494,6 +494,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 3) (delete @-2) (set CID 90) (insert "দ্‌গ") (shift juktoborno-state))
 						((= CID 4) (delete @-2) (set CID 91) (insert "দ্‌ঘ") (shift juktoborno-state))
+						((= CID 13) (delete @-2) (set CID 74) (insert "ড্ড") (shift juktoborno-state))
 						((= CID 18) (delete @-2) (set CID 92) (insert "দ্দ") (shift juktoborno-state))
 						((= CID 19) (delete @-2) (set CID 93) (insert "দ্ধ") (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set CID 94) (insert "দ্ব") (shift juktoborno-state))
