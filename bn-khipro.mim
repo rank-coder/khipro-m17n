@@ -127,21 +127,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("rf" (set CID 34) "ড়")
 		("rff" (set CID 35) "ঢ়")
 		(",," (set CID 36) "়")
-
-		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
-		("kf" (set CID 39) "ক্ষ")
-		;; ("gg" (set CID 65) "জ্ঞ")
-		;; ("nc" (set CID 67) "ঞ্চ") ;; এগুলোর বিকল্প ব্যবস্থা করা হবে
-		;; ("nch" (set CID 68) "ঞ্ছ")
-		;; ("nj" (set CID 69) "ঞ্জ")
-		;; ("njh" (set CID 70) "ঞ্ঝ")
-		;; ("ttf" (set CID 71) "ট্ট") ;; এটার বিকল্প ব্যবস্থা করা হবে
-		;; ("nnf" (set CID 81) "ণ্ণ") ;; এটার বিকল্প ব্যবস্থা করা হবে
 	)
 	(juktoborno 
-		
-
-
+		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
+		("kf" (set CID 39) "ক্ষ")
 	)
 	(ng )
 	(reph
