@@ -130,7 +130,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(juktoborno 
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
-		("kf" (set CID 39) "ক্ষ")
+		("kf" (set CID 39) (set DELETER 1) "ক্ষ")
 	)
 	(ng )
 	(reph
@@ -613,8 +613,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(juktoborno-state
 		(deleter
 			(cond
-				((= DELETER 1)  (move @-)  (delete @-)  (move @>)  (set DELETER 0))
-				((= DELETER 2)  (move @-)  (delete @-)  (delete @-)  (move @>)  (set DELETER 0))
+				((= DELETER 1)  (move @-)  (delete @-)  (move @>) )
+				((= DELETER 2)  (move @-)  (delete @-)  (delete @-)  (move @>) )
 				((= DELETER 3) 
 					(cond 
 						((= ALTERNATE 1)  (delete @-)  (delete @-)  (delete @-)  (insert "নচ"))
@@ -625,6 +625,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					)
 				)
 			)
+			(set DELETER 0)
 		)
 		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
