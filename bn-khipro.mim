@@ -346,7 +346,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(byanjon 
 			(cond
-				((= PCID 187) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1) (shift juktoborno-state))
+				((= PCID 187) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1))
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-2) (set LCID CID) (set CID 38) (insert "ক্ক") (set SLICER 1) (shift juktoborno-state))
