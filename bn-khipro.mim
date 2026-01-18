@@ -348,8 +348,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(cond
 				((= PCID 187) 
 					(cond
-						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 4))
-						(1 (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1))
+						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 4) (shift juktoborno-state))
+						(1 (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1) (shift juktoborno-state))
 					)
 				)
 				((= PCID 1) 
