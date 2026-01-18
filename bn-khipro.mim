@@ -717,7 +717,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 28) (delete @-4) (set LCID CID) (set CID 186) (insert "মপ্ল"))						
 					)
 				)
-				(1 (shift byanjon-state))	
+				(1 (set PCID CID) (shift byanjon-state))	
 			)
 		)
 		(backspace)
