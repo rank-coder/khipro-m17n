@@ -307,7 +307,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(backspace)
 	)
 	(byanjon-state
-		(diacritic  (shift shor-state))
 		(ng  (shift shor-state))
 		(prithayok (delete @-)  (shift prithayok-state))
 		(ongko  (shift shor-state))
@@ -607,6 +606,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				(1 (delete @-) (insert "ঁ") )
 			)
 		)
+		(diacritic  (shift shor-state))
 	
 		(backspace)
 	)
