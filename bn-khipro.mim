@@ -229,16 +229,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("```" "``")
 		("``f" "‍")
 
-		;; স্ল্যাশযুক্ত ব্যঞ্জন
-			("kh//" "খ/")
-			("gh//" "ঘ/")
-			("ng//" "ঙ/")
-			("ch//" "ছ/")
-			("jh//" "ঝ/")
-			("th//" "থ/")
-			("dh//" "ধ/")
-			("ph//" "ফ/")
-			("sh//" "শ/")
+
 
 	)
 	(biram
