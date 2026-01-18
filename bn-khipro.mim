@@ -319,18 +319,20 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(juktoborno (set PCID CID) (shift juktoborno-state))
 		(phola
-			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণ, ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। আর যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
+			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে। উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set LCID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
-				((! (= PCID 27)) (move @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
+				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
+				(1 (move @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state)) 
 			)
 		)
 		(byanjon 
 			(cond
-				((= PCID 187) 
+				((= PCID 187)
 					(cond
 						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 4))
 						(1 (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1))
+						;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। তার পরের সবগুলোতে দেখব - করা হয়েছে।
 					)
 				)
 				((= PCID 1) 
