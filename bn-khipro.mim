@@ -355,7 +355,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 1) (delete @-2) (set CID 38) (insert "ক্ক") (set DELETER 1) (shift juktoborno-state))
 
-						((= CID 2) (delete @-2) (set CID 39) (insert "ক্ষ") (set DELETER 3) (set ALTERNATE 2) (shift juktoborno-state))
+						((= CID 2) (delete @-2) (set CID 39) (insert "ক্ষ") (set DELETER 3) (set ALTERNATE 1) (shift juktoborno-state))
 						((= CID 11) (delete @-2) (set CID 40) (insert "ক্ট") (set DELETER 1) (shift juktoborno-state))
 						((= CID 16) (delete @-2) (set CID 41) (insert "ক্ত") (set DELETER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set CID 42) (insert "ক্ব") (set DELETER 1) (shift juktoborno-state))
@@ -367,7 +367,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 3) 
 					(cond
-						((= CID 3) (delete @-2) (set CID 65) (insert "জ্ঞ") (set DELETER 3) (set ALTERNATE 6) (shift juktoborno-state))
+						((= CID 3) (delete @-2) (set CID 65) (insert "জ্ঞ") (set DELETER 3) (set ALTERNATE 2) (shift juktoborno-state))
 						((= CID 15) (delete @-2) (set CID 46) (insert "গ্‌ণ") (set DELETER 2) (shift juktoborno-state))
 						((= CID 19) (delete @-2) (set CID 47) (insert "গ্ধ") (set DELETER 1) (shift juktoborno-state))
 						;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা -এর ম্যাপিং ব্যতিক্রম নয়।
@@ -439,14 +439,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 13) (delete @-2) (set CID 79) (insert "ণ্ড") (set DELETER 1) (shift juktoborno-state))
 						((= CID 14) (delete @-2) (set CID 80) (insert "ণ্ঢ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 15) (delete @-2) (set CID 81) (insert "ণ্ণ") (set DELETER 1) (shift juktoborno-state))
-						((= CID 20) (delete @-2) (set CID 81) (insert "ণ্ণ") (set DELETER 3) (set ALTERNATE 7) (shift juktoborno-state))
+						((= CID 20) (delete @-2) (set CID 81) (insert "ণ্ণ") (set DELETER 3) (set ALTERNATE 3) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set CID 82) (insert "ণ্ব") (set DELETER 1) (shift juktoborno-state))
 						((CID 25) (delete @-2) (set CID 83) (insert "ণ্ম") (set DELETER 1) (shift juktoborno-state))
 					)
 				)
 				((= PCID 16)
 					(cond
-						((= CID 11) (delete @-2) (set CID 71) (insert "ট্ট") (set DELETER 3) (set ALTERNATE 8) (shift juktoborno-state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে
+						((= CID 11) (delete @-2) (set CID 71) (insert "ট্ট") (set DELETER 3) (set ALTERNATE 4) (shift juktoborno-state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে
 						((= CID 16) (delete @-2) (set CID 84) (insert "ত্ত") (set DELETER 1) (shift juktoborno-state))
 						((= CID 17) (delete @-2) (set CID 85) (insert "ত্থ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 20) (delete @-2) (set CID 86) (insert "ত্ন") (set DELETER 1) (shift juktoborno-state))
@@ -463,7 +463,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 3) (delete @-2) (set CID 90) (insert "দ্‌গ") (set DELETER 2) (shift juktoborno-state))
 						((= CID 4) (delete @-2) (set CID 91) (insert "দ্‌ঘ") (set DELETER 2) (shift juktoborno-state))
-						((= CID 13) (delete @-2) (set CID 74) (insert "ড্ড") (set DELETER 3) (set ALTERNATE 9) (shift juktoborno-state)) ;; এটা দ এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে
+						((= CID 13) (delete @-2) (set CID 74) (insert "ড্ড") (set DELETER 3) (set ALTERNATE 5) (shift juktoborno-state)) ;; এটা দ এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে
 						((= CID 18) (delete @-2) (set CID 92) (insert "দ্দ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 19) (delete @-2) (set CID 93) (insert "দ্ধ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set CID 94) (insert "দ্ব") (set DELETER 1) (shift juktoborno-state))
@@ -480,14 +480,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 20)
 					(cond
-						((= CID 6) (delete @-2) (set CID 67) (insert "ঞ্চ") (set DELETER 3) (set ALTERNATE 10) (shift juktoborno-state))
-						((= CID 7) (delete @-2) (set CID 68) (insert "ঞ্ছ") (set DELETER 3) (set ALTERNATE 11) (shift juktoborno-state))
-						((= CID 8) (delete @-2) (set CID 69) (insert "ঞ্জ") (set DELETER 3) (set ALTERNATE 12) (shift juktoborno-state))
-						((= CID 9) (delete @-2) (set CID 70) (insert "ঞ্ঝ") (set DELETER 3) (set ALTERNATE 13) (shift juktoborno-state))
+						((= CID 6) (delete @-2) (set CID 67) (insert "ঞ্চ") (set DELETER 3) (set ALTERNATE 6) (shift juktoborno-state))
+						((= CID 7) (delete @-2) (set CID 68) (insert "ঞ্ছ") (set DELETER 3) (set ALTERNATE 7) (shift juktoborno-state))
+						((= CID 8) (delete @-2) (set CID 69) (insert "ঞ্জ") (set DELETER 3) (set ALTERNATE 8) (shift juktoborno-state))
+						((= CID 9) (delete @-2) (set CID 70) (insert "ঞ্ঝ") (set DELETER 3) (set ALTERNATE 9) (shift juktoborno-state))
 						((= CID 11) (delete @-2) (set CID 100) (insert "ন্ট") (set DELETER 1) (shift juktoborno-state))
 						((= CID 12) (delete @-2) (set CID 101) (insert "ন্ঠ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 13) (delete @-2) (set CID 102) (insert "ন্ড") (set DELETER 1) (shift juktoborno-state))
-						((= CID 15) (delete @-2) (set CID 81) (insert "ণ্ণ") (set DELETER 3) (set ALTERNATE 14) (shift juktoborno-state))
+						((= CID 15) (delete @-2) (set CID 81) (insert "ণ্ণ") (set DELETER 3) (set ALTERNATE 10) (shift juktoborno-state))
 						((= CID 16) (delete @-2) (set CID 103) (insert "ন্ত") (set DELETER 1) (shift juktoborno-state))
 						((= CID 17) (delete @-2) (set CID 104) (insert "ন্থ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 18) (delete @-2) (set CID 105) (insert "ন্দ") (set DELETER 1) (shift juktoborno-state))
@@ -569,7 +569,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 11) (delete @-2) (set CID 149) (insert "ষ্ট") (set DELETER 1) (shift juktoborno-state))
 						((= CID 12) (delete @-2) (set CID 150) (insert "ষ্ঠ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 15) (delete @-2) (set CID 151) (insert "ষ্ণ") (set DELETER 1) (shift juktoborno-state))
-						((= CID 20) (delete @-2) (set CID 151) (insert "ষ্ণ") (set DELETER 3) (set ALTERNATE 15) (shift juktoborno-state))
+						((= CID 20) (delete @-2) (set CID 151) (insert "ষ্ণ") (set DELETER 3) (set ALTERNATE 11) (shift juktoborno-state))
 						((= CID 21) (delete @-2) (set CID 152) (insert "ষ্প") (set DELETER 1) (shift juktoborno-state))
 						((= CID 22) (delete @-2) (set CID 153) (insert "ষ্ফ") (set DELETER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set CID 154) (insert "ষ্ব") (set DELETER 1) (shift juktoborno-state))
@@ -615,25 +615,21 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(juktoborno-state
 		(deleter
 			(cond
-				((= DELETER 1)  (move @-)  (delete @-)  (move @>) )
-				((= DELETER 2)  (move @-)  (delete @-2)  (move @>) )
+				((= DELETER 1)  (move @-)  (delete @-)  (move @>) (set PCID CID) (shift byanjon-state) )
+				((= DELETER 2)  (move @-)  (delete @-2)  (move @>) (set PCID CID) (shift byanjon-state) )
 				((= DELETER 3) 
 					(cond 
-						((= ALTERNATE 1)  (delete @-3) (insert "নচ"))
-						((= ALTERNATE 2)  (delete @-3) (insert "কখ"))
-						((= ALTERNATE 3)  (delete @-3) (insert "নজ"))
-						((= ALTERNATE 4)  (delete @-3) (insert "নঝ"))
-						((= ALTERNATE 5)  (delete @-3) (insert "নছ"))
-						((= ALTERNATE 6)  (delete @-3) (insert "গগ"))
-						((= ALTERNATE 7)  (delete @-3) (insert "ণন"))
-						((= ALTERNATE 8)  (delete @-3) (insert "তট"))
-						((= ALTERNATE 9)  (delete @-3) (insert "দড"))
-						((= ALTERNATE 10)  (delete @-3) (insert "নচ"))
-						((= ALTERNATE 11)  (delete @-3) (insert "নছ"))
-						((= ALTERNATE 12)  (delete @-3) (insert "নজ"))
-						((= ALTERNATE 13)  (delete @-3) (insert "নঝ"))		
-						((= ALTERNATE 14)  (delete @-3) (insert "নণ"))		
-						((= ALTERNATE 15)  (delete @-3) (insert "ষন"))		
+						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set PCID 2) (shift byanjon-state) )
+						((= ALTERNATE 2)  (delete @-3) (insert "গগ") (set PCID 3) (shift byanjon-state) )
+						((= ALTERNATE 3)  (delete @-3) (insert "ণন") (set PCID 20) (shift byanjon-state) )
+						((= ALTERNATE 4)  (delete @-3) (insert "তট") (set PCID 11) (shift byanjon-state) )
+						((= ALTERNATE 5)  (delete @-3) (insert "দড") (set PCID 13) (shift byanjon-state) )
+						((= ALTERNATE 6)  (delete @-3) (insert "নচ") (set PCID 6) (shift byanjon-state) )
+						((= ALTERNATE 7)  (delete @-3) (insert "নছ") (set PCID 7) (shift byanjon-state) )
+						((= ALTERNATE 8)  (delete @-3) (insert "নজ") (set PCID 8) (shift byanjon-state) )
+						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set PCID 9) (shift byanjon-state) )		
+						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set PCID 15) (shift byanjon-state) )		
+						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon-state) )		
 					)
 				)
 				((= DELETER 4)  (move @-) (move @-) (move @-)  (delete @-)  (move @>) )
