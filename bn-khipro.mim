@@ -129,15 +129,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(",," (set CID 36) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) (set SLICER 1) "ক্ষ")
+		("rr" (set CID 187) "‍রর")		
 	)
-	(juktoborno 
-	
-	)
+	(juktoborno )
 	(ng )
-	(reph
-		("rr" "র্")
-		("rr/" "রর")
-	)
+	(reph )
 	(phola
 		("r" "র")
 		("z" (set CID 26) "য")
@@ -350,7 +346,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(byanjon 
 			(cond
-				
+				((= PCID 187) (move @-) (delete @-) (insert "্") (set SLICER 1)) ;; স্লাইসিং আপাতত কাজ করবে না ‍কারণ এটাকে juktoborno-state এ পাঠানো হয়নি।
 				((= PCID 1) 
 					(cond
 						((= CID 1) (delete @-2) (set LCID CID) (set CID 38) (insert "ক্ক") (set SLICER 1) (shift juktoborno-state))
