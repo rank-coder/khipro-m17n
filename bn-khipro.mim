@@ -669,7 +669,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 53)
 					(cond
-						((= CID 2) (delete @-4) (set LCID CID) (set CID 58) (insert "ঙ্ক্ষ"))
+						((= CID 2) (delete @-4) (set LCID CID) (set CID 58) (set SLICER 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ"))
 						((= CID 30) (delete @-4) (set LCID CID) (set CID 58) (insert "ঙ্ক্ষ"))
 						((= CID 16) (delete @-4) (set LCID CID) (set CID 176) (insert "ঙ্‌ক্ত"))
 					)
