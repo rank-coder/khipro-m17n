@@ -264,7 +264,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 (state
 	(init
-		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		;; (ng (commit)  (shift shor-state))
 		(shor (shift shor-state))
@@ -277,7 +277,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(prithayok-state
-		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		;;(ng (commit)  (shift shor-state)) 
 		(shor (shift shor-state))
@@ -290,7 +290,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(shor-state
-		(t (set IO 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0))
+		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0))
 		(diacritic  )
 		;; (ng  )
 		(shor )
@@ -388,7 +388,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 8) (delete @-2) (set LCID CID) (set CID 63) (insert "জ্জ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set LCID CID) (set CID 64) (insert "জ্ঝ") (set SLICER 1) (shift juktoborno-state))
-						((= CID 10) (delete @-2) (set LCID CID) (set CID 65) (set IO 1) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই
+						((= CID 10) (delete @-2) (set LCID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) 
+						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য lcid চেক করা হবে।
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state))
 					)
 				)
@@ -657,7 +658,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 65)
 					(cond
-						( (& (= CID 3) (! IO 1)) (delete @-4) (set LCID CID) (set CID 175) (insert "গ্‌গ"))						
+						((& (= CID 3) (= LCID 3)) (delete @-4) (set LCID CID) (set CID 175) (insert "গ্‌গ"))						
 					)
 				)
 				((= PCID 53)
