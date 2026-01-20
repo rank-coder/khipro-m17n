@@ -322,7 +322,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
         exit 1
     else
         echo ""
-        print_success "Available versions:"
+        print_success "Available branches:"
         
         # Store branches in an array for number selection
         branches_array=()
