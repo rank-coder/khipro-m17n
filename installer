@@ -333,9 +333,9 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             ((counter++))
         done <<< "$branches"
         
-        # Add "Older releases" option
-        older_releases_index=$counter
-        echo " $counter. Install older releases (Tags)"
+        # Add "Release Tags" option
+        release_tags_index=$counter
+        echo " $counter. Install by release tag (version number)"
         echo ""
     fi
     
@@ -344,7 +344,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     if [ -z "$input_ver" ]; then
         print_warning "No input. Using 'main' branch."
         branch_name="main"
-    elif [ "$input_ver" -eq "$older_releases_index" ]; then
+    elif [ "$input_ver" -eq "$release_tags_index" ]; then
         # Show tags with pagination
         print_status "Fetching available release tags..."
         all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r)
@@ -363,7 +363,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             start_index=$((current_page * items_per_page))
             
             if [ $start_index -ge $total_tags ]; then
-                print_warning "No more older releases found."
+                print_warning "No more release tags found."
                 # Fallback to main if they loop too far? Or exit?
                 # Let's just break logic flow -> exit or ask again.
                 # Simplest: exit
@@ -371,7 +371,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             fi
             
             echo ""
-            print_success "Older Releases (Page $((current_page + 1))):"
+            print_success "Release Tags (Page $((current_page + 1))):"
             
             current_items=()
             for ((i=0; i<items_per_page; i++)); do
@@ -402,7 +402,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
                     current_page=$((current_page + 1))
                     continue
                 else
-                    print_warning "No more older releases found."
+                    print_warning "No more release tags found."
                     # Loop back to show the same page again or handle gracefully
                     continue
                 fi
