@@ -10,7 +10,7 @@ This is the m17n version of Khipro. Using it with Typing-booster provides even b
 - Khipro layout is available on **Linux**, **Windows**, and **Android**.
 
 > [!NOTE]
-> This project is powered by github 🌟s. Go ahead and *star* it please!
+> This project is powered by github 🌟 stars. Go ahead and *star* it please!
 
 # Documentation
 

@@ -10,7 +10,7 @@
 - **লিনাক্সে**, **উইন্ডোজে**, ও **অ্যান্ড্রয়েডে** ক্ষিপ্র লেআউট ব্যবহার করা যাচ্ছে।
 
 > [!NOTE]
-> This project is powered by github 🌟s. Go ahead and *star* it please!
+> This project is powered by github 🌟 stars. Go ahead and *star* it please!
 
 # ডকুমেন্টেশন
 
