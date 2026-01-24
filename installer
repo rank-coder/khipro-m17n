@@ -237,10 +237,10 @@ if command_exists fcitx5; then
     fi
 fi
 
-# Check if any input method is installed
+# Check input method installation status
 if [ "$ibus_installed" = false ] && [ "$fcitx_installed" = false ]; then
     print_error "No input method framework found!"
-    print_status "You need to install either IBus or Fcitx5 to use KhiproKeyboard."
+    print_warning "You need to install either IBus or Fcitx5 to use KhiproKeyboard."
     distro=$(detect_distro)
     case $distro in
         ubuntu|debian)
@@ -259,7 +259,23 @@ if [ "$ibus_installed" = false ] && [ "$fcitx_installed" = false ]; then
             print_status "Please install IBus or Fcitx5 with m17n support using your distribution's package manager."
             ;;
     esac
+    # We warn but don't exit? The original code exited.
+    # The requirement says "warn the user to install at least one".
+    # If neither is installed, we probably can't really "install" successfully in a way that works immediately,
+    # but the script copies files.
+    # Original code exited. I will keep the exit to force them to install one.
     exit 1
+elif [ "$ibus_installed" = true ] && [ "$fcitx_installed" = true ]; then
+    print_status "Both IBus and Fcitx5 are installed."
+    print_status "Suggestion: We recommend using IBus for KhiproKeyboard as it supports 'ibus-typing-booster' for better prediction."
+elif [ "$fcitx_installed" = true ]; then
+    print_status "Fcitx5 is installed."
+    # Only Fcitx is installed (and IBus is not).
+    # Warn about typing booster limitation
+    print_warning "Note: 'ibus-typing-booster' cannot be used with Fcitx5. But you can still use khipro-m17n"
+else
+    # Only IBus is installed
+    : # No special message needed
 fi
 
 # Warn about missing m17n packages
