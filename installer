@@ -202,120 +202,122 @@ fi
 print_status "Checking input method frameworks and m17n support..."
 
 ibus_installed=false
+ibus_m17n_installed=false
 fcitx_installed=false
-missing_packages=()
+fcitx_m17n_installed=false
 
-# Check IBus
+# Check IBus status
 if command_exists ibus; then
     ibus_installed=true
-    print_status "IBus is installed"
-    
-    # Check for ibus-m17n
-    if ! check_package_debian "ibus-m17n" 2>/dev/null && \
-       ! check_package_fedora "ibus-m17n" 2>/dev/null && \
-       ! check_package_arch "ibus-m17n" 2>/dev/null; then
-        missing_packages+=("ibus-m17n")
-        print_warning "ibus-m17n is not installed (required for IBus users)"
-    else
-        print_success "ibus-m17n is installed"
+    if check_package_debian "ibus-m17n" 2>/dev/null || \
+       check_package_fedora "ibus-m17n" 2>/dev/null || \
+       check_package_arch "ibus-m17n" 2>/dev/null; then
+        ibus_m17n_installed=true
     fi
 fi
 
-# Check Fcitx5
+# Check Fcitx5 status
 if command_exists fcitx5; then
     fcitx_installed=true
-    print_status "Fcitx5 is installed"
-    
-    # Check for fcitx5-m17n
-    if ! check_package_debian "fcitx5-m17n" 2>/dev/null && \
-       ! check_package_fedora "fcitx5-m17n" 2>/dev/null && \
-       ! check_package_arch "fcitx5-m17n" 2>/dev/null; then
-        missing_packages+=("fcitx5-m17n")
-        print_warning "fcitx5-m17n is not installed (required for Fcitx5 users)"
-    else
-        print_success "fcitx5-m17n is installed"
+    if check_package_debian "fcitx5-m17n" 2>/dev/null || \
+       check_package_fedora "fcitx5-m17n" 2>/dev/null || \
+       check_package_arch "fcitx5-m17n" 2>/dev/null; then
+        fcitx_m17n_installed=true
     fi
 fi
 
-# Check input method installation status
-if [ "$ibus_installed" = false ] && [ "$fcitx_installed" = false ]; then
-    print_error "No input method framework found!"
-    print_warning "You need to install either IBus or Fcitx5 to use KhiproKeyboard."
-    distro=$(detect_distro)
-    case $distro in
-        ubuntu|debian)
-            print_status "To install IBus: sudo apt install ibus ibus-m17n"
-            print_status "To install Fcitx5: sudo apt install fcitx5 fcitx5-m17n"
-            ;;
-        fedora|rhel|centos)
-            print_status "To install IBus: sudo dnf install ibus ibus-m17n"
-            print_status "To install Fcitx5: sudo dnf install fcitx5 fcitx5-m17n"
-            ;;
-        arch|manjaro)
-            print_status "To install IBus: sudo pacman -S ibus ibus-m17n"
-            print_status "To install Fcitx5: sudo pacman -S fcitx5 fcitx5-m17n"
-            ;;
-        *)
-            print_status "Please install IBus or Fcitx5 with m17n support using your distribution's package manager."
-            ;;
-    esac
-    # We warn but don't exit? The original code exited.
-    # The requirement says "warn the user to install at least one".
-    # If neither is installed, we probably can't really "install" successfully in a way that works immediately,
-    # but the script copies files.
-    # Original code exited. I will keep the exit to force them to install one.
-    exit 1
-elif [ "$ibus_installed" = true ] && [ "$fcitx_installed" = true ]; then
-    print_status "Both IBus and Fcitx5 are installed."
-    print_status "Suggestion: We recommend using IBus for KhiproKeyboard as it supports 'ibus-typing-booster' for better prediction."
-elif [ "$fcitx_installed" = true ]; then
-    print_status "Fcitx5 is installed."
-    # Only Fcitx is installed (and IBus is not).
-    # Warn about typing booster limitation
-    print_warning "Note: 'ibus-typing-booster' cannot be used with Fcitx5. But you can still use khipro-m17n"
-else
-    # Only IBus is installed
-    : # No special message needed
+# Determine readiness
+ibus_ready=false
+if [ "$ibus_installed" = true ] && [ "$ibus_m17n_installed" = true ]; then
+    ibus_ready=true
 fi
 
-# Warn about missing m17n packages
-if [ ${#missing_packages[@]} -gt 0 ]; then
-    echo ""
-    print_warning "Some required m17n packages are missing:"
-    for pkg in "${missing_packages[@]}"; do
-        echo "  - $pkg"
-    done
+fcitx_ready=false
+if [ "$fcitx_installed" = true ] && [ "$fcitx_m17n_installed" = true ]; then
+    fcitx_ready=true
+fi
+
+# Logic Flow
+if [ "$ibus_ready" = true ] && [ "$fcitx_ready" = true ]; then
+    print_success "Both IBus and Fcitx5 are fully installed and supported."
+    print_status "Suggestion: We recommend using IBus for KhiproKeyboard."
+
+elif [ "$ibus_ready" = true ]; then
+    print_success "IBus (with m17n support) is ready."
+
+elif [ "$fcitx_ready" = true ]; then
+    print_success "Fcitx5 (with m17n support) is ready."
+
+else
+    # Neither is fully ready. Diagnose why.
+    print_error "No fully compatible input method framework found!"
     
-    distro=$(detect_distro)
-    case $distro in
-        ubuntu|debian)
-            print_status "To install missing packages on Ubuntu/Debian:"
-            echo "  sudo apt update && sudo apt install ${missing_packages[*]}"
-            ;;
-        fedora|rhel|centos)
-            print_status "To install missing packages on Fedora/RHEL/CentOS:"
-            echo "  sudo dnf install ${missing_packages[*]}"
-            ;;
-        arch|manjaro)
-            print_status "To install missing packages on Arch/Manjaro:"
-            echo "  sudo pacman -S ${missing_packages[*]}"
-            ;;
-        *)
-            print_status "Please install the missing packages using your distribution's package manager:"
-            echo "  ${missing_packages[*]}"
-            ;;
-    esac
-    
+    missing_packages=()
+    show_install_help=false
+
+    if [ "$ibus_installed" = false ] && [ "$fcitx_installed" = false ]; then
+        print_warning "You need to install either IBus or Fcitx5 framework."
+        show_install_help=true
+    else
+        # At least one framework is installed but missing m17n
+        if [ "$ibus_installed" = true ] && [ "$ibus_m17n_installed" = false ]; then
+            missing_packages+=("ibus-m17n")
+        fi
+        if [ "$fcitx_installed" = true ] && [ "$fcitx_m17n_installed" = false ]; then
+            missing_packages+=("fcitx5-m17n")
+        fi
+    fi
+
+    if [ ${#missing_packages[@]} -gt 0 ]; then
+        print_warning "The following packages are missing for your installed frameworks:"
+        for pkg in "${missing_packages[@]}"; do
+            echo "  - $pkg"
+        done
+        show_install_help=true
+    fi
+
+    if [ "$show_install_help" = true ]; then
+        distro=$(detect_distro)
+        echo ""
+        case $distro in
+            ubuntu|debian)
+                print_status "Install commands for Ubuntu/Debian:"
+                [ "$ibus_installed" = false ] && echo "  sudo apt install ibus ibus-m17n"
+                [ "$fcitx_installed" = false ] && echo "  sudo apt install fcitx5 fcitx5-m17n"
+                if [ ${#missing_packages[@]} -gt 0 ]; then
+                     echo "  sudo apt install ${missing_packages[*]}"
+                fi
+                ;;
+            fedora|rhel|centos)
+                print_status "Install commands for Fedora/RHEL/CentOS:"
+                [ "$ibus_installed" = false ] && echo "  sudo dnf install ibus ibus-m17n"
+                [ "$fcitx_installed" = false ] && echo "  sudo dnf install fcitx5 fcitx5-m17n"
+                if [ ${#missing_packages[@]} -gt 0 ]; then
+                     echo "  sudo dnf install ${missing_packages[*]}"
+                fi
+                ;;
+            arch|manjaro)
+                print_status "Install commands for Arch/Manjaro:"
+                [ "$ibus_installed" = false ] && echo "  sudo pacman -S ibus ibus-m17n"
+                [ "$fcitx_installed" = false ] && echo "  sudo pacman -S fcitx5 fcitx5-m17n"
+                if [ ${#missing_packages[@]} -gt 0 ]; then
+                     echo "  sudo pacman -S ${missing_packages[*]}"
+                fi
+                ;;
+            *)
+                print_status "Please install IBus or Fcitx5 along with their m17n packages."
+                ;;
+        esac
+    fi
+
     echo ""
     read -p "Do you want to continue with installation anyway? (y/N): " continue_choice
     continue_choice=${continue_choice:-N}
     if [[ ! $continue_choice =~ ^[Yy]$ ]]; then
-        print_status "Installation cancelled. Please install the required packages first."
+        print_status "Installation cancelled. Please resolve the dependencies."
         exit 1
     fi
-    print_warning "Continuing installation without required m17n packages..."
-    print_warning "KhiproKeyboard may not work until you install the missing packages."
-    echo ""
+    print_warning "Continuing installation..."
 fi
 
 # Branch selection
