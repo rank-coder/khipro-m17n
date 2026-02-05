@@ -322,7 +322,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set LCID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
 				((= REPPHSTS 1) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state)) ;; rr এর পরে কোনো ব্যঞ্জন লেখা হলো।
-				((& (= PCID 27) (= CID 27)) (delete @-) (delete @-) (set LCID CID) (set REPPHSTS 1) (shift byanjon-state)) ;; র এর পরে র লেখা হলো
+				((& (= PCID 27) (= CID 27)) (set LCID CID) (set REPPHSTS 1) (shift byanjon-state)) ;; র এর পরে র লেখা হলো
 				(1 (move @-) (insert ?্) (move @>) (set LCID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
 		)
