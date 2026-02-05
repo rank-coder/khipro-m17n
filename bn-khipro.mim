@@ -413,6 +413,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 13) (delete @-2) (set LCID CID) (set CID 74) (insert "ড্ড") (set SLICER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 75) (insert "ড্ব") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 14) (insert "ঢ"))
 					)
 				)
 				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
