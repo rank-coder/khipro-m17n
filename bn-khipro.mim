@@ -321,8 +321,8 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			;; VARIABLE LCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set LCID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
-				((= REPPHSTS 1) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state)) ;; rr এর পরে কোনো ব্যঞ্জন লেখা হলো।
-				((& (= PCID 27) (= CID 27)) (delete @-2) (set LCID CID) (set REPPHSTS 1) (insert "রর") (shift byanjon-state)) ;; র এর পরে র লেখা হলো
+				((& (= PCID 27) (= CID 27)) (delete @-2) (set LCID CID) (set REPPHSTS 1) (insert "রর") (shift byanjon-state)) ;;র এর পরে র লেখা হলো
+				((= REPPHSTS 1) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state)) ;;rr এর পরে কোনো ব্যঞ্জন লেখা হলো।
 				(1 (move @-) (insert ?্) (move @>) (set LCID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
 		)
