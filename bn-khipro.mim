@@ -274,6 +274,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; (reph (shift reph-state))
 		;; (juktoborno (set PCID CID) (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
+		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 	)
 	(prithayok-state
 		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
@@ -317,6 +318,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; (juktoborno (set PCID CID) (shift juktoborno-state))
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে। উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
+			;; VARIABLE LCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set LCID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
 				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
@@ -389,7 +391,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 8) (delete @-2) (set LCID CID) (set CID 63) (insert "জ্জ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set LCID CID) (set CID 64) (insert "জ্ঝ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 10) (delete @-2) (set LCID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) 
-						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য lcid চেক করা হবে।
+						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য LCID চেক করা হবে।
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state))
 					)
 				)
