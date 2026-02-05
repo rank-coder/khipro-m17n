@@ -427,6 +427,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 20) (delete @-2) (set LCID CID) (set CID 81) (insert "ণ্ণ") (set SLICER 3) (set ALTERNATE 3) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 82) (insert "ণ্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 83) (insert "ণ্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 10) (insert "ঞ"))
 					)
 				)
 				((= PCID 16)
