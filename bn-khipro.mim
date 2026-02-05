@@ -104,6 +104,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("n" (set CID 20) "ন") 
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
+		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম") 
