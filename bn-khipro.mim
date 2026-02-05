@@ -579,6 +579,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 164) (insert "স্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 165) (insert "স্ম") (set SLICER 1) (shift juktoborno-state))
 						((= CID 28) (delete @-2) (set LCID CID) (set CID 166) (insert "স্ল") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 30) (insert "ষ"))
 					)
 				)
 				((= PCID 32)
