@@ -456,6 +456,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 94) (insert "দ্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 24) (delete @-2) (set LCID CID) (set CID 95) (insert "দ্ভ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 96) (insert "দ্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 13) (insert "ড"))
 					)
 				)
 				((= PCID 19)
