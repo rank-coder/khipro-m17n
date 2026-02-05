@@ -604,6 +604,16 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 25) (delete @-4) (set LCID CID) (set CID 174) (insert "ক্ষ্ম") (shift juktoborno-state))
 					)
 				)
+				((= PCID 27)
+					(cond
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 34) (insert "ড়"))
+					)
+				)
+				((= PCID 34)
+					(cond
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 35) (insert "ঢ়"))
+					)
+				)
 			)
 			(set PCID CID)
 		)
