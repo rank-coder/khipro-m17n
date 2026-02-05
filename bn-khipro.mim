@@ -596,6 +596,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 34)
 					(cond
 						((= CID 3) (delete @-2) (set LCID CID) (set CID 76) (insert "ড়্‌গ") (set SLICER 2) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 35) (insert "ঢ়"))
 					)
 				)
 				((= PCID 39)
@@ -609,11 +610,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 27)
 					(cond
 						((= CID 189) (delete @-2) (set LCID CID) (set CID 34) (insert "ড়"))
-					)
-				)
-				((= PCID 34)
-					(cond
-						((= CID 189) (delete @-2) (set LCID CID) (set CID 35) (insert "ঢ়"))
 					)
 				)
 			)
