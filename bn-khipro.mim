@@ -127,7 +127,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	;; (ng )
 	;; (reph )
 	(phola
-		("r" "র")
+		("r" (set CID 27) "র")
 		("z" (set CID 26) "য")
 	)
 	(kar
