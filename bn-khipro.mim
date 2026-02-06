@@ -263,24 +263,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(diacritic (commit)  (shift shor-state))
 		(shor (shift shor-state))
 		(fkar (commit)  (shift shor-state))
-		(prithayok (commit)  (shift prithayok-state))
+		(prithayok (commit)  (shift init))
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
 		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
-	)
-	(prithayok-state
-		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
-		(diacritic (commit)  (shift shor-state))
-
-		(shor (shift shor-state))
-		(fkar (commit)  (shift shor-state))
-		(prithayok (commit))
-		(ongko (shift shor-state))
-		(biram (shift shor-state))
-
-
-		(byanjon (set PCID CID) (shift byanjon-state))
 	)
 	(shor-state
 		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0))
@@ -289,7 +276,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(shor )
 		(fkar )
 		(biram )
-		(prithayok (delete @-)  (shift prithayok-state) )
+		(prithayok (delete @-)  (shift init) )
 		(ongko )
 		(biram )
 
@@ -298,7 +285,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	)
 	(byanjon-state
 
-		(prithayok (delete @-)  (shift prithayok-state))
+		(prithayok (delete @-)  (shift init))
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
 		(kar 
@@ -646,7 +633,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(diacritic  (shift shor-state))
 
-		(prithayok (delete @-)  (shift prithayok-state))
+		(prithayok (delete @-)  (shift init))
 		(ongko  (shift shor-state))
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
