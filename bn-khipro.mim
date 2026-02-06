@@ -242,7 +242,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(fkar (commit)  (shift shor-state))
 		(prithayok (commit) )
 		(ongko )
-		(biram (shift shor-state))
+		(biram )
 		(byanjon (set PCID CID) (shift byanjon-state))
 		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 	)
@@ -253,11 +253,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(slicer2 (shift init))
 		(shor )
 		(fkar )
-		(biram )
+		(biram (shift init))
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
-		(biram )
-
 		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
@@ -265,7 +263,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor-state))
+		(biram  (shift init))
 		(kar 
 			(cond
 				( (& (| (= PCID 27) (= PCID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  
@@ -613,7 +611,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(slicer2 (shift init))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor-state))
+		(biram  (shift init))
 		(kar (shift shor-state))
 
 		(phola
