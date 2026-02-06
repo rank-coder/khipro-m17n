@@ -263,7 +263,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(diacritic (commit)  (shift shor-state))
 		(shor (shift shor-state))
 		(fkar (commit)  (shift shor-state))
-		(prithayok (commit)  (shift init))
+		(prithayok (commit) )
 		(ongko (shift shor-state))
 		(biram (shift shor-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
