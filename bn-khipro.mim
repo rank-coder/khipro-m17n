@@ -619,15 +619,6 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		)
 		(slicer
 			(cond
-				((= PCID 2) (delete @-2) (insert "কহ") (set PCID 32))
-				((= PCID 4) (delete @-2) (insert "গহ") (set PCID 32))
-				((= PCID 5) (delete @-2) (insert "নগ") (set PCID 3))
-				((= PCID 7) (delete @-2) (insert "চহ") (set PCID 32))
-				((= PCID 9) (delete @-2) (insert "জহ") (set PCID 32))
-				((= PCID 17) (delete @-2) (insert "তহ") (set PCID 32))
-				((= PCID 19) (delete @-2) (insert "দহ") (set PCID 32))
-				((= PCID 22) (delete @-2) (insert "পহ") (set PCID 32))
-				((= PCID 29) (delete @-2) (insert "সহ") (set PCID 32))
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188))
 				(1 (delete @-) (insert "ঁ") )
 			)
