@@ -191,9 +191,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(diacritic
 		("qq" "্")
 		("xx" "্‌")
-		("x" "ং")
-		("/" "ঁ")
-		("//" "/")		
+		("x" "ং")		
 		("`" "`")
 		("``" "‌")
 		("```" "``")
@@ -225,6 +223,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(slicer
 		("/" "/")
 	)
+	(slicer2
+		("//" "/")
+	)
 
 	(backspace
 		( (BackSpace)  (undo) )
@@ -235,33 +236,34 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(init
 		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
+		(slicer (commit))
+		(slicer2 (delete @-) (insert "ঁ") (shift shor-state))
 		(shor (shift shor-state))
 		(fkar (commit)  (shift shor-state))
 		(prithayok (commit) )
-		(ongko (shift shor-state))
-		(biram (shift shor-state))
+		(ongko )
+		(biram )
 		(byanjon (set PCID CID) (shift byanjon-state))
 		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 	)
 	(shor-state
 		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0))
 		(diacritic  )
-
+		(slicer (delete @-) (insert "ঁ"))
+		(slicer2 (shift init))
 		(shor )
 		(fkar )
-		(biram )
+		(biram (shift init))
 		(prithayok (delete @-)  (shift init) )
-		(ongko )
-		(biram )
-
+		(ongko (shift init))
 		(byanjon (set PCID CID) (shift byanjon-state))
 		(backspace)
 	)
 	(byanjon-state
 
 		(prithayok (delete @-)  (shift init))
-		(ongko  (shift shor-state))
-		(biram  (shift shor-state))
+		(ongko  (shift init))
+		(biram  (shift init))
 		(kar 
 			(cond
 				( (& (| (= PCID 27) (= PCID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  
@@ -606,10 +608,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(set SLICER 0)
 		)
 		(diacritic  (shift shor-state))
-
+		(slicer2 (shift init))
 		(prithayok (delete @-)  (shift init))
-		(ongko  (shift shor-state))
-		(biram  (shift shor-state))
+		(ongko  (shift init))
+		(biram  (shift init))
 		(kar (shift shor-state))
 
 		(phola
