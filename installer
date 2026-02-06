@@ -321,11 +321,20 @@ else
 fi
 
 # Branch selection
-print_status "Checking installation branch..."
+print_status "Checking available versions..."
 read -p "Install stable release from the main branch? (Y/n): " branch_choice
 branch_choice=${branch_choice:-Y}
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
+    # Fetch available release tags for preview
+    print_status "Fetching recent release tags..."
+    # Using awk to handle formatting more reliably across platforms
+    recent_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
+    
+    if [ -z "$recent_tags" ]; then
+        recent_tags="e.g. v34.0.0-beta, v33.1.0, etc."
+    fi
+
     print_status "Fetching available branches from GitHub..."
     
     # Get list of branches from remote repository
@@ -338,31 +347,27 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
         print_warning "Could not fetch branch list. Please check your internet connection."
         print_status "You can view branches at: https://github.com/rank-coder/khipro-m17n/branches"
         exit 1
-    else
-        echo ""
-        print_success "Available branches:"
-        
-        # Store branches in an array for number selection
-        branches_array=()
-        counter=1
-        while IFS= read -r branch; do
-            echo " $counter. $branch"
-            branches_array+=("$branch")
-            ((counter++))
-        done <<< "$branches"
-        
-        # Add "Release Tags" option
-        release_tags_index=$counter
-        echo " $counter. Install by release tag (version number)"
-        echo ""
     fi
     
-    read -p "Enter number: " input_ver
+    echo ""
+    print_success "Available installation options:"
     
-    if [ -z "$input_ver" ]; then
-        print_warning "No input. Using 'main' branch."
-        branch_name="main"
-    elif [ "$input_ver" -eq "$release_tags_index" ]; then
+    echo " 1. Install by Release Number (Version Number) ($recent_tags) [DEFAULT]"
+    
+    # Store branches in an array for number selection
+    branches_array=()
+    counter=2
+    while IFS= read -r branch; do
+        echo " $counter. Install from branch: $branch"
+        branches_array+=("$branch")
+        ((counter++))
+    done <<< "$branches"
+    
+    echo ""
+    read -p "Enter number [Default: 1]: " input_ver
+    input_ver=${input_ver:-1}
+    
+    if [ "$input_ver" -eq 1 ]; then
         # Show tags with pagination
         print_status "Fetching available release tags..."
         all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r)
@@ -382,10 +387,11 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             
             if [ $start_index -ge $total_tags ]; then
                 print_warning "No more release tags found."
-                # Fallback to main if they loop too far? Or exit?
-                # Let's just break logic flow -> exit or ask again.
-                # Simplest: exit
-                exit 0
+                # If we run out of tags, what to do? Exit or loop? 
+                # Let's just exit for safety or allow re-selection? 
+                # The user looped here previously. Let's just break and exit logic if forced.
+                # However, cleaner UI is to just say no more tags.
+                break
             fi
             
             echo ""
@@ -421,7 +427,6 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
                     continue
                 else
                     print_warning "No more release tags found."
-                    # Loop back to show the same page again or handle gracefully
                     continue
                 fi
             elif [[ "$tag_choice" =~ ^[1-5]$ ]]; then
@@ -433,19 +438,24 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
                     break
                 else
                      print_error "Invalid selection. Please try again."
-                     # Loop back instead of exiting
                      continue
                 fi
             else
                 print_error "Invalid input. Please enter a valid number."
-                # Loop back instead of exiting
                 continue
             fi
         done
         
+        # If we broke out of the loop without selecting (e.g. no more tags), ensure we handle it?
+        # If branch_name is not set (empty), defaulting to main or erroring is wise.
+        if [ -z "$branch_name" ]; then
+             print_warning "No release selected. Defaulting to 'main'."
+             branch_name="main"
+        fi
+
     elif [[ "$input_ver" =~ ^[0-9]+$ ]]; then
-        # User selected a branch number
-        index=$((input_ver - 1))
+        # User selected a branch number (offset by 2)
+        index=$((input_ver - 2))
         if [ $index -ge 0 ] && [ $index -lt ${#branches_array[@]} ]; then
             branch_name="${branches_array[$index]}"
             print_success "Selected branch: $branch_name"
@@ -454,18 +464,16 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
             exit 1
         fi
     else
-        # Fallback if they typed a name directly (legacy logic support or just fail? Prompt implied number selection)
-        # Let's verify if input matches a branch name directly just in case
+        # Fallback if they typed a name directly
         branch_name="$input_ver"
         if echo "$branches" | grep -q "^${branch_name}$"; then
             print_success "Branch '$branch_name' found!"
         else
-            print_warning "Branch '$branch_name' not found in the list."
-             # Assuming they know what they are doing if typing manually, or fail.
-             # Given the robust menu, let's warn but proceed.
+            print_warning "Branch '$branch_name' not found in the list. Defaulting to 'main' if failure occurs."
         fi
     fi
 else
+    # User chose Yes (or default) for stable release
     branch_name="main"
     print_status "Using stable release (main branch)"
 fi
