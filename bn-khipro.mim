@@ -191,9 +191,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	(diacritic
 		("qq" "্")
 		("xx" "্‌")
-		("x" "ং")
-		("/" "ঁ")
-		("//" "/")		
+		("x" "ং")		
 		("`" "`")
 		("``" "‌")
 		("```" "``")
