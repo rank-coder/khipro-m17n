@@ -331,6 +331,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 					(cond
 						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 4))
 						((= CID 189) (delete @-2) (set LCID CID) (set CID 34) (insert "ড়"))
+						((= CID 187) (set LCID CID))
 						(1 (move @-) (delete @-) (insert "্") (move @>) (set LCID CID) (set SLICER 1))
 						;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
 					)
