@@ -104,6 +104,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("n" (set CID 20) "ন") 
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
+		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম") 
@@ -126,7 +127,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 	;; (ng )
 	;; (reph )
 	(phola
-		("r" "র")
+		("r" (set CID 27) "র")
 		("z" (set CID 26) "য")
 	)
 	(kar
@@ -273,6 +274,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; (reph (shift reph-state))
 		;; (juktoborno (set PCID CID) (shift juktoborno-state))
 		(byanjon (set PCID CID) (shift byanjon-state))
+		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 	)
 	(prithayok-state
 		(t (set LCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
@@ -316,10 +318,11 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		;; (juktoborno (set PCID CID) (shift juktoborno-state))
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে। উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
+			;; VARIABLE LCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। LCID হচ্ছে তার পরের ব্যঞ্জনের ID. (L = last). অর্থাৎ, PCID -> LCID -> CID -> তারপরে অন্যান্য।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set LCID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
 				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
-				(1 (move @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state)) 
+				(1 (move @-) (insert ?্) (move @>) (set LCID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
 		)
 		(byanjon 
@@ -343,6 +346,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 30) (delete @-2) (set LCID CID) (set CID 39) (insert "ক্ষ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 28) (delete @-2) (set LCID CID) (set CID 44) (insert "ক্ল") (set SLICER 1) (shift juktoborno-state))
 						((= CID 31) (delete @-2) (set LCID CID) (set CID 45) (insert "ক্স") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 39) (insert "ক্ষ"))
 					)
 				)
 				((= PCID 3) 
@@ -387,7 +391,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 8) (delete @-2) (set LCID CID) (set CID 63) (insert "জ্জ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 9) (delete @-2) (set LCID CID) (set CID 64) (insert "জ্ঝ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 10) (delete @-2) (set LCID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) 
-						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য lcid চেক করা হবে।
+						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য LCID চেক করা হবে।
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state))
 					)
 				)
@@ -404,12 +408,14 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 11) (delete @-2) (set LCID CID) (set CID 71) (insert "ট্ট") (set SLICER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 72) (insert "ট্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 73) (insert "ট্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 12) (insert "ঠ"))
 					)
 				)
 				((= PCID 13)
 					(cond
 						((= CID 13) (delete @-2) (set LCID CID) (set CID 74) (insert "ড্ড") (set SLICER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 75) (insert "ড্ব") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 14) (insert "ঢ"))
 					)
 				)
 				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
@@ -423,6 +429,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 20) (delete @-2) (set LCID CID) (set CID 81) (insert "ণ্ণ") (set SLICER 3) (set ALTERNATE 3) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 82) (insert "ণ্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 83) (insert "ণ্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 10) (insert "ঞ"))
 					)
 				)
 				((= PCID 16)
@@ -433,6 +440,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 20) (delete @-2) (set LCID CID) (set CID 86) (insert "ত্ন") (set SLICER 1) (shift juktoborno-state))
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 87) (insert "ত্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 88) (insert "ত্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 11) (insert "ট"))
 					)
 				)
 				((= PCID 17)
@@ -450,6 +458,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 94) (insert "দ্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 24) (delete @-2) (set LCID CID) (set CID 95) (insert "দ্ভ") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 96) (insert "দ্ম") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 13) (insert "ড"))
 					)
 				)
 				((= PCID 19)
@@ -478,6 +487,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 108) (insert "ন্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 109) (insert "ন্ম") (set SLICER 1) (shift juktoborno-state))
 						((= CID 31) (delete @-2) (set LCID CID) (set CID 110) (insert "ন্স") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 15) (insert "ণ"))
 					)
 				)
 				((= PCID 21)
@@ -571,6 +581,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 23) (delete @-2) (set LCID CID) (set CID 164) (insert "স্ব") (set SLICER 1) (shift juktoborno-state))
 						((= CID 25) (delete @-2) (set LCID CID) (set CID 165) (insert "স্ম") (set SLICER 1) (shift juktoborno-state))
 						((= CID 28) (delete @-2) (set LCID CID) (set CID 166) (insert "স্ল") (set SLICER 1) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 30) (insert "ষ"))
 					)
 				)
 				((= PCID 32)
@@ -585,6 +596,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 34)
 					(cond
 						((= CID 3) (delete @-2) (set LCID CID) (set CID 76) (insert "ড়্‌গ") (set SLICER 2) (shift juktoborno-state))
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 35) (insert "ঢ়"))
 					)
 				)
 				((= PCID 39)
@@ -595,8 +607,13 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 25) (delete @-4) (set LCID CID) (set CID 174) (insert "ক্ষ্ম") (shift juktoborno-state))
 					)
 				)
+				((= PCID 27)
+					(cond
+						((= CID 189) (delete @-2) (set LCID CID) (set CID 34) (insert "ড়"))
+					)
+				)
 			)
-			(set PCID CID)
+			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
 			(cond
@@ -650,7 +667,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(kar (shift shor-state))
 		;; (juktoborno (set PCID CID))
 		(phola
-			(move @-)  (insert ?্)  (move @>) (set SLICER 1)
+			(move @-) (insert ?্) (move @>) (set LCID CID) (set SLICER 1)
 		)
 		(byanjon 
 			(cond
