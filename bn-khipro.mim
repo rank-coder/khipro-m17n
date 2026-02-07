@@ -619,6 +619,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(set SLICER 0)
 		)
 		(diacritic  (shift shor-state))
+		(slicer2 (shift init))
 		(slicer3 (shift init))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
