@@ -283,7 +283,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
-				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
+				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1))
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
 			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
