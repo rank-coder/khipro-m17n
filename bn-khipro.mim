@@ -587,6 +587,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(delete @-)
 			(cond
 				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set PCID P2CID) (shift byanjon-state) )
+				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই P2CID এর মান PCID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
 				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set PCID P2CID) (shift byanjon-state) )
 				((= SLICER 3) 
 					(cond 
