@@ -275,7 +275,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে। উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
 			;; VARIABLE P2CID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID. (P2 = P এর পরের ব্যঞ্জনের ID). অর্থাৎ, PCID -> P2CID -> CID -> তারপরে অন্যান্য।
 			(cond 
-				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র্য") (set SLICER 2) (shift juktoborno-state))
+				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state))
 				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1) (shift juktoborno-state))
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
