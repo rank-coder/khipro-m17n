@@ -579,6 +579,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		(slicer
 			(cond
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188))
+				(1 (shift init))
 			)
 		)
 		(diacritic  (shift shor-state))
