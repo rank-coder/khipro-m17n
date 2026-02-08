@@ -586,7 +586,12 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				(1 (shift init))
 			)
 		)
-		(slicer2 (delete @-) (insert "ঁ") (shift shor-state))
+		(slicer2 
+			(cond
+				((= PCID 16) (delete @-2) (insert "ত/"))
+				(1 (delete @-) (insert "ঁ") (shift shor-state))
+			)
+		)
 		(slicer3 (shift init))
 		(diacritic  (shift shor-state))
 	
