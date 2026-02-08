@@ -482,7 +482,9 @@ fi
 if [ "$branch_name" = "main" ]; then
     BRANCH_SUFFIX=""
 else
-    BRANCH_SUFFIX="-${branch_name}"
+    # Replace dots with hyphens for the suffix to avoid issues in filenames/internal names
+    clean_branch_name=$(echo "$branch_name" | tr '.' '-')
+    BRANCH_SUFFIX="-${clean_branch_name}"
 fi
 
 FILE_SUFFIX="${BRANCH_SUFFIX}${PRIV_SUFFIX}"
