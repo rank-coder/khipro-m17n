@@ -120,7 +120,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		("rff" (set CID 35) "ঢ়")
 		(",," (set CID 36) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
-		("kf" (set CID 39) (set SLICER 1) "ক্ষ")
+		("kf" (set CID 39) "ক্ষ")
 		("rr" (set CID 187) "‍রর")		
 	)
 	(phola
