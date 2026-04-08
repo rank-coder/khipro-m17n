@@ -298,6 +298,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4))
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
 						((= CID 187) (set P2CID CID)) ;; ‍রর এর পরে ‍রর লিখলে রেফ আসবে না। এতে বারবার র-ফলা আসার ইশু ফিক্স হবে।
+						((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state) ) ;; রর লেখার পরে zf লিখলে যাতে রেফ না হয়ে রর‍্য হয়।
 						(1 (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 1))
 						;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
 					)
