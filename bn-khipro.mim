@@ -578,6 +578,7 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				((= PCID 27)
 					(cond
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়"))
+						((= CID 190) (move @-) (move @-) (insert "‍") (shift juktoborno-state))
 					)
 				)
 			)
