@@ -570,10 +570,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 				)
 				((= PCID 39) ;; ক্ষ 
 					(cond
-						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ") (shift juktoborno-state)) ;; ণ 
-						((= CID 20) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ") (shift juktoborno-state)) ;; ন 
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 173) (insert "ক্ষ্ব") (shift juktoborno-state)) ;; ব 
-						((= CID 25) (delete @-4) (set P2CID CID) (set CID 174) (insert "ক্ষ্ম") (shift juktoborno-state)) ;; ম 
+						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ") (set SLICER 1) (shift juktoborno-state)) ;; ণ 
+						((= CID 20) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ") (set SLICER 3) (set ALTERNATE 11) (shift juktoborno-state)) ;; ন 
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 173) (insert "ক্ষ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব 
+						((= CID 25) (delete @-4) (set P2CID CID) (set CID 174) (insert "ক্ষ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম 
 					)
 				)
 				((= PCID 27) ;; র 
@@ -648,10 +648,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(cond
 				((= PCID 39) ;; ক্ষ 
 					(cond
-						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ")) ;; ণ 
-						((= CID 20) (delete @-4) (set P2CID CID) (set CID 172) (insert "ক্ষ্ণ")) ;; ন 
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 173) (insert "ক্ষ্ব")) ;; ব 
-						((= CID 25) (delete @-4) (set P2CID CID) (set CID 174) (insert "ক্ষ্ম")) ;; ম 
+						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 1) (insert "ক্ষ্ণ")) ;; ণ 
+						((= CID 20) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন 
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 173) (set SLICER 1) (insert "ক্ষ্ব")) ;; ব 
+						((= CID 25) (delete @-4) (set P2CID CID) (set CID 174) (set SLICER 1) (insert "ক্ষ্ম")) ;; ম 
 					)
 				)
 				((= PCID 65) ;; জ্ঞ 
