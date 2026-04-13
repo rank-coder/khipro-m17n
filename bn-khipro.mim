@@ -608,7 +608,9 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 			(cond
 				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set PCID P2CID) (shift byanjon-state) )
 				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই P2CID এর মান PCID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
+				;; SLICER = 1 সাধারণ যুক্তবর্ণের জন্য। যেগুলোকে কেবল হসন্ত মুছে দিয়েই ভেঙে দেওয়া যায়।
 				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set PCID P2CID) (shift byanjon-state) )
+				;; SLICER = 2 ব্যবহার করা হয় যখন যুক্তবর্ণের মাঝে হসন্তের সাথে সাথে ZWNJ থাকে।
 				((= SLICER 3) 
 					(cond 
 						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set PCID 2) (shift byanjon-state) )
@@ -623,8 +625,10 @@ PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set PCID 15) (shift byanjon-state) )		
 						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon-state) )		
 					)
-				)
+				) 
+				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
 				((= SLICER 4)  (move @-) (move @-) (move @-)  (delete @-)  (move @>) )
+				;; SLICER = 4 কেবল তখন ব্যবহার হয় যখন শেষ ব‍র্ণটি kf দিয়ে লেখা ক্ষ হয়। যেমন: ngkf/ = ঙক্ষ
 			)
 			(set SLICER 0)
 		)
