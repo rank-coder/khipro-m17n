@@ -25,18 +25,18 @@
 (description "
 	A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
 
-Key Characteristics:
+	Key Characteristics:
 
-	1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being somewhat phonetic.
-	2. Removes the need for the SHIFT key entirely.
-	3. Uses a modifier technique to type various characters without using SHIFT.
-	4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
-	5. Utilizes key sequences to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+		1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being somewhat phonetic.
+		2. Removes the need for the SHIFT key entirely.
+		3. Uses a modifier technique to type various characters without using SHIFT.
+		4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
+		5. Utilizes key sequences to incorporate various extra characters that would otherwise be impossible on fixed layouts.
 
-PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
-	* Website: <https://khiprokeyboard.github.io>
-	* Author: Nafi [<https://github.com/rank-coder>]
-	* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/KhiproKeyboard>] organization.
+	PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
+		* Website: <https://khipro.khiproteam.pro.bd/>
+		* Author: Nafi [<https://github.com/rank-coder>]
+		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub rganization.
 ")
 (title "ক্ষিপ্র")
 (map
