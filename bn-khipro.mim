@@ -246,7 +246,7 @@
 		(fkar (commit)  (shift shor-state))
 		(prithayok (commit) )
 		(ongko )
-		(biram )
+		(biram (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়। 
 		(byanjon (set PCID CID) (shift byanjon-state))
 		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID. 
 		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
@@ -260,7 +260,7 @@
 		(slicer3 (shift init))
 		(shor )
 		(fkar )
-		(biram (shift init))
+		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়। 
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon (set PCID CID) (shift byanjon-state))
@@ -270,7 +270,7 @@
 
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift init))
+		(biram  (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়। 
 		(kar 
 			(cond
 				( (& (| (= PCID 27) (= PCID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর 
@@ -637,7 +637,7 @@
 		(slicer3 (shift init))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift init))
+		(biram  (shift shor-state))
 		(kar (shift shor-state))
 
 		(phola
