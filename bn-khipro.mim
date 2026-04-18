@@ -285,7 +285,7 @@
 			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 			(cond 
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state)) ;; র, য 
-				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর 
+				((& (= PCID 187) (= CID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
 				((& (= PCID 33) (= CID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র 
 				((& (= PCID 187)(= CID 27)) (delete @-3) (insert "র্র") (set CID 191) (shift juktoborno-state) ) ;; র্র
 				((&  (= PCID 27) (= CID 27)) (shift rr-state) (set CID 187) )
