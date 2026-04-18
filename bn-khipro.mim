@@ -287,6 +287,7 @@
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state)) ;; র, য 
 				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর 
 				((& (= PCID 33) (= CID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র 
+				((& (= PCID 187)(= PCID 27)) (delete @-3) (insert "র্র") (set CID 191) (shift juktoborno-state) ) ;; র্র
 				((&  (= PCID 27) (= CID 27)) (shift rr-state) (set CID 187) )
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
@@ -651,6 +652,11 @@
 		)
 		(byanjon 
 			(cond
+				((= PCID 191) ;; র্র
+					(cond
+						((= CID 27) (delete @-4) (set P2CID CID) (set CID 187) (insert "রররর") (shift rr-state)) ;; র
+					)
+				)
 				((= PCID 39) ;; ক্ষ 
 					(cond
 						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 1) (insert "ক্ষ্ণ")) ;; ণ 
