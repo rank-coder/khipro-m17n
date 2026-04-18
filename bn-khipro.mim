@@ -646,17 +646,18 @@
 			(cond
 				((&  (= PCID 27) (= CID 27)) (move @-) (move @-) (delete @-) (move @>) (shift rr-state) (set CID 187) ) 
 				;; র ফলার পরে র লিখলে র ফলা বাতিল করে রর আনতে।
+				((= PCID 191) ;; র্র
+					(cond
+						((= CID 27) (delete @-4) (set P2CID CID) (set CID 187) (insert "রররর") (shift rr-state)) ;; র
+					)
+				)
+				;; র্র এর পরে র লিখলে রররর আনতে।
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) )
 			)
 			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon 
 			(cond
-				((= PCID 191) ;; র্র
-					(cond
-						((= CID 27) (delete @-4) (set P2CID CID) (set CID 187) (insert "রররর") (shift rr-state)) ;; র
-					)
-				)
 				((= PCID 39) ;; ক্ষ 
 					(cond
 						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 1) (insert "ক্ষ্ণ")) ;; ণ 
