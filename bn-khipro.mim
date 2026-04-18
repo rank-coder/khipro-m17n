@@ -121,7 +121,7 @@
 		(",," (set CID 36) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
-		("rr" (set CID 187) "রর")	
+		
 		("zf" (set CID 190) "্য")	
 	)
 	(phola
@@ -287,6 +287,7 @@
 				((& (= PCID 27) (= CID 26)) (delete @-) (delete @-) (set P2CID CID) (set CID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno-state)) ;; র, য 
 				((= PCID 187) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর 
 				((& (= PCID 33) (= CID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র 
+				((&  (= PCID 27) (= CID 27)) (shift rr-state) (set CID 187) )
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) (shift juktoborno-state)) 
 			)
 			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
@@ -725,5 +726,10 @@
 		)
 		(backspace)
 
+	)
+	
+	(rr-state
+		(t (shift byanjon-state) )
+	
 	)
 )
