@@ -680,6 +680,7 @@
 						((= CID 2) (delete @-4) (set P2CID CID) (set CID 58) (set SLICER 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ 
 						((= CID 30) (delete @-4) (set P2CID CID) (set CID 58) (set SLICER 1) (insert "ঙ্ক্ষ")) ;; ষ 
 						((= CID 16) (delete @-4) (set P2CID CID) (set CID 176) (set SLICER 1) (insert "ঙ্‌ক্ত")) ;; ত 
+						(1 (shift byanjon-state))
 					)
 				)
 				((= PCID 60) ;; চ্ছ 
