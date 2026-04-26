@@ -732,9 +732,9 @@
 						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 				
 					)
 				)
-				
+				(1 (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
-			(set PCID CID) (shift byanjon-state)
+			(set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
 		)
 		(backspace)
 
