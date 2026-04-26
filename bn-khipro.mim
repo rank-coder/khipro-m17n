@@ -732,8 +732,9 @@
 						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 				
 					)
 				)
-				(1 (set PCID CID) (shift byanjon-state))	
+				
 			)
+			(set PCID CID) (shift byanjon-state)
 		)
 		(backspace)
 
