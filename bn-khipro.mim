@@ -234,7 +234,7 @@
 
 	)
 	(shor-state
-		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0))
+		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
@@ -645,11 +645,13 @@
 						((= CID 20) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন 
 						((= CID 23) (delete @-4) (set P2CID CID) (set CID 173) (set SLICER 1) (insert "ক্ষ্ব")) ;; ব 
 						((= CID 25) (delete @-4) (set P2CID CID) (set CID 174) (set SLICER 1) (insert "ক্ষ্ম")) ;; ম 
+						(1 (shift byanjon-state))
 					)
 				)
 				((= PCID 65) ;; জ্ঞ 
 					(cond
 						((& (= CID 3) (= P2CID 3)) (delete @-4) (set P2CID CID) (set CID 175) (set SLICER 3) (set ALTERNATE 2) (insert "গ্‌গ")) ;; গ 
+						(1 (shift byanjon-state))
 					)
 					;; P2CID -এর (সম্ভবত) একমাত্র ব্যবহার হয়েছে এখানে। এখানে PCID হচ্ছে 'জ্ঞ' -এর ID, আর P2CID হচ্ছে 'গ' -এর ID. 
 					;; গ + গ + গ লেখা হয়েছে। CID = 3 বলতে বুঝি: শেষে 'গ' লেখা হয়েছে; PCID = 65 বলতে বুঝি: শেষের 'গ' -এর আগে 'জ্ঞ' ছিল; আর P2CID = 3 বলতে বুঝি PCID -এর যুক্তবর্ণটি (এক্ষেত্রে 'জ্ঞ') কোন্ ব্যঞ্জন লেখামাত্র গঠিত হয়েছে। এক্ষেত্রে একেবারে প্রথম গ এর পরে আরেকটা গ লেখায় 'জ্ঞ' গঠিত হয়েছে। এজন্যই P2CID = 3. 
@@ -661,60 +663,72 @@
 						((= CID 2) (delete @-4) (set P2CID CID) (set CID 58) (set SLICER 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ 
 						((= CID 30) (delete @-4) (set P2CID CID) (set CID 58) (set SLICER 1) (insert "ঙ্ক্ষ")) ;; ষ 
 						((= CID 16) (delete @-4) (set P2CID CID) (set CID 176) (set SLICER 1) (insert "ঙ্‌ক্ত")) ;; ত 
+						(1 (shift byanjon-state))
 					)
 				)
 				((= PCID 60) ;; চ্ছ 
 					(cond
 						((= CID 23) (delete @-4) (set P2CID CID) (set CID 177) (set SLICER 1) (insert "চ্ছ্ব")) ;; ব 				
+						(1 (shift byanjon-state))
 					)
 				)
 				((= PCID 63) ;; জ্জ 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 178) (set SLICER 1) (insert "জ্জ্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 178) (set SLICER 1) (insert "জ্জ্ব")) ;; ব 	
+						(1 (shift byanjon-state))			
 					)
 				)
 				((= PCID 84) ;; ত্ত 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 179) (set SLICER 1) (insert "ত্ত্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 179) (set SLICER 1) (insert "ত্ত্ব")) ;; ব 		
+						(1 (shift byanjon-state))		
 					)
 				)
 				((= PCID 92) ;; দ্দ 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 180) (set SLICER 1) (insert "দ্দ্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 180) (set SLICER 1) (insert "দ্দ্ব")) ;; ব 	
+						(1 (shift byanjon-state))			
 					)
 				)
 				((= PCID 103) ;; ন্ত 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 181) (set SLICER 1) (insert "ন্ত্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 181) (set SLICER 1) (insert "ন্ত্ব")) ;; ব 	
+						(1 (shift byanjon-state))			
 					)
 				)
 				((= PCID 105) ;; ন্দ 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 182) (set SLICER 1) (insert "ন্দ্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 182) (set SLICER 1) (insert "ন্দ্ব")) ;; ব 		
+						(1 (shift byanjon-state))		
 					)
 				)				
 				((= PCID 159) ;; স্ত 
 					(cond
-						((= CID 23) (delete @-4) (set P2CID CID) (set CID 183) (set SLICER 1) (insert "স্ত্ব")) ;; ব 				
+						((= CID 23) (delete @-4) (set P2CID CID) (set CID 183) (set SLICER 1) (insert "স্ত্ব")) ;; ব 
+						(1 (shift byanjon-state))				
 					)
 				)
 				((= PCID 162) ;; স্প 
 					(cond
-						((= CID 28) (delete @-4) (set P2CID CID) (set CID 184) (set SLICER 1) (insert "স্প্ল"))	;; ল 				
+						((= CID 28) (delete @-4) (set P2CID CID) (set CID 184) (set SLICER 1) (insert "স্প্ল"))	;; ল 		
+						(1 (shift byanjon-state))		
 					)
 				)
 				((= PCID 110) ;; ন্স
 					(cond
-						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 1) (insert "নস্ট")) ;; ট 				
+						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 1) (insert "নস্ট")) ;; ট 
+						(1 (shift byanjon-state))				
 					)
 				)	
 				((= PCID 126) ;; ম্প 
 					(cond
-						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 				
+						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 
+						(1 (shift byanjon-state))				
 					)
 				)
-				(1 (set PCID CID) (shift byanjon-state))	
+				(1 (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
+			(set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
 		)
 		(backspace)
 
