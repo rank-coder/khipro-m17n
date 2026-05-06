@@ -118,7 +118,7 @@
 		("y" (set CID 33) "য়")
 		("rf" (set CID 34) "ড়")
 		("rff" (set CID 35) "ঢ়")
-		(",," (set CID 36) "়")
+		(",," (set CID 36) "়") ;; Kept unchanged even for touchscreen
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
 		
@@ -168,55 +168,36 @@
 
 	)
 	(ongko
-		(".1" ".১")
-		(".2" ".২")
-		(".3" ".৩")
-		(".4" ".৪")
-		(".5" ".৫")
-		(".6" ".৬")
-		(".7" ".৭")
-		(".8" ".৮")
-		(".9" ".৯")
-		(".0" ".০")
-		("1" "১")
-		("2" "২") 
-		("3" "৩")
-		("4" "৪")
-		("5" "৫")
-		("6" "৬")
-		("7" "৭")
-		("8" "৮")
-		("9" "৯")
-		("0" "০")
+		;; Not needed for touchscreen
 	)
 	(diacritic
 		("qq" "্")
 		("xx" "্‌")
 		("x" "ং")		
-		("`" "`")
-		("``" "‌")
-		("```" "``")
-		("``f" "‍")
+		;; ("`" "`") ;; Not needed for touchscreen
+		;; ("``" "‌") ;; Not needed for touchscreen
+		;; ("```" "``") ;; Not needed for touchscreen
+		;; ("``f" "‍") ;; Not needed for touchscreen
 
 
 
 	)
 	(biram
-		("." "।")
-		("..." "...")
-		(".." ".")
-		("$" "৳")
-		("$f" "₹")
-		(",,," ",,")
-		(".f" "॥")
-		(".ff" "৺") 
-		("+" "+")
-		("-" "-")
-		("+f" "×")
-		("-f" "÷")
-		("$$" "$")
-		("=" "=")
-		("=f" "≠")
+		;; ("." "।") ;; Not needed for touchscreen
+		;; ("..." "...") ;; Not needed for touchscreen
+		;; (".." ".") ;; Not needed for touchscreen
+		;; ("$" "৳") ;; Not needed for touchscreen
+		;; ("$f" "₹") ;; Not needed for touchscreen
+		(",,," ",,") ;; Not changed even for touchscreen
+		("।f" "॥") ;; Changed for touchscreen
+		("।ff" "৺") ;; Changed for touchscreen
+		;; ("+" "+") ;; Not needed for touchscreen
+		;; ("-" "-") ;; Not needed for touchscreen
+		;; ("+f" "×") ;; Not needed for touchscreen
+		;; ("-f" "÷") ;; Not needed for touchscreen
+		;; ("$$" "$") ;; Not needed for touchscreen
+		;; ("=" "=") ;; Not needed for touchscreen
+		;; ("=f" "≠") ;; Not needed for touchscreen
 	)
 	(prithayok
 		(";" ";")
