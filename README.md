@@ -35,7 +35,7 @@
 
 
 ## ক্ষিপ্র লেআউট এক নজরে
-![ক্ষিপ্র লেআউট এক নজরে](https://khiproteam.github.io/khipro/quickstart/%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BF%E0%A6%AA%E0%A7%8D%E0%A6%B0-%E0%A6%8F%E0%A6%95-%E0%A6%A8%E0%A6%9C%E0%A6%B0%E0%A7%87.png)
+![ক্ষিপ্র লেআউট এক নজরে](https://raw.githubusercontent.com/KhiproTeam/khipro-at-a-glance/refs/heads/main/the_table_2.svg)
 
 ## [ক্ষিপ্র কুইকস্টার্ট](https://KhiproTeam.github.io/khipro/quickstart)
 
