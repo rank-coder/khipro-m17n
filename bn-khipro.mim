@@ -626,6 +626,8 @@
 						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set PCID 9) (shift byanjon-state) )		
 						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set PCID 15) (shift byanjon-state) )		
 						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon-state) )		
+						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set PCID 11) (shift byanjon-state))
+						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set PCID 28) (shift byanjon-state))
 					)
 				) 
 				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
@@ -735,13 +737,13 @@
 				)
 				((= PCID 110) ;; ন্স
 					(cond
-						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 1) (insert "নস্ট")) ;; ট 
+						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট 
 						(1 (shift byanjon-state))				
 					)
 				)	
 				((= PCID 126) ;; ম্প 
 					(cond
-						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 
+						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল 
 						(1 (shift byanjon-state))				
 					)
 				)
