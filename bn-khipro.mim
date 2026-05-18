@@ -1,4 +1,4 @@
-;; bn-khipro.mim | A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
+;; bn-khipro.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 ;;	MIT License
 ;;	
 ;;	Copyright (c) 2024 rank_coder
@@ -23,22 +23,25 @@
 
 (input-method bn khipro) 
 (description "
-	A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
+	A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 
 	Key Characteristics:
 
-		1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being somewhat phonetic.
-		2. Removes the need for the SHIFT key entirely.
-		3. Uses a modifier technique to type various characters without using SHIFT.
+		1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being close to phonetic style typing. Meaning it lets you type anything, what you can't get easily at all in phonetic typing methods.
+		2. Removes the need for the *SHIFT key* entirely.
+		3. Removes the need for the *Number Row* entirely.
 		4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
-		5. Utilizes key sequences to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+		5. Uses a *modifier technique* to type all characters without using SHIFT.
+		6. Utilizes *key sequences* to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+		7. Utilizes *function keys* like slicer (/) to break readily formed conjuncts.
+
 
 	PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		* Website: <https://khipro.khiproteam.pro.bd/>
-		* Author: Nafi [<https://github.com/rank-coder>]
+		* Author: Nafee [<https://github.com/rank-coder>]
 		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub rganization.
 ")
-(title "ক্ষিপ্র")
+(title "Khipro Compositional")
 (map
 	(shor
 		("o" "অ")
@@ -607,6 +610,8 @@
 						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set PCID 9) (shift byanjon-state) )		
 						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set PCID 15) (shift byanjon-state) )		
 						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon-state) )		
+						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set PCID 11) (shift byanjon-state))
+						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set PCID 28) (shift byanjon-state))
 					)
 				) 
 				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
@@ -716,13 +721,13 @@
 				)
 				((= PCID 110) ;; ন্স
 					(cond
-						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 1) (insert "নস্ট")) ;; ট 
+						((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট 
 						(1 (shift byanjon-state))				
 					)
 				)	
 				((= PCID 126) ;; ম্প 
 					(cond
-						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 1) (insert "মপ্ল"))	;; ল 
+						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল 
 						(1 (shift byanjon-state))				
 					)
 				)
