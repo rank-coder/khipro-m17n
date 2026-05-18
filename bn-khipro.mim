@@ -1,4 +1,4 @@
-;; bn-khipro.mim | A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
+;; bn-khipro.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 ;;	MIT License
 ;;	
 ;;	Copyright (c) 2024 rank_coder
@@ -23,19 +23,22 @@
 
 (input-method bn khipro) 
 (description "
-	A fixed-phonetic keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for Bengali.
+	A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 
 	Key Characteristics:
 
-		1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being somewhat phonetic.
-		2. Removes the need for the SHIFT key entirely.
-		3. Uses a modifier technique to type various characters without using SHIFT.
+		1. Provides the absolute flexibility and control of typing offered by any fixed layout, despite being close to phonetic style typing. Meaning it lets you type anything, what you can't get easily at all in phonetic typing methods.
+		2. Removes the need for the *SHIFT key* entirely.
+		3. Removes the need for the *Number Row* entirely.
 		4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
-		5. Utilizes key sequences to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+		5. Uses a *modifier technique* to type all characters without using SHIFT.
+		6. Utilizes *key sequences* to incorporate various extra characters that would otherwise be impossible on fixed layouts.
+		7. Utilizes *function keys* like slicer (/) to break readily formed conjuncts.
+
 
 	PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		* Website: <https://khipro.khiproteam.pro.bd/>
-		* Author: Nafi [<https://github.com/rank-coder>]
+		* Author: Nafee [<https://github.com/rank-coder>]
 		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub rganization.
 ")
 (title "ক্ষিপ্র")
