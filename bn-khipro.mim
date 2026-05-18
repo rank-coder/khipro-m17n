@@ -41,7 +41,7 @@
 		* Author: Nafee [<https://github.com/rank-coder>]
 		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub rganization.
 ")
-(title "ক্ষিপ্র")
+(title "Khipro Compositional")
 (map
 	(shor
 		("o" "অ")
