@@ -39,7 +39,7 @@
 	PLEASE READ THE DOCUMENTATION ON OUR WEBSITE TO BEST USE THE LAYOUT.
 		* Website: <https://khiproteam.github.io/khipro>
 		* Author: Nafee [<https://github.com/rank-coder>]
-		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub rganization.
+		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub organization.
 ")
 (title "Khipro Compositional")
 (map
@@ -328,7 +328,7 @@
 						((= CID 3) (delete @-2) (set P2CID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 3) (set ALTERNATE 2) (shift juktoborno-state)) ;; গ 
 						((= CID 15) (delete @-2) (set P2CID CID) (set CID 46) (insert "গ্‌ণ") (set SLICER 2) (shift juktoborno-state)) ;; ণ 
 						((= CID 19) (delete @-2) (set P2CID CID) (set CID 47) (insert "গ্ধ") (set SLICER 1) (shift juktoborno-state)) ;; ধ 
-						;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা -এর ম্যাপিং ব্যতিক্রম নয়।
+						;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
 						((= CID 20) (delete @-2) (set P2CID CID) (set CID 48) (insert "গ্ন") (set SLICER 1) (shift juktoborno-state)) ;; ন 
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 49) (insert "গ্‌ব") (set SLICER 2) (shift juktoborno-state)) ;; ব 
 						;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
