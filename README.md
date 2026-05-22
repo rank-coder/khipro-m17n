@@ -1,6 +1,6 @@
 [Read in English](README.en.md)
 ## আমাদের ওয়েবসাইট (Website):
-### https://khipro.khiproteam.pro.bd/
+### https://khipro.khiproteam.com/
 
 # ক্ষিপ্র khipro-MIM-touchscreen
 
@@ -25,7 +25,7 @@
 
 লিনাক্সে টাইপিং বুস্টারের মাধ্যমে ক্ষিপ্র আরও ক্ষিপ্রতর হয়, যেখানে পরবর্তী একাধিক শব্দের সাজেশন পাওয়া যায়। উইন্ডোজ, অ্যান্ড্রয়েডসহ অন্যান্য প্ল্যাটফর্মেও ক্ষিপ্র ইমপ্লিমেন্ট করা অ্যাপ দিয়ে প্রেডিকটিভ টেক্সট সুবিধা ব্যবহার করা যাবে।
 
-ক্ষিপ্রতে কারচিহ্নকে ফোর্স করে স্বরবর্ণ বানানো, কিংবা স্বরবর্ণ কে ফোর্স করে কারচিহ্ন বানানো মাত্র একটা বাটন প্রেস করে করা সম্ভব। এরকম আরো বেশকিছু ফিচার রয়েছে যেগুলোর উল্লেখ [ক্ষিপ্র কুইক্সটার্ট গাইডে](https://khipro.khiproteam.pro.bd/quickstart/) করা হয়েছে।
+ক্ষিপ্রতে কারচিহ্নকে ফোর্স করে স্বরবর্ণ বানানো, কিংবা স্বরবর্ণ কে ফোর্স করে কারচিহ্ন বানানো মাত্র একটা বাটন প্রেস করে করা সম্ভব। এরকম আরো বেশকিছু ফিচার রয়েছে যেগুলোর উল্লেখ [ক্ষিপ্র কুইক্সটার্ট গাইডে](https://khipro.khiproteam.com/quickstart/) করা হয়েছে।
 
 
 ## ডেমো ভিডিয়ো:
@@ -37,12 +37,12 @@
 ## ক্ষিপ্র লেআউট এক নজরে
 ![ক্ষিপ্র লেআউট এক নজরে](https://raw.githubusercontent.com/KhiproTeam/khipro-at-a-glance/refs/heads/main/the_table_2.svg)
 
-## [ক্ষিপ্র কুইকস্টার্ট](https://khipro.khiproteam.pro.bd/quickstart/)
+## [ক্ষিপ্র কুইকস্টার্ট](https://khipro.khiproteam.com/quickstart/)
 
 আমাদের ওয়েবসাইটে ক্ষিপ্র ব্যবহার করার উপায়, টিপস, ও ট্রিকস রয়েছে।  
 ভিজিট করুন https://khipro.khiproteam.pro.bd/quickstart/
 
-## [লাইভ ডেমো](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm)
+## [লাইভ ডেমো](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)
 ক্ষিপ্র ইনস্টল করা ছাড়াই টেস্টিং করতে [এখানে ক্লিক করুন](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm)।
 
 

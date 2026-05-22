@@ -1,6 +1,6 @@
 [বাংলায় পড়ুন](README.md)
 ## Our Website:
-### https://khipro.khiproteam.pro.bd/
+### https://khipro.khiproteam.com/
 
 # Khipro khipro-m17n
 
@@ -23,7 +23,7 @@ With the goal of typing Bangla even faster than English, the Khipro keyboard lay
 
 On Linux, Khipro becomes even faster through Typing Booster, providing suggestions for multiple upcoming words. On Windows, Android, and other platforms, predictive text features can be used with apps that implement Khipro.
 
-In Khipro, it's possible to force a vowel sign (*kar*) to become a vowel or vice versa with just a single button press. There are many more such features mentioned in the [Khipro Quickstart Guide](https://khipro.khiproteam.pro.bd/quickstart/).
+In Khipro, it's possible to force a vowel sign (*kar*) to become a vowel or vice versa with just a single button press. There are many more such features mentioned in the [Khipro Quickstart Guide](https://khipro.khiproteam.com/quickstart/).
 
 
 ## Demo Video:
@@ -35,12 +35,12 @@ In Khipro, it's possible to force a vowel sign (*kar*) to become a vowel or vice
 ## Khipro Layout at a Glance
 ![Khipro Layout at a Glance](https://raw.githubusercontent.com/KhiproTeam/khipro-at-a-glance/refs/heads/main/the_table_2.svg)
 
-## [Khipro Quickstart](https://khipro.khiproteam.pro.bd/quickstart/)
+## [Khipro Quickstart](https://khipro.khiproteam.com/quickstart/)
 
 Our website contains instructions, tips, and tricks for using Khipro.  
 Visit https://khipro.khiproteam.pro.bd/quickstart/
 
-## [Live Demo](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm)
+## [Live Demo](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)
 Try Khipro without installation: [Click Here](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm).
 
 
