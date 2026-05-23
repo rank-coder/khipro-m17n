@@ -39,10 +39,10 @@
 ## [ক্ষিপ্র কুইকস্টার্ট](https://khipro.khiproteam.com/quickstart/)
 
 আমাদের ওয়েবসাইটে ক্ষিপ্র ব্যবহার করার উপায়, টিপস, ও ট্রিকস রয়েছে।  
-ভিজিট করুন https://khipro.khiproteam.pro.bd/quickstart/
+ভিজিট করুন https://khipro.khiproteam.com/quickstart/
 
 ## [লাইভ ডেমো](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)
-ক্ষিপ্র ইনস্টল করা ছাড়াই টেস্টিং করতে [এখানে ক্লিক করুন](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm)।
+ক্ষিপ্র ইনস্টল করা ছাড়াই টেস্টিং করতে [এখানে ক্লিক করুন](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)।
 
 
 
