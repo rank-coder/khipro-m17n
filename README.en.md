@@ -38,10 +38,10 @@ In Khipro, it's possible to force a vowel sign (*kar*) to become a vowel or vice
 ## [Khipro Quickstart](https://khipro.khiproteam.com/quickstart/)
 
 Our website contains instructions, tips, and tricks for using Khipro.  
-Visit https://khipro.khiproteam.pro.bd/quickstart/
+Visit https://khipro.khiproteam.com/quickstart/
 
 ## [Live Demo](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)
-Try Khipro without installation: [Click Here](https://khipro.khiproteam.pro.bd/quickstart/#libh-tipn-dm).
+Try Khipro without installation: [Click Here](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm).
 
 
 
