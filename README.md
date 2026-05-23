@@ -6,7 +6,7 @@
 
 ![khipro-m17n](https://socialify.git.ci/KhiproTeam/khipro-MIM-touchscreen/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FKhiproTeam%2Fkhipro-MIM-touchscreen%2Fmain%2Fbn-khipro.png&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
-এটি ক্ষিপ্র m17n -এর টাচস্ক্রিন সংস্করণ। যেসব টাচস্ক্রিন কিবোর্ডে m17n লাইব্রেরির মতো MIM ফরম্যাটের লেআউটের সাপোর্ট রয়েছে সেসব কিবোর্ড অ্যাপে এই রিপোজিটরির কোড সরাসরি কোড ব্যবহার করা যাবে। টাচস্ক্রিনের জন্য কী কী পরিবর্তন করা হয় তা এখানে দেখুন: [টাচস্ক্রিনে অ্যাডাপটেশনের জন্য সাজেশন](https://khipro.khiproteam.pro.bd/documentation/#tchshkrn-ojdptshnr-jnj-shjshn)
+এটি ক্ষিপ্র m17n -এর টাচস্ক্রিন সংস্করণ। যেসব টাচস্ক্রিন কিবোর্ডে m17n লাইব্রেরির মতো MIM ফরম্যাটের লেআউটের সাপোর্ট রয়েছে সেসব কিবোর্ড অ্যাপে এই রিপোজিটরির কোড সরাসরি কোড ব্যবহার করা যাবে। টাচস্ক্রিনের জন্য কী কী পরিবর্তন করা হয় তা এখানে দেখুন: [টাচস্ক্রিনে অ্যাডাপটেশনের জন্য সাজেশন](https://khipro.khiproteam.com/documentation/#tchshkrn-ojdptshnr-jnj-shjshn)
 
 - **লিনাক্সে**, **উইন্ডোজে**, ও **অ্যান্ড্রয়েডে** ক্ষিপ্র লেআউট ব্যবহার করা যাচ্ছে।
 
