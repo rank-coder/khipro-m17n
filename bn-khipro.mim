@@ -178,30 +178,14 @@
 		("qq" "্")
 		("xx" "্‌")
 		("x" "ং")
-		;; ("`" "`") ;; Not needed for touchscreen
-		;; ("``" "‌") ;; Not needed for touchscreen
-		;; ("```" "``") ;; Not needed for touchscreen
-		;; ("``f" "‍") ;; Not needed for touchscreen
-
-
-
+		
 	)
 	(biram
-		;; ("." "।") ;; Not needed for touchscreen
-		;; ("..." "...") ;; Not needed for touchscreen
-		;; (".." ".") ;; Not needed for touchscreen
-		;; ("$" "৳") ;; Not needed for touchscreen
-		;; ("$f" "₹") ;; Not needed for touchscreen
+		
 		(",,," ",,") ;; Not changed even for touchscreen
 		("।f" "॥") ;; Changed for touchscreen
 		("।ff" "৺") ;; Changed for touchscreen
-		;; ("+" "+") ;; Not needed for touchscreen
-		;; ("-" "-") ;; Not needed for touchscreen
-		;; ("+f" "×") ;; Not needed for touchscreen
-		;; ("-f" "÷") ;; Not needed for touchscreen
-		;; ("$$" "$") ;; Not needed for touchscreen
-		;; ("=" "=") ;; Not needed for touchscreen
-		;; ("=f" "≠") ;; Not needed for touchscreen
+		
 	)
 	(prithayok
 		(";" ";")
