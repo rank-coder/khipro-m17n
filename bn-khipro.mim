@@ -108,8 +108,10 @@
 		("n" (set CID 20) "ন")
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
+		("pf" (set CID 22) "ফ")
 		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
+		("bf" (set CID 24) "ভ")
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম")
 		("z" (set CID 26) "য")
@@ -497,6 +499,7 @@
 						((= CID 21) (delete @-2) (set P2CID CID) (set CID 114) (insert "প্প") (set SLICER 1) (shift juktoborno-state)) ;; প
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 115) (insert "প্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 31) (delete @-2) (set P2CID CID) (set CID 116) (insert "প্স") (set SLICER 1) (shift juktoborno-state)) ;; স
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 22) (insert "ফ")) ;; ⁌
 					)
 				)
 				((= PCID 22) ;; ফ
@@ -511,6 +514,7 @@
 						((= CID 19) (delete @-2) (set P2CID CID) (set CID 120) (insert "ব্ধ") (set SLICER 1) (shift juktoborno-state)) ;; ধ
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 121) (insert "ব্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 122) (insert "ব্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 24) (insert "ভ")) ;; ⁌
 					)
 				)
 				((= PCID 24) ;; ভ
