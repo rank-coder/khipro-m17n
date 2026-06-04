@@ -99,6 +99,7 @@
 		("jh" (set CID 9) "ঝ")
 		("jf" (set CID 9) "ঝ")
 		("nff" (set CID 10) "ঞ")
+		("mf" (set CID 10) "ঞ")
 		("tf" (set CID 11) "ট")
 		("tff" (set CID 12) "ঠ")
 		("df" (set CID 13) "ড")
@@ -538,6 +539,7 @@
 						((= CID 24) (delete @-2) (set P2CID CID) (set CID 129) (insert "ম্ভ") (set SLICER 1) (shift juktoborno-state)) ;; ভ
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 130) (insert "ম্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 131) (insert "ম্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 10) (insert "ঞ")) ;; ⁌
 					)
 				)
 				((= PCID 28) ;; ল
