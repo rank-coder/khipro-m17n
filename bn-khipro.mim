@@ -90,6 +90,7 @@
 		("kh" (set CID 2) "খ")
 		("g" (set CID 3) "গ")
 		("gh" (set CID 4) "ঘ")
+		("gf" (set CID 4) "ঘ")
 		("ng" (set CID 5) "ঙ")
 		("c" (set CID 6) "চ")
 		("ch" (set CID 7) "ছ")
@@ -363,6 +364,7 @@
 						;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 50) (insert "গ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 51) (insert "গ্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 4) (insert "ঘ")) ;; ⁌
 					)
 				)
 				((= PCID 4) ;; ঘ
