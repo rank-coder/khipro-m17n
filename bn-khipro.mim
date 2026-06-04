@@ -93,8 +93,10 @@
 		("ng" (set CID 5) "ঙ")
 		("c" (set CID 6) "চ")
 		("ch" (set CID 7) "ছ")
+		("cf" (set CID 7) "ছ")
 		("j" (set CID 8) "জ")
 		("jh" (set CID 9) "ঝ")
+		("jf" (set CID 9) "ঝ")
 		("nff" (set CID 10) "ঞ")
 		("tf" (set CID 11) "ট")
 		("tff" (set CID 12) "ঠ")
@@ -385,6 +387,7 @@
 						((= CID 7) (delete @-2) (set P2CID CID) (set CID 60) (insert "চ্ছ") (set SLICER 1) (shift juktoborno-state)) ;; ছ
 						((= CID 10) (delete @-2) (set P2CID CID) (set CID 61) (insert "চ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; ঞ
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 62) (insert "চ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 7) (insert "ছ")) ;; ⁌
 					)
 				)
 				((= PCID 8) ;; জ
@@ -394,6 +397,7 @@
 						((= CID 10) (delete @-2) (set P2CID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; ঞ
 						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য P2CID চেক করা হবে।
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 9) (insert "ঝ")) ;; ⁌
 					)
 				)
 				((= PCID 10) ;; ঞ
