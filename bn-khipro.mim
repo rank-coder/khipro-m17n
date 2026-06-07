@@ -668,6 +668,7 @@
 						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon-state) )
 						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set PCID 11) (shift byanjon-state))
 						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set PCID 28) (shift byanjon-state))
+						((= ALTERNATE 14) (delete @-4) (insert "জ্ঞগ") (set PCID 3) (shift byanjon-state))
 					)
 				)
 				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
@@ -711,7 +712,7 @@
 				)
 				((= PCID 65) ;; জ্ঞ
 					(cond
-						((& (= CID 3) (= P2CID 3)) (delete @-4) (set P2CID CID) (set CID 175) (set SLICER 3) (set ALTERNATE 2) (insert "গ্‌গ")) ;; গ
+						((& (= CID 3) (= P2CID 3)) (delete @-4) (set P2CID CID) (set CID 175) (set SLICER 3) (set ALTERNATE 14) (insert "গ্‌গ")) ;; গ
 						(1 (shift byanjon-state))
 					)
 					;; P2CID -এর (সম্ভবত) একমাত্র ব্যবহার হয়েছে এখানে। এখানে PCID হচ্ছে 'জ্ঞ' -এর ID, আর P2CID হচ্ছে 'গ' -এর ID.
