@@ -326,6 +326,22 @@
 		("Y" "Y")
 		("Z" "Z")
 	)
+	(digitsIdentity
+		("0" "0")
+		("1" "1")
+		("2" "2")
+		("3" "3")
+		("4" "4")
+		("5" "5")
+		("6" "6")
+		("7" "7")
+		("8" "8")
+		("9" "9")
+	)
+	(symbolsIdentity
+		("." ".")
+		("$" "$")
+	)
 	(blinder
 		("\\" "\\")
 	)
@@ -865,9 +881,13 @@
 	(blind-state
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
 		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
+		(digitsIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
+		(symbolsIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
 	)
 	(blind-state2
 		(lowercaseIdentity)
 		(uppercaseIdentity)
+		(digitsIdentity)
+		(symbolsIdentity)
 	)
 )
