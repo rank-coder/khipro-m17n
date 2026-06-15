@@ -863,7 +863,7 @@
 
 	)
 	(blind-state
-		(lowercaseIdentity)
-		(uppercaseIdentity)
+		(lowercaseIdentity (move @-) (delete @-3) (move @>))
+		(uppercaseIdentity (move @-) (delete @-3) (move @>))
 	)
 )
