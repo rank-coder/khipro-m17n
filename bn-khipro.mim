@@ -327,7 +327,7 @@
 		("Z" "Z")
 	)
 	(blinder
-		("''" "''")
+		("\" "\")
 	)
 )
 
@@ -863,8 +863,8 @@
 
 	)
 	(blind-state
-		(lowercaseIdentity (move @-) (delete @-2) (move @>) (shift blind-state2))
-		(uppercaseIdentity (move @-) (delete @-2) (move @>) (shift blind-state2))
+		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
+		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
 	)
 	(blind-state2
 		(lowercaseIdentity)
