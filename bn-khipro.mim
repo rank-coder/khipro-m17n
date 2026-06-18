@@ -913,6 +913,7 @@
 		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
 		(digitsIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
 		(symbolsIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
+		(prithayok (move @-) (delete @-) (move @>) (shift blind-state2))
 	)
 	(blind-state2
 		(lowercaseIdentity)
