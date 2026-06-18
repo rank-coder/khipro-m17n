@@ -919,5 +919,6 @@
 		(uppercaseIdentity)
 		(digitsIdentity)
 		(symbolsIdentity)
+		(prithayok (delete @-) (shift init))
 	)
 )
