@@ -407,6 +407,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon (set PCID CID) (shift byanjon-state))
+		(blinder (shift blind-state))
 		(backspace)
 	)
 	(byanjon-state
@@ -750,7 +751,7 @@
 		)
 		(slicer3 (shift init))
 		(diacritic  (shift shor-state))
-
+		(blinder (shift blind-state))
 		(backspace)
 	)
 	(juktoborno-state
@@ -901,6 +902,7 @@
 			)
 			(set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
 		)
+		(blinder (shift blind-state))
 		(backspace)
 
 	)
