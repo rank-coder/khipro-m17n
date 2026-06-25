@@ -448,7 +448,7 @@
 		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
-		(byanjon
+		(byanjon2
 			(set PCID CID)
 			(shift byanjon-state)
 			(cond
