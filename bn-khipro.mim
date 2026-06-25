@@ -88,15 +88,25 @@
 	(byanjon
 		("k" (set CID 1) "ক")
 		("kh" (set CID 2) "খ")
+		("kh/" (set CID 32) "কহ")
+		("kh//" (set CID 0) "খ/")
 		("g" (set CID 3) "গ")
 		("gh" (set CID 4) "ঘ")
+		("gh/" (set CID 32) "গহ")
+		("gh//" (set CID 0) "ঘ/")
 		("gf" (set CID 4) "ঘ")
 		("ng" (set CID 5) "ঙ")
+		("ng/" (set CID 3) "নগ")
+		("ng//" (set CID 0) "ঙ/")
 		("c" (set CID 6) "চ")
 		("ch" (set CID 7) "ছ")
+		("ch/" (set CID 32) "চহ")
+		("ch//" (set CID 0) "ছ/")
 		("cf" (set CID 7) "ছ")
 		("j" (set CID 8) "জ")
 		("jh" (set CID 9) "ঝ")
+		("jh/" (set CID 32) "জহ")
+		("jh//" (set CID 0) "ঝ/")
 		("jf" (set CID 9) "ঝ")
 		("nff" (set CID 10) "ঞ")
 		("mf" (set CID 10) "ঞ")
@@ -107,11 +117,17 @@
 		("nf" (set CID 15) "ণ")
 		("t" (set CID 16) "ত")
 		("th" (set CID 17) "থ")
+		("dh/" (set CID 32) "তহ")
+		("dh//" (set CID 0) "থ/")
 		("d" (set CID 18) "দ")
 		("dh" (set CID 19) "ধ")
+		("dh/" (set CID 32) "দহ")
+		("dh//" (set CID 0) "ধ/")
 		("n" (set CID 20) "ন")
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
+		("ph/" (set CID 32) "পহ")
+		("ph//" (set CID 0) "ফ/")
 		("pf" (set CID 22) "ফ")
 		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
@@ -122,6 +138,8 @@
 		("r" (set CID 27) "র")
 		("l" (set CID 28) "ল")
 		("sh" (set CID 29) "শ")
+		("sh/" (set CID 32) "সহ")
+		("sh//" (set CID 0) "শ/")
 		("sf" (set CID 30) "ষ")
 		("s" (set CID 31) "স")
 		("h" (set CID 32) "হ")
@@ -390,7 +408,13 @@
 		(prithayok (commit) )
 		(ongko )
 		(biram (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
-		(byanjon (set PCID CID) (shift byanjon-state))
+		(byanjon 
+			(set PCID CID)
+			(shift byanjon-state)
+			(cond
+				((= CID 0) (shift init))
+			)
+		)
 		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID.
 		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 		(blinder (shift blind-state))
@@ -406,7 +430,13 @@
 		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
-		(byanjon (set PCID CID) (shift byanjon-state))
+		(byanjon 
+			(set PCID CID)
+			(shift byanjon-state)
+			(cond
+				((= CID 0) (shift init))
+			)
+		)
 		(blinder (shift blind-state))
 		(backspace)
 	)
@@ -439,6 +469,7 @@
 		)
 		(byanjon
 			(cond
+				((= CID 0) (shift init))
 				((= PCID 187) ;; রর
 					(cond
 						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4)) ;; ক্ষ
@@ -811,6 +842,7 @@
 		)
 		(byanjon
 			(cond
+				((= CID 0) (shift init))
 				((= PCID 39) ;; ক্ষ
 					(cond
 						((= CID 15) (delete @-4) (set P2CID CID) (set CID 172) (set SLICER 1) (insert "ক্ষ্ণ")) ;; ণ
