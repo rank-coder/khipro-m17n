@@ -493,6 +493,7 @@
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 44) (insert "ক্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 31) (delete @-2) (set P2CID CID) (set CID 45) (insert "ক্স") (set SLICER 1) (shift juktoborno-state)) ;; স
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 39) (insert "ক্ষ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 2) (insert "খ")) ;; হ
 					)
 				)
 				((= PCID 3) ;; গ
@@ -507,6 +508,7 @@
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 50) (insert "গ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 51) (insert "গ্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 4) (insert "ঘ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 4) (insert "ঘ")) ;; হ
 					)
 				)
 				((= PCID 4) ;; ঘ
@@ -532,6 +534,7 @@
 						((= CID 10) (delete @-2) (set P2CID CID) (set CID 61) (insert "চ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; ঞ
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 62) (insert "চ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 7) (insert "ছ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 7) (insert "ছ")) ;; হ
 					)
 				)
 				((= PCID 8) ;; জ
@@ -542,6 +545,7 @@
 						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য P2CID চেক করা হবে।
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 9) (insert "ঝ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 9) (insert "ঝ")) ;; হ
 					)
 				)
 				((= PCID 10) ;; ঞ
@@ -590,6 +594,7 @@
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 87) (insert "ত্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 88) (insert "ত্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 11) (insert "ট")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 17) (insert "থ")) ;; হ
 					)
 				)
 				((= PCID 17) ;; থ
@@ -608,6 +613,7 @@
 						((= CID 24) (delete @-2) (set P2CID CID) (set CID 95) (insert "দ্ভ") (set SLICER 1) (shift juktoborno-state)) ;; ভ
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 96) (insert "দ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 13) (insert "ড")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 19) (insert "ধ")) ;; হ
 					)
 				)
 				((= PCID 19) ;; ধ
@@ -637,6 +643,7 @@
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 109) (insert "ন্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 31) (delete @-2) (set P2CID CID) (set CID 110) (insert "ন্স") (set SLICER 1) (shift juktoborno-state)) ;; স
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 15) (insert "ণ")) ;; ⁌
+						((= CID 3) (delete @-2) (set P2CID CID) (set CID 5) (insert "ঙ")) ;; গ
 					)
 				)
 				((= PCID 21) ;; প
@@ -648,6 +655,7 @@
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 115) (insert "প্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 31) (delete @-2) (set P2CID CID) (set CID 116) (insert "প্স") (set SLICER 1) (shift juktoborno-state)) ;; স
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 22) (insert "ফ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 22) (insert "ফ")) ;; হ
 					)
 				)
 				((= PCID 22) ;; ফ
@@ -734,6 +742,7 @@
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 165) (insert "স্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 166) (insert "স্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 189) (delete @-2) (set P2CID CID) (set CID 30) (insert "ষ")) ;; ⁌
+						((= CID 32) (delete @-2) (set P2CID CID) (set CID 29) (insert "শ")) ;; হ
 					)
 				)
 				((= PCID 32) ;; হ
