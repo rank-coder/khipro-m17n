@@ -810,7 +810,7 @@
 		)
 		(slicer2
 			(cond
-				((= PCID 16) (delete @-2) (insert "ত/")) ;; ত
+				((= PCID 16) (delete @-2) (insert "ত/")) ;; ত ;; দেখে বাহুল্য মনে হলেও এই লাইনটার দরকার আছে। নিচের লাইনের কারণে।
 				(1 (delete @-) (insert "ঁ") (shift shor-state))
 			)
 		)
