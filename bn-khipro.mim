@@ -389,7 +389,7 @@
 
 (state
 	(init
-		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		(slicer (commit))
 		(slicer3 (commit))
@@ -411,7 +411,7 @@
 		(blinder (shift blind-state))
 	)
 	(shor-state
-		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
