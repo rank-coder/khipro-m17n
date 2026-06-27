@@ -707,7 +707,7 @@
 				)
 				((= PCID 32) ;; হ
 					(cond
-						((= CID 15) (delete @-2) (set P2CID CID) (set CID 168) (insert "হ্ণ") (set SLICER 1) (shift juktoborno-state)) ;; ল
+						((= CID 15) (delete @-2) (set P2CID CID) (set CID 168) (insert "হ্ণ") (set SLICER 1) (shift juktoborno-state)) ;; ণ
 						((= CID 20) (delete @-2) (set P2CID CID) (set CID 167) (insert "হ্ন") (set SLICER 1) (shift juktoborno-state)) ;; ন
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 169) (insert "হ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 170) (insert "হ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
