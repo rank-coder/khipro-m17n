@@ -772,7 +772,18 @@
 			(cond
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188)) ;; ত
 
-				((= PCID 2) (delete @-2) (insert "কহ") (set PCID 32))
+				((= PCID 2) 
+					(cond
+						(
+							(|
+								(= PrevCID 28)
+								(= PrevCID 30)
+							) ;; this is the condition
+							(delete @-2) (insert "্কহ") (set PCID 32) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "কহ") (set PCID 32))
+					)
+				)
 				((= PCID 4) 
 					(cond
 						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set PCID 32))
