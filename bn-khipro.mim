@@ -389,7 +389,7 @@
 
 (state
 	(init
-		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		(slicer (commit))
 		(slicer3 (commit))
@@ -400,7 +400,7 @@
 		(ongko )
 		(biram (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set PCID CID)
+			(set PrevCID PCID) (set PCID CID)
 			(shift byanjon-state)
 			(cond
 				((= CID 0) (shift init))
@@ -411,7 +411,7 @@
 		(blinder (shift blind-state))
 	)
 	(shor-state
-		(t (set P2CID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
@@ -422,7 +422,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set PCID CID)
+			(set PrevCID PCID) (set PCID CID)
 			(shift byanjon-state)
 			(cond
 				((= CID 0) (shift init))
@@ -456,7 +456,7 @@
 				((&  (= PCID 27) (= CID 27)) (shift rr-state) (set CID 187) )
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) (shift juktoborno-state))
 			)
-			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
@@ -766,21 +766,91 @@
 					)
 				)
 			)
-			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
 			(cond
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188)) ;; ত
 
-				((= PCID 2) (delete @-2) (insert "কহ") (set PCID 32))
-				((= PCID 4) (delete @-2) (insert "গহ") (set PCID 32))
-				((= PCID 5) (delete @-2) (insert "নগ") (set PCID 3))
+				((= PCID 2) 
+					(cond
+						(
+							(|
+								(= PrevCID 28)
+								(= PrevCID 30)
+							) ;; this is the condition
+							(delete @-2) (insert "্কহ") (set PCID 32) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "কহ") (set PCID 32))
+					)
+				)
+				((= PCID 4) 
+					(cond
+						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set PCID 32))
+						((= PrevCID 28) (delete @-2) (insert "্গহ") (set PCID 32))
+						((= PrevCID 34) (delete @-2) (insert "্‌গহ") (set PCID 32)) ;; zwnj আছে
+						((= PrevCID 65) (delete @-5) (insert "গ্‌গহ") (set PCID 32)) ;; special case
+						(1 (delete @-2) (insert "গহ") (set PCID 32))
+					)
+				)
+				((= PCID 5)
+					(cond	
+						(
+							(|
+								(= PrevCID 3)
+								(= PrevCID 4)
+								
+								(= PrevCID 16)
+								(= PrevCID 19)
+								(= PrevCID 20)
+								(= PrevCID 21)
+								(= PrevCID 25)
+								(= PrevCID 29)
+								
+								(= PrevCID 31)
+								(= PrevCID 32)
+								
+							) ;; this is the condition
+							(delete @-2) (insert "্নগ") (set PCID 3) ;; this is the operation
+						)
+						(
+							(|
+								(= PrevCID 15)
+								(= PrevCID 30)
+								(= PrevCID 39)
+							) ;; this is the condition
+							(delete @-2) (insert "্ণগ") (set PCID 3) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "নগ") (set PCID 3))
+					)
+				)
 				((= PCID 7) (delete @-2) (insert "চহ") (set PCID 32))
-				((= PCID 9) (delete @-2) (insert "জহ") (set PCID 32))
-				((= PCID 17) (delete @-2) (insert "তহ") (set PCID 32))
+				((= PCID 9)
+					(cond
+						((= PrevCID 23) (delete @-2) (insert "্জহ") (set PCID 32))
+						(1 (delete @-2) (insert "জহ") (set PCID 32))
+					)
+				)
+				((= PCID 17)
+					(cond
+						((| (= PrevCID 1) (= PrevCID 21)) (delete @-2) (insert "্তহ") (set PCID 32))
+						((= PrevCID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set PCID 32))
+						(1 (delete @-2) (insert "তহ") (set PCID 32))
+					)
+				)
 				((= PCID 19) (delete @-2) (insert "দহ") (set PCID 32))
-				((= PCID 22) (delete @-2) (insert "পহ") (set PCID 32))
-				((= PCID 29) (delete @-2) (insert "সহ") (set PCID 32))
+				((= PCID 22)
+					(cond
+						((= PrevCID 21) (delete @-2) (insert "্পহ") (set PCID 32))
+						(1 (delete @-2) (insert "পহ") (set PCID 32))
+					)
+				)
+				((= PCID 29)
+					(cond
+						((| (= PrevCID 1) (= PrevCID 20) (= PrevCID 21)) (delete @-2) (insert "্সহ") (set PCID 32))
+						(1 (delete @-2) (insert "সহ") (set PCID 32))
+					)
+				)
 
 				(1 (shift init))
 			)
@@ -849,7 +919,7 @@
 				;; র্র এর পরে র লিখলে রররর আনতে।
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CID) (set SLICER 1) )
 			)
-			(set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
@@ -943,7 +1013,7 @@
 				)
 				(1 (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
-			(set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
+			(set PrevCID PCID) (set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
 		)
 		(blinder (shift blind-state))
 		(backspace)
