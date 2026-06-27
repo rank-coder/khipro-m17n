@@ -773,7 +773,15 @@
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188)) ;; ত
 
 				((= PCID 2) (delete @-2) (insert "কহ") (set PCID 32))
-				((= PCID 4) (delete @-2) (insert "গহ") (set PCID 32))
+				((= PCID 4) 
+					(cond
+						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set PCID 32))
+						((= PrevCID 28) (delete @-2) (insert "্গহ") (set PCID 32))
+						((= PrevCID 34) (delete @-2) (insert "্‌গহ") (set PCID 32)) ;; zwnj আছে
+						((= PrevCID 65) (delete @-5) (insert "গ্‌গহ") (set PCID 32)) ;; special case
+						(1 (delete @-2) (insert "গহ") (set PCID 32))
+					)
+				)
 				((= PCID 5)
 					(cond	
 						(
