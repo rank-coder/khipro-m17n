@@ -774,7 +774,37 @@
 
 				((= PCID 2) (delete @-2) (insert "কহ") (set PCID 32))
 				((= PCID 4) (delete @-2) (insert "গহ") (set PCID 32))
-				((= PCID 5) (delete @-2) (insert "নগ") (set PCID 3))
+				((= PCID 5)
+					(cond	
+						(
+							(|
+								(= PrevCID 3)
+								(= PrevCID 4)
+								
+								(= PrevCID 16)
+								(= PrevCID 19)
+								(= PrevCID 20)
+								(= PrevCID 21)
+								(= PrevCID 25)
+								(= PrevCID 29)
+								
+								(= PrevCID 31)
+								(= PrevCID 32)
+								
+							) ;; this is the condition
+							(delete @-2) (insert "্নগ") (set PCID 3) ;; this is the operation
+						)
+						(
+							(|
+								(= PrevCID 15)
+								(= PrevCID 30)
+								(= PrevCID 39)
+							) ;; this is the condition
+							(delete @-2) (insert "্ণগ") (set PCID 3) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "নগ") (set PCID 3))
+					)
+				)
 				((= PCID 7) (delete @-2) (insert "চহ") (set PCID 32))
 				((= PCID 9)
 					(cond
