@@ -779,7 +779,8 @@
 				((= PCID 9) (delete @-2) (insert "জহ") (set PCID 32))
 				((= PCID 17)
 					(cond
-						((| (= PrevCID 1) (= PrevCID 21) (= PrevCID 53)) (delete @-2) (insert "্তহ") (set PCID 32))
+						((| (= PrevCID 1) (= PrevCID 21)) (delete @-2) (insert "্তহ") (set PCID 32))
+						((= PrevCID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set PCID 32))
 						(1 (delete @-2) (insert "তহ") (set PCID 32))
 					)
 				)
