@@ -739,7 +739,7 @@
 		)
 		(slicer
 			(cond
-				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188)) ;; ত
+				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188) (shift init)) ;; ত
 				(1 (shift init))
 			)
 		)
