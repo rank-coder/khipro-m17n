@@ -755,7 +755,7 @@
 			(cond
 				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188) (shift init)) ;; ত
 
-				((= PCID 2) 
+				((= PCID 2)
 					(cond
 						(
 							(|
