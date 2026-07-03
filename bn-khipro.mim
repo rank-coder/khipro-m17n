@@ -88,21 +88,16 @@
 	(byanjon
 		("k" (set CID 1) "ক")
 		("kh" (set CID 2) "খ")
-
 		("g" (set CID 3) "গ")
 		("gh" (set CID 4) "ঘ")
-
-		("gf" (set CID 4) "ঘ")
+		("gf" (set CID 4) (set FF 1) "ঘ")
 		("ng" (set CID 5) "ঙ")
-
 		("c" (set CID 6) "চ")
 		("ch" (set CID 7) "ছ")
-
-		("cf" (set CID 7) "ছ")
+		("cf" (set CID 7) (set FF 1) "ছ")
 		("j" (set CID 8) "জ")
 		("jh" (set CID 9) "ঝ")
-
-		("jf" (set CID 9) "ঝ")
+		("jf" (set CID 9) (set FF 1) "ঝ")
 		("nff" (set CID 10) "ঞ")
 		("mf" (set CID 10) "ঞ")
 		("tf" (set CID 11) "ট")
@@ -112,25 +107,21 @@
 		("nf" (set CID 15) "ণ")
 		("t" (set CID 16) "ত")
 		("th" (set CID 17) "থ")
-
 		("d" (set CID 18) "দ")
 		("dh" (set CID 19) "ধ")
-
 		("n" (set CID 20) "ন")
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
-
-		("pf" (set CID 22) "ফ")
+		("pf" (set CID 22) (set FF 1) "ফ")
 		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
-		("bf" (set CID 24) "ভ")
+		("bf" (set CID 24) (set FF 1) "ভ")
 		("v" (set CID 24) "ভ")
 		("m" (set CID 25) "ম")
 		("z" (set CID 26) "য")
 		("r" (set CID 27) "র")
 		("l" (set CID 28) "ল")
 		("sh" (set CID 29) "শ")
-
 		("sf" (set CID 30) "ষ")
 		("s" (set CID 31) "স")
 		("h" (set CID 32) "হ")
@@ -140,7 +131,6 @@
 		(",," (set CID 36) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
-
 		("zf" (set CID 190) "্য")
 	)
 	(phola
@@ -176,13 +166,11 @@
 		("uff" "‌ু")
 		("uuff" "‌ূ")
 		("qff" "‌ৃ")
-
 		("we" "োয়ে")
 		("wef" "ওয়ে")
 		("waf" "ওয়া")
 		("wa" "োয়া")
 		("wae" "ওয়্যা")
-
 		("oo" "ঃ")
 
 	)
@@ -239,9 +227,6 @@
 		("``" "‌")
 		("```" "``")
 		("``f" "‍")
-
-
-
 	)
 	(biram
 		("." "।")
@@ -389,7 +374,7 @@
 
 (state
 	(init
-		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor-state))
 		(slicer (commit))
 		(slicer3 (commit))
@@ -411,7 +396,7 @@
 		(blinder (shift blind-state))
 	)
 	(shor-state
-		(t (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
+		(t (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
@@ -432,7 +417,6 @@
 		(backspace)
 	)
 	(byanjon-state
-
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
@@ -442,7 +426,6 @@
 			)
 			(shift shor-state)
 		)
-
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে।
 			;; উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
@@ -498,7 +481,7 @@
 						;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 50) (insert "গ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 51) (insert "গ্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 4) (insert "ঘ")) ;; ⁌
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 4) (set FF 1) (insert "ঘ")) ;; ⁌
 						((= CID 32) (delete @-2) (set P2CID CID) (set CID 4) (insert "ঘ")) ;; হ
 					)
 				)
@@ -524,7 +507,7 @@
 						((= CID 7) (delete @-2) (set P2CID CID) (set CID 60) (insert "চ্ছ") (set SLICER 1) (shift juktoborno-state)) ;; ছ
 						((= CID 10) (delete @-2) (set P2CID CID) (set CID 61) (insert "চ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; ঞ
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 62) (insert "চ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 7) (insert "ছ")) ;; ⁌
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 7) (set FF 1) (insert "ছ")) ;; ⁌
 						((= CID 32) (delete @-2) (set P2CID CID) (set CID 7) (insert "ছ")) ;; হ
 					)
 				)
@@ -535,7 +518,7 @@
 						((= CID 10) (delete @-2) (set P2CID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 1) (shift juktoborno-state)) ;; ঞ
 						;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno-state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য P2CID চেক করা হবে।
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 66) (insert "জ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 9) (insert "ঝ")) ;; ⁌
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 9) (set FF 1) (insert "ঝ")) ;; ⁌
 						((= CID 32) (delete @-2) (set P2CID CID) (set CID 9) (insert "ঝ")) ;; হ
 					)
 				)
@@ -645,7 +628,7 @@
 						((= CID 21) (delete @-2) (set P2CID CID) (set CID 114) (insert "প্প") (set SLICER 1) (shift juktoborno-state)) ;; প
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 115) (insert "প্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
 						((= CID 31) (delete @-2) (set P2CID CID) (set CID 116) (insert "প্স") (set SLICER 1) (shift juktoborno-state)) ;; স
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 22) (insert "ফ")) ;; ⁌
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 22) (set FF 1) (insert "ফ")) ;; ⁌
 						((= CID 32) (delete @-2) (set P2CID CID) (set CID 22) (insert "ফ")) ;; হ
 					)
 				)
@@ -661,7 +644,7 @@
 						((= CID 19) (delete @-2) (set P2CID CID) (set CID 120) (insert "ব্ধ") (set SLICER 1) (shift juktoborno-state)) ;; ধ
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 121) (insert "ব্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 28) (delete @-2) (set P2CID CID) (set CID 122) (insert "ব্ল") (set SLICER 1) (shift juktoborno-state)) ;; ল
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 24) (insert "ভ")) ;; ⁌
+						((= CID 189) (delete @-2) (set P2CID CID) (set CID 24) (set FF 1) (insert "ভ")) ;; ⁌
 					)
 				)
 				((= PCID 24) ;; ভ
@@ -738,7 +721,7 @@
 				)
 				((= PCID 32) ;; হ
 					(cond
-						((= CID 15) (delete @-2) (set P2CID CID) (set CID 168) (insert "হ্ণ") (set SLICER 1) (shift juktoborno-state)) ;; ল
+						((= CID 15) (delete @-2) (set P2CID CID) (set CID 168) (insert "হ্ণ") (set SLICER 1) (shift juktoborno-state)) ;; ণ
 						((= CID 20) (delete @-2) (set P2CID CID) (set CID 167) (insert "হ্ন") (set SLICER 1) (shift juktoborno-state)) ;; ন
 						((= CID 23) (delete @-2) (set P2CID CID) (set CID 169) (insert "হ্ব") (set SLICER 1) (shift juktoborno-state)) ;; ব
 						((= CID 25) (delete @-2) (set P2CID CID) (set CID 170) (insert "হ্ম") (set SLICER 1) (shift juktoborno-state)) ;; ম
@@ -770,9 +753,9 @@
 		)
 		(slicer
 			(cond
-				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188)) ;; ত
+				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188) (shift init)) ;; ত
 
-				((= PCID 2) 
+				((= PCID 2)
 					(cond
 						(
 							(|
@@ -784,7 +767,7 @@
 						(1 (delete @-2) (insert "কহ") (set PCID 32))
 					)
 				)
-				((= PCID 4) 
+				((&(= PCID 4) (= FF 0))
 					(cond
 						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set PCID 32))
 						((= PrevCID 28) (delete @-2) (insert "্গহ") (set PCID 32))
@@ -798,18 +781,15 @@
 						(
 							(|
 								(= PrevCID 3)
-								(= PrevCID 4)
-								
+								(= PrevCID 4)								
 								(= PrevCID 16)
 								(= PrevCID 19)
 								(= PrevCID 20)
 								(= PrevCID 21)
 								(= PrevCID 25)
-								(= PrevCID 29)
-								
+								(= PrevCID 29)								
 								(= PrevCID 31)
-								(= PrevCID 32)
-								
+								(= PrevCID 32)								
 							) ;; this is the condition
 							(delete @-2) (insert "্নগ") (set PCID 3) ;; this is the operation
 						)
@@ -824,8 +804,8 @@
 						(1 (delete @-2) (insert "নগ") (set PCID 3))
 					)
 				)
-				((= PCID 7) (delete @-2) (insert "চহ") (set PCID 32))
-				((= PCID 9)
+				((&(= PCID 7) (= FF 0)) (delete @-2) (insert "চহ") (set PCID 32))
+				((&(= PCID 9) (= FF 0))
 					(cond
 						((= PrevCID 23) (delete @-2) (insert "্জহ") (set PCID 32))
 						(1 (delete @-2) (insert "জহ") (set PCID 32))
@@ -839,7 +819,7 @@
 					)
 				)
 				((= PCID 19) (delete @-2) (insert "দহ") (set PCID 32))
-				((= PCID 22)
+				((&(= PCID 22) (= FF 0))
 					(cond
 						((= PrevCID 21) (delete @-2) (insert "্পহ") (set PCID 32))
 						(1 (delete @-2) (insert "পহ") (set PCID 32))
@@ -851,7 +831,6 @@
 						(1 (delete @-2) (insert "সহ") (set PCID 32))
 					)
 				)
-
 				(1 (shift init))
 			)
 		)
@@ -906,7 +885,6 @@
 		(ongko  (shift init))
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
-
 		(phola
 			(cond
 				((&  (= PCID 27) (= CID 27)) (move @-) (move @-) (delete @-) (move @>) (shift rr-state) (set CID 187) )
@@ -1017,12 +995,9 @@
 		)
 		(blinder (shift blind-state))
 		(backspace)
-
 	)
-
 	(rr-state
 		(t (shift byanjon-state) )
-
 	)
 	(blind-state
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))

@@ -6,32 +6,30 @@
 
 ![khipro-m17n](https://socialify.git.ci/rank-coder/khipro-m17n/image?description=0&forks=1&issues=1&language=0&logo=https%3A%2F%2Fraw.githubusercontent.com%2Frank-coder%2Fkhipro-m17n%2Fmain%2Fbn-khipro.png&name=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
-- **Khipro layout is available for Linux, Windows, and Android.** See more details on [our website](https://khipro.khiproteam.com/).
+- Khipro layout is available for Linux, Windows, and Android. See more details on [our website](https://khipro.khiproteam.com/).
 
 > [!NOTE]
 > This project is powered by GitHub 🌟 stars. Go ahead and *star* it please!
 
 
 ## Introduction
-Khipro is not a phonetic layout. It is a compositional layout. That means instead of using a modifier key such as Alt or Shift, you can use a modifier key to transform a character like 'ত' into 'ট' or 'ক' into 'ক্ষ'. Another modifier, the slicer, allows you to split conjunct consonants—for example turning 'ক্ত' into 'কত'.
+Bengali typing often involves repeated Shift presses, remembering mixed phonetic mappings with both uppercase and lowercase letters, struggling to write desired or unusual spellings, placing diacritics in the middle or at the beginning of words, frequent backspacing, moving fingers to the number row for chandrabindu and similar marks, keyboard layouts becoming awkward on different setups, and lacking convenient ways to type characters such as "়" (nukta) and "॥" (double danda), among many other issues.
 
-Khipro removes many common Bengali typing frustrations: repeated Shift usage, remembering mixed-case phonetic mappings, inability to type desired or unusual spellings, not being able to place diacritics in the middle or beginning of words, frequent backspacing, having to move fingers to the number row for chandrabindu and other marks, keyboard keys being blocked on different layouts, missing ways to type '়' (nukta), '॥' (double danda), and more.
+To address these problems, the Khipro team introduced the “Khipro” concept: a lowercase-input-based compositional keyboard layout that is neither fixed nor purely phonetic, but combines the strengths of both approaches.
 
-To solve these issues, the Khipro team created the “Khipro” concept: a lowercase-input-based compositional keyboard layout that is neither fixed nor purely phonetic—offering the best of both worlds.
+Khipro is not a phonetic layout. It is a compositional layout. That means that instead of using a modifier key such as Alt or Shift, you can use a modifier key to transform characters like "ত" into "ট" or "ক" into "ক্ষ". Another modifier, the slicer, can be used to split conjunct consonants—for example, turning "ক্ত" into "কত".
 
-A compositional typing method is not the same as a phonetic method, but it shares some similarities. For more, see the Khipro quickstart guide.
+Although compositional typing is not the same as a phonetic method, it shares some similarities. For more information, see the Khipro quickstart guide.
 
-With the goal of faster Bengali typing than English, the Khipro keyboard layout is now available for Linux, Android, and Windows.
+Driven by the goal of writing Bengali faster than English, the Khipro keyboard layout is now available on Linux, Android, and Windows.
 
-On Linux, Khipro becomes even faster with a typing booster that offers suggestions for upcoming words. On Windows, Android, and other platforms, predictive text is available with Khipro-enabled apps.
+On Linux, typing becomes even faster with a typing booster that provides suggestions for subsequent words. On Windows, Android, and other platforms, predictive text is available through apps that support Khipro.
 
-Khipro also lets you force a vowel from a diacritic or force a diacritic from a vowel with a single key press. There are many more features described in the [Khipro quickstart guide](https://khipro.khiproteam.com/quickstart/).
-
+Khipro also allows you to force a vowel from a diacritic or force a diacritic from a vowel with the press of a single key. There are many other features, which are described in the [Khipro quickstart guide](https://khipro.khiproteam.com/quickstart/).
 
 ## Demo Video
 
 [Screencast From 2025-03-19 22-43-44.webm](https://github.com/user-attachments/assets/84f803a1-d01e-416e-addb-65c7f7cd6b91)
-
 
 ## Khipro Layout at a Glance
 ![Khipro Layout at a Glance](https://raw.githubusercontent.com/KhiproTeam/khipro-at-a-glance/refs/heads/main/the_table_2.svg)
@@ -44,7 +42,6 @@ Visit https://khipro.khiproteam.com/quickstart/
 ## [Live Demo](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm)
 
 You can test Khipro without installing it by clicking [here](https://khipro.khiproteam.com/quickstart/#libh-tipn-dm).
-
 
 # Contact
 1. Khipro Telegram group: https://t.me/KhiproChat
