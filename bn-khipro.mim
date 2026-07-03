@@ -88,20 +88,15 @@
 	(byanjon
 		("k" (set CID 1) "ক")
 		("kh" (set CID 2) "খ")
-
 		("g" (set CID 3) "গ")
 		("gh" (set CID 4) "ঘ")
-
 		("gf" (set CID 4) "ঘ")
 		("ng" (set CID 5) "ঙ")
-
 		("c" (set CID 6) "চ")
 		("ch" (set CID 7) "ছ")
-
 		("cf" (set CID 7) "ছ")
 		("j" (set CID 8) "জ")
 		("jh" (set CID 9) "ঝ")
-
 		("jf" (set CID 9) "ঝ")
 		("nff" (set CID 10) "ঞ")
 		("mf" (set CID 10) "ঞ")
@@ -112,14 +107,11 @@
 		("nf" (set CID 15) "ণ")
 		("t" (set CID 16) "ত")
 		("th" (set CID 17) "থ")
-
 		("d" (set CID 18) "দ")
 		("dh" (set CID 19) "ধ")
-
 		("n" (set CID 20) "ন")
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) "ফ")
-
 		("pf" (set CID 22) "ফ")
 		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
@@ -130,7 +122,6 @@
 		("r" (set CID 27) "র")
 		("l" (set CID 28) "ল")
 		("sh" (set CID 29) "শ")
-
 		("sf" (set CID 30) "ষ")
 		("s" (set CID 31) "স")
 		("h" (set CID 32) "হ")
@@ -140,7 +131,6 @@
 		(",," (set CID 36) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) "ক্ষ")
-
 		("zf" (set CID 190) "্য")
 	)
 	(phola
@@ -176,13 +166,11 @@
 		("uff" "‌ু")
 		("uuff" "‌ূ")
 		("qff" "‌ৃ")
-
 		("we" "োয়ে")
 		("wef" "ওয়ে")
 		("waf" "ওয়া")
 		("wa" "োয়া")
 		("wae" "ওয়্যা")
-
 		("oo" "ঃ")
 
 	)
@@ -239,9 +227,6 @@
 		("``" "‌")
 		("```" "``")
 		("``f" "‍")
-
-
-
 	)
 	(biram
 		("." "।")
@@ -432,7 +417,6 @@
 		(backspace)
 	)
 	(byanjon-state
-
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
@@ -442,7 +426,6 @@
 			)
 			(shift shor-state)
 		)
-
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে।
 			;; উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
@@ -798,18 +781,15 @@
 						(
 							(|
 								(= PrevCID 3)
-								(= PrevCID 4)
-								
+								(= PrevCID 4)								
 								(= PrevCID 16)
 								(= PrevCID 19)
 								(= PrevCID 20)
 								(= PrevCID 21)
 								(= PrevCID 25)
-								(= PrevCID 29)
-								
+								(= PrevCID 29)								
 								(= PrevCID 31)
-								(= PrevCID 32)
-								
+								(= PrevCID 32)								
 							) ;; this is the condition
 							(delete @-2) (insert "্নগ") (set PCID 3) ;; this is the operation
 						)
@@ -851,7 +831,6 @@
 						(1 (delete @-2) (insert "সহ") (set PCID 32))
 					)
 				)
-
 				(1 (shift init))
 			)
 		)
@@ -906,7 +885,6 @@
 		(ongko  (shift init))
 		(biram  (shift shor-state))
 		(kar (shift shor-state))
-
 		(phola
 			(cond
 				((&  (= PCID 27) (= CID 27)) (move @-) (move @-) (delete @-) (move @>) (shift rr-state) (set CID 187) )
@@ -1017,12 +995,9 @@
 		)
 		(blinder (shift blind-state))
 		(backspace)
-
 	)
-
 	(rr-state
 		(t (shift byanjon-state) )
-
 	)
 	(blind-state
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind-state2))
