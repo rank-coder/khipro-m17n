@@ -113,6 +113,7 @@
 		("p" (set CID 21) "প")
 		("ph" (set CID 22) (set CmpC 1) "ফ")
 		("pf" (set CID 22) (set FF 1) "ফ")
+		("ff" (set CID 22) (set FF 1) "ফ")
 		("f" (set CID 189) "⁌")
 		("b" (set CID 23) "ব")
 		("bf" (set CID 24) (set FF 1) "ভ")
