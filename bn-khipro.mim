@@ -124,7 +124,7 @@
 		("sh" (set CID 29) (set CmpC 1) "শ")
 		("sf" (set CID 30) (set CmpC 0) "ষ")
 		("s" (set CID 31) (set CmpC 0) "স")
-		("h" (set CID 32) (set CmpC 0) "হ")
+		("h" (set CID 32) (set CmpC 0) (set FF 0) "হ")
 		("y" (set CID 33) (set CmpC 0) "য়")
 		("rf" (set CID 34) (set CmpC 0) "ড়")
 		("rff" (set CID 35) (set CmpC 0) "ঢ়")
