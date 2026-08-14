@@ -128,7 +128,7 @@
 		("y" (set CID 33) (set CmpC 0) "য়")
 		("rf" (set CID 34) (set CmpC 0) "ড়")
 		("rff" (set CID 35) (set CmpC 0) "ঢ়")
-		(",," (set CID 36) "(set CmpC 0) ়")
+		(",," (set CID 36) (set CmpC 0) "়")
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CID 39) (set CmpC 0) "ক্ষ")
 		("zf" (set CID 190) (set CmpC 0) "্য")
