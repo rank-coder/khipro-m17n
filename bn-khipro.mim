@@ -133,6 +133,7 @@
 		("kf" (set CID 39) (set CmpC 0) "ক্ষ")
 		("zf" (set CID 190) (set CmpC 0) "্য")
 		("gg" (set CID 65) (set CmpC 1) "জ্ঞ")
+		("t;" (set CmpC 0) "ৎ")
 	)
 	(phola
 		;;("r" (set CID 27) "র") ;; ডার্ক ক্ষিপ্রর জন্য ফলা প্রয়োজন নেই
