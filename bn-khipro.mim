@@ -756,7 +756,10 @@
 			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
-			(delete @-) (insert "্") (set linker 1)
+			(cond 
+				((= linkerLevel 0) (delete @-) (insert "্") (set linker 1) (set linkerLevel 1))
+				((= linkerLevel 1) (delete @-) (insert "্") (set linker 1) (set linkerLevel 0) (shift juktoborno-state))
+			)
 		)
 		(slicer2
 			(cond
