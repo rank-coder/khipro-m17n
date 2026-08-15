@@ -418,6 +418,7 @@
 		(backspace)
 	)
 	(byanjon-state
+		(t (set linker 0))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor-state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
