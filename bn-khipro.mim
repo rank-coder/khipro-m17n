@@ -476,7 +476,7 @@
 					)
 					((= PCID 3) ;; গ
 						(cond
-							((= CID 3) (delete @-3) (set P2CID CID) (set CID 65) (insert "জ্ঞ") (set SLICER 3) (set ALTERNATE 2) (shift juktoborno-state)) ;; গ
+							((= CID 3) (delete @-3) (set P2CID CID) (set CID 175) (insert "গ্‌গ") (set SLICER 3) (shift juktoborno-state)) ;; গ
 							((= CID 15) (delete @-3) (set P2CID CID) (set CID 46) (insert "গ্‌ণ") (set SLICER 2) (shift juktoborno-state)) ;; ণ
 							((= CID 19) (delete @-3) (set P2CID CID) (set CID 47) (insert "গ্ধ") (set SLICER 1) (shift juktoborno-state)) ;; ধ
 							;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
