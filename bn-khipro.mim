@@ -772,6 +772,7 @@
 		(backspace)
 	)
 	(juktoborno-state
+		(t (insert "⫘"))
 		(slicer
 			(delete @-)
 			(cond
