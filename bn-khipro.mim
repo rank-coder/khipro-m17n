@@ -749,6 +749,12 @@
 						((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state)) ;; zf
 					)
 				)
+				((> PCID 0)
+					(cond
+						((= CID 27) (move @-) (insert "্") (move @>))
+						((= CID 26) (move @-) (insert "্") (move @>))
+					)
+				)
 			)))
 			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
@@ -909,6 +915,12 @@
 						((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
 						(1 (shift byanjon-state))
 					)
+				)
+				((> PCID 0)
+					(cond
+						((= CID 27) (move @-) (insert "্") (move @>))
+						((= CID 26) (move @-) (insert "্") (move @>))
+					) (shift byanjon-state)
 				)
 				(1 (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
