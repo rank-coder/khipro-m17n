@@ -748,7 +748,6 @@
 								((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state)) ;; zf
 							)
 						)
-
 					)
 				)
 				(1
