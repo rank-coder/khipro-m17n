@@ -898,18 +898,18 @@
 								(1 (noMatchAfterJukto) (shift byanjon-state))
 							)
 						)
-						((= PCID 110) ;; ন্স
-							(cond
-								((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
-								(1 (noMatchAfterJukto) (shift byanjon-state))
-							)
-						)
-						((= PCID 126) ;; ম্প
-							(cond
-								((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
-								(1 (noMatchAfterJukto) (shift byanjon-state))
-							)
-						)
+;;						((= PCID 110) ;; ন্স
+;;							(cond
+;;								((= CID 11) (delete @-4) (set P2CID CID) (set CID 185) (set SLICER 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
+;;								(1 (noMatchAfterJukto) (shift byanjon-state))
+;;							)
+;;						)
+;;						((= PCID 126) ;; ম্প
+;;							(cond
+;;								((= CID 28) (delete @-4) (set P2CID CID) (set CID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
+;;								(1 (noMatchAfterJukto) (shift byanjon-state))
+;;							)
+;;						)
 
 						(1 (noMatchAfterJukto) (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 					)
