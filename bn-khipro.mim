@@ -446,7 +446,7 @@
 		)
 		(byanjon
 			(cond
-				((= linking 1) (move @-) (delete @-) (move @+) 
+				((= linking 1) (move @-) (delete @-) (move @+)
 					(cond
 						((= CID 0) (shift init))
 
