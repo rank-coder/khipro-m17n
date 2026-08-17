@@ -750,8 +750,8 @@
 				)
 				((>= PCID 0)
 					(cond
-						((= CID 27) (move @-) (insert "্") (move @>))
-						((= CID 26) (move @-) (insert "্") (move @>))
+						((= CID 27) (move @-) (insert "্") (move @>) (shift juktoborno-state))
+						((= CID 26) (move @-) (insert "্") (move @>) (shift juktoborno-state))
 					)
 				)
 			)))
