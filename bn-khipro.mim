@@ -754,7 +754,7 @@
 						)
 					)
 				)
-				((= linking 0)
+				(1
 					(cond
 						(= PCID 187) ;; রর
 								(cond
