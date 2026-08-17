@@ -749,7 +749,7 @@
 					)
 				)
 			))
-				( (&(= linkin 0)(= PCID 187)) ;; রর
+				( (&(= linking 0)(= PCID 187)) ;; রর
 						(cond
 							((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4)) ;; ক্ষ
 							((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
