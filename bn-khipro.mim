@@ -815,6 +815,7 @@
 		(ongko (move @-) (delete @-) (move @+) (shift init))
 		(biram (move @-) (delete @-) (move @+) (shift shor-state))
 		(kar (move @-) (delete @-) (move @+) (shift shor-state))
+		(nil (delete @-) (shift init))
 		(phola
 			(cond((= linking 1) (move @-) (delete @-) (move @+)
 				(cond
