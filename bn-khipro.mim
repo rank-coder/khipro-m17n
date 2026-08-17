@@ -820,7 +820,7 @@
 		)
 		(byanjon
 			(cond
-				((= linking 1)
+				((= linking 1) (move linkingSign) (delete @-) (move @>)
 					(cond
 						((= CID 0) (shift init))
 						((= PCID 39) ;; ক্ষ
@@ -913,7 +913,6 @@
 
 						(1 (noMatchAfterJukto) (shift byanjon-state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 					)
-					(move linkingSign) (delete @-) (move @>)
 				)
 			)
 			(set PrevCID PCID) (set PCID CID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
