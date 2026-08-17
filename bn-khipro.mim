@@ -134,7 +134,8 @@
 		("zf" (set CID 190) (set CmpC 0) "্য")
 	)
 	(phola
-
+		("r" (set CID 27) "র")
+		("z" (set CID 26) "য")
 	)
 	(kar
 		("o" "")
