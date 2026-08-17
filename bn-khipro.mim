@@ -940,6 +940,6 @@
 
 (macro
 	(noMatchAfterJukto
-		(move linkingSign) (delete @-) (set linking 0) (move @>)
+		(set linking 0)
 	)
 )
