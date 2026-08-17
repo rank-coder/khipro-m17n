@@ -133,7 +133,7 @@
 		("kf" (set CID 39) (set CmpC 0) "ক্ষ")
 		("zf" (set CID 190) (set CmpC 0) "্য")
 		;; নিচের বর্ণগুলো ক্ষিপ্র-ডার্কের জন্য
-		("rr" (set CID 187)(set CmpC 1) "পারলাম")
+		("rr" (set CID 187)(set CmpC 1) "রর")
 	)
 	(phola
 		("r" (set CID 27) "র")
@@ -756,7 +756,7 @@
 				)
 				(1
 					(cond
-						(= PCID 187) ;; রর
+						((= PCID 187) ;; রর
 								(cond
 									((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4)) ;; ক্ষ
 									((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
@@ -765,6 +765,7 @@
 									(1 (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 1))
 									;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
 								)
+						)
 					)
 				)
 			)
