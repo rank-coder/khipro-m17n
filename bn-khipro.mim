@@ -748,7 +748,7 @@
 						((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state)) ;; zf
 					)
 				)
-				((> PCID 0)
+				((>= PCID 0)
 					(cond
 						((= CID 27) (move @-) (insert "্") (move @>))
 						((= CID 26) (move @-) (insert "্") (move @>))
@@ -916,7 +916,7 @@
 						(1 (shift byanjon-state))
 					)
 				)
-				((> PCID 0)
+				((>= PCID 0)
 					(cond
 						((= CID 27) (move @-) (insert "্") (move @>))
 						((= CID 26) (move @-) (insert "্") (move @>))
