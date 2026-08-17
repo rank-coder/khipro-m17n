@@ -133,7 +133,7 @@
 		("kf" (set CID 39) (set CmpC 0) "ক্ষ")
 		("zf" (set CID 190) (set CmpC 0) "্য")
 		;; নিচের বর্ণগুলো ক্ষিপ্র-ডার্কের জন্য
-		("rr" (set CID 187)(set CmpC 1) "রর")
+		("rr" (set CID 187)(set CmpC 1) "পারলাম")
 	)
 	(phola
 		("r" (set CID 27) "র")
