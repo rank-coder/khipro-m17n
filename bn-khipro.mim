@@ -135,6 +135,7 @@
 		;; নিচের বর্ণগুলো ক্ষিপ্র-ডার্কের জন্য
 		("rr" (set CID 187)(set CmpC 1) "রর")
 		("rrz" (set CmpC 1) "র্য")
+		("gg" (set CmpC 1) "জ্ঞ")
 	)
 	(phola
 		("r" (set CID 27) "র")
