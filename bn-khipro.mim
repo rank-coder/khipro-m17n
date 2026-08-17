@@ -776,7 +776,7 @@
 		(slicer
 			
 			(cond 
-				((= linking 1) (delete @-) (insert "⫘") (mark linkingSign) (set linking 0))
+				((= linking 1) (delete @-) (mark linkingSign) (set linking 0))
 				(1 (delete @-) (insert "⫘") (mark linkingSign) (set linking 1))
 			)
 		)
@@ -795,7 +795,7 @@
 		(t (insert "⫘") (mark linkingSign))
 		(slicer 
 			(cond 
-				((= linking 1) (delete @-) (insert "⫘") (mark linkingSign) (set linking 0))
+				((= linking 1) (delete @-) (mark linkingSign) (set linking 0))
 				((= linking 0) (delete @-) (insert "⫘") (mark linkingSign) (set linking 1))
 			)
 		)
