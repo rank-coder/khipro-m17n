@@ -775,7 +775,7 @@
 		(backspace)
 	)
 	(juktoborno-state
-		(t (insert "⫘"))
+		(t (insert "⫘") (mark linkingSign))
 		(slicer
 			(delete @-)
 			(cond
@@ -808,14 +808,14 @@
 			)
 			(set SLICER 0)
 		)
-		(diacritic (move @-) (delete @-) (move @+) (shift shor-state))
-		(slicer2 (move @-) (delete @-) (move @+) (shift init))
-		(slicer3 (move @-2) (delete @-) (move @+) (shift init))
-		(prithayok (delete @-) (delete @-) (shift init))
-		(ongko (move @-) (delete @-) (move @+) (shift init))
-		(biram (move @-) (delete @-) (move @+) (shift shor-state))
-		(kar (move @-) (delete @-) (move @+) (shift shor-state))
-		(nil (delete @-) (shift init))
+		(diacritic (move linkingSign) (delete @-) (move @>) (shift shor-state))
+		(slicer2 (move linkingSign) (delete @-) (move @>) (shift init))
+		(slicer3 (move linkingSign) (delete @-) (move @>) (shift init))
+		(prithayok (delete @-) (move linkingSign) (delete @-) (move @>) (shift init))
+		(ongko (move linkingSign) (delete @-) (move @>) (shift init))
+		(biram (move linkingSign) (delete @-) (move @>) (shift shor-state))
+		(kar (move linkingSign) (delete @-) (move @>) (shift shor-state))
+		(nil (move linkingSign) (delete @-) (move @>) (shift init))
 		(phola
 			(cond((= linking 1) (move @-) (delete @-) (move @+)
 				(cond
