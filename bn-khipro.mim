@@ -445,18 +445,9 @@
 			))
 		)
 		(byanjon
-			(cond ((= linking 1) (move @-) (delete @-) (move @+) (cond
+			(cond( (= linking 1) (move @-) (delete @-) (move @+) (cond
 				((= CID 0) (shift init))
-				((= PCID 187) ;; রর
-					(cond
-						((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4)) ;; ক্ষ
-						((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
-						((= CID 187) (set P2CID CID)) ;; ‍রর এর পরে ‍রর লিখলে রেফ আসবে না। এতে বারবার র-ফলা আসার ইশু ফিক্স হবে।
-						((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state) ) ;; রর লেখার পরে zf লিখলে যাতে রেফ না হয়ে রর‍্য হয়।
-						(1 (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 1))
-						;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
-					)
-				)
+
 				((= PCID 1) ;; ক
 					(cond
 						((= CID 1) (delete @-2) (set P2CID CID) (set CID 38) (insert "ক্ক") (set SLICER 1) (shift juktoborno-state)) ;; ক
@@ -757,7 +748,18 @@
 						((= CID 26) (move @-) (insert "্") (move @>) (shift juktoborno-state))
 					)
 				)
-			)))
+			))
+				( (&(= linkin 0)(= PCID 187)) ;; রর
+						(cond
+							((= CID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 4)) ;; ক্ষ
+							((= CID 189) (delete @-2) (set P2CID CID) (set CID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
+							((= CID 187) (set P2CID CID)) ;; ‍রর এর পরে ‍রর লিখলে রেফ আসবে না। এতে বারবার র-ফলা আসার ইশু ফিক্স হবে।
+							((= CID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno-state) ) ;; রর লেখার পরে zf লিখলে যাতে রেফ না হয়ে রর‍্য হয়।
+							(1 (move @-) (delete @-) (insert "্") (move @>) (set P2CID CID) (set SLICER 1))
+							;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno-state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
+						)
+				)
+			)
 			(set PrevCID PCID) (set PCID CID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
