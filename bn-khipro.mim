@@ -937,3 +937,9 @@
 		(prithayok (delete @-) (shift init))
 	)
 )
+
+(macro
+	(noMatchAfterJukto
+		(move linkingSign) (delete @-) (set linking 0) (move @>)
+	)
+)
