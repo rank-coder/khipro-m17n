@@ -134,6 +134,7 @@
 		("zf" (set CID 190) (set CmpC 0) "্য")
 		;; নিচের বর্ণগুলো ক্ষিপ্র-ডার্কের জন্য
 		("rr" (set CID 187)(set CmpC 1) "রর")
+		("rrz" (set CmpC 1) "র্য")
 	)
 	(phola
 		("r" (set CID 27) "র")
