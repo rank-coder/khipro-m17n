@@ -753,87 +753,7 @@
 			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
-			(cond
-				((= FrstCnstID 16) (delete @-2) (insert "ৎ") (set FrstCnstID 188) (shift init)) ;; ত
 
-				((= FrstCnstID 2)
-					(cond
-						(
-							(|
-								(= PrvCnstID 28)
-								(= PrvCnstID 30)
-							) ;; this is the condition
-							(delete @-2) (insert "্কহ") (set FrstCnstID 32) ;; this is the operation
-						)
-						(1 (delete @-2) (insert "কহ") (set FrstCnstID 32))
-					)
-				)
-				((&(= FrstCnstID 4) (= Fflag 0))
-					(cond
-						((= PrvCnstID 3) (delete @-3) (insert "জ্ঞহ") (set FrstCnstID 32))
-						((= PrvCnstID 28) (delete @-2) (insert "্গহ") (set FrstCnstID 32))
-						((= PrvCnstID 34) (delete @-2) (insert "্‌গহ") (set FrstCnstID 32)) ;; zwnj আছে
-						((= PrvCnstID 65) (delete @-5) (insert "গ্‌গহ") (set FrstCnstID 32)) ;; special case
-						(1 (delete @-2) (insert "গহ") (set FrstCnstID 32))
-					)
-				)
-				((= FrstCnstID 5)
-					(cond
-						(
-							(|
-								(= PrvCnstID 3)
-								(= PrvCnstID 4)
-								(= PrvCnstID 16)
-								(= PrvCnstID 19)
-								(= PrvCnstID 20)
-								(= PrvCnstID 21)
-								(= PrvCnstID 25)
-								(= PrvCnstID 29)
-								(= PrvCnstID 31)
-								(= PrvCnstID 32)
-							) ;; this is the condition
-							(delete @-2) (insert "্নগ") (set FrstCnstID 3) ;; this is the operation
-						)
-						(
-							(|
-								(= PrvCnstID 15)
-								(= PrvCnstID 30)
-								(= PrvCnstID 39)
-							) ;; this is the condition
-							(delete @-2) (insert "্ণগ") (set FrstCnstID 3) ;; this is the operation
-						)
-						(1 (delete @-2) (insert "নগ") (set FrstCnstID 3))
-					)
-				)
-				((&(= FrstCnstID 7) (= Fflag 0)) (delete @-2) (insert "চহ") (set FrstCnstID 32))
-				((&(= FrstCnstID 9) (= Fflag 0))
-					(cond
-						((= PrvCnstID 23) (delete @-2) (insert "্জহ") (set FrstCnstID 32))
-						(1 (delete @-2) (insert "জহ") (set FrstCnstID 32))
-					)
-				)
-				((= FrstCnstID 17)
-					(cond
-						((| (= PrvCnstID 1) (= PrvCnstID 21)) (delete @-2) (insert "্তহ") (set FrstCnstID 32))
-						((= PrvCnstID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set FrstCnstID 32))
-						(1 (delete @-2) (insert "তহ") (set FrstCnstID 32))
-					)
-				)
-				((= FrstCnstID 19) (delete @-2) (insert "দহ") (set FrstCnstID 32))
-				((&(= FrstCnstID 22) (= Fflag 0))
-					(cond
-						((= PrvCnstID 21) (delete @-2) (insert "্পহ") (set FrstCnstID 32))
-						(1 (delete @-2) (insert "পহ") (set FrstCnstID 32))
-					)
-				)
-				((= FrstCnstID 29)
-					(cond
-						((| (= PrvCnstID 1) (= PrvCnstID 20) (= PrvCnstID 21)) (delete @-2) (insert "্সহ") (set FrstCnstID 32))
-						(1 (delete @-2) (insert "সহ") (set FrstCnstID 32))
-					)
-				)
-				(1 (shift init))
-			)
 		)
 		(slicer2
 			(cond
@@ -848,36 +768,7 @@
 	)
 	(juktoborno_state
 		(slicer
-			(delete @-)
-			(cond
-				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set FrstCnstID ScndCnstID) (shift byanjon_state) )
-				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই ScndCnstID এর মান FrstCnstID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
-				;; SLICER = 1 সাধারণ যুক্তবর্ণের জন্য। যেগুলোকে কেবল হসন্ত মুছে দিয়েই ভেঙে দেওয়া যায়।
-				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set FrstCnstID ScndCnstID) (shift byanjon_state) )
-				;; SLICER = 2 ব্যবহার করা হয় যখন যুক্তবর্ণের মাঝে হসন্তের সাথে সাথে ZWNJ থাকে।
-				((= SLICER 3)
-					(cond
-						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set FrstCnstID 2) (shift byanjon_state) )
-						((= ALTERNATE 2)  (delete @-3) (insert "গগ") (set FrstCnstID 3) (shift byanjon_state) )
-						((= ALTERNATE 3)  (delete @-3) (insert "ণন") (set FrstCnstID 20) (shift byanjon_state) )
-						((= ALTERNATE 4)  (delete @-3) (insert "তট") (set FrstCnstID 11) (shift byanjon_state) )
-						((= ALTERNATE 5)  (delete @-3) (insert "দড") (set FrstCnstID 13) (shift byanjon_state) )
-						((= ALTERNATE 6)  (delete @-3) (insert "নচ") (set FrstCnstID 6) (shift byanjon_state) )
-						((= ALTERNATE 7)  (delete @-3) (insert "নছ") (set FrstCnstID 7) (shift byanjon_state) )
-						((= ALTERNATE 8)  (delete @-3) (insert "নজ") (set FrstCnstID 8) (shift byanjon_state) )
-						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set FrstCnstID 9) (shift byanjon_state) )
-						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set FrstCnstID 15) (shift byanjon_state) )
-						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set FrstCnstID 20) (shift byanjon_state) )
-						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set FrstCnstID 11) (shift byanjon_state))
-						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set FrstCnstID 28) (shift byanjon_state))
-						((= ALTERNATE 14) (delete @-4) (insert "জ্ঞগ") (set FrstCnstID 3) (shift byanjon_state))
-					)
-				)
-				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
-				((= SLICER 4)  (move @-) (move @-) (move @-)  (delete @-)  (move @>) )
-				;; SLICER = 4 কেবল তখন ব্যবহার হয় যখন শেষ ব‍র্ণটি kf দিয়ে লেখা ক্ষ হয়। যেমন: ngkf/ = ঙক্ষ
-			)
-			(set SLICER 0)
+
 		)
 		(diacritic  (shift shor_state))
 		(slicer2 (shift init))
@@ -1013,5 +904,122 @@
 		(digitsIdentity)
 		(symbolsIdentity)
 		(prithayok (delete @-) (shift init))
+	)
+)
+(macro
+	(slicer_code_in_byanjon_state
+			(cond
+				((= FrstCnstID 16) (delete @-2) (insert "ৎ") (set FrstCnstID 188) (shift init)) ;; ত
+
+				((= FrstCnstID 2)
+					(cond
+						(
+							(|
+								(= PrvCnstID 28)
+								(= PrvCnstID 30)
+							) ;; this is the condition
+							(delete @-2) (insert "্কহ") (set FrstCnstID 32) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "কহ") (set FrstCnstID 32))
+					)
+				)
+				((&(= FrstCnstID 4) (= Fflag 0))
+					(cond
+						((= PrvCnstID 3) (delete @-3) (insert "জ্ঞহ") (set FrstCnstID 32))
+						((= PrvCnstID 28) (delete @-2) (insert "্গহ") (set FrstCnstID 32))
+						((= PrvCnstID 34) (delete @-2) (insert "্‌গহ") (set FrstCnstID 32)) ;; zwnj আছে
+						((= PrvCnstID 65) (delete @-5) (insert "গ্‌গহ") (set FrstCnstID 32)) ;; special case
+						(1 (delete @-2) (insert "গহ") (set FrstCnstID 32))
+					)
+				)
+				((= FrstCnstID 5)
+					(cond
+						(
+							(|
+								(= PrvCnstID 3)
+								(= PrvCnstID 4)
+								(= PrvCnstID 16)
+								(= PrvCnstID 19)
+								(= PrvCnstID 20)
+								(= PrvCnstID 21)
+								(= PrvCnstID 25)
+								(= PrvCnstID 29)
+								(= PrvCnstID 31)
+								(= PrvCnstID 32)
+							) ;; this is the condition
+							(delete @-2) (insert "্নগ") (set FrstCnstID 3) ;; this is the operation
+						)
+						(
+							(|
+								(= PrvCnstID 15)
+								(= PrvCnstID 30)
+								(= PrvCnstID 39)
+							) ;; this is the condition
+							(delete @-2) (insert "্ণগ") (set FrstCnstID 3) ;; this is the operation
+						)
+						(1 (delete @-2) (insert "নগ") (set FrstCnstID 3))
+					)
+				)
+				((&(= FrstCnstID 7) (= Fflag 0)) (delete @-2) (insert "চহ") (set FrstCnstID 32))
+				((&(= FrstCnstID 9) (= Fflag 0))
+					(cond
+						((= PrvCnstID 23) (delete @-2) (insert "্জহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "জহ") (set FrstCnstID 32))
+					)
+				)
+				((= FrstCnstID 17)
+					(cond
+						((| (= PrvCnstID 1) (= PrvCnstID 21)) (delete @-2) (insert "্তহ") (set FrstCnstID 32))
+						((= PrvCnstID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "তহ") (set FrstCnstID 32))
+					)
+				)
+				((= FrstCnstID 19) (delete @-2) (insert "দহ") (set FrstCnstID 32))
+				((&(= FrstCnstID 22) (= Fflag 0))
+					(cond
+						((= PrvCnstID 21) (delete @-2) (insert "্পহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "পহ") (set FrstCnstID 32))
+					)
+				)
+				((= FrstCnstID 29)
+					(cond
+						((| (= PrvCnstID 1) (= PrvCnstID 20) (= PrvCnstID 21)) (delete @-2) (insert "্সহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "সহ") (set FrstCnstID 32))
+					)
+				)
+				(1 (shift init))
+			)
+	)
+	(slicer_code_in_juktoborno_state
+			(delete @-)
+			(cond
+				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set FrstCnstID ScndCnstID) (shift byanjon_state) )
+				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই ScndCnstID এর মান FrstCnstID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
+				;; SLICER = 1 সাধারণ যুক্তবর্ণের জন্য। যেগুলোকে কেবল হসন্ত মুছে দিয়েই ভেঙে দেওয়া যায়।
+				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set FrstCnstID ScndCnstID) (shift byanjon_state) )
+				;; SLICER = 2 ব্যবহার করা হয় যখন যুক্তবর্ণের মাঝে হসন্তের সাথে সাথে ZWNJ থাকে।
+				((= SLICER 3)
+					(cond
+						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set FrstCnstID 2) (shift byanjon_state) )
+						((= ALTERNATE 2)  (delete @-3) (insert "গগ") (set FrstCnstID 3) (shift byanjon_state) )
+						((= ALTERNATE 3)  (delete @-3) (insert "ণন") (set FrstCnstID 20) (shift byanjon_state) )
+						((= ALTERNATE 4)  (delete @-3) (insert "তট") (set FrstCnstID 11) (shift byanjon_state) )
+						((= ALTERNATE 5)  (delete @-3) (insert "দড") (set FrstCnstID 13) (shift byanjon_state) )
+						((= ALTERNATE 6)  (delete @-3) (insert "নচ") (set FrstCnstID 6) (shift byanjon_state) )
+						((= ALTERNATE 7)  (delete @-3) (insert "নছ") (set FrstCnstID 7) (shift byanjon_state) )
+						((= ALTERNATE 8)  (delete @-3) (insert "নজ") (set FrstCnstID 8) (shift byanjon_state) )
+						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set FrstCnstID 9) (shift byanjon_state) )
+						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set FrstCnstID 15) (shift byanjon_state) )
+						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set FrstCnstID 20) (shift byanjon_state) )
+						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set FrstCnstID 11) (shift byanjon_state))
+						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set FrstCnstID 28) (shift byanjon_state))
+						((= ALTERNATE 14) (delete @-4) (insert "জ্ঞগ") (set FrstCnstID 3) (shift byanjon_state))
+					)
+				)
+				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
+				((= SLICER 4)  (move @-) (move @-) (move @-)  (delete @-)  (move @>) )
+				;; SLICER = 4 কেবল তখন ব্যবহার হয় যখন শেষ ব‍র্ণটি kf দিয়ে লেখা ক্ষ হয়। যেমন: ngkf/ = ঙক্ষ
+			)
+			(set SLICER 0)
 	)
 )
