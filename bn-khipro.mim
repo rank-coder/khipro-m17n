@@ -375,7 +375,7 @@
 
 (state
 	(init
-		(t (set CmpC 0) (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
+		(t (set CmpC 0) (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor_state))
 		(slicer (commit))
 		(slicer3 (commit))
@@ -386,18 +386,18 @@
 		(ongko )
 		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set PrevCID PCID) (set PCID CnstID)
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
 			)
 		)
-		;; VARIABLE PCID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID.
-		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
+		;; VARIABLE FrstCnstID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID.
+		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 		(blinder (shift blind_state))
 	)
 	(shor_state
-		(t (set CmpC 0) (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set PCID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
+		(t (set CmpC 0) (set FF 0) (set P2CID 0) (set PrevCID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
@@ -408,7 +408,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set PrevCID PCID) (set PCID CnstID)
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -423,29 +423,29 @@
 		(biram  (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(kar
 			(cond
-				( (& (| (= PCID 27) (= PCID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর
+				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর
 			)
 			(shift shor_state)
 		)
 		(phola
 			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে।
 			;; উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
-			;; VARIABLE P2CID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে PCID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID.
-			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে PCID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
+			;; VARIABLE P2CID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। P2CID হচ্ছে তার পরের ব্যঞ্জনের ID.
+			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 			(cond
-				((& (= PCID 27) (= CnstID 26)) (delete @-) (delete @-) (set P2CID CnstID) (set CnstID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno_state)) ;; র, য
-				((& (= PCID 187) (= CnstID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
-				((& (= PCID 33) (= CnstID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র
-				((& (= PCID 187)(= CnstID 27)) (delete @-3) (insert "র্র") (set CnstID 191) (shift juktoborno_state) ) ;; র্র
-				((&  (= PCID 27) (= CnstID 27)) (shift rr_state) (set CnstID 187) )
+				((& (= FrstCnstID 27) (= CnstID 26)) (delete @-) (delete @-) (set P2CID CnstID) (set CnstID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno_state)) ;; র, য
+				((& (= FrstCnstID 187) (= CnstID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
+				((& (= FrstCnstID 33) (= CnstID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র
+				((& (= FrstCnstID 187)(= CnstID 27)) (delete @-3) (insert "র্র") (set CnstID 191) (shift juktoborno_state) ) ;; র্র
+				((&  (= FrstCnstID 27) (= CnstID 27)) (shift rr_state) (set CnstID 187) )
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CnstID) (set SLICER 1) (shift juktoborno_state))
 			)
-			(set PrevCID PCID) (set PCID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
 				((= CnstID 0) (shift init))
-				((= PCID 187) ;; রর
+				((= FrstCnstID 187) ;; রর
 					(cond
 						((= CnstID 39) (move @-) (move @-) (move @-) (delete @-) (insert "্") (move @>) (set P2CID CnstID) (set SLICER 4)) ;; ক্ষ
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 34) (insert "ড়")) ;; ‍রর লেখার পরে ⁌ লিখলে ড় আসবে।
@@ -455,7 +455,7 @@
 						;; এই সেকশন রেফের জন্য। যেকোনো যুক্তবর্ণের আগে যাতে রেফ দেওয়া যায় সেজন্য এখান থেকে juktoborno_state -এ শিফট করা হয়নি। পরব‍র্তী সবগুলোতে আমরা দেখব যে শিফট করা হয়েছে।
 					)
 				)
-				((= PCID 1) ;; ক
+				((= FrstCnstID 1) ;; ক
 					(cond
 						((= CnstID 1) (delete @-2) (set P2CID CnstID) (set CnstID 38) (insert "ক্ক") (set SLICER 1) (shift juktoborno_state)) ;; ক
 
@@ -471,7 +471,7 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 2) (insert "খ")) ;; হ
 					)
 				)
-				((= PCID 3) ;; গ
+				((= FrstCnstID 3) ;; গ
 					(cond
 						((= CnstID 3) (delete @-2) (set P2CID CnstID) (set CnstID 65) (insert "জ্ঞ") (set SLICER 3) (set ALTERNATE 2) (shift juktoborno_state)) ;; গ
 						((= CnstID 15) (delete @-2) (set P2CID CnstID) (set CnstID 46) (insert "গ্‌ণ") (set SLICER 2) (shift juktoborno_state)) ;; ণ
@@ -486,12 +486,12 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 4) (insert "ঘ")) ;; হ
 					)
 				)
-				((= PCID 4) ;; ঘ
+				((= FrstCnstID 4) ;; ঘ
 					(cond
 						((= CnstID 20) (delete @-2) (set P2CID CnstID) (set CnstID 52) (insert "ঘ্ন") (set SLICER 1) (shift juktoborno_state)) ;; ন
 					)
 				)
-				((= PCID 5) ;; ঙ
+				((= FrstCnstID 5) ;; ঙ
 					(cond
 						((= CnstID 1) (delete @-2) (set P2CID CnstID) (set CnstID 53) (insert "ঙ্ক") (set SLICER 1) (shift juktoborno_state)) ;; ক
 						((= CnstID 2) (delete @-2) (set P2CID CnstID) (set CnstID 54) (insert "ঙ্খ") (set SLICER 1) (shift juktoborno_state)) ;; খ
@@ -502,7 +502,7 @@
 						;; এখানে চারবার ডিলিট করার কারণ হলো ঙক্ষ = ৪টা ক্যারেক্টার
 					)
 				)
-				((= PCID 6) ;; চ
+				((= FrstCnstID 6) ;; চ
 					(cond
 						((= CnstID 6) (delete @-2) (set P2CID CnstID) (set CnstID 59) (insert "চ্চ") (set SLICER 1) (shift juktoborno_state)) ;; চ
 						((= CnstID 7) (delete @-2) (set P2CID CnstID) (set CnstID 60) (insert "চ্ছ") (set SLICER 1) (shift juktoborno_state)) ;; ছ
@@ -512,7 +512,7 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 7) (insert "ছ")) ;; হ
 					)
 				)
-				((= PCID 8) ;; জ
+				((= FrstCnstID 8) ;; জ
 					(cond
 						((= CnstID 8) (delete @-2) (set P2CID CnstID) (set CnstID 63) (insert "জ্জ") (set SLICER 1) (shift juktoborno_state)) ;; জ
 						((= CnstID 9) (delete @-2) (set P2CID CnstID) (set CnstID 64) (insert "জ্ঝ") (set SLICER 1) (shift juktoborno_state)) ;; ঝ
@@ -523,7 +523,7 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 9) (insert "ঝ")) ;; হ
 					)
 				)
-				((= PCID 10) ;; ঞ
+				((= FrstCnstID 10) ;; ঞ
 					(cond
 						((= CnstID 6) (delete @-2) (set P2CID CnstID) (set CnstID 67) (insert "ঞ্চ") (set SLICER 1) (shift juktoborno_state)) ;; চ
 						((= CnstID 7) (delete @-2) (set P2CID CnstID) (set CnstID 68) (insert "ঞ্ছ") (set SLICER 1) (shift juktoborno_state)) ;; ছ
@@ -531,7 +531,7 @@
 						((= CnstID 9) (delete @-2) (set P2CID CnstID) (set CnstID 70) (insert "ঞ্ঝ") (set SLICER 1) (shift juktoborno_state)) ;; ঝ
 					)
 				)
-				((= PCID 11) ;; ট
+				((= FrstCnstID 11) ;; ট
 					(cond
 						((= CnstID 11) (delete @-2) (set P2CID CnstID) (set CnstID 71) (insert "ট্ট") (set SLICER 1) (shift juktoborno_state)) ;; ট
 						((= CnstID 23) (delete @-2) (set P2CID CnstID) (set CnstID 72) (insert "ট্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
@@ -539,7 +539,7 @@
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 12) (insert "ঠ")) ;; ⁌
 					)
 				)
-				((= PCID 13) ;; ড
+				((= FrstCnstID 13) ;; ড
 					(cond
 						((= CnstID 13) (delete @-2) (set P2CID CnstID) (set CnstID 74) (insert "ড্ড") (set SLICER 1) (shift juktoborno_state)) ;; ড
 						((= CnstID 23) (delete @-2) (set P2CID CnstID) (set CnstID 75) (insert "ড্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
@@ -547,7 +547,7 @@
 					)
 				)
 				;; লক্ষ্যণীয়, আমরা য-ফলা ও র-ফলা যুক্তবর্ণ গুলো এড়িয়ে যাচ্ছি।
-				((= PCID 15) ;; ণ
+				((= FrstCnstID 15) ;; ণ
 					(cond
 						((= CnstID 11) (delete @-2) (set P2CID CnstID) (set CnstID 77) (insert "ণ্ট") (set SLICER 1) (shift juktoborno_state)) ;; ট
 						((= CnstID 12) (delete @-2) (set P2CID CnstID) (set CnstID 78) (insert "ণ্ঠ") (set SLICER 1) (shift juktoborno_state)) ;; ঠ
@@ -560,7 +560,7 @@
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 10) (insert "ঞ")) ;; ⁌
 					)
 				)
-				((= PCID 16) ;; ত
+				((= FrstCnstID 16) ;; ত
 					(cond
 						((= CnstID 11) (delete @-2) (set P2CID CnstID) (set CnstID 71) (insert "ট্ট") (set SLICER 3) (set ALTERNATE 4) (shift juktoborno_state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে ;; ট
 						((= CnstID 16) (delete @-2) (set P2CID CnstID) (set CnstID 84) (insert "ত্ত") (set SLICER 1) (shift juktoborno_state)) ;; ত
@@ -572,12 +572,12 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 17) (insert "থ")) ;; হ
 					)
 				)
-				((= PCID 17) ;; থ
+				((= FrstCnstID 17) ;; থ
 					(cond
 						((= CnstID 23) (delete @-2) (set P2CID CnstID) (set CnstID 89) (insert "থ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 					)
 				)
-				((= PCID 18) ;; দ
+				((= FrstCnstID 18) ;; দ
 					(cond
 						((= CnstID 3) (delete @-2) (set P2CID CnstID) (set CnstID 90) (insert "দ্‌গ") (set SLICER 2) (shift juktoborno_state)) ;; গ
 						((= CnstID 4) (delete @-2) (set P2CID CnstID) (set CnstID 91) (insert "দ্‌ঘ") (set SLICER 2) (shift juktoborno_state)) ;; ঘ
@@ -591,14 +591,14 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 19) (insert "ধ")) ;; হ
 					)
 				)
-				((= PCID 19) ;; ধ
+				((= FrstCnstID 19) ;; ধ
 					(cond
 						((= CnstID 20) (delete @-2) (set P2CID CnstID) (set CnstID 97) (insert "ধ্ন") (set SLICER 1) (shift juktoborno_state)) ;; ন
 						((= CnstID 23) (delete @-2) (set P2CID CnstID) (set CnstID 98) (insert "ধ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 25) (delete @-2) (set P2CID CnstID) (set CnstID 99) (insert "ধ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 					)
 				)
-				((= PCID 20) ;; ন
+				((= FrstCnstID 20) ;; ন
 					(cond
 						((= CnstID 6) (delete @-2) (set P2CID CnstID) (set CnstID 67) (insert "ঞ্চ") (set SLICER 3) (set ALTERNATE 6) (shift juktoborno_state)) ;; চ
 						((= CnstID 7) (delete @-2) (set P2CID CnstID) (set CnstID 68) (insert "ঞ্ছ") (set SLICER 3) (set ALTERNATE 7) (shift juktoborno_state)) ;; ছ
@@ -621,7 +621,7 @@
 						((= CnstID 3) (delete @-2) (set P2CID CnstID) (set CnstID 5) (insert "ঙ")) ;; গ
 					)
 				)
-				((= PCID 21) ;; প
+				((= FrstCnstID 21) ;; প
 					(cond
 						((= CnstID 11) (delete @-2) (set P2CID CnstID) (set CnstID 111) (insert "প্ট") (set SLICER 1) (shift juktoborno_state)) ;; ট
 						((= CnstID 16) (delete @-2) (set P2CID CnstID) (set CnstID 112) (insert "প্ত") (set SLICER 1) (shift juktoborno_state)) ;; ত
@@ -633,12 +633,12 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 22) (insert "ফ")) ;; হ
 					)
 				)
-				((= PCID 22) ;; ফ
+				((= FrstCnstID 22) ;; ফ
 					(cond
 						((= CnstID 28) (delete @-2) (set P2CID CnstID) (set CnstID 117) (insert "ফ্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 					)
 				)
-				((= PCID 23) ;; ব
+				((= FrstCnstID 23) ;; ব
 					(cond
 						((= CnstID 8) (delete @-2) (set P2CID CnstID) (set CnstID 118) (insert "ব্জ") (set SLICER 1) (shift juktoborno_state)) ;; জ
 						((= CnstID 18) (delete @-2) (set P2CID CnstID) (set CnstID 119) (insert "ব্দ") (set SLICER 1) (shift juktoborno_state)) ;; দ
@@ -648,13 +648,13 @@
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 24) (set FF 1) (insert "ভ")) ;; ⁌
 					)
 				)
-				((= PCID 24) ;; ভ
+				((= FrstCnstID 24) ;; ভ
 					(cond
 						((= CnstID 23) (delete @-2) (set P2CID CnstID) (set CnstID 123) (insert "ভ্ব") (set SLICER 1) (shift juktoborno_state)) ;; ব
 						((= CnstID 28) (delete @-2) (set P2CID CnstID) (set CnstID 124) (insert "ভ্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 					)
 				)
-				((= PCID 25) ;; ম
+				((= FrstCnstID 25) ;; ম
 					(cond
 						((= CnstID 20) (delete @-2) (set P2CID CnstID) (set CnstID 125) (insert "ম্ন") (set SLICER 1) (shift juktoborno_state)) ;; ন
 						((= CnstID 21) (delete @-2) (set P2CID CnstID) (set CnstID 126) (insert "ম্প") (set SLICER 1) (shift juktoborno_state)) ;; প
@@ -666,7 +666,7 @@
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 10) (insert "ঞ")) ;; ⁌
 					)
 				)
-				((= PCID 28) ;; ল
+				((= FrstCnstID 28) ;; ল
 					(cond
 						((= CnstID 1) (delete @-2) (set P2CID CnstID) (set CnstID 132) (insert "ল্ক") (set SLICER 1) (shift juktoborno_state)) ;; ক
 						((= CnstID 3) (delete @-2) (set P2CID CnstID) (set CnstID 133) (insert "ল্গ") (set SLICER 1) (shift juktoborno_state)) ;; গ
@@ -680,7 +680,7 @@
 						((= CnstID 28) (delete @-2) (set P2CID CnstID) (set CnstID 141) (insert "ল্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 					)
 				)
-				((= PCID 29) ;; শ
+				((= FrstCnstID 29) ;; শ
 					(cond
 						((= CnstID 6) (delete @-2) (set P2CID CnstID) (set CnstID 142) (insert "শ্চ") (set SLICER 1) (shift juktoborno_state)) ;; চ
 						((= CnstID 7) (delete @-2) (set P2CID CnstID) (set CnstID 143) (insert "শ্ছ") (set SLICER 1) (shift juktoborno_state)) ;; ছ
@@ -690,7 +690,7 @@
 						((= CnstID 28) (delete @-2) (set P2CID CnstID) (set CnstID 147) (insert "শ্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 					)
 				)
-				((= PCID 30) ;; ষ
+				((= FrstCnstID 30) ;; ষ
 					(cond
 						((= CnstID 1) (delete @-2) (set P2CID CnstID) (set CnstID 148) (insert "ষ্ক") (set SLICER 1) (shift juktoborno_state)) ;; ক
 						((= CnstID 11) (delete @-2) (set P2CID CnstID) (set CnstID 149) (insert "ষ্ট") (set SLICER 1) (shift juktoborno_state)) ;; ট
@@ -703,7 +703,7 @@
 						((= CnstID 25) (delete @-2) (set P2CID CnstID) (set CnstID 155) (insert "ষ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 					)
 				)
-				((= PCID 31) ;; স
+				((= FrstCnstID 31) ;; স
 					(cond
 						((= CnstID 1) (delete @-2) (set P2CID CnstID) (set CnstID 156) (insert "স্ক") (set SLICER 1) (shift juktoborno_state)) ;; ক
 						((= CnstID 2) (delete @-2) (set P2CID CnstID) (set CnstID 157) (insert "স্খ") (set SLICER 1) (shift juktoborno_state)) ;; খ
@@ -720,7 +720,7 @@
 						((= CnstID 32) (delete @-2) (set P2CID CnstID) (set CnstID 29) (insert "শ")) ;; হ
 					)
 				)
-				((= PCID 32) ;; হ
+				((= FrstCnstID 32) ;; হ
 					(cond
 						((= CnstID 15) (delete @-2) (set P2CID CnstID) (set CnstID 168) (insert "হ্ণ") (set SLICER 1) (shift juktoborno_state)) ;; ণ
 						((= CnstID 20) (delete @-2) (set P2CID CnstID) (set CnstID 167) (insert "হ্ন") (set SLICER 1) (shift juktoborno_state)) ;; ন
@@ -729,13 +729,13 @@
 						((= CnstID 28) (delete @-2) (set P2CID CnstID) (set CnstID 171) (insert "হ্ল") (set SLICER 1) (shift juktoborno_state)) ;; ল
 					)
 				)
-				((= PCID 34) ;; ড়
+				((= FrstCnstID 34) ;; ড়
 					(cond
 						((= CnstID 3) (delete @-2) (set P2CID CnstID) (set CnstID 76) (insert "ড়্‌গ") (set SLICER 2) (shift juktoborno_state)) ;; গ
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 35) (insert "ঢ়")) ;; ⁌
 					)
 				)
-				((= PCID 39) ;; ক্ষ
+				((= FrstCnstID 39) ;; ক্ষ
 					(cond
 						((= CnstID 15) (delete @-4) (set P2CID CnstID) (set CnstID 172) (insert "ক্ষ্ণ") (set SLICER 1) (shift juktoborno_state)) ;; ণ
 						((= CnstID 20) (delete @-4) (set P2CID CnstID) (set CnstID 172) (insert "ক্ষ্ণ") (set SLICER 3) (set ALTERNATE 11) (shift juktoborno_state)) ;; ন
@@ -743,41 +743,41 @@
 						((= CnstID 25) (delete @-4) (set P2CID CnstID) (set CnstID 174) (insert "ক্ষ্ম") (set SLICER 1) (shift juktoborno_state)) ;; ম
 					)
 				)
-				((= PCID 27) ;; র
+				((= FrstCnstID 27) ;; র
 					(cond
 						((= CnstID 189) (delete @-2) (set P2CID CnstID) (set CnstID 34) (insert "ড়")) ;; ⁌
 						((= CnstID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state)) ;; zf
 					)
 				)
 			)
-			(set PrevCID PCID) (set PCID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
 			(cond
-				((= PCID 16) (delete @-2) (insert "ৎ") (set PCID 188) (shift init)) ;; ত
+				((= FrstCnstID 16) (delete @-2) (insert "ৎ") (set FrstCnstID 188) (shift init)) ;; ত
 
-				((= PCID 2)
+				((= FrstCnstID 2)
 					(cond
 						(
 							(|
 								(= PrevCID 28)
 								(= PrevCID 30)
 							) ;; this is the condition
-							(delete @-2) (insert "্কহ") (set PCID 32) ;; this is the operation
+							(delete @-2) (insert "্কহ") (set FrstCnstID 32) ;; this is the operation
 						)
-						(1 (delete @-2) (insert "কহ") (set PCID 32))
+						(1 (delete @-2) (insert "কহ") (set FrstCnstID 32))
 					)
 				)
-				((&(= PCID 4) (= FF 0))
+				((&(= FrstCnstID 4) (= FF 0))
 					(cond
-						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set PCID 32))
-						((= PrevCID 28) (delete @-2) (insert "্গহ") (set PCID 32))
-						((= PrevCID 34) (delete @-2) (insert "্‌গহ") (set PCID 32)) ;; zwnj আছে
-						((= PrevCID 65) (delete @-5) (insert "গ্‌গহ") (set PCID 32)) ;; special case
-						(1 (delete @-2) (insert "গহ") (set PCID 32))
+						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set FrstCnstID 32))
+						((= PrevCID 28) (delete @-2) (insert "্গহ") (set FrstCnstID 32))
+						((= PrevCID 34) (delete @-2) (insert "্‌গহ") (set FrstCnstID 32)) ;; zwnj আছে
+						((= PrevCID 65) (delete @-5) (insert "গ্‌গহ") (set FrstCnstID 32)) ;; special case
+						(1 (delete @-2) (insert "গহ") (set FrstCnstID 32))
 					)
 				)
-				((= PCID 5)
+				((= FrstCnstID 5)
 					(cond
 						(
 							(|
@@ -792,7 +792,7 @@
 								(= PrevCID 31)
 								(= PrevCID 32)								
 							) ;; this is the condition
-							(delete @-2) (insert "্নগ") (set PCID 3) ;; this is the operation
+							(delete @-2) (insert "্নগ") (set FrstCnstID 3) ;; this is the operation
 						)
 						(
 							(|
@@ -800,36 +800,36 @@
 								(= PrevCID 30)
 								(= PrevCID 39)
 							) ;; this is the condition
-							(delete @-2) (insert "্ণগ") (set PCID 3) ;; this is the operation
+							(delete @-2) (insert "্ণগ") (set FrstCnstID 3) ;; this is the operation
 						)
-						(1 (delete @-2) (insert "নগ") (set PCID 3))
+						(1 (delete @-2) (insert "নগ") (set FrstCnstID 3))
 					)
 				)
-				((&(= PCID 7) (= FF 0)) (delete @-2) (insert "চহ") (set PCID 32))
-				((&(= PCID 9) (= FF 0))
+				((&(= FrstCnstID 7) (= FF 0)) (delete @-2) (insert "চহ") (set FrstCnstID 32))
+				((&(= FrstCnstID 9) (= FF 0))
 					(cond
-						((= PrevCID 23) (delete @-2) (insert "্জহ") (set PCID 32))
-						(1 (delete @-2) (insert "জহ") (set PCID 32))
+						((= PrevCID 23) (delete @-2) (insert "্জহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "জহ") (set FrstCnstID 32))
 					)
 				)
-				((= PCID 17)
+				((= FrstCnstID 17)
 					(cond
-						((| (= PrevCID 1) (= PrevCID 21)) (delete @-2) (insert "্তহ") (set PCID 32))
-						((= PrevCID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set PCID 32))
-						(1 (delete @-2) (insert "তহ") (set PCID 32))
+						((| (= PrevCID 1) (= PrevCID 21)) (delete @-2) (insert "্তহ") (set FrstCnstID 32))
+						((= PrevCID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "তহ") (set FrstCnstID 32))
 					)
 				)
-				((= PCID 19) (delete @-2) (insert "দহ") (set PCID 32))
-				((&(= PCID 22) (= FF 0))
+				((= FrstCnstID 19) (delete @-2) (insert "দহ") (set FrstCnstID 32))
+				((&(= FrstCnstID 22) (= FF 0))
 					(cond
-						((= PrevCID 21) (delete @-2) (insert "্পহ") (set PCID 32))
-						(1 (delete @-2) (insert "পহ") (set PCID 32))
+						((= PrevCID 21) (delete @-2) (insert "্পহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "পহ") (set FrstCnstID 32))
 					)
 				)
-				((= PCID 29)
+				((= FrstCnstID 29)
 					(cond
-						((| (= PrevCID 1) (= PrevCID 20) (= PrevCID 21)) (delete @-2) (insert "্সহ") (set PCID 32))
-						(1 (delete @-2) (insert "সহ") (set PCID 32))
+						((| (= PrevCID 1) (= PrevCID 20) (= PrevCID 21)) (delete @-2) (insert "্সহ") (set FrstCnstID 32))
+						(1 (delete @-2) (insert "সহ") (set FrstCnstID 32))
 					)
 				)
 				(1 (shift init))
@@ -837,7 +837,7 @@
 		)
 		(slicer2
 			(cond
-				((= PCID 16) (delete @-2) (insert "ত/")) ;; ত ;; দেখে বাহুল্য মনে হলেও এই লাইনটার দরকার আছে। নিচের লাইনের কারণে।
+				((= FrstCnstID 16) (delete @-2) (insert "ত/")) ;; ত ;; দেখে বাহুল্য মনে হলেও এই লাইনটার দরকার আছে। নিচের লাইনের কারণে।
 				((= CmpC 0) (delete @-) (insert "ঁ") (shift shor_state))
 			)
 		)
@@ -850,27 +850,27 @@
 		(slicer
 			(delete @-)
 			(cond
-				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set PCID P2CID) (shift byanjon_state) )
-				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই P2CID এর মান PCID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
+				((= SLICER 1)  (move @-)  (delete @-)  (move @>) (set FrstCnstID P2CID) (shift byanjon_state) )
+				;; লক্ষ্যণীয়, এখানে স্লাইসিংয়ের পরই P2CID এর মান FrstCnstID -তে সেট করা হচ্ছে। যাতে এর পরে অন্য কোনো ব্যঞ্জন লিখলে সেটা যুক্তবর্ণ গঠন করতে পারে।
 				;; SLICER = 1 সাধারণ যুক্তবর্ণের জন্য। যেগুলোকে কেবল হসন্ত মুছে দিয়েই ভেঙে দেওয়া যায়।
-				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set PCID P2CID) (shift byanjon_state) )
+				((= SLICER 2)  (move @-)  (delete @-2)  (move @>) (set FrstCnstID P2CID) (shift byanjon_state) )
 				;; SLICER = 2 ব্যবহার করা হয় যখন যুক্তবর্ণের মাঝে হসন্তের সাথে সাথে ZWNJ থাকে।
 				((= SLICER 3)
 					(cond
-						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set PCID 2) (shift byanjon_state) )
-						((= ALTERNATE 2)  (delete @-3) (insert "গগ") (set PCID 3) (shift byanjon_state) )
-						((= ALTERNATE 3)  (delete @-3) (insert "ণন") (set PCID 20) (shift byanjon_state) )
-						((= ALTERNATE 4)  (delete @-3) (insert "তট") (set PCID 11) (shift byanjon_state) )
-						((= ALTERNATE 5)  (delete @-3) (insert "দড") (set PCID 13) (shift byanjon_state) )
-						((= ALTERNATE 6)  (delete @-3) (insert "নচ") (set PCID 6) (shift byanjon_state) )
-						((= ALTERNATE 7)  (delete @-3) (insert "নছ") (set PCID 7) (shift byanjon_state) )
-						((= ALTERNATE 8)  (delete @-3) (insert "নজ") (set PCID 8) (shift byanjon_state) )
-						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set PCID 9) (shift byanjon_state) )
-						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set PCID 15) (shift byanjon_state) )
-						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set PCID 20) (shift byanjon_state) )
-						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set PCID 11) (shift byanjon_state))
-						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set PCID 28) (shift byanjon_state))
-						((= ALTERNATE 14) (delete @-4) (insert "জ্ঞগ") (set PCID 3) (shift byanjon_state))
+						((= ALTERNATE 1)  (delete @-3) (insert "কখ") (set FrstCnstID 2) (shift byanjon_state) )
+						((= ALTERNATE 2)  (delete @-3) (insert "গগ") (set FrstCnstID 3) (shift byanjon_state) )
+						((= ALTERNATE 3)  (delete @-3) (insert "ণন") (set FrstCnstID 20) (shift byanjon_state) )
+						((= ALTERNATE 4)  (delete @-3) (insert "তট") (set FrstCnstID 11) (shift byanjon_state) )
+						((= ALTERNATE 5)  (delete @-3) (insert "দড") (set FrstCnstID 13) (shift byanjon_state) )
+						((= ALTERNATE 6)  (delete @-3) (insert "নচ") (set FrstCnstID 6) (shift byanjon_state) )
+						((= ALTERNATE 7)  (delete @-3) (insert "নছ") (set FrstCnstID 7) (shift byanjon_state) )
+						((= ALTERNATE 8)  (delete @-3) (insert "নজ") (set FrstCnstID 8) (shift byanjon_state) )
+						((= ALTERNATE 9)  (delete @-3) (insert "নঝ") (set FrstCnstID 9) (shift byanjon_state) )
+						((= ALTERNATE 10)  (delete @-3) (insert "নণ") (set FrstCnstID 15) (shift byanjon_state) )
+						((= ALTERNATE 11)  (delete @-3) (insert "ষন") (set FrstCnstID 20) (shift byanjon_state) )
+						((= ALTERNATE 12) (delete @-4) (insert "ন্সট") (set FrstCnstID 11) (shift byanjon_state))
+						((= ALTERNATE 13) (delete @-4) (insert "ম্পল") (set FrstCnstID 28) (shift byanjon_state))
+						((= ALTERNATE 14) (delete @-4) (insert "জ্ঞগ") (set FrstCnstID 3) (shift byanjon_state))
 					)
 				)
 				;; SLICER = 3 তখন দেওয়া হয় যখন কেবল হসন্ত কিংবা ZWNJ মুছে ভাঙা যৌক্তিক না। যেমন: kkh/ = কখ হবে, কষ নয়।
@@ -888,9 +888,9 @@
 		(kar (shift shor_state))
 		(phola
 			(cond
-				((&  (= PCID 27) (= CnstID 27)) (move @-) (move @-) (delete @-) (move @>) (shift rr_state) (set CnstID 187) )
+				((&  (= FrstCnstID 27) (= CnstID 27)) (move @-) (move @-) (delete @-) (move @>) (shift rr_state) (set CnstID 187) )
 				;; র ফলার পরে র লিখলে র ফলা বাতিল করে রর আনতে।
-				((= PCID 191) ;; র্র
+				((= FrstCnstID 191) ;; র্র
 					(cond
 						((= CnstID 27) (delete @-4) (set P2CID CnstID) (set CnstID 187) (insert "রররর") (shift rr_state)) ;; র
 					)
@@ -898,12 +898,12 @@
 				;; র্র এর পরে র লিখলে রররর আনতে।
 				(1 (move @-) (insert ?্) (move @>) (set P2CID CnstID) (set SLICER 1) )
 			)
-			(set PrevCID PCID) (set PCID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে PCID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
 				((= CnstID 0) (shift init))
-				((= PCID 39) ;; ক্ষ
+				((= FrstCnstID 39) ;; ক্ষ
 					(cond
 						((= CnstID 15) (delete @-4) (set P2CID CnstID) (set CnstID 172) (set SLICER 1) (insert "ক্ষ্ণ")) ;; ণ
 						((= CnstID 20) (delete @-4) (set P2CID CnstID) (set CnstID 172) (set SLICER 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন
@@ -912,17 +912,17 @@
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 65) ;; জ্ঞ
+				((= FrstCnstID 65) ;; জ্ঞ
 					(cond
 						((& (= CnstID 3) (= P2CID 3)) (delete @-4) (set P2CID CnstID) (set CnstID 175) (set SLICER 3) (set ALTERNATE 14) (insert "গ্‌গ")) ;; গ
 						(1 (shift byanjon_state))
 					)
-					;; P2CID -এর (সম্ভবত) একমাত্র ব্যবহার হয়েছে এখানে। এখানে PCID হচ্ছে 'জ্ঞ' -এর ID, আর P2CID হচ্ছে 'গ' -এর ID.
-					;; গ + গ + গ লেখা হয়েছে। CnstID = 3 বলতে বুঝি: শেষে 'গ' লেখা হয়েছে; PCID = 65 বলতে বুঝি: শেষের 'গ' -এর আগে 'জ্ঞ' ছিল; আর P2CID = 3 বলতে বুঝি PCID -এর যুক্তবর্ণটি (এক্ষেত্রে 'জ্ঞ') কোন্ ব্যঞ্জন লেখামাত্র গঠিত হয়েছে। এক্ষেত্রে একেবারে প্রথম গ এর পরে আরেকটা গ লেখায় 'জ্ঞ' গঠিত হয়েছে। এজন্যই P2CID = 3.
+					;; P2CID -এর (সম্ভবত) একমাত্র ব্যবহার হয়েছে এখানে। এখানে FrstCnstID হচ্ছে 'জ্ঞ' -এর ID, আর P2CID হচ্ছে 'গ' -এর ID.
+					;; গ + গ + গ লেখা হয়েছে। CnstID = 3 বলতে বুঝি: শেষে 'গ' লেখা হয়েছে; FrstCnstID = 65 বলতে বুঝি: শেষের 'গ' -এর আগে 'জ্ঞ' ছিল; আর P2CID = 3 বলতে বুঝি FrstCnstID -এর যুক্তবর্ণটি (এক্ষেত্রে 'জ্ঞ') কোন্ ব্যঞ্জন লেখামাত্র গঠিত হয়েছে। এক্ষেত্রে একেবারে প্রথম গ এর পরে আরেকটা গ লেখায় 'জ্ঞ' গঠিত হয়েছে। এজন্যই P2CID = 3.
 					;; লক্ষ্যণীয় যে, ৩টি 'গ' এর মধ্যে একেবারে প্রথমটি যে 'গ' ছিল সেটা চেক করার কোনো ব্যবস্থা রাখা হয়নি। দরকার নেই তাই।
 					;; P2CID তখন ব্যবহার করা হয় যখন যুক্তবর্ণ গঠনের উপায়ের উপর নির্ভর করে যুক্তবর্ণের পরের বর্ণের সাথে আরো যুক্তবর্ণ গঠিত হবে কি হবে না, কিংবা হলে কোন যুক্তবর্ণ হবে সেসব নির্ণয় করার দরকার পড়ে।
 				)
-				((= PCID 53) ;; ঙ্ক
+				((= FrstCnstID 53) ;; ঙ্ক
 					(cond
 						((= CnstID 2) (delete @-4) (set P2CID CnstID) (set CnstID 58) (set SLICER 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ
 						((= CnstID 30) (delete @-4) (set P2CID CnstID) (set CnstID 58) (set SLICER 1) (insert "ঙ্ক্ষ")) ;; ষ
@@ -930,61 +930,61 @@
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 60) ;; চ্ছ
+				((= FrstCnstID 60) ;; চ্ছ
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 177) (set SLICER 1) (insert "চ্ছ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 63) ;; জ্জ
+				((= FrstCnstID 63) ;; জ্জ
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 178) (set SLICER 1) (insert "জ্জ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 84) ;; ত্ত
+				((= FrstCnstID 84) ;; ত্ত
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 179) (set SLICER 1) (insert "ত্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 92) ;; দ্দ
+				((= FrstCnstID 92) ;; দ্দ
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 180) (set SLICER 1) (insert "দ্দ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 103) ;; ন্ত
+				((= FrstCnstID 103) ;; ন্ত
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 181) (set SLICER 1) (insert "ন্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 105) ;; ন্দ
+				((= FrstCnstID 105) ;; ন্দ
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 182) (set SLICER 1) (insert "ন্দ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 159) ;; স্ত
+				((= FrstCnstID 159) ;; স্ত
 					(cond
 						((= CnstID 23) (delete @-4) (set P2CID CnstID) (set CnstID 183) (set SLICER 1) (insert "স্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 162) ;; স্প
+				((= FrstCnstID 162) ;; স্প
 					(cond
 						((= CnstID 28) (delete @-4) (set P2CID CnstID) (set CnstID 184) (set SLICER 1) (insert "স্প্ল"))	;; ল
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 110) ;; ন্স
+				((= FrstCnstID 110) ;; ন্স
 					(cond
 						((= CnstID 11) (delete @-4) (set P2CID CnstID) (set CnstID 185) (set SLICER 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
 						(1 (shift byanjon_state))
 					)
 				)
-				((= PCID 126) ;; ম্প
+				((= FrstCnstID 126) ;; ম্প
 					(cond
 						((= CnstID 28) (delete @-4) (set P2CID CnstID) (set CnstID 186) (set SLICER 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
 						(1 (shift byanjon_state))
@@ -992,7 +992,7 @@
 				)
 				(1 (shift byanjon_state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
-			(set PrevCID PCID) (set PCID CnstID) ;; ম্যাচ করুক আর না করুক নতুন PCID সেট করতেই হচ্ছে।
+			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ম্যাচ করুক আর না করুক নতুন FrstCnstID সেট করতেই হচ্ছে।
 		)
 		(blinder (shift blind_state))
 		(backspace)
