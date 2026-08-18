@@ -375,7 +375,7 @@
 
 (state
 	(init
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrevCID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
 		(diacritic (commit)  (shift shor_state))
 		(slicer (commit))
 		(slicer3 (commit))
@@ -386,7 +386,7 @@
 		(ongko )
 		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID)
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -397,7 +397,7 @@
 		(blinder (shift blind_state))
 	)
 	(shor_state
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrevCID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLICER 0) (set KAR 0))
 		(diacritic  )
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
@@ -408,7 +408,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID)
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -440,7 +440,7 @@
 				((&  (= FrstCnstID 27) (= CnstID 27)) (shift rr_state) (set CnstID 187) )
 				(1 (move @-) (insert ?্) (move @>) (set ScndCnstID CnstID) (set SLICER 1) (shift juktoborno_state))
 			)
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
@@ -750,7 +750,7 @@
 					)
 				)
 			)
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(slicer
 			(cond
@@ -760,8 +760,8 @@
 					(cond
 						(
 							(|
-								(= PrevCID 28)
-								(= PrevCID 30)
+								(= PrvCnstID 28)
+								(= PrvCnstID 30)
 							) ;; this is the condition
 							(delete @-2) (insert "্কহ") (set FrstCnstID 32) ;; this is the operation
 						)
@@ -770,10 +770,10 @@
 				)
 				((&(= FrstCnstID 4) (= Fflag 0))
 					(cond
-						((= PrevCID 3) (delete @-3) (insert "জ্ঞহ") (set FrstCnstID 32))
-						((= PrevCID 28) (delete @-2) (insert "্গহ") (set FrstCnstID 32))
-						((= PrevCID 34) (delete @-2) (insert "্‌গহ") (set FrstCnstID 32)) ;; zwnj আছে
-						((= PrevCID 65) (delete @-5) (insert "গ্‌গহ") (set FrstCnstID 32)) ;; special case
+						((= PrvCnstID 3) (delete @-3) (insert "জ্ঞহ") (set FrstCnstID 32))
+						((= PrvCnstID 28) (delete @-2) (insert "্গহ") (set FrstCnstID 32))
+						((= PrvCnstID 34) (delete @-2) (insert "্‌গহ") (set FrstCnstID 32)) ;; zwnj আছে
+						((= PrvCnstID 65) (delete @-5) (insert "গ্‌গহ") (set FrstCnstID 32)) ;; special case
 						(1 (delete @-2) (insert "গহ") (set FrstCnstID 32))
 					)
 				)
@@ -781,24 +781,24 @@
 					(cond
 						(
 							(|
-								(= PrevCID 3)
-								(= PrevCID 4)								
-								(= PrevCID 16)
-								(= PrevCID 19)
-								(= PrevCID 20)
-								(= PrevCID 21)
-								(= PrevCID 25)
-								(= PrevCID 29)								
-								(= PrevCID 31)
-								(= PrevCID 32)								
+								(= PrvCnstID 3)
+								(= PrvCnstID 4)								
+								(= PrvCnstID 16)
+								(= PrvCnstID 19)
+								(= PrvCnstID 20)
+								(= PrvCnstID 21)
+								(= PrvCnstID 25)
+								(= PrvCnstID 29)								
+								(= PrvCnstID 31)
+								(= PrvCnstID 32)								
 							) ;; this is the condition
 							(delete @-2) (insert "্নগ") (set FrstCnstID 3) ;; this is the operation
 						)
 						(
 							(|
-								(= PrevCID 15)
-								(= PrevCID 30)
-								(= PrevCID 39)
+								(= PrvCnstID 15)
+								(= PrvCnstID 30)
+								(= PrvCnstID 39)
 							) ;; this is the condition
 							(delete @-2) (insert "্ণগ") (set FrstCnstID 3) ;; this is the operation
 						)
@@ -808,27 +808,27 @@
 				((&(= FrstCnstID 7) (= Fflag 0)) (delete @-2) (insert "চহ") (set FrstCnstID 32))
 				((&(= FrstCnstID 9) (= Fflag 0))
 					(cond
-						((= PrevCID 23) (delete @-2) (insert "্জহ") (set FrstCnstID 32))
+						((= PrvCnstID 23) (delete @-2) (insert "্জহ") (set FrstCnstID 32))
 						(1 (delete @-2) (insert "জহ") (set FrstCnstID 32))
 					)
 				)
 				((= FrstCnstID 17)
 					(cond
-						((| (= PrevCID 1) (= PrevCID 21)) (delete @-2) (insert "্তহ") (set FrstCnstID 32))
-						((= PrevCID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set FrstCnstID 32))
+						((| (= PrvCnstID 1) (= PrvCnstID 21)) (delete @-2) (insert "্তহ") (set FrstCnstID 32))
+						((= PrvCnstID 53) (delete @-5) (insert "ঙ্‌ক্তহ") (set FrstCnstID 32))
 						(1 (delete @-2) (insert "তহ") (set FrstCnstID 32))
 					)
 				)
 				((= FrstCnstID 19) (delete @-2) (insert "দহ") (set FrstCnstID 32))
 				((&(= FrstCnstID 22) (= Fflag 0))
 					(cond
-						((= PrevCID 21) (delete @-2) (insert "্পহ") (set FrstCnstID 32))
+						((= PrvCnstID 21) (delete @-2) (insert "্পহ") (set FrstCnstID 32))
 						(1 (delete @-2) (insert "পহ") (set FrstCnstID 32))
 					)
 				)
 				((= FrstCnstID 29)
 					(cond
-						((| (= PrevCID 1) (= PrevCID 20) (= PrevCID 21)) (delete @-2) (insert "্সহ") (set FrstCnstID 32))
+						((| (= PrvCnstID 1) (= PrvCnstID 20) (= PrvCnstID 21)) (delete @-2) (insert "্সহ") (set FrstCnstID 32))
 						(1 (delete @-2) (insert "সহ") (set FrstCnstID 32))
 					)
 				)
@@ -898,7 +898,7 @@
 				;; র্র এর পরে র লিখলে রররর আনতে।
 				(1 (move @-) (insert ?্) (move @>) (set ScndCnstID CnstID) (set SLICER 1) )
 			)
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 		)
 		(byanjon
 			(cond
@@ -992,7 +992,7 @@
 				)
 				(1 (shift byanjon_state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
-			(set PrevCID FrstCnstID) (set FrstCnstID CnstID) ;; ম্যাচ করুক আর না করুক নতুন FrstCnstID সেট করতেই হচ্ছে।
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ম্যাচ করুক আর না করুক নতুন FrstCnstID সেট করতেই হচ্ছে।
 		)
 		(blinder (shift blind_state))
 		(backspace)
