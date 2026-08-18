@@ -782,15 +782,15 @@
 						(
 							(|
 								(= PrvCnstID 3)
-								(= PrvCnstID 4)								
+								(= PrvCnstID 4)
 								(= PrvCnstID 16)
 								(= PrvCnstID 19)
 								(= PrvCnstID 20)
 								(= PrvCnstID 21)
 								(= PrvCnstID 25)
-								(= PrvCnstID 29)								
+								(= PrvCnstID 29)
 								(= PrvCnstID 31)
-								(= PrvCnstID 32)								
+								(= PrvCnstID 32)
 							) ;; this is the condition
 							(delete @-2) (insert "্নগ") (set FrstCnstID 3) ;; this is the operation
 						)
