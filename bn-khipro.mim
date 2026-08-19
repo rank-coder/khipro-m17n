@@ -430,7 +430,11 @@
 			
 		)
 		(byanjon
-			(set PrvCnstID FrstCnstID) (set ScndCnstID CnstID)
+			(cond
+				((= ScndCnstID 0) (set PrvCnstID FrstCnstID) (set ScndCnstID CnstID))
+				(1 (set PrvCnstID FrstCnstID) (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+			)
+			
 			(cond
 				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
 			)
