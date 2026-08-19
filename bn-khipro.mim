@@ -792,6 +792,7 @@
 						((= ScndCnstID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state)) ;; zf
 						((= ScndCnstID 26) (form_jo_phola))
 						((= ScndCnstID 27) (form_ro_phola))
+						(1 (form_generic_juktoborno)) ;; র এর পরে যদি র, য এগুলা বাদে অন্য কোনো বর্ণ আসে তাহলে রেফ তৈরি হবে
 					)
 				)
 				((& (= FrstCnstID 27) (= ScndCnstID 26)) (delete @-) (delete @-) (set ScndCnstID CnstID) (set CnstID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno_state)) ;; র, য
