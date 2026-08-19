@@ -1037,4 +1037,7 @@
 	(form_ro_phola
 		(move @-) (insert "্") (move @>)
 	)
+	(form_generic_juktoborno
+		(move @-) (insert "্") (move @>)
+	)
 )
