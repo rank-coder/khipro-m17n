@@ -422,7 +422,7 @@
 		(biram  (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(kar
 			(cond
-				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর
+				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর ইত্যাদিতে অ্যা কার দেওয়ার জন্য
 			)
 			(shift shor_state)
 		)
