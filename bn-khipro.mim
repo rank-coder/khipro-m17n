@@ -1028,4 +1028,13 @@
 		
 			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 	)
+	(form_jo_phola
+		(cond
+			((& (= FrstCnstID 27)(= ScndCnstID 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
+			(1 (move @-) (insert "্") (move @>))
+		)
+	)
+	(form_ro_phola
+		(move @-) (insert "্") (move @>)
+	)
 )
