@@ -428,19 +428,7 @@
 			(shift shor_state)
 		)
 		(phola
-			;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে।
-			;; উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
-			;; VARIABLE ScndCnstID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। ScndCnstID হচ্ছে তার পরের ব্যঞ্জনের ID.
-			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
-			(cond
-				((& (= FrstCnstID 27) (= CnstID 26)) (delete @-) (delete @-) (set ScndCnstID CnstID) (set CnstID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno_state)) ;; র, য
-				((& (= FrstCnstID 187) (= CnstID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
-				((& (= FrstCnstID 33) (= CnstID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র
-				((& (= FrstCnstID 187)(= CnstID 27)) (delete @-3) (insert "র্র") (set CnstID 191) (shift juktoborno_state) ) ;; র্র
-				((&  (= FrstCnstID 27) (= CnstID 27)) (shift rr_state) (set CnstID 187) )
-				(1 (move @-) (insert ?্) (move @>) (set ScndCnstID CnstID) (set SLICER 1) (shift juktoborno_state))
-			)
-			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			
 		)
 		(byanjon
 			
@@ -1022,5 +1010,20 @@
 				;; SLICER = 4 কেবল তখন ব্যবহার হয় যখন শেষ ব‍র্ণটি kf দিয়ে লেখা ক্ষ হয়। যেমন: ngkf/ = ঙক্ষ
 			)
 			(set SLICER 0)
+	)
+	(phola_code_in_byanjon_state
+		;; র দিয়ে শেষ হয় এমন যুক্তবর্ণকে ব্যঞ্জন হিসেবে অ্যাড করা যাবে না। নতুবা নিচের লজিক ফেইল করবে। সেক্ষেত্রে এখানে বাড়তি লজিক অ্যাড করতে হবে।
+			;; উল্লেখ্য: যুক্তবর্ণ সেকশনেও ফলা লজিক আছে।
+			;; VARIABLE ScndCnstID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। ScndCnstID হচ্ছে তার পরের ব্যঞ্জনের ID.
+			;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
+			(cond
+				((& (= FrstCnstID 27) (= CnstID 26)) (delete @-) (delete @-) (set ScndCnstID CnstID) (set CnstID 37) (insert "র‍্য") (set SLICER 2) (shift juktoborno_state)) ;; র, য
+				((& (= FrstCnstID 187) (= CnstID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
+				((& (= FrstCnstID 33) (= CnstID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র
+				((& (= FrstCnstID 187)(= CnstID 27)) (delete @-3) (insert "র্র") (set CnstID 191) (shift juktoborno_state) ) ;; র্র
+				((&  (= FrstCnstID 27) (= CnstID 27)) (shift rr_state) (set CnstID 187) )
+				(1 (move @-) (insert ?্) (move @>) (set ScndCnstID CnstID) (set SLICER 1) (shift juktoborno_state))
+			)
+			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
 	)
 )
