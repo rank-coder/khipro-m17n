@@ -429,8 +429,10 @@
 			
 		)
 		(byanjon
-			
-			(set PrvCnstID FrstCnstID) (set ScndCnstID CnstID) ;; ব্যঞ্জনের পরে ব্যঞ্জন লেখা হলে শেষ যত CnstID সেট করা হলো, হোক সেটা যুক্তবর্ণ কিংবা একক ব্যঞ্জন, সেটার CnstID -কে FrstCnstID তে পাঠিয়ে দেওয়া হলো। যাতে এর পরে আবার ব্যঞ্জন লেখা হলে সেটা এটার সাথে যুক্ত করা বা না করার সিদ্ধান্ত নেওয়া যায়।
+			(set PrvCnstID FrstCnstID) (set ScndCnstID CnstID)
+			(cond
+				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
+			)
 		)
 		(juktoborno_bunon
 			(delete @-)
@@ -796,7 +798,7 @@
 					)
 				)
 
-				((& (= FrstCnstID 187) (= ScndCnstID 26) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLICER 1)) ;; রর, য
+				
 				((& (= FrstCnstID 33) (= ScndCnstID 27)) ) ;; কেননা য় এর পরে র ফলা হয় না। যেমন: ভায়রা ;; য়, র
 				((& (= FrstCnstID 187)(= ScndCnstID 27)) (delete @-3) (insert "র্র") (set CnstID 191) (shift juktoborno_state) ) ;; র্র
 				((&  (= FrstCnstID 27) (= ScndCnstID 27)) (shift rr_state) (set CnstID 187) )
