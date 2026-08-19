@@ -132,6 +132,7 @@
 		;; কিছু বিশেষ যুক্তবর্ণ যাদেরকে ব্যঞ্জনবর্ণের মর্যাদা দেওয়া হলো
 		("kf" (set CnstID 39) (set CmpdCnstFlag 0) "ক্ষ")
 		("zf" (set CnstID 190) (set CmpdCnstFlag 0) "্য")
+		("rr" (set CnstID 187) (set CmpdCnstFlag 1) "রর")
 	)
 	(phola
 	)
