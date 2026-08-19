@@ -134,8 +134,6 @@
 		("zf" (set CnstID 190) (set CmpdCnstFlag 0) "্য")
 	)
 	(phola
-		("r" (set CnstID 27) "র")
-		("z" (set CnstID 26) "য")
 	)
 	(kar
 		("o" "")
