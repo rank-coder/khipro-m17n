@@ -219,7 +219,6 @@
 		("0.." "০।")
 	)
 	(diacritic
-		("t;" "ৎ")
 		("qq" "্")
 		("xx" "্‌")
 		("x" "ং")
@@ -227,6 +226,9 @@
 		("``" "‌")
 		("```" "``")
 		("``f" "‍")
+	)
+	(khondo_to
+		("t;" "ৎ")
 	)
 	(biram
 		("." "।")
@@ -377,6 +379,7 @@
 	(init
 		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic (commit)  (shift shor_state))
+		(khondo_to (shift init))
 		(juktoborno_bunon (commit))
 		(slash3 (commit))
 		(slash2 (delete @-) (insert "ঁ") (shift shor_state))
@@ -399,6 +402,7 @@
 	(shor_state
 		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic  )
+		(khondo_to (shift init))
 		(juktoborno_bunon (delete @-) (insert "ঁ"))
 		(slash2 (shift init))
 		(slash3 (shift init))
@@ -840,6 +844,7 @@
 			)
 		)
 		(slash3 (shift init))
+		(khondo_to (shift init))
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
 		(backspace)
@@ -849,6 +854,7 @@
 
 		)
 		(diacritic  (shift shor_state))
+		(khondo_to (shift init))
 		(slash2 (shift init))
 		(slash3 (shift init))
 		(prithayok (delete @-)  (shift init))
