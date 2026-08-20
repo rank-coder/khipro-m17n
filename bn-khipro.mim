@@ -133,7 +133,7 @@
 		("kf" (set CnstID 39) (set CmpdCnstFlag 0) "ক্ষ")
 		("zf" (set CnstID 190) (set CmpdCnstFlag 0) "্য")
 		("rr" (set CnstID 187) (set CmpdCnstFlag 1) "রর")
-		("gg" (set CmpdCnstFlag 1) "জ্ঞ")
+		("gg" (set CmpdCnstFlag 1) (set FrstCnstID 3) (set ScndCnstID 3) "জ্ঞ")
 	)
 	(phola
 	)
