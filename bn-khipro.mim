@@ -838,10 +838,7 @@
 			)
 		)
 		(slash2
-			(cond
-				((= FrstCnstID 16) (delete @-2) (insert "ত/")) ;; ত ;; দেখে বাহুল্য মনে হলেও এই লাইনটার দরকার আছে। নিচের লাইনের কারণে।
-				((= CmpdCnstFlag 0) (delete @-) (insert "ঁ") (shift shor_state))
-			)
+			
 		)
 		(slash3 (shift init))
 		(khondo_to (shift init))
