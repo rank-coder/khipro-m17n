@@ -219,6 +219,7 @@
 		("0.." "০।")
 	)
 	(diacritic
+		("t;" "ৎ")
 		("qq" "্")
 		("xx" "্‌")
 		("x" "ং")
@@ -827,7 +828,6 @@
 			)
 			(1 ;; প্রথম ব্যঞ্জনের পরেই স্ল্যাশ চাপলে কী হবে?
 				(cond
-					((= FrstCnstID 16) (delete @-2) (insert "ৎ") (shift init))
 					(1 (set SLASH 1) (shift init))
 				)
 			)
