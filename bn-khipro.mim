@@ -845,7 +845,16 @@
 				)
 			)
 		)
-		(slash3 (shift init))
+		(slash3
+			(cond
+				((> ScndCnstID 0)
+					(shift init)
+				)
+				(1
+					(insert "/") (shift init)
+				)
+			)
+		)
 		(khondo_to (shift init))
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
