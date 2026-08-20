@@ -259,7 +259,7 @@
 		("//" "/")
 	)
 	(slash3
-		("///" "//")
+		("///" "/")
 	)
 	(backspace
 		( (BackSpace)  (undo) )
