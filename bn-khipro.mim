@@ -836,7 +836,14 @@
 			)
 		)
 		(slash2
-			
+			(cond
+				((> ScndCnstID 0)
+					(delete @-) (insert "ঁ") (shift shor_state)
+				)
+				(1
+					(shift init)
+				)
+			)
 		)
 		(slash3 (shift init))
 		(khondo_to (shift init))
