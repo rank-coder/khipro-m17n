@@ -471,7 +471,7 @@
 						)
 						((= FrstCnstID 3) ;; গ
 							(cond
-								((= ScndCnstID 3) (delete @-2) (set ScndCnstID CnstID) (set CnstID 65) (insert "জ্ঞ") (set SLASH 3) (set ALTERNATE 2) (shift juktoborno_state)) ;; গ
+								((= ScndCnstID 3) (delete @-2) (set ScndCnstID CnstID) (set CnstID 175) (insert "গ্‌গ") (set SLASH 3) (set ALTERNATE 2) (shift juktoborno_state)) ;; গ
 								((= ScndCnstID 15) (delete @-2) (set ScndCnstID CnstID) (set CnstID 46) (insert "গ্‌ণ") (set SLASH 2) (shift juktoborno_state)) ;; ণ
 								((= ScndCnstID 19) (delete @-2) (set ScndCnstID CnstID) (set CnstID 47) (insert "গ্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
 								;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
