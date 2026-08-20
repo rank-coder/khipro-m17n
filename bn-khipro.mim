@@ -831,9 +831,7 @@
 				)
 			)
 			(1 ;; প্রথম ব্যঞ্জনের পরেই স্ল্যাশ চাপলে কী হবে?
-				(cond
-					(1 (delete @-) (insert "ঁ") (shift shor_state))
-				)
+				(delete @-) (insert "ঁ") (shift shor_state)
 			)
 			)
 		)
