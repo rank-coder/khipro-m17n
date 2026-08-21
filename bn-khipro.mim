@@ -442,7 +442,7 @@
 			)
 			
 			(cond
-				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set SLASH 1)) ;; রর, য
+				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set FrstCnstID ScndCnstID) (set ScndCnstID 0)) ;; রর, য
 			)
 		)
 		(juktoborno_bunon
