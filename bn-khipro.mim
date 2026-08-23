@@ -863,19 +863,7 @@
 	)
 	(juktoborno_state
 		(juktoborno_bunon
-
-		)
-		(diacritic  (shift shor_state))
-		(khondo_to (shift init))
-		(slash2 (shift init))
-		(slash3 (shift init))
-		(prithayok (delete @-)  (shift init))
-		(ongko  (shift init))
-		(biram  (shift shor_state))
-		(kar (shift shor_state))
-		(phola)
-		(byanjon
-			(cond
+						(cond
 				((= CnstID 0) (shift init))
 				((= FrstCnstID 39) ;; ক্ষ
 					(cond
@@ -966,6 +954,18 @@
 				)
 				(1 (shift byanjon_state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
+		)
+		(diacritic  (shift shor_state))
+		(khondo_to (shift init))
+		(slash2 (shift init))
+		(slash3 (shift init))
+		(prithayok (delete @-)  (shift init))
+		(ongko  (shift init))
+		(biram  (shift shor_state))
+		(kar (shift shor_state))
+		(phola)
+		(byanjon
+
 			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ম্যাচ করুক আর না করুক নতুন FrstCnstID সেট করতেই হচ্ছে।
 		)
 		(blinder (shift blind_state))
