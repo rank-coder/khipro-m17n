@@ -867,16 +867,16 @@
 			(cond
 				((= FrstCnstID 39) ;; ক্ষ
 					(cond
-						((= CnstID 15) (delete @-4) (set ScndCnstID CnstID) (set CnstID 172) (set SLASH 1) (insert "ক্ষ্ণ")) ;; ণ
-						((= CnstID 20) (delete @-4) (set ScndCnstID CnstID) (set CnstID 172) (set SLASH 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 173) (set SLASH 1) (insert "ক্ষ্ব")) ;; ব
-						((= CnstID 25) (delete @-4) (set ScndCnstID CnstID) (set CnstID 174) (set SLASH 1) (insert "ক্ষ্ম")) ;; ম
+						((= ScndCnstID 15) (delete @-4) (set ScndCnstID CnstID) (set CnstID 172) (set SLASH 1) (insert "ক্ষ্ণ")) ;; ণ
+						((= ScndCnstID 20) (delete @-4) (set ScndCnstID CnstID) (set CnstID 172) (set SLASH 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 173) (set SLASH 1) (insert "ক্ষ্ব")) ;; ব
+						((= ScndCnstID 25) (delete @-4) (set ScndCnstID CnstID) (set CnstID 174) (set SLASH 1) (insert "ক্ষ্ম")) ;; ম
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 65) ;; জ্ঞ
 					(cond
-						((& (= CnstID 3) (= ScndCnstID 3)) (delete @-4) (set ScndCnstID CnstID) (set CnstID 175) (set SLASH 3) (set ALTERNATE 14) (insert "গ্‌গ")) ;; গ
+						((& (= ScndCnstID 3) (= ScndCnstID 3)) (delete @-4) (set ScndCnstID CnstID) (set CnstID 175) (set SLASH 3) (set ALTERNATE 14) (insert "গ্‌গ")) ;; গ
 						(1 (shift byanjon_state))
 					)
 					;; ScndCnstID -এর (সম্ভবত) একমাত্র ব্যবহার হয়েছে এখানে। এখানে FrstCnstID হচ্ছে 'জ্ঞ' -এর ID, আর ScndCnstID হচ্ছে 'গ' -এর ID.
@@ -886,73 +886,75 @@
 				)
 				((= FrstCnstID 53) ;; ঙ্ক
 					(cond
-						((= CnstID 2) (delete @-4) (set ScndCnstID CnstID) (set CnstID 58) (set SLASH 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ
-						((= CnstID 30) (delete @-4) (set ScndCnstID CnstID) (set CnstID 58) (set SLASH 1) (insert "ঙ্ক্ষ")) ;; ষ
-						((= CnstID 16) (delete @-4) (set ScndCnstID CnstID) (set CnstID 176) (set SLASH 1) (insert "ঙ্‌ক্ত")) ;; ত
+						((= ScndCnstID 2) (delete @-4) (set ScndCnstID CnstID) (set CnstID 58) (set SLASH 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ
+						((= ScndCnstID 30) (delete @-4) (set ScndCnstID CnstID) (set CnstID 58) (set SLASH 1) (insert "ঙ্ক্ষ")) ;; ষ
+						((= ScndCnstID 16) (delete @-4) (set ScndCnstID CnstID) (set CnstID 176) (set SLASH 1) (insert "ঙ্‌ক্ত")) ;; ত
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 60) ;; চ্ছ
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 177) (set SLASH 1) (insert "চ্ছ্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 177) (set SLASH 1) (insert "চ্ছ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 63) ;; জ্জ
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 178) (set SLASH 1) (insert "জ্জ্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 178) (set SLASH 1) (insert "জ্জ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 84) ;; ত্ত
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 179) (set SLASH 1) (insert "ত্ত্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 179) (set SLASH 1) (insert "ত্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 92) ;; দ্দ
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 180) (set SLASH 1) (insert "দ্দ্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 180) (set SLASH 1) (insert "দ্দ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 103) ;; ন্ত
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 181) (set SLASH 1) (insert "ন্ত্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 181) (set SLASH 1) (insert "ন্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 105) ;; ন্দ
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 182) (set SLASH 1) (insert "ন্দ্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 182) (set SLASH 1) (insert "ন্দ্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 159) ;; স্ত
 					(cond
-						((= CnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 183) (set SLASH 1) (insert "স্ত্ব")) ;; ব
+						((= ScndCnstID 23) (delete @-4) (set ScndCnstID CnstID) (set CnstID 183) (set SLASH 1) (insert "স্ত্ব")) ;; ব
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 162) ;; স্প
 					(cond
-						((= CnstID 28) (delete @-4) (set ScndCnstID CnstID) (set CnstID 184) (set SLASH 1) (insert "স্প্ল"))	;; ল
+						((= ScndCnstID 28) (delete @-4) (set ScndCnstID CnstID) (set CnstID 184) (set SLASH 1) (insert "স্প্ল"))	;; ল
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 110) ;; ন্স
 					(cond
-						((= CnstID 11) (delete @-4) (set ScndCnstID CnstID) (set CnstID 185) (set SLASH 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
+						((= ScndCnstID 11) (delete @-4) (set ScndCnstID CnstID) (set CnstID 185) (set SLASH 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
 						(1 (shift byanjon_state))
 					)
 				)
 				((= FrstCnstID 126) ;; ম্প
 					(cond
-						((= CnstID 28) (delete @-4) (set ScndCnstID CnstID) (set CnstID 186) (set SLASH 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
+						((= ScndCnstID 28) (delete @-4) (set ScndCnstID CnstID) (set CnstID 186) (set SLASH 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
 						(1 (shift byanjon_state))
 					)
 				)
-				(1 (shift byanjon_state)) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
+				(1
+					(shift byanjon_state)
+				) ;; উপরের কোনোটা ম্যাচ না করার অর্থ শেষে যুক্তবর্ণ নেই, মুক্তব্যঞ্জন রয়েছে। তাই কেবল উপরের কোনোটা ম্যাচ না করলেই ব্যঞ্জন স্টেটে যাওয়া হচ্ছে।
 			)
 		)
 		(diacritic  (shift shor_state))
