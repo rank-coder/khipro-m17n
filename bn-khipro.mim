@@ -864,8 +864,7 @@
 	)
 	(juktoborno_state
 		(juktoborno_bunon
-						(cond
-				((= CnstID 0) (shift init))
+			(cond
 				((= FrstCnstID 39) ;; ক্ষ
 					(cond
 						((= CnstID 15) (delete @-4) (set ScndCnstID CnstID) (set CnstID 172) (set SLASH 1) (insert "ক্ষ্ণ")) ;; ণ
