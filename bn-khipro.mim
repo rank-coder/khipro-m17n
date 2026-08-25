@@ -965,8 +965,14 @@
 		(kar (shift shor_state))
 		(phola)
 		(byanjon
-
-			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID) ;; ম্যাচ করুক আর না করুক নতুন FrstCnstID সেট করতেই হচ্ছে।
+			(cond
+				((= ScndCnstID 0) (set PrvCnstID FrstCnstID) (set ScndCnstID CnstID))
+				(1 (set PrvCnstID FrstCnstID) (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+			)
+			
+			(cond
+				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set FrstCnstID ScndCnstID) (set ScndCnstID 0)) ;; রর
+			)
 		)
 		(blinder (shift blind_state))
 		(backspace)
