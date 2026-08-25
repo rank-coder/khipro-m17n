@@ -967,8 +967,26 @@
 		)
 		(diacritic  (shift shor_state))
 		(khondo_to (shift init))
-		(slash2 (shift init))
-		(slash3 (shift init))
+		(slash2
+			(cond
+				((> ScndCnstID 0)
+					(delete @-) (insert "ঁ") (shift shor_state)
+				)
+				(1
+					(shift init)
+				)
+			)
+		)
+		(slash3
+			(cond
+				((> ScndCnstID 0)
+					(shift init)
+				)
+				(1
+					(insert "/") (shift init)
+				)
+			)
+		)
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor_state))
