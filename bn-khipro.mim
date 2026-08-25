@@ -835,6 +835,7 @@
 					(delete @-) (insert "ঁ") (shift shor_state)
 				)
 			)
+			(set FrstCnstID CnstID) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে FrstCnstID সেট করা হচ্ছে
 		)
 		(slash2
 			(cond
