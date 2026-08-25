@@ -866,6 +866,7 @@
 		(juktoborno_bunon
 			(cond
 				((> ScndCnstID 0)
+					(delete @-)
 					(cond
 						((= FrstCnstID 39) ;; ক্ষ
 							(cond
