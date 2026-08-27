@@ -834,7 +834,10 @@
 					)
 				)
 				(1 ;; প্রথম ব্যঞ্জনের পরেই স্ল্যাশ চাপলে কী হবে?
-					(delete @-) (insert "ঁ") (shift shor_state)
+					(cond
+						((= FrstCnstID 16) (delete @-2) (insert "ৎ") (shift init))
+						(1 (delete @-) (insert "ঁ") (shift shor_state))
+					)
 				)
 			)
 			(set FrstCnstID CnstID) (set ScndCnstID 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে FrstCnstID সেট করা হচ্ছে
@@ -985,7 +988,10 @@
 					)
 				)
 				(1
-					(delete @-) (insert "ঁ") (shift shor_state)
+					(cond
+						((= FrstCnstID 16) (delete @-2) (insert "ৎ") (shift init))
+						(1 (delete @-) (insert "ঁ") (shift shor_state))
+					)
 				)
 			)
 		)
