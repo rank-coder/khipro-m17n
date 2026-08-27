@@ -859,6 +859,13 @@
 				)
 			)
 		)
+		(slashModified
+			(cond
+				( (| (&(= FrstCnstID 16)(= ScndCnstID 0)) (= ScndCnstID 16))
+					(delete @-3) (insert "ৎ") (shift init)
+				)
+			)
+		)
 		(khondo_to (shift init))
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
