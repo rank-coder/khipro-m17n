@@ -264,6 +264,9 @@
 	(slash3
 		("///" "/")
 	)
+	(slashModified
+		("/f" "/⁌")
+	)
 	(backspace
 		( (BackSpace)  (undo) )
 	)
