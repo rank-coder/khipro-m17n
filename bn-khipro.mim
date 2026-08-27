@@ -1011,6 +1011,13 @@
 				)
 			)
 		)
+		(slashModified
+			(cond
+				( (| (&(= FrstCnstID 16)(= ScndCnstID 0)) (= ScndCnstID 16))
+					(delete @-3) (insert "ৎ") (shift init)
+				)
+			)
+		)
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor_state))
