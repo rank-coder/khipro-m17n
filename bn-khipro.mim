@@ -378,7 +378,7 @@
 
 (state
 	(init
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic (commit)  (shift shor_state))
 		(khondo_to (shift init))
 		(juktoborno_bunon (commit))
@@ -390,7 +390,7 @@
 		(ongko )
 		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
+			(set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -401,7 +401,7 @@
 		(blinder (shift blind_state))
 	)
 	(shor_state
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set PrvCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic  )
 		(khondo_to (shift init))
 		(juktoborno_bunon (delete @-) (insert "ঁ"))
@@ -413,7 +413,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
+			(set FrstCnstID CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -434,8 +434,8 @@
 		)
 		(byanjon
 			(cond
-				((= ScndCnstID 0) (set PrvCnstID FrstCnstID) (set ScndCnstID CnstID))
-				(1 (set PrvCnstID FrstCnstID) (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+				((= ScndCnstID 0) (set ScndCnstID CnstID))
+				(1 (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
 			)
 			
 			(cond
@@ -1025,8 +1025,8 @@
 		(kar (shift shor_state))
 		(byanjon
 			(cond
-				((= ScndCnstID 0) (set PrvCnstID FrstCnstID) (set ScndCnstID CnstID))
-				(1 (set PrvCnstID FrstCnstID) (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+				((= ScndCnstID 0)  (set ScndCnstID CnstID))
+				(1 (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
 			)
 			
 			(cond
