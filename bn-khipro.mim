@@ -135,8 +135,6 @@
 		("rr" (set CnstID 187) (set CmpdCnstFlag 1) "রর")
 		("gg" (set CmpdCnstFlag 1) (set FrstCnstID 3) (set ScndCnstID 3) "জ্ঞ")
 	)
-	(phola
-	)
 	(kar
 		("o" "")
 		("of" "অ")
@@ -433,9 +431,6 @@
 				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর ইত্যাদিতে অ্যা কার দেওয়ার জন্য
 			)
 			(shift shor_state)
-		)
-		(phola
-			
 		)
 		(byanjon
 			(cond
@@ -1028,7 +1023,6 @@
 		(ongko  (shift init))
 		(biram  (shift shor_state))
 		(kar (shift shor_state))
-		(phola)
 		(byanjon
 			(cond
 				((= ScndCnstID 0) (set PrvCnstID FrstCnstID) (set ScndCnstID CnstID))
