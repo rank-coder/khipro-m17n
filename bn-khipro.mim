@@ -426,8 +426,10 @@
 		)
 		(byanjon
 			(cond
-				((= Cnst2 0) (set Cnst2 CnstID))
-				(1 (set Cnst1 Cnst2) (set Cnst2 CnstID))
+				((= CnstBufr 1) (set Cnst2 CnstID) (set CnstBufr 2))
+				((= CnstBufr 2) (set Cnst3 CnstID) (set CnstBufr 3))
+				((= CnstBufr 3) (set Cnst4 CnstID) (set CnstBufr 4)) 
+				((= CnstBufr 4) (set Cnst1 Cnst2) (set Cnst2 Cnst3) (set Cnst3 Cnst4) (set Cnst4 CnstID))
 			)
 			
 			(cond
