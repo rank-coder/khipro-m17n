@@ -253,17 +253,11 @@
 	(prithayok
 		(";" ";")
 	)
-	(juktoborno_bunon
-		("/" "/")
-	)
-	(slash2
-		("//" "/")
-	)
-	(slash3
-		("///" "/")
-	)
-	(slashModified
-		("/f" "/⁌")
+	(fuser
+		("/" (set FuserID 1) "/")
+		("//" (set FuserID 2) "/")
+		("///" (set FuserID 3) "/")
+		("/f" (set FuserID 4) "/⁌")
 	)
 	(backspace
 		( (BackSpace)  (undo) )
