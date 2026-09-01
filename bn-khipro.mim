@@ -824,7 +824,7 @@
 							)
 						)
 						(1 ;; বাকি সকল বর্ণের জন্য সাধরণ পদ্ধতিতে যুক্তবর্ণ গঠন হবে
-							(1 (form_generic_juktoborno))
+							(form_generic_juktoborno)
 						)
 					)
 				)
