@@ -378,7 +378,7 @@
 
 (state
 	(init
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set Cnst3 0) (set Cnst4 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
 		(diacritic (commit)  (shift shor_state))
 		(khondo_to (shift init))
 		(juktoborno_bunon (commit))
@@ -397,7 +397,7 @@
 		(blinder (shift blind_state))
 	)
 	(shor_state
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set Cnst3 0) (set Cnst4 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
 		(diacritic  )
 		(khondo_to (shift init))
 		(juktoborno_bunon (delete @-) (insert "ঁ"))
