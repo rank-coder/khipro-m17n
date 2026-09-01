@@ -133,7 +133,7 @@
 		("kf" (set CnstID 39) (set CmpdCnstFlag 0) "ক্ষ")
 		("zf" (set CnstID 190) (set CmpdCnstFlag 0) "্য")
 		("rr" (set CnstID 187) (set CmpdCnstFlag 1) "রর")
-		("gg" (set CmpdCnstFlag 1) (set FrstCnstID 3) (set ScndCnstID 3) "জ্ঞ")
+		("gg" (set CmpdCnstFlag 1) (set Cnst1 3) (set Cnst2 3) "জ্ঞ")
 	)
 	(kar
 		("o" "")
@@ -378,7 +378,7 @@
 
 (state
 	(init
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic (commit)  (shift shor_state))
 		(khondo_to (shift init))
 		(juktoborno_bunon (commit))
@@ -390,18 +390,18 @@
 		(ongko )
 		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set FrstCnstID CnstID)
+			(set Cnst1 CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
 			)
 		)
-		;; VARIABLE FrstCnstID অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে FrstCnstID তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। ScndCnstID হচ্ছে তার পরের ব্যঞ্জনের ID.
-		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে FrstCnstID তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
+		;; VARIABLE Cnst1 অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে Cnst1 তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। Cnst2 হচ্ছে তার পরের ব্যঞ্জনের ID.
+		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে Cnst1 তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
 		(blinder (shift blind_state))
 	)
 	(shor_state
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set ScndCnstID 0) (set ALTERNATE 0) (set FrstCnstID 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
 		(diacritic  )
 		(khondo_to (shift init))
 		(juktoborno_bunon (delete @-) (insert "ঁ"))
@@ -413,7 +413,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set FrstCnstID CnstID)
+			(set Cnst1 CnstID)
 			(shift byanjon_state)
 			(cond
 				((= CnstID 0) (shift init))
@@ -428,398 +428,398 @@
 		(biram  (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(kar
 			(cond
-				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর ইত্যাদিতে অ্যা কার দেওয়ার জন্য
+				( (& (| (= Cnst1 27) (= Cnst1 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর ইত্যাদিতে অ্যা কার দেওয়ার জন্য
 			)
 			(shift shor_state)
 		)
 		(byanjon
 			(cond
-				((= ScndCnstID 0) (set ScndCnstID CnstID))
-				(1 (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+				((= Cnst2 0) (set Cnst2 CnstID))
+				(1 (set Cnst1 Cnst2) (set Cnst2 CnstID))
 			)
 			
 			(cond
-				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set FrstCnstID ScndCnstID) (set ScndCnstID 0)) ;; রর
+				((& (= Cnst1 187) (> Cnst2 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst1 Cnst2) (set Cnst2 0)) ;; রর
 			)
 		)
 		(juktoborno_bunon
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(delete @-)
 					(cond
-						((= FrstCnstID 1) ;; ক
+						((= Cnst1 1) ;; ক
 							(cond
-								((= ScndCnstID 1) (delete @-2) (set CnstID 38) (insert "ক্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
+								((= Cnst2 1) (delete @-2) (set CnstID 38) (insert "ক্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
 
-								((= ScndCnstID 2) (delete @-2) (set CnstID 39) (insert "ক্ষ") (set SLASH 3) (set ALTERNATE 1) (shift juktoborno_state)) ;; খ
-								((= ScndCnstID 11) (delete @-2) (set CnstID 40) (insert "ক্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 16) (delete @-2) (set CnstID 41) (insert "ক্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
-								((= ScndCnstID 23) (delete @-2) (set CnstID 42) (insert "ক্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 43) (insert "ক্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 30) (delete @-2) (set CnstID 39) (insert "ক্ষ") (set SLASH 1) (shift juktoborno_state)) ;; ষ
-								((= ScndCnstID 28) (delete @-2) (set CnstID 44) (insert "ক্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 31) (delete @-2) (set CnstID 45) (insert "ক্স") (set SLASH 1) (shift juktoborno_state)) ;; স
-								((= ScndCnstID 189) (delete @-2) (set CnstID 39) (insert "ক্ষ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 2) (insert "খ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 2) (delete @-2) (set CnstID 39) (insert "ক্ষ") (set SLASH 3) (set ALTERNATE 1) (shift juktoborno_state)) ;; খ
+								((= Cnst2 11) (delete @-2) (set CnstID 40) (insert "ক্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 16) (delete @-2) (set CnstID 41) (insert "ক্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
+								((= Cnst2 23) (delete @-2) (set CnstID 42) (insert "ক্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 43) (insert "ক্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 30) (delete @-2) (set CnstID 39) (insert "ক্ষ") (set SLASH 1) (shift juktoborno_state)) ;; ষ
+								((= Cnst2 28) (delete @-2) (set CnstID 44) (insert "ক্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 31) (delete @-2) (set CnstID 45) (insert "ক্স") (set SLASH 1) (shift juktoborno_state)) ;; স
+								((= Cnst2 189) (delete @-2) (set CnstID 39) (insert "ক্ষ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 2) (insert "খ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 3) ;; গ
+						((= Cnst1 3) ;; গ
 							(cond
-								((= ScndCnstID 3) (delete @-3) (set CnstID 175) (insert "গ্‌গ") (set SLASH 3) (set ALTERNATE 2) (shift juktoborno_state)) ;; গ
-								((= ScndCnstID 15) (delete @-2) (set CnstID 46) (insert "গ্‌ণ") (set SLASH 2) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 19) (delete @-2) (set CnstID 47) (insert "গ্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
+								((= Cnst2 3) (delete @-3) (set CnstID 175) (insert "গ্‌গ") (set SLASH 3) (set ALTERNATE 2) (shift juktoborno_state)) ;; গ
+								((= Cnst2 15) (delete @-2) (set CnstID 46) (insert "গ্‌ণ") (set SLASH 2) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 19) (delete @-2) (set CnstID 47) (insert "গ্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
 								;; ক্ষ -এর মত গ্ধ -কে ব্যঞ্জনবর্ণের মর্যাদা দেওয়ার প্রয়োজন নেই, কেননা এর ম্যাপিং ব্যতিক্রম নয়।
-								((= ScndCnstID 20) (delete @-2) (set CnstID 48) (insert "গ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 49) (insert "গ্‌ব") (set SLASH 2) (shift juktoborno_state)) ;; ব
+								((= Cnst2 20) (delete @-2) (set CnstID 48) (insert "গ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 49) (insert "গ্‌ব") (set SLASH 2) (shift juktoborno_state)) ;; ব
 								;; গ + ব -এর গ্‌ব এই রূপটি বাঞ্ছিত আর গ্ব এই রূপটি বাঞ্ছিত না। গ্ব লিখতে gqqb লিখতে হবে।
-								((= ScndCnstID 25) (delete @-2) (set CnstID 50) (insert "গ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 51) (insert "গ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 189) (delete @-2) (set CnstID 4) (set Fflag 1) (insert "ঘ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 4) (insert "ঘ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 25) (delete @-2) (set CnstID 50) (insert "গ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 51) (insert "গ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 189) (delete @-2) (set CnstID 4) (set Fflag 1) (insert "ঘ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 4) (insert "ঘ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 4) ;; ঘ
+						((= Cnst1 4) ;; ঘ
 							(cond
-								((= ScndCnstID 20) (delete @-2) (set CnstID 52) (insert "ঘ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 20) (delete @-2) (set CnstID 52) (insert "ঘ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 5) ;; ঙ
+						((= Cnst1 5) ;; ঙ
 							(cond
-								((= ScndCnstID 1) (delete @-2) (set CnstID 53) (insert "ঙ্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
-								((= ScndCnstID 2) (delete @-2) (set CnstID 54) (insert "ঙ্খ") (set SLASH 1) (shift juktoborno_state)) ;; খ
-								((= ScndCnstID 3) (delete @-2) (set CnstID 55) (insert "ঙ্গ") (set SLASH 1) (shift juktoborno_state)) ;; গ
-								((= ScndCnstID 4) (delete @-2) (set CnstID 56) (insert "ঙ্ঘ") (set SLASH 1) (shift juktoborno_state)) ;; ঘ
-								((= ScndCnstID 25) (delete @-2) (set CnstID 57) (insert "ঙ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 39) (delete @-4) (set CnstID 58) (insert "ঙ্ক্ষ") (set SLASH 4) (shift juktoborno_state)) ;; ক্ষ
+								((= Cnst2 1) (delete @-2) (set CnstID 53) (insert "ঙ্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
+								((= Cnst2 2) (delete @-2) (set CnstID 54) (insert "ঙ্খ") (set SLASH 1) (shift juktoborno_state)) ;; খ
+								((= Cnst2 3) (delete @-2) (set CnstID 55) (insert "ঙ্গ") (set SLASH 1) (shift juktoborno_state)) ;; গ
+								((= Cnst2 4) (delete @-2) (set CnstID 56) (insert "ঙ্ঘ") (set SLASH 1) (shift juktoborno_state)) ;; ঘ
+								((= Cnst2 25) (delete @-2) (set CnstID 57) (insert "ঙ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 39) (delete @-4) (set CnstID 58) (insert "ঙ্ক্ষ") (set SLASH 4) (shift juktoborno_state)) ;; ক্ষ
 								;; এখানে চারবার ডিলিট করার কারণ হলো ঙক্ষ = ৪টা ক্যারেক্টার
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 6) ;; চ
+						((= Cnst1 6) ;; চ
 							(cond
-								((= ScndCnstID 6) (delete @-2) (set CnstID 59) (insert "চ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
-								((= ScndCnstID 7) (delete @-2) (set CnstID 60) (insert "চ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
-								((= ScndCnstID 10) (delete @-2) (set CnstID 61) (insert "চ্ঞ") (set SLASH 1) (shift juktoborno_state)) ;; ঞ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 62) (insert "চ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 189) (delete @-2) (set CnstID 7) (set Fflag 1) (insert "ছ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 7) (insert "ছ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 6) (delete @-2) (set CnstID 59) (insert "চ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
+								((= Cnst2 7) (delete @-2) (set CnstID 60) (insert "চ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
+								((= Cnst2 10) (delete @-2) (set CnstID 61) (insert "চ্ঞ") (set SLASH 1) (shift juktoborno_state)) ;; ঞ
+								((= Cnst2 23) (delete @-2) (set CnstID 62) (insert "চ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 189) (delete @-2) (set CnstID 7) (set Fflag 1) (insert "ছ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 7) (insert "ছ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 8) ;; জ
+						((= Cnst1 8) ;; জ
 							(cond
-								((= ScndCnstID 8) (delete @-2) (set CnstID 63) (insert "জ্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
-								((= ScndCnstID 9) (delete @-2) (set CnstID 64) (insert "জ্ঝ") (set SLASH 1) (shift juktoborno_state)) ;; ঝ
-								((= ScndCnstID 10) (delete @-2) (set CnstID 65) (insert "জ্ঞ") (set SLASH 1) (shift juktoborno_state)) ;; ঞ
-								;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno_state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য ScndCnstID চেক করা হবে।
-								((= ScndCnstID 23) (delete @-2) (set CnstID 66) (insert "জ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 189) (delete @-2) (set CnstID 9) (set Fflag 1) (insert "ঝ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 9) (insert "ঝ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 8) (delete @-2) (set CnstID 63) (insert "জ্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
+								((= Cnst2 9) (delete @-2) (set CnstID 64) (insert "জ্ঝ") (set SLASH 1) (shift juktoborno_state)) ;; ঝ
+								((= Cnst2 10) (delete @-2) (set CnstID 65) (insert "জ্ঞ") (set SLASH 1) (shift juktoborno_state)) ;; ঞ
+								;; যাতে jnff এর পরে g লিখলে গ্‌গ না আসে তাই juktoborno_state এর byanjon ব্রাঞ্চে pcid 65 এর জন্য Cnst2 চেক করা হবে।
+								((= Cnst2 23) (delete @-2) (set CnstID 66) (insert "জ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 189) (delete @-2) (set CnstID 9) (set Fflag 1) (insert "ঝ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 9) (insert "ঝ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 10) ;; ঞ
+						((= Cnst1 10) ;; ঞ
 							(cond
-								((= ScndCnstID 6) (delete @-2) (set CnstID 67) (insert "ঞ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
-								((= ScndCnstID 7) (delete @-2) (set CnstID 68) (insert "ঞ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
-								((= ScndCnstID 8) (delete @-2) (set CnstID 69) (insert "ঞ্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
-								((= ScndCnstID 9) (delete @-2) (set CnstID 70) (insert "ঞ্ঝ") (set SLASH 1) (shift juktoborno_state)) ;; ঝ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 6) (delete @-2) (set CnstID 67) (insert "ঞ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
+								((= Cnst2 7) (delete @-2) (set CnstID 68) (insert "ঞ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
+								((= Cnst2 8) (delete @-2) (set CnstID 69) (insert "ঞ্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
+								((= Cnst2 9) (delete @-2) (set CnstID 70) (insert "ঞ্ঝ") (set SLASH 1) (shift juktoborno_state)) ;; ঝ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 11) ;; ট
+						((= Cnst1 11) ;; ট
 							(cond
-								((= ScndCnstID 11) (delete @-2) (set CnstID 71) (insert "ট্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 23) (delete @-2) (set CnstID 72) (insert "ট্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 73) (insert "ট্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 189) (delete @-2) (set CnstID 12) (insert "ঠ")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 11) (delete @-2) (set CnstID 71) (insert "ট্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 23) (delete @-2) (set CnstID 72) (insert "ট্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 73) (insert "ট্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 189) (delete @-2) (set CnstID 12) (insert "ঠ")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 13) ;; ড
+						((= Cnst1 13) ;; ড
 							(cond
-								((= ScndCnstID 13) (delete @-2) (set CnstID 74) (insert "ড্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
-								((= ScndCnstID 23) (delete @-2) (set CnstID 75) (insert "ড্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 189) (delete @-2) (set CnstID 14) (insert "ঢ")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 13) (delete @-2) (set CnstID 74) (insert "ড্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
+								((= Cnst2 23) (delete @-2) (set CnstID 75) (insert "ড্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 189) (delete @-2) (set CnstID 14) (insert "ঢ")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 15) ;; ণ
+						((= Cnst1 15) ;; ণ
 							(cond
-								((= ScndCnstID 11) (delete @-2) (set CnstID 77) (insert "ণ্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 12) (delete @-2) (set CnstID 78) (insert "ণ্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
-								((= ScndCnstID 13) (delete @-2) (set CnstID 79) (insert "ণ্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
-								((= ScndCnstID 14) (delete @-2) (set CnstID 80) (insert "ণ্ঢ") (set SLASH 1) (shift juktoborno_state)) ;; ঢ
-								((= ScndCnstID 15) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 3) (set ALTERNATE 3) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 82) (insert "ণ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 83) (insert "ণ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 189) (delete @-2) (set CnstID 10) (insert "ঞ")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 11) (delete @-2) (set CnstID 77) (insert "ণ্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 12) (delete @-2) (set CnstID 78) (insert "ণ্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
+								((= Cnst2 13) (delete @-2) (set CnstID 79) (insert "ণ্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
+								((= Cnst2 14) (delete @-2) (set CnstID 80) (insert "ণ্ঢ") (set SLASH 1) (shift juktoborno_state)) ;; ঢ
+								((= Cnst2 15) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 20) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 3) (set ALTERNATE 3) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 82) (insert "ণ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 83) (insert "ণ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 189) (delete @-2) (set CnstID 10) (insert "ঞ")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 16) ;; ত
+						((= Cnst1 16) ;; ত
 							(cond
-								((= ScndCnstID 11) (delete @-2) (set CnstID 71) (insert "ট্ট") (set SLASH 3) (set ALTERNATE 4) (shift juktoborno_state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে ;; ট
-								((= ScndCnstID 16) (delete @-2) (set CnstID 84) (insert "ত্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
-								((= ScndCnstID 17) (delete @-2) (set CnstID 85) (insert "ত্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 86) (insert "ত্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 87) (insert "ত্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 88) (insert "ত্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 189) (delete @-2) (set CnstID 11) (insert "ট")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 17) (insert "থ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 11) (delete @-2) (set CnstID 71) (insert "ট্ট") (set SLASH 3) (set ALTERNATE 4) (shift juktoborno_state)) ;; এটা ত এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে ;; ট
+								((= Cnst2 16) (delete @-2) (set CnstID 84) (insert "ত্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
+								((= Cnst2 17) (delete @-2) (set CnstID 85) (insert "ত্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
+								((= Cnst2 20) (delete @-2) (set CnstID 86) (insert "ত্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 87) (insert "ত্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 88) (insert "ত্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 189) (delete @-2) (set CnstID 11) (insert "ট")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 17) (insert "থ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 17) ;; থ
+						((= Cnst1 17) ;; থ
 							(cond
-								((= ScndCnstID 23) (delete @-2) (set CnstID 89) (insert "থ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 23) (delete @-2) (set CnstID 89) (insert "থ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 18) ;; দ
+						((= Cnst1 18) ;; দ
 							(cond
-								((= ScndCnstID 3) (delete @-2) (set CnstID 90) (insert "দ্‌গ") (set SLASH 2) (shift juktoborno_state)) ;; গ
-								((= ScndCnstID 4) (delete @-2) (set CnstID 91) (insert "দ্‌ঘ") (set SLASH 2) (shift juktoborno_state)) ;; ঘ
-								((= ScndCnstID 13) (delete @-2) (set CnstID 74) (insert "ড্ড") (set SLASH 3) (set ALTERNATE 5) (shift juktoborno_state)) ;; এটা দ এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে ;; ড
-								((= ScndCnstID 18) (delete @-2) (set CnstID 92) (insert "দ্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
-								((= ScndCnstID 19) (delete @-2) (set CnstID 93) (insert "দ্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 94) (insert "দ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 24) (delete @-2) (set CnstID 95) (insert "দ্ভ") (set SLASH 1) (shift juktoborno_state)) ;; ভ
-								((= ScndCnstID 25) (delete @-2) (set CnstID 96) (insert "দ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 189) (delete @-2) (set CnstID 13) (insert "ড")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 19) (insert "ধ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 3) (delete @-2) (set CnstID 90) (insert "দ্‌গ") (set SLASH 2) (shift juktoborno_state)) ;; গ
+								((= Cnst2 4) (delete @-2) (set CnstID 91) (insert "দ্‌ঘ") (set SLASH 2) (shift juktoborno_state)) ;; ঘ
+								((= Cnst2 13) (delete @-2) (set CnstID 74) (insert "ড্ড") (set SLASH 3) (set ALTERNATE 5) (shift juktoborno_state)) ;; এটা দ এর যুক্তবর্ণ না হলেও এটা এখানে থাকবে ;; ড
+								((= Cnst2 18) (delete @-2) (set CnstID 92) (insert "দ্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
+								((= Cnst2 19) (delete @-2) (set CnstID 93) (insert "দ্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
+								((= Cnst2 23) (delete @-2) (set CnstID 94) (insert "দ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 24) (delete @-2) (set CnstID 95) (insert "দ্ভ") (set SLASH 1) (shift juktoborno_state)) ;; ভ
+								((= Cnst2 25) (delete @-2) (set CnstID 96) (insert "দ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 189) (delete @-2) (set CnstID 13) (insert "ড")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 19) (insert "ধ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 19) ;; ধ
+						((= Cnst1 19) ;; ধ
 							(cond
-								((= ScndCnstID 20) (delete @-2) (set CnstID 97) (insert "ধ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 98) (insert "ধ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 99) (insert "ধ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 20) (delete @-2) (set CnstID 97) (insert "ধ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 98) (insert "ধ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 99) (insert "ধ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 20) ;; ন
+						((= Cnst1 20) ;; ন
 							(cond
-								((= ScndCnstID 6) (delete @-2) (set CnstID 67) (insert "ঞ্চ") (set SLASH 3) (set ALTERNATE 6) (shift juktoborno_state)) ;; চ
-								((= ScndCnstID 7) (delete @-2) (set CnstID 68) (insert "ঞ্ছ") (set SLASH 3) (set ALTERNATE 7) (shift juktoborno_state)) ;; ছ
-								((= ScndCnstID 8) (delete @-2) (set CnstID 69) (insert "ঞ্জ") (set SLASH 3) (set ALTERNATE 8) (shift juktoborno_state)) ;; জ
-								((= ScndCnstID 9) (delete @-2) (set CnstID 70) (insert "ঞ্ঝ") (set SLASH 3) (set ALTERNATE 9) (shift juktoborno_state)) ;; ঝ
-								((= ScndCnstID 11) (delete @-2) (set CnstID 100) (insert "ন্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 12) (delete @-2) (set CnstID 101) (insert "ন্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
-								((= ScndCnstID 13) (delete @-2) (set CnstID 102) (insert "ন্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
-								((= ScndCnstID 15) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 3) (set ALTERNATE 10) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 16) (delete @-2) (set CnstID 103) (insert "ন্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
-								((= ScndCnstID 17) (delete @-2) (set CnstID 104) (insert "ন্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
-								((= ScndCnstID 18) (delete @-2) (set CnstID 105) (insert "ন্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
-								((= ScndCnstID 19) (delete @-2) (set CnstID 106) (insert "ন্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 107) (insert "ন্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 108) (insert "ন্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 109) (insert "ন্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 31) (delete @-2) (set CnstID 110) (insert "ন্স") (set SLASH 1) (shift juktoborno_state)) ;; স
-								((= ScndCnstID 189) (delete @-2) (set CnstID 15) (insert "ণ")) ;; ⁌
-								((= ScndCnstID 3) (delete @-2) (set CnstID 5) (insert "ঙ")) ;; গ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 6) (delete @-2) (set CnstID 67) (insert "ঞ্চ") (set SLASH 3) (set ALTERNATE 6) (shift juktoborno_state)) ;; চ
+								((= Cnst2 7) (delete @-2) (set CnstID 68) (insert "ঞ্ছ") (set SLASH 3) (set ALTERNATE 7) (shift juktoborno_state)) ;; ছ
+								((= Cnst2 8) (delete @-2) (set CnstID 69) (insert "ঞ্জ") (set SLASH 3) (set ALTERNATE 8) (shift juktoborno_state)) ;; জ
+								((= Cnst2 9) (delete @-2) (set CnstID 70) (insert "ঞ্ঝ") (set SLASH 3) (set ALTERNATE 9) (shift juktoborno_state)) ;; ঝ
+								((= Cnst2 11) (delete @-2) (set CnstID 100) (insert "ন্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 12) (delete @-2) (set CnstID 101) (insert "ন্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
+								((= Cnst2 13) (delete @-2) (set CnstID 102) (insert "ন্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
+								((= Cnst2 15) (delete @-2) (set CnstID 81) (insert "ণ্ণ") (set SLASH 3) (set ALTERNATE 10) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 16) (delete @-2) (set CnstID 103) (insert "ন্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
+								((= Cnst2 17) (delete @-2) (set CnstID 104) (insert "ন্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
+								((= Cnst2 18) (delete @-2) (set CnstID 105) (insert "ন্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
+								((= Cnst2 19) (delete @-2) (set CnstID 106) (insert "ন্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
+								((= Cnst2 20) (delete @-2) (set CnstID 107) (insert "ন্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 108) (insert "ন্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 109) (insert "ন্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 31) (delete @-2) (set CnstID 110) (insert "ন্স") (set SLASH 1) (shift juktoborno_state)) ;; স
+								((= Cnst2 189) (delete @-2) (set CnstID 15) (insert "ণ")) ;; ⁌
+								((= Cnst2 3) (delete @-2) (set CnstID 5) (insert "ঙ")) ;; গ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 21) ;; প
+						((= Cnst1 21) ;; প
 							(cond
-								((= ScndCnstID 11) (delete @-2) (set CnstID 111) (insert "প্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 16) (delete @-2) (set CnstID 112) (insert "প্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
-								((= ScndCnstID 20) (delete @-2) (set CnstID 113) (insert "প্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 21) (delete @-2) (set CnstID 114) (insert "প্প") (set SLASH 1) (shift juktoborno_state)) ;; প
-								((= ScndCnstID 28) (delete @-2) (set CnstID 115) (insert "প্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 31) (delete @-2) (set CnstID 116) (insert "প্স") (set SLASH 1) (shift juktoborno_state)) ;; স
-								((= ScndCnstID 189) (delete @-2) (set CnstID 22) (set Fflag 1) (insert "ফ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 22) (insert "ফ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 11) (delete @-2) (set CnstID 111) (insert "প্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 16) (delete @-2) (set CnstID 112) (insert "প্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
+								((= Cnst2 20) (delete @-2) (set CnstID 113) (insert "প্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 21) (delete @-2) (set CnstID 114) (insert "প্প") (set SLASH 1) (shift juktoborno_state)) ;; প
+								((= Cnst2 28) (delete @-2) (set CnstID 115) (insert "প্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 31) (delete @-2) (set CnstID 116) (insert "প্স") (set SLASH 1) (shift juktoborno_state)) ;; স
+								((= Cnst2 189) (delete @-2) (set CnstID 22) (set Fflag 1) (insert "ফ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 22) (insert "ফ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 22) ;; ফ
+						((= Cnst1 22) ;; ফ
 							(cond
-								((= ScndCnstID 28) (delete @-2) (set CnstID 117) (insert "ফ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 28) (delete @-2) (set CnstID 117) (insert "ফ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 23) ;; ব
+						((= Cnst1 23) ;; ব
 							(cond
-								((= ScndCnstID 8) (delete @-2) (set CnstID 118) (insert "ব্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
-								((= ScndCnstID 18) (delete @-2) (set CnstID 119) (insert "ব্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
-								((= ScndCnstID 19) (delete @-2) (set CnstID 120) (insert "ব্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 121) (insert "ব্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 28) (delete @-2) (set CnstID 122) (insert "ব্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 189) (delete @-2) (set CnstID 24) (set Fflag 1) (insert "ভ")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 8) (delete @-2) (set CnstID 118) (insert "ব্জ") (set SLASH 1) (shift juktoborno_state)) ;; জ
+								((= Cnst2 18) (delete @-2) (set CnstID 119) (insert "ব্দ") (set SLASH 1) (shift juktoborno_state)) ;; দ
+								((= Cnst2 19) (delete @-2) (set CnstID 120) (insert "ব্ধ") (set SLASH 1) (shift juktoborno_state)) ;; ধ
+								((= Cnst2 23) (delete @-2) (set CnstID 121) (insert "ব্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 28) (delete @-2) (set CnstID 122) (insert "ব্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 189) (delete @-2) (set CnstID 24) (set Fflag 1) (insert "ভ")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 24) ;; ভ
+						((= Cnst1 24) ;; ভ
 							(cond
-								((= ScndCnstID 23) (delete @-2) (set CnstID 123) (insert "ভ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 28) (delete @-2) (set CnstID 124) (insert "ভ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 23) (delete @-2) (set CnstID 123) (insert "ভ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 28) (delete @-2) (set CnstID 124) (insert "ভ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 25) ;; ম
+						((= Cnst1 25) ;; ম
 							(cond
-								((= ScndCnstID 20) (delete @-2) (set CnstID 125) (insert "ম্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 21) (delete @-2) (set CnstID 126) (insert "ম্প") (set SLASH 1) (shift juktoborno_state)) ;; প
-								((= ScndCnstID 22) (delete @-2) (set CnstID 127) (insert "ম্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 128) (insert "ম্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 24) (delete @-2) (set CnstID 129) (insert "ম্ভ") (set SLASH 1) (shift juktoborno_state)) ;; ভ
-								((= ScndCnstID 25) (delete @-2) (set CnstID 130) (insert "ম্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 131) (insert "ম্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 189) (delete @-2) (set CnstID 10) (insert "ঞ")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 20) (delete @-2) (set CnstID 125) (insert "ম্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 21) (delete @-2) (set CnstID 126) (insert "ম্প") (set SLASH 1) (shift juktoborno_state)) ;; প
+								((= Cnst2 22) (delete @-2) (set CnstID 127) (insert "ম্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
+								((= Cnst2 23) (delete @-2) (set CnstID 128) (insert "ম্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 24) (delete @-2) (set CnstID 129) (insert "ম্ভ") (set SLASH 1) (shift juktoborno_state)) ;; ভ
+								((= Cnst2 25) (delete @-2) (set CnstID 130) (insert "ম্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 131) (insert "ম্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 189) (delete @-2) (set CnstID 10) (insert "ঞ")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 28) ;; ল
+						((= Cnst1 28) ;; ল
 							(cond
-								((= ScndCnstID 1) (delete @-2) (set CnstID 132) (insert "ল্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
-								((= ScndCnstID 3) (delete @-2) (set CnstID 133) (insert "ল্গ") (set SLASH 1) (shift juktoborno_state)) ;; গ
-								((= ScndCnstID 11) (delete @-2) (set CnstID 134) (insert "ল্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 13) (delete @-2) (set CnstID 135) (insert "ল্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
-								((= ScndCnstID 21) (delete @-2) (set CnstID 136) (insert "ল্প") (set SLASH 1) (shift juktoborno_state)) ;; প
-								((= ScndCnstID 22) (delete @-2) (set CnstID 137) (insert "ল্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 138) (insert "ল্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 24) (delete @-2) (set CnstID 139) (insert "ল্‌ভ") (set SLASH 2) (shift juktoborno_state)) ;; ভ
-								((= ScndCnstID 25) (delete @-2) (set CnstID 140) (insert "ল্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 141) (insert "ল্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 1) (delete @-2) (set CnstID 132) (insert "ল্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
+								((= Cnst2 3) (delete @-2) (set CnstID 133) (insert "ল্গ") (set SLASH 1) (shift juktoborno_state)) ;; গ
+								((= Cnst2 11) (delete @-2) (set CnstID 134) (insert "ল্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 13) (delete @-2) (set CnstID 135) (insert "ল্ড") (set SLASH 1) (shift juktoborno_state)) ;; ড
+								((= Cnst2 21) (delete @-2) (set CnstID 136) (insert "ল্প") (set SLASH 1) (shift juktoborno_state)) ;; প
+								((= Cnst2 22) (delete @-2) (set CnstID 137) (insert "ল্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
+								((= Cnst2 23) (delete @-2) (set CnstID 138) (insert "ল্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 24) (delete @-2) (set CnstID 139) (insert "ল্‌ভ") (set SLASH 2) (shift juktoborno_state)) ;; ভ
+								((= Cnst2 25) (delete @-2) (set CnstID 140) (insert "ল্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 141) (insert "ল্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 29) ;; শ
+						((= Cnst1 29) ;; শ
 							(cond
-								((= ScndCnstID 6) (delete @-2) (set CnstID 142) (insert "শ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
-								((= ScndCnstID 7) (delete @-2) (set CnstID 143) (insert "শ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 144) (insert "শ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 145) (insert "শ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 146) (insert "শ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 147) (insert "শ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 6) (delete @-2) (set CnstID 142) (insert "শ্চ") (set SLASH 1) (shift juktoborno_state)) ;; চ
+								((= Cnst2 7) (delete @-2) (set CnstID 143) (insert "শ্ছ") (set SLASH 1) (shift juktoborno_state)) ;; ছ
+								((= Cnst2 20) (delete @-2) (set CnstID 144) (insert "শ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 145) (insert "শ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 146) (insert "শ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 147) (insert "শ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 30) ;; ষ
+						((= Cnst1 30) ;; ষ
 							(cond
-								((= ScndCnstID 1) (delete @-2) (set CnstID 148) (insert "ষ্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
-								((= ScndCnstID 11) (delete @-2) (set CnstID 149) (insert "ষ্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 12) (delete @-2) (set CnstID 150) (insert "ষ্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
-								((= ScndCnstID 15) (delete @-2) (set CnstID 151) (insert "ষ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 151) (insert "ষ্ণ") (set SLASH 3) (set ALTERNATE 11) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 21) (delete @-2) (set CnstID 152) (insert "ষ্প") (set SLASH 1) (shift juktoborno_state)) ;; প
-								((= ScndCnstID 22) (delete @-2) (set CnstID 153) (insert "ষ্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 154) (insert "ষ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 155) (insert "ষ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 1) (delete @-2) (set CnstID 148) (insert "ষ্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
+								((= Cnst2 11) (delete @-2) (set CnstID 149) (insert "ষ্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 12) (delete @-2) (set CnstID 150) (insert "ষ্ঠ") (set SLASH 1) (shift juktoborno_state)) ;; ঠ
+								((= Cnst2 15) (delete @-2) (set CnstID 151) (insert "ষ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 20) (delete @-2) (set CnstID 151) (insert "ষ্ণ") (set SLASH 3) (set ALTERNATE 11) (shift juktoborno_state)) ;; ন
+								((= Cnst2 21) (delete @-2) (set CnstID 152) (insert "ষ্প") (set SLASH 1) (shift juktoborno_state)) ;; প
+								((= Cnst2 22) (delete @-2) (set CnstID 153) (insert "ষ্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
+								((= Cnst2 23) (delete @-2) (set CnstID 154) (insert "ষ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 155) (insert "ষ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 31) ;; স
+						((= Cnst1 31) ;; স
 							(cond
-								((= ScndCnstID 1) (delete @-2) (set CnstID 156) (insert "স্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
-								((= ScndCnstID 2) (delete @-2) (set CnstID 157) (insert "স্খ") (set SLASH 1) (shift juktoborno_state)) ;; খ
-								((= ScndCnstID 11) (delete @-2) (set CnstID 158) (insert "স্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
-								((= ScndCnstID 16) (delete @-2) (set CnstID 159) (insert "স্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
-								((= ScndCnstID 17) (delete @-2) (set CnstID 160) (insert "স্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 161) (insert "স্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 21) (delete @-2) (set CnstID 162) (insert "স্প") (set SLASH 1) (shift juktoborno_state)) ;; প
-								((= ScndCnstID 22) (delete @-2) (set CnstID 163) (insert "স্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
-								((= ScndCnstID 23) (delete @-2) (set CnstID 164) (insert "স্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 165) (insert "স্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 166) (insert "স্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 189) (delete @-2) (set CnstID 30) (insert "ষ")) ;; ⁌
-								((= ScndCnstID 32) (delete @-2) (set CnstID 29) (insert "শ")) ;; হ
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 1) (delete @-2) (set CnstID 156) (insert "স্ক") (set SLASH 1) (shift juktoborno_state)) ;; ক
+								((= Cnst2 2) (delete @-2) (set CnstID 157) (insert "স্খ") (set SLASH 1) (shift juktoborno_state)) ;; খ
+								((= Cnst2 11) (delete @-2) (set CnstID 158) (insert "স্ট") (set SLASH 1) (shift juktoborno_state)) ;; ট
+								((= Cnst2 16) (delete @-2) (set CnstID 159) (insert "স্ত") (set SLASH 1) (shift juktoborno_state)) ;; ত
+								((= Cnst2 17) (delete @-2) (set CnstID 160) (insert "স্থ") (set SLASH 1) (shift juktoborno_state)) ;; থ
+								((= Cnst2 20) (delete @-2) (set CnstID 161) (insert "স্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 21) (delete @-2) (set CnstID 162) (insert "স্প") (set SLASH 1) (shift juktoborno_state)) ;; প
+								((= Cnst2 22) (delete @-2) (set CnstID 163) (insert "স্ফ") (set SLASH 1) (shift juktoborno_state)) ;; ফ
+								((= Cnst2 23) (delete @-2) (set CnstID 164) (insert "স্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 165) (insert "স্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 166) (insert "স্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 189) (delete @-2) (set CnstID 30) (insert "ষ")) ;; ⁌
+								((= Cnst2 32) (delete @-2) (set CnstID 29) (insert "শ")) ;; হ
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 32) ;; হ
+						((= Cnst1 32) ;; হ
 							(cond
-								((= ScndCnstID 15) (delete @-2) (set CnstID 168) (insert "হ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 20) (delete @-2) (set CnstID 167) (insert "হ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-2) (set CnstID 169) (insert "হ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-2) (set CnstID 170) (insert "হ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 28) (delete @-2) (set CnstID 171) (insert "হ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 15) (delete @-2) (set CnstID 168) (insert "হ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 20) (delete @-2) (set CnstID 167) (insert "হ্ন") (set SLASH 1) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-2) (set CnstID 169) (insert "হ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-2) (set CnstID 170) (insert "হ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 28) (delete @-2) (set CnstID 171) (insert "হ্ল") (set SLASH 1) (shift juktoborno_state)) ;; ল
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 34) ;; ড়
+						((= Cnst1 34) ;; ড়
 							(cond
-								((= ScndCnstID 3) (delete @-2) (set CnstID 76) (insert "ড়্‌গ") (set SLASH 2) (shift juktoborno_state)) ;; গ
-								((= ScndCnstID 189) (delete @-2) (set CnstID 35) (insert "ঢ়")) ;; ⁌
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 3) (delete @-2) (set CnstID 76) (insert "ড়্‌গ") (set SLASH 2) (shift juktoborno_state)) ;; গ
+								((= Cnst2 189) (delete @-2) (set CnstID 35) (insert "ঢ়")) ;; ⁌
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 39) ;; ক্ষ
+						((= Cnst1 39) ;; ক্ষ
 							(cond
-								((= ScndCnstID 15) (delete @-4) (set CnstID 172) (insert "ক্ষ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
-								((= ScndCnstID 20) (delete @-4) (set CnstID 172) (insert "ক্ষ্ণ") (set SLASH 3) (set ALTERNATE 11) (shift juktoborno_state)) ;; ন
-								((= ScndCnstID 23) (delete @-4) (set CnstID 173) (insert "ক্ষ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
-								((= ScndCnstID 25) (delete @-4) (set CnstID 174) (insert "ক্ষ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 15) (delete @-4) (set CnstID 172) (insert "ক্ষ্ণ") (set SLASH 1) (shift juktoborno_state)) ;; ণ
+								((= Cnst2 20) (delete @-4) (set CnstID 172) (insert "ক্ষ্ণ") (set SLASH 3) (set ALTERNATE 11) (shift juktoborno_state)) ;; ন
+								((= Cnst2 23) (delete @-4) (set CnstID 173) (insert "ক্ষ্ব") (set SLASH 1) (shift juktoborno_state)) ;; ব
+								((= Cnst2 25) (delete @-4) (set CnstID 174) (insert "ক্ষ্ম") (set SLASH 1) (shift juktoborno_state)) ;; ম
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno))
 							)
 						)
-						((= FrstCnstID 27) ;; র
+						((= Cnst1 27) ;; র
 							(cond
-								((= ScndCnstID 189) (delete @-2) (set CnstID 34) (insert "ড়")) ;; ⁌
-								((= ScndCnstID 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state)) ;; zf
-								((= ScndCnstID 26) (form_jo_phola))
-								((= ScndCnstID 27) (form_ro_phola))
+								((= Cnst2 189) (delete @-2) (set CnstID 34) (insert "ড়")) ;; ⁌
+								((= Cnst2 190) (move @-) (move @-) (insert "‍") (move @>) (shift juktoborno_state)) ;; zf
+								((= Cnst2 26) (form_jo_phola))
+								((= Cnst2 27) (form_ro_phola))
 								(1 (form_generic_juktoborno)) ;; র এর পরে যদি র, য এগুলা বাদে অন্য কোনো বর্ণ আসে তাহলে রেফ তৈরি হবে
 							)
 						)
@@ -830,16 +830,16 @@
 				)
 				(1 ;; প্রথম ব্যঞ্জনের পরেই স্ল্যাশ চাপলে কী হবে?
 					(cond
-						((= FrstCnstID 16) (delete @-2) (insert "ৎ") (shift init))
+						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
 						(1 (delete @-) (insert "ঁ") (shift shor_state))
 					)
 				)
 			)
-			(set FrstCnstID CnstID) (set ScndCnstID 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে FrstCnstID সেট করা হচ্ছে
+			(set Cnst1 CnstID) (set Cnst2 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে Cnst1 সেট করা হচ্ছে
 		)
 		(slash2
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(delete @-) (insert "ঁ") (shift shor_state)
 				)
 				(1
@@ -849,7 +849,7 @@
 		)
 		(slash3
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(shift init)
 				)
 				(1
@@ -859,7 +859,7 @@
 		)
 		(slashModified
 			(cond
-				( (| (&(= FrstCnstID 16)(= ScndCnstID 0)) (= ScndCnstID 16))
+				( (| (&(= Cnst1 16)(= Cnst2 0)) (= Cnst2 16))
 					(delete @-3) (insert "ৎ") (shift init)
 				)
 			)
@@ -872,108 +872,108 @@
 	(juktoborno_state
 		(juktoborno_bunon
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(delete @-)
 					(cond
-						((= FrstCnstID 39) ;; ক্ষ
+						((= Cnst1 39) ;; ক্ষ
 							(cond
-								((= ScndCnstID 15) (delete @-4) (set CnstID 172) (set SLASH 1) (insert "ক্ষ্ণ")) ;; ণ
-								((= ScndCnstID 20) (delete @-4) (set CnstID 172) (set SLASH 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন
-								((= ScndCnstID 23) (delete @-4) (set CnstID 173) (set SLASH 1) (insert "ক্ষ্ব")) ;; ব
-								((= ScndCnstID 25) (delete @-4) (set CnstID 174) (set SLASH 1) (insert "ক্ষ্ম")) ;; ম
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 15) (delete @-4) (set CnstID 172) (set SLASH 1) (insert "ক্ষ্ণ")) ;; ণ
+								((= Cnst2 20) (delete @-4) (set CnstID 172) (set SLASH 3) (set ALTERNATE 11) (insert "ক্ষ্ণ")) ;; ন
+								((= Cnst2 23) (delete @-4) (set CnstID 173) (set SLASH 1) (insert "ক্ষ্ব")) ;; ব
+								((= Cnst2 25) (delete @-4) (set CnstID 174) (set SLASH 1) (insert "ক্ষ্ম")) ;; ম
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
 						
-						((= FrstCnstID 53) ;; ঙ্ক
+						((= Cnst1 53) ;; ঙ্ক
 							(cond
-								((= ScndCnstID 2) (delete @-4) (set CnstID 58) (set SLASH 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ
-								((= ScndCnstID 30) (delete @-4) (set CnstID 58) (set SLASH 1) (insert "ঙ্ক্ষ")) ;; ষ
-								((= ScndCnstID 16) (delete @-4) (set CnstID 176) (set SLASH 1) (insert "ঙ্‌ক্ত")) ;; ত
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 2) (delete @-4) (set CnstID 58) (set SLASH 3) (set ALTERNATE 1) (insert "ঙ্ক্ষ")) ;; খ
+								((= Cnst2 30) (delete @-4) (set CnstID 58) (set SLASH 1) (insert "ঙ্ক্ষ")) ;; ষ
+								((= Cnst2 16) (delete @-4) (set CnstID 176) (set SLASH 1) (insert "ঙ্‌ক্ত")) ;; ত
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 60) ;; চ্ছ
+						((= Cnst1 60) ;; চ্ছ
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 177) (set SLASH 1) (insert "চ্ছ্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 177) (set SLASH 1) (insert "চ্ছ্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 63) ;; জ্জ
+						((= Cnst1 63) ;; জ্জ
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 178) (set SLASH 1) (insert "জ্জ্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 178) (set SLASH 1) (insert "জ্জ্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 84) ;; ত্ত
+						((= Cnst1 84) ;; ত্ত
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 179) (set SLASH 1) (insert "ত্ত্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 179) (set SLASH 1) (insert "ত্ত্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 92) ;; দ্দ
+						((= Cnst1 92) ;; দ্দ
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 180) (set SLASH 1) (insert "দ্দ্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 180) (set SLASH 1) (insert "দ্দ্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 103) ;; ন্ত
+						((= Cnst1 103) ;; ন্ত
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 181) (set SLASH 1) (insert "ন্ত্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 181) (set SLASH 1) (insert "ন্ত্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 105) ;; ন্দ
+						((= Cnst1 105) ;; ন্দ
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 182) (set SLASH 1) (insert "ন্দ্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 182) (set SLASH 1) (insert "ন্দ্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 159) ;; স্ত
+						((= Cnst1 159) ;; স্ত
 							(cond
-								((= ScndCnstID 23) (delete @-4) (set CnstID 183) (set SLASH 1) (insert "স্ত্ব")) ;; ব
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 23) (delete @-4) (set CnstID 183) (set SLASH 1) (insert "স্ত্ব")) ;; ব
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 162) ;; স্প
+						((= Cnst1 162) ;; স্প
 							(cond
-								((= ScndCnstID 28) (delete @-4) (set CnstID 184) (set SLASH 1) (insert "স্প্ল"))	;; ল
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 28) (delete @-4) (set CnstID 184) (set SLASH 1) (insert "স্প্ল"))	;; ল
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 110) ;; ন্স
+						((= Cnst1 110) ;; ন্স
 							(cond
-								((= ScndCnstID 11) (delete @-4) (set CnstID 185) (set SLASH 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 11) (delete @-4) (set CnstID 185) (set SLASH 3) (set ALTERNATE 12) (insert "নস্ট")) ;; ট
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
-						((= FrstCnstID 126) ;; ম্প
+						((= Cnst1 126) ;; ম্প
 							(cond
-								((= ScndCnstID 28) (delete @-4) (set CnstID 186) (set SLASH 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
-								((= ScndCnstID 26) (form_jo_phola) (shift byanjon_state))
-								((= ScndCnstID 27) (form_ro_phola) (shift byanjon_state))
+								((= Cnst2 28) (delete @-4) (set CnstID 186) (set SLASH 3) (set ALTERNATE 13) (insert "মপ্ল"))	;; ল
+								((= Cnst2 26) (form_jo_phola) (shift byanjon_state))
+								((= Cnst2 27) (form_ro_phola) (shift byanjon_state))
 								(1 (form_generic_juktoborno) (shift byanjon_state))
 							)
 						)
@@ -984,7 +984,7 @@
 				)
 				(1
 					(cond
-						((= FrstCnstID 16) (delete @-2) (insert "ৎ") (shift init))
+						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
 						(1 (delete @-) (insert "ঁ") (shift shor_state))
 					)
 				)
@@ -994,7 +994,7 @@
 		(khondo_to (shift init))
 		(slash2
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(delete @-) (insert "ঁ") (shift shor_state)
 				)
 				(1
@@ -1004,7 +1004,7 @@
 		)
 		(slash3
 			(cond
-				((> ScndCnstID 0)
+				((> Cnst2 0)
 					(shift init)
 				)
 				(1
@@ -1014,7 +1014,7 @@
 		)
 		(slashModified
 			(cond
-				( (| (&(= FrstCnstID 16)(= ScndCnstID 0)) (= ScndCnstID 16))
+				( (| (&(= Cnst1 16)(= Cnst2 0)) (= Cnst2 16))
 					(delete @-3) (insert "ৎ") (shift init)
 				)
 			)
@@ -1025,12 +1025,12 @@
 		(kar (shift shor_state))
 		(byanjon
 			(cond
-				((= ScndCnstID 0)  (set ScndCnstID CnstID))
-				(1 (set FrstCnstID ScndCnstID) (set ScndCnstID CnstID))
+				((= Cnst2 0)  (set Cnst2 CnstID))
+				(1 (set Cnst1 Cnst2) (set Cnst2 CnstID))
 			)
 			
 			(cond
-				((& (= FrstCnstID 187) (> ScndCnstID 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set FrstCnstID ScndCnstID) (set ScndCnstID 0)) ;; রর
+				((& (= Cnst1 187) (> Cnst2 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst1 Cnst2) (set Cnst2 0)) ;; রর
 			)
 		)
 		(blinder (shift blind_state))
@@ -1057,7 +1057,7 @@
 (macro
 	(form_jo_phola
 		(cond
-			((& (= FrstCnstID 27)(= ScndCnstID 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
+			((& (= Cnst1 27)(= Cnst2 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
 			(1 (move @-) (insert "্") (move @>))
 		)
 	)
