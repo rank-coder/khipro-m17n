@@ -433,7 +433,7 @@
 			)
 			
 			(cond
-				((& (= Cnst1 187) (> Cnst2 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst1 Cnst2) (set Cnst2 0)) ;; রর
+				((& (= Cnst1 187) (> Cnst2 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst1 Cnst2) (set Cnst2 0) (set CnstBufr 1)) ;; রর
 			)
 		)
 		(juktoborno_bunon
