@@ -378,7 +378,7 @@
 
 (state
 	(init
-		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0))
+		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
 		(diacritic (commit)  (shift shor_state))
 		(khondo_to (shift init))
 		(juktoborno_bunon (commit))
@@ -390,11 +390,7 @@
 		(ongko )
 		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
-			(set Cnst1 CnstID)
-			(shift byanjon_state)
-			(cond
-				((= CnstID 0) (shift init))
-			)
+			(set Cnst1 CnstID) (set CnstBufr 1) (shift byanjon_state)
 		)
 		;; VARIABLE Cnst1 অর্থ: কোনো ব্যঞ্জন লেখামাত্র সেটার ID -কে Cnst1 তে সেভ করা হয় (P অর্থ previous ধরতে পারি)। Cnst2 হচ্ছে তার পরের ব্যঞ্জনের ID.
 		;; কোনো যুক্তবর্ণ গঠিত হলে সেই যুক্তব‍র্ণের আলাদা CnstID সেট করা হবে। সেটাকে সাথে সাথে Cnst1 তে পাসও করে দেওয়া হবে। এতে পরব‍র্তী ব্যঞ্জন এই যুক্তবর্ণের সাথে যুক্ত হবে কিনা সিদ্ধান্ত নেওয়া যাবে।
@@ -413,11 +409,7 @@
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
-			(set Cnst1 CnstID)
-			(shift byanjon_state)
-			(cond
-				((= CnstID 0) (shift init))
-			)
+			(set Cnst1 CnstID) (set CnstBufr 1) (shift byanjon_state)
 		)
 		(blinder (shift blind_state))
 		(backspace)
