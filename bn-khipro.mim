@@ -245,7 +245,7 @@
 		("....." "....")
 		("......" ".....")
 		("......." "......")
-		("\\\\" "\\")
+		
 		("$" "৳")
 		("$f" "₹")
 		(",,," ",,")
@@ -344,7 +344,7 @@
 		("!" "!")
 		("@" "@")
 		("#" "#")
-		("$" "$")
+		
 		("%" "%")
 		("^" "^")
 		("&" "&")
@@ -368,11 +368,14 @@
 		("<" "<")
 		(">" ">")
 		("/" "/")
-		("?" "?")
+		
 		("`" "`")
 		("~" "~")
-		("\\" "\\")
+		
 		("|" "|")
+	)
+	(symbolsNoIdentity
+		("$" "$")
 	)
 	(blinder
 		("\\" "\\")
@@ -682,14 +685,18 @@
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 		(digitsIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
-		(symbolsIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
+		(symbolsIdentity)
 		(prithayok (move @-) (delete @-) (move @>) (shift blind_state2))
+		(blinder)
+		(symbolsNoIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 	)
 	(blind_state2
 		(lowercaseIdentity)
 		(uppercaseIdentity)
 		(digitsIdentity)
 		(symbolsIdentity)
+		(blinder)
+		(symbolsNoIdentity)
 		(prithayok (delete @-) (shift init))
 	)
 	(slash_state
