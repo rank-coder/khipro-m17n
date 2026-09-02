@@ -437,7 +437,7 @@
 		)
 		(fuser
 			(cond
-				((> Cnst2 0)
+				((> CnstBufr 1)
 					(delete @-)
 					(cond
 						((= Cnst1 1) ;; ক
@@ -821,7 +821,7 @@
 						)
 					)
 				)
-				(1 ;; প্রথম ব্যঞ্জনের পরেই স্ল্যাশ চাপলে কী হবে?
+				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
 						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
 						(1 (delete @-) (insert "ঁ") (shift shor_state))
