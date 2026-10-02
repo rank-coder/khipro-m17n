@@ -218,6 +218,17 @@
 		("8.." "৮।")
 		("9.." "৯।")
 		("0.." "০।")
+
+		((KP_0) "০") ; U+09E6 BENGALI DIGIT ZERO
+		((KP_1) "১") ; U+09E7 BENGALI DIGIT ONE
+		((KP_2) "২") ; U+09E8 BENGALI DIGIT TWO
+		((KP_3) "৩") ; U+09E9 BENGALI DIGIT THREE
+		((KP_4) "৪") ; U+09EA BENGALI DIGIT FOUR
+		((KP_5) "৫") ; U+09EB BENGALI DIGIT FIVE
+		((KP_6) "৬") ; U+09EC BENGALI DIGIT SIX
+		((KP_7) "৭") ; U+09ED BENGALI DIGIT SEVEN
+		((KP_8) "৮") ; U+09EE BENGALI DIGIT EIGHT
+		((KP_9) "৯") ; U+09EF BENGALI DIGIT NINE
 	)
 	(diacritic
 		("qq" "্")
