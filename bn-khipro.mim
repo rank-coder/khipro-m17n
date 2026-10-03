@@ -442,7 +442,7 @@
 			)
 
 			(cond
-				((& (= Cnst1 187) (> Cnst2 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst1 Cnst2) (set Cnst2 0) (set CnstBufr 1)) ;; রর এর পরে কোনো ব্যঞ্জনবর্ণ লিখলে সেটা রেফ তৈরি করবে কোনো মডিফায়ার ছাড়াই
+				((& (= Cnst2 187) (> Cnst1 0) ) (move @-) (delete @-) (insert ?্) (move @>) (set Cnst2 Cnst1) (set Cnst1 0) (set CnstBufr 1)) ;; রর এর পরে কোনো ব্যঞ্জনবর্ণ লিখলে সেটা রেফ তৈরি করবে কোনো মডিফায়ার ছাড়াই
 			)
 		)
 		(fuser
