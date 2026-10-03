@@ -439,7 +439,7 @@
 		(fuser
 			(cond
 				( (& (= CnstBufr 2)(= FuserID 1))
-					(move cstm1) (insert ?্) (move @>) (set CnstBufr 0)
+					(move cstm1) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
 				)
 				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
