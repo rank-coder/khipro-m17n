@@ -449,7 +449,7 @@
 			(cond
 				( (& (> CnstBufr 1)(= FuserID 1))
 					(cond
-						((& (= Cnst2 2) (= Cnst1 2)) (delete @-2) (insert "ক্ষ") (set CnstBufr 0))
+						((& (= Cnst2 1) (= Cnst1 2)) (delete @-2) (insert "ক্ষ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 					
