@@ -855,7 +855,12 @@
 				((= CmpdCnstFlag 0) (delete @-) (insert "ঁ") (shift shor_state))
 			)
 		)
-		(slicer3 (shift init))
+		(slicer3 
+			(cond 
+				((= CmpdCnstFlag 1) (delete @-2) (insert "ঁ") (shift shor_state))
+				(1 (shift init))
+			)
+		)
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
 		(backspace)
@@ -895,7 +900,7 @@
 		)
 		(diacritic  (shift shor_state))
 		(slicer2 (shift init))
-		(slicer3 (shift init))
+		(slicer3 (delete @-2) (insert "ঁ") (shift shor_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor_state))
