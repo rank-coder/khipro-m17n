@@ -455,6 +455,9 @@
 						((& (= Cnst2 3) (= Cnst1 23)) (delete @-3) (insert "গ্‌ব") (set CnstBufr 0))
 
 						((& (= Cnst2 16) (= Cnst1 11)) (delete @-3) (insert "ট্ট") (set CnstBufr 0))
+
+						((& (= Cnst2 18) (= Cnst1 3)) (delete @-3) (insert "দ্‌গ") (set CnstBufr 0))
+						((& (= Cnst2 18) (= Cnst1 4)) (delete @-3) (insert "দ্‌ঘ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 				)
