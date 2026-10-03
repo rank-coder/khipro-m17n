@@ -448,11 +448,15 @@
 		(fuser
 			(cond
 				( (& (> CnstBufr 1)(= FuserID 1))
-					(move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
+					(cond
+						((& (= Cnst2 2) (= Cnst1 2)) (delete @-2) (insert "ক্ষ") (set CnstBufr 0))
+						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
+					)
+					
 				)
 				( (& (> CnstBufr 2)(= FuserID 2))
 					(cond
-						((& (= Cnst2 2) (= Cnst1 2)) (delete @-2) (insert "ক্ষ") (set CnstBufr 0))
+						
 						(1 (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 					
