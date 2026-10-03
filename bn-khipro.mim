@@ -447,8 +447,14 @@
 		)
 		(fuser
 			(cond
-				( (& (= CnstBufr 2)(= FuserID 1))
-					(move cstm1) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
+				( (& (> CnstBufr 1)(= FuserID 1))
+					(move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
+				)
+				( (& (> CnstBufr 2)(= FuserID 2))
+					(move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
+				)
+				( (& (> CnstBufr 3)(= FuserID 3))
+					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
 				)
 				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
