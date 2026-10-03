@@ -452,14 +452,12 @@
 						((& (= Cnst2 1) (= Cnst1 2)) (delete @-3) (insert "ক্ষ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
-					
 				)
 				( (& (> CnstBufr 2)(= FuserID 2))
 					(cond
 						
 						(1 (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
-					
 				)
 				( (& (> CnstBufr 3)(= FuserID 3))
 					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
