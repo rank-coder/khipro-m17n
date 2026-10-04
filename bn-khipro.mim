@@ -458,6 +458,7 @@
 
 						((& (= Cnst2 18) (= Cnst1 3)) (delete @-3) (insert "দ্‌গ") (set CnstBufr 0))
 						((& (= Cnst2 18) (= Cnst1 4)) (delete @-3) (insert "দ্‌ঘ") (set CnstBufr 0))
+						((& (= Cnst2 18) (= Cnst1 13)) (delete @-3) (insert "ড্ড") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 				)
