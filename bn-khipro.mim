@@ -485,7 +485,11 @@
 				)
 				( (& (> CnstBufr 2)(= FuserID 2))
 					(cond
-						
+						((& (= Cnst3 1) (= Cnst2 2) (= Cnst1 15)) (delete @-4) (insert "ক্ষ্ণ") (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst3 1) (= Cnst2 2) (= Cnst1 20)) (delete @-4) (insert "ক্ষ্ণ") (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst3 5) (= Cnst2 1) (= Cnst1 2)) (delete @-4) (insert "ঙ্ক্ষ") (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst3 5) (= Cnst2 1) (= Cnst1 16)) (delete @-4) (insert "ঙ্‌ক্ত") (reset_cnst_buffer_after_cnjnct))
 						(1 (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct) )
 					)
 				)
