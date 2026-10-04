@@ -459,6 +459,11 @@
 						((& (= Cnst2 18) (= Cnst1 3)) (delete @-3) (insert "দ্‌গ") (set CnstBufr 0))
 						((& (= Cnst2 18) (= Cnst1 4)) (delete @-3) (insert "দ্‌ঘ") (set CnstBufr 0))
 						((& (= Cnst2 18) (= Cnst1 13)) (delete @-3) (insert "ড্ড") (set CnstBufr 0))
+
+						((& (= Cnst2 20) (= Cnst1 6)) (delete @-3) (insert "ঞ্চ") (set CnstBufr 0))
+						((& (= Cnst2 20) (= Cnst1 7)) (delete @-3) (insert "ঞ্ছ") (set CnstBufr 0))
+						((& (= Cnst2 20) (= Cnst1 8)) (delete @-3) (insert "ঞ্জ") (set CnstBufr 0))
+						((& (= Cnst2 20) (= Cnst1 9)) (delete @-3) (insert "ঞ্ঝ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 				)
