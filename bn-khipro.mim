@@ -496,14 +496,14 @@
 				( (& (> CnstBufr 3)(= FuserID 3))
 					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct)
 				)
-				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
+				((= CnstBufr 1) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
-						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
+						((= Cnst1 16) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
 						;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
 						(1 (delete @-) (insert "/") (shift shor_state))
 					)
 				)
-				((& (= FuserID 4)(= Cnst1 16)) (delete @-3) (insert "ৎ") (shift init))
+				((& (= FuserID 4)(= Cnst1 16)) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
 			)
 			(set Cnst1 CnstID) (set Cnst2 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে Cnst1 সেট করা হচ্ছে
 		)
