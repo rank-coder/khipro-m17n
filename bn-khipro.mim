@@ -505,7 +505,6 @@
 				)
 				((& (= FuserID 4)(= Cnst1 16)) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
 			)
-			(set Cnst1 CnstID) (set Cnst2 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে Cnst1 সেট করা হচ্ছে
 		)
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
