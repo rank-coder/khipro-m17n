@@ -507,34 +507,6 @@
 			)
 			(set Cnst1 CnstID) (set Cnst2 0) ;; যুক্তবর্ণ গঠিত হলে অথবা না হলেও শেষ CnstID কে Cnst1 সেট করা হচ্ছে
 		)
-		(slash2
-			(cond
-				((> Cnst2 0)
-					(delete @-) (insert "ঁ") (shift shor_state)
-				)
-				(1
-					(shift init)
-				)
-			)
-		)
-		(slash3
-			(cond
-				((> Cnst2 0)
-					(shift init)
-				)
-				(1
-					(insert "/") (shift init)
-				)
-			)
-		)
-		(slashModified
-			(cond
-				( (| (&(= Cnst1 16)(= Cnst2 0)) (= Cnst2 16))
-					(delete @-3) (insert "ৎ") (shift init)
-				)
-			)
-		)
-		(khondo_to (shift init))
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
 		(backspace)
