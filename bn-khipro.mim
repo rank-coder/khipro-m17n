@@ -464,6 +464,7 @@
 						((& (= Cnst2 20) (= Cnst1 7)) (delete @-3) (insert "ঞ্ছ") (set CnstBufr 0))
 						((& (= Cnst2 20) (= Cnst1 8)) (delete @-3) (insert "ঞ্জ") (set CnstBufr 0))
 						((& (= Cnst2 20) (= Cnst1 9)) (delete @-3) (insert "ঞ্ঝ") (set CnstBufr 0))
+						((& (= Cnst2 20) (= Cnst1 15)) (delete @-3) (insert "ণ্ণ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 				)
