@@ -717,7 +717,7 @@
 )
 (macro
 	(reset_cnst_buffer_after_cnjnct
-		(commit) (set Cnst1 CnstID) (set Cnst2 0) (set Cnst3 0) (set Cnst4 0)
+		(mark cstm1) (mark cstm2) (mark cstm3) (mark cstm4) (set Cnst1 CnstID) (set Cnst2 0) (set Cnst3 0) (set Cnst4 0)
 	)
 	(form_jo_phola
 		(cond
