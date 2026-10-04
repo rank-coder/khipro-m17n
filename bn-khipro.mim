@@ -525,7 +525,9 @@
 					)
 				)
 				( (& (> CnstBufr 3)(= FuserID 3))
-					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct)
+					(cond
+						(1 (move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct))
+					)					
 				)
 				((= CnstBufr 1) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
