@@ -471,6 +471,8 @@
 						((& (= Cnst2 28) (= Cnst1 24)) (delete @-3) (insert "ল্‌ভ") (set CnstBufr 0))
 
 						((& (= Cnst2 30) (= Cnst1 20)) (delete @-3) (insert "ষ্ণ") (set CnstBufr 0))
+
+						((& (= Cnst2 34) (= Cnst1 3)) (delete @-3) (insert "ড়্‌গ") (set CnstBufr 0))
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
 					)
 				)
