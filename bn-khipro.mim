@@ -449,44 +449,44 @@
 			(cond
 				( (& (> CnstBufr 1)(= FuserID 1))
 					(cond
-						((& (= Cnst2 1) (= Cnst1 2)) (delete @-3) (insert "ক্ষ") (set CnstID 39) (set CnstBufr 0))
-						((& (= Cnst2 1) (= Cnst1 30)) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstID 39) (set CnstBufr 0))
+						((& (= Cnst2 1) (= Cnst1 2)) (delete @-3) (insert "ক্ষ") (set CnstID 39) (set CnstBufr 1))
+						((& (= Cnst2 1) (= Cnst1 30)) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstID 39) (set CnstBufr 1))
 						
-						((& (= Cnst2 3) (= Cnst1 15)) (delete @-3) (insert "গ্‌ণ") (set CnstBufr 0))
-						((& (= Cnst2 3) (= Cnst1 23)) (delete @-3) (insert "গ্‌ব") (set CnstBufr 0))
+						((& (= Cnst2 3) (= Cnst1 15)) (delete @-3) (insert "গ্‌ণ") (set CnstBufr 1))
+						((& (= Cnst2 3) (= Cnst1 23)) (delete @-3) (insert "গ্‌ব") (set CnstBufr 1))
 
-						((& (= Cnst2 15) (= Cnst1 20)) (delete @-3) (insert "ণ্ণ") (set CnstBufr 0))
+						((& (= Cnst2 15) (= Cnst1 20)) (delete @-3) (insert "ণ্ণ") (set CnstBufr 1))
 
-						((& (= Cnst2 16) (= Cnst1 11)) (delete @-3) (insert "ট্ট") (set CnstBufr 0))
+						((& (= Cnst2 16) (= Cnst1 11)) (delete @-3) (insert "ট্ট") (set CnstBufr 1))
 
-						((& (= Cnst2 18) (= Cnst1 3)) (delete @-3) (insert "দ্‌গ") (set CnstBufr 0))
-						((& (= Cnst2 18) (= Cnst1 4)) (delete @-3) (insert "দ্‌ঘ") (set CnstBufr 0))
-						((& (= Cnst2 18) (= Cnst1 13)) (delete @-3) (insert "ড্ড") (set CnstBufr 0))
+						((& (= Cnst2 18) (= Cnst1 3)) (delete @-3) (insert "দ্‌গ") (set CnstBufr 1))
+						((& (= Cnst2 18) (= Cnst1 4)) (delete @-3) (insert "দ্‌ঘ") (set CnstBufr 1))
+						((& (= Cnst2 18) (= Cnst1 13)) (delete @-3) (insert "ড্ড") (set CnstBufr 1))
 
-						((& (= Cnst2 20) (= Cnst1 6)) (delete @-3) (insert "ঞ্চ") (set CnstBufr 0))
-						((& (= Cnst2 20) (= Cnst1 7)) (delete @-3) (insert "ঞ্ছ") (set CnstBufr 0))
-						((& (= Cnst2 20) (= Cnst1 8)) (delete @-3) (insert "ঞ্জ") (set CnstBufr 0))
-						((& (= Cnst2 20) (= Cnst1 9)) (delete @-3) (insert "ঞ্ঝ") (set CnstBufr 0))
-						((& (= Cnst2 20) (= Cnst1 15)) (delete @-3) (insert "ণ্ণ") (set CnstBufr 0))
+						((& (= Cnst2 20) (= Cnst1 6)) (delete @-3) (insert "ঞ্চ") (set CnstBufr 1))
+						((& (= Cnst2 20) (= Cnst1 7)) (delete @-3) (insert "ঞ্ছ") (set CnstBufr 1))
+						((& (= Cnst2 20) (= Cnst1 8)) (delete @-3) (insert "ঞ্জ") (set CnstBufr 1))
+						((& (= Cnst2 20) (= Cnst1 9)) (delete @-3) (insert "ঞ্ঝ") (set CnstBufr 1))
+						((& (= Cnst2 20) (= Cnst1 15)) (delete @-3) (insert "ণ্ণ") (set CnstBufr 1))
 
-						((& (= Cnst2 28) (= Cnst1 24)) (delete @-3) (insert "ল্‌ভ") (set CnstBufr 0))
+						((& (= Cnst2 28) (= Cnst1 24)) (delete @-3) (insert "ল্‌ভ") (set CnstBufr 1))
 
-						((& (= Cnst2 30) (= Cnst1 20)) (delete @-3) (insert "ষ্ণ") (set CnstBufr 0))
+						((& (= Cnst2 30) (= Cnst1 20)) (delete @-3) (insert "ষ্ণ") (set CnstBufr 1))
 
-						((& (= Cnst2 34) (= Cnst1 3)) (delete @-3) (insert "ড়্‌গ") (set CnstBufr 0))
+						((& (= Cnst2 34) (= Cnst1 3)) (delete @-3) (insert "ড়্‌গ") (set CnstBufr 1))
 
-						((& (= Cnst2 39) (= Cnst1 20)) (delete @-5) (insert "ক্ষ্ণ") (set CnstBufr 0))
-						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
+						((& (= Cnst2 39) (= Cnst1 20)) (delete @-5) (insert "ক্ষ্ণ") (set CnstBufr 1))
+						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 1) )
 					)
 				)
 				( (& (> CnstBufr 2)(= FuserID 2))
 					(cond
 						
-						(1 (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0) )
+						(1 (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 1) )
 					)
 				)
 				( (& (> CnstBufr 3)(= FuserID 3))
-					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 0)
+					(move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstBufr 1)
 				)
 				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
