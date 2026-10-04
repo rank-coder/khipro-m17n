@@ -449,7 +449,8 @@
 			(cond
 				( (& (> CnstBufr 1)(= FuserID 1))
 					(cond
-						((& (= Cnst2 1) (= Cnst1 2)) (delete @-3) (insert "ক্ষ") (set CnstBufr 0))
+						((& (= Cnst2 1) (= Cnst1 2)) (delete @-3) (insert "ক্ষ") (set CnstID 39) (set CnstBufr 0))
+						((& (= Cnst2 1) (= Cnst1 30)) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstID 39) (set CnstBufr 0))
 						
 						((& (= Cnst2 3) (= Cnst1 15)) (delete @-3) (insert "গ্‌ণ") (set CnstBufr 0))
 						((& (= Cnst2 3) (= Cnst1 23)) (delete @-3) (insert "গ্‌ব") (set CnstBufr 0))
