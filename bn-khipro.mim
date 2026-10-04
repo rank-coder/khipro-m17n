@@ -479,6 +479,7 @@
 				((< CnstBufr 2) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
 						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
+						;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
 						(1 (delete @-) (insert "ঁ") (shift shor_state))
 					)
 				)
