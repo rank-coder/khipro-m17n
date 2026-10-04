@@ -476,6 +476,9 @@
 						((& (= Cnst2 34) (= Cnst1 3)) (delete @-3) (insert "ড়্‌গ") (reset_cnst_buffer_after_cnjnct))
 
 						((& (= Cnst2 39) (= Cnst1 20)) (delete @-5) (insert "ক্ষ্ণ") (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst2 27) (= Cnst1 26)) (delete @-) (form_jo_phola) (reset_cnst_buffer_after_cnjnct))
+
 						(1 (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct) )
 					)
 				)
