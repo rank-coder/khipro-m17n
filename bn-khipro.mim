@@ -496,7 +496,7 @@
 					(cond
 						((= Cnst1 16) (delete @-2) (insert "ৎ") (shift init))
 						;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
-						(1 (delete @-) (insert "ঁ") (shift shor_state))
+						(1 (delete @-) (insert "/") (shift shor_state))
 					)
 				)
 			)
