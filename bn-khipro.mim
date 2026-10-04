@@ -563,7 +563,7 @@
 
 						((& (= Cnst4 39) (= Cnst3 20) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-3) (insert "ক্ষ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
 
-						((& (= Cnst4 27) (= Cnst3 26) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (form_jo_phola) (insert ?্)  (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 27) (= Cnst3 26) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert "্") (move cstm3) (delete cstm4) (delete @-) (insert "র‍্য") (insert "্") (reset_cnst_buffer_after_cnjnct))
 
 						(1 (move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct))
 					)					
