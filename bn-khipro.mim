@@ -526,6 +526,45 @@
 				)
 				( (& (> CnstBufr 3)(= FuserID 3))
 					(cond
+						;; SMALL GROUP SUPPORT
+						((& (= Cnst4 1) (= Cnst3 2) (= Cnst2 15) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm4) (delete @-) (insert "ক্ষ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 1) (= Cnst3 2) (= Cnst2 20) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm4) (delete @-) (insert "ক্ষ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 5) (= Cnst3 1) (= Cnst2 2) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm4) (delete @-) (insert "ঙ্ক্ষ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 5) (= Cnst3 1) (= Cnst2 16) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm4) (delete @-) (insert "ঙ্‌ক্ত") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+
+						;; SMALLER GROUP SUPPORT
+						((& (= Cnst4 1) (= Cnst3 2) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ক্ষ") (insert ?্) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 1) (= Cnst3 30) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (insert ?্) (move cstm4) (insert ?্) (move @>) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
+						
+						((& (= Cnst4 3) (= Cnst3 15) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "গ্‌ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 3) (= Cnst3 23) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "গ্‌ব") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 15) (= Cnst3 20) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ণ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 16) (= Cnst3 11) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ট্ট") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 18) (= Cnst3 3) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "দ্‌গ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 18) (= Cnst3 4) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "দ্‌ঘ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 18) (= Cnst3 13) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ড্ড") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 20) (= Cnst3 6) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ঞ্চ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 20) (= Cnst3 7) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ঞ্ছ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 20) (= Cnst3 8) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ঞ্জ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 20) (= Cnst3 9) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ঞ্ঝ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+						((& (= Cnst4 20) (= Cnst3 15) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ণ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 28) (= Cnst3 24) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ল্‌ভ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 30) (= Cnst3 20) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ষ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 34) (= Cnst3 3) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ড়্‌গ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 39) (= Cnst3 20) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-3) (insert "ক্ষ্ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
+
+						((& (= Cnst4 27) (= Cnst3 26) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (form_jo_phola) (insert ?্)  (reset_cnst_buffer_after_cnjnct))
+
 						(1 (move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct))
 					)					
 				)
