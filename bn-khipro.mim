@@ -721,7 +721,8 @@
 	)
 	(form_jo_phola
 		(cond
-			((& (= Cnst1 27)(= Cnst2 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
+			((& (= Cnst2 27)(= Cnst1 26)) (move @-) (insert "‍্") (move @>)) ;; র‍্য
+			((& (= Cnst2 27)(= Cnst1 190)) (move @-) (delete @-) (insert "‍্") (move @>)) ;; zf র‍্য
 			(1 (move @-) (insert "্") (move @>))
 		)
 	)
