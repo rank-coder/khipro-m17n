@@ -133,7 +133,7 @@
 		("kf" (set CnstID 39) (set CmpdCnstFlag 0) "ক্ষ")
 		("zf" (set CnstID 190) (set CmpdCnstFlag 0) (reset_cnst_buffer_after_cnjnct) "্য")
 		("rr" (set CnstID 187) (set CmpdCnstFlag 1) "রর")
-		("gg" (set CmpdCnstFlag 1) (set Cnst1 3) (set Cnst2 3) "জ্ঞ")
+		("gg" (set CnstID 188) (set CmpdCnstFlag 1) (set Cnst1 3) (set Cnst2 3) "জ্ঞ")
 	)
 	(kar
 		("o" "")
@@ -568,14 +568,36 @@
 						(1 (move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct))
 					)					
 				)
-				((= CnstBufr 1) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
+				( (& (= CnstBufr 1)(= FuserID 1)) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
 						((= Cnst1 16) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
+						((= Cnst1 2) (delete cstm1) (delete @-) (insert "কহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 1) (set Cnst2 32))
+						((&(= Cnst1 4) (= Fflag 0)) (delete cstm1) (delete @-) (insert "গহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 32))
+						((&(= Cnst1 5) (= Fflag 0)) (delete cstm1) (delete @-) (insert "নগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 20) (set Cnst2 3))
+						((&(= Cnst1 7) (= Fflag 0)) (delete cstm1) (delete @-) (insert "চহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 6) (set Cnst2 32))
+						((&(= Cnst1 9) (= Fflag 0)) (delete cstm1) (delete @-) (insert "জহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 8) (set Cnst2 32))
+						((&(= Cnst1 22) (= Fflag 0)) (delete cstm1) (delete @-) (insert "পহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 21) (set Cnst2 32))
+						((&(= Cnst1 29) (= Fflag 0)) (delete cstm1) (delete @-) (insert "সহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 31) (set Cnst2 32))
+						((&(= Cnst1 188) (= Fflag 0)) (delete cstm1) (delete @-3) (insert "গগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 3))
 						;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
 						(1 (delete @-) (insert "/") (shift shor_state))
-					)
+					)					
 				)
-				((& (= FuserID 4)(= Cnst1 16)) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
+				((= FuserID 4)
+					(cond
+							((= Cnst1 16) (delete cstm1) (delete @-) (insert "ৎ") (shift init))
+							((= Cnst1 2) (delete cstm1) (delete @-) (insert "কহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 1) (set Cnst2 32))
+							((&(= Cnst1 4) (= Fflag 0)) (delete cstm1) (delete @-) (insert "গহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 32))
+							((&(= Cnst1 5) (= Fflag 0)) (delete cstm1) (delete @-) (insert "নগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 20) (set Cnst2 3))
+							((&(= Cnst1 7) (= Fflag 0)) (delete cstm1) (delete @-) (insert "চহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 6) (set Cnst2 32))
+							((&(= Cnst1 9) (= Fflag 0)) (delete cstm1) (delete @-) (insert "জহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 8) (set Cnst2 32))
+							((&(= Cnst1 22) (= Fflag 0)) (delete cstm1) (delete @-) (insert "পহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 21) (set Cnst2 32))
+							((&(= Cnst1 29) (= Fflag 0)) (delete cstm1) (delete @-) (insert "সহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 31) (set Cnst2 32))
+							((&(= Cnst1 188) (= Fflag 0)) (delete cstm1) (delete @-3) (insert "গগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 3))
+							;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
+							(1 (delete @-) (insert "/") (shift shor_state))
+						)
+				)
 			)
 		)
 		(diacritic  (shift shor_state))
