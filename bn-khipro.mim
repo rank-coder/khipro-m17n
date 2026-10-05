@@ -21,7 +21,7 @@
 ;;	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;;	SOFTWARE.
 
-(input-method bn khipro)
+(input-method bn khipro-dark)
 (description "
 	A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 
@@ -42,7 +42,7 @@
 		* Author: Nafee [<https://github.com/rank-coder>]
 		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub organization.
 ")
-(title "Khipro Compositional")
+(title "Khipro Dark Compositional")
 (map
 	(shor
 		("o" "অ")
