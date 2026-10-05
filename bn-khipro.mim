@@ -604,9 +604,6 @@
 		(blinder (shift blind_state))
 		(backspace)
 	)
-	(rr_state
-		(t (shift byanjon_state) )
-	)
 	(blind_state
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
