@@ -372,7 +372,14 @@
 	(init
 		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set Cnst3 0) (set Cnst4 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
 		(diacritic (commit)  (shift shor_state))
-		(fuser (commit))
+		(fuser
+			(cond
+				((= FuserID 1) (commit))
+				((= FuserID 2) (delete @-) (insert "ঁ") (shift shor_state))
+				((= FuserID 3) (insert "/") (commit))
+				((= FuserID 4) (commit))
+			)
+		)
 		(shor (shift shor_state))
 		(fkar (commit)  (shift shor_state))
 		(prithayok (commit) )
