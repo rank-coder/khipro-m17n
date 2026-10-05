@@ -416,7 +416,7 @@
 		)
 		(byanjon
 			(cond
-				((= CnstBufr 0) 
+				((= CnstBufr 0)
 					(set Cnst1 CnstID) (set CnstBufr 1) (mark cstm1)
 				)
 				((= CnstBufr 1)
@@ -427,10 +427,10 @@
 					(set Cnst3 Cnst2) (set Cnst2 Cnst1) (set Cnst1 CnstID) (set CnstBufr 3)
 					(move cstm2) (mark cstm3) (move cstm1) (mark cstm2) (move @>) (mark cstm1)
 				)
-				((= CnstBufr 3) 
+				((= CnstBufr 3)
 					(set Cnst4 Cnst3) (set Cnst3 Cnst2) (set Cnst2 Cnst1) (set Cnst1 CnstID) (set CnstBufr 4)
 					(move cstm3) (mark cstm4) (move cstm2) (mark cstm3) (move cstm1) (mark cstm2) (move @>) (mark cstm1)
-				) 
+				)
 				((= CnstBufr 4)
 					(set Cnst4 Cnst3) (set Cnst3 Cnst2) (set Cnst2 Cnst1) (set Cnst1 CnstID) (set CnstBufr 4)
 					(move cstm3) (mark cstm4) (move cstm2) (mark cstm3) (move cstm1) (mark cstm2) (move @>) (mark cstm1)
@@ -448,7 +448,7 @@
 					(cond
 						((& (= Cnst2 1) (= Cnst1 2)) (delete cstm2) (delete @-) (insert "ক্ষ") (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst2 1) (= Cnst1 30)) (move cstm2) (insert ?্) (move @>) (delete @-) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
-						
+
 						((& (= Cnst2 3) (= Cnst1 15)) (delete cstm2) (delete @-) (insert "গ্‌ণ") (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst2 3) (= Cnst1 23)) (delete cstm2) (delete @-) (insert "গ্‌ব") (reset_cnst_buffer_after_cnjnct))
 
@@ -491,7 +491,7 @@
 						;; SMALLER GROUP SUPPORT
 						((& (= Cnst3 1) (= Cnst2 2) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm3) (delete @-) (insert "ক্ষ") (insert ?্) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst3 1) (= Cnst2 30) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (insert ?্) (move @>) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
-						
+
 						((& (= Cnst3 3) (= Cnst2 15) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm3) (delete @-) (insert "গ্‌ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst3 3) (= Cnst2 23) (> Cnst1 0)) (delete cstm1) (move cstm2) (delete cstm3) (delete @-) (insert "গ্‌ব") (insert ?্) (reset_cnst_buffer_after_cnjnct))
 
@@ -537,7 +537,7 @@
 						;; SMALLER GROUP SUPPORT
 						((& (= Cnst4 1) (= Cnst3 2) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "ক্ষ") (insert ?্) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst4 1) (= Cnst3 30) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (insert ?্) (move cstm4) (insert ?্) (move @>) (set CnstID 39) (reset_cnst_buffer_after_cnjnct))
-						
+
 						((& (= Cnst4 3) (= Cnst3 15) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "গ্‌ণ") (insert ?্) (reset_cnst_buffer_after_cnjnct))
 						((& (= Cnst4 3) (= Cnst3 23) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert ?্) (move cstm3) (delete cstm4) (delete @-) (insert "গ্‌ব") (insert ?্) (reset_cnst_buffer_after_cnjnct))
 
@@ -566,7 +566,7 @@
 						((& (= Cnst4 27) (= Cnst3 26) (> Cnst2 0) (> Cnst1 0)) (delete cstm1) (move cstm2) (insert "্") (move cstm3) (delete cstm4) (delete @-) (insert "র‍্য") (insert "্") (reset_cnst_buffer_after_cnjnct))
 
 						(1 (move cstm4) (insert ?্) (move cstm3) (insert ?্) (move cstm2) (insert ?্) (move @>) (delete @-) (reset_cnst_buffer_after_cnjnct))
-					)					
+					)
 				)
 				( (& (= CnstBufr 1)(= FuserID 1)) ;; প্রথম ব্যঞ্জনের পরেই ফিউজ়ার চাপলে কী হবে?
 					(cond
@@ -581,7 +581,7 @@
 						((&(= Cnst1 188) (= Fflag 0)) (delete cstm1) (delete @-3) (insert "গগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 3))
 						;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
 						(1 (delete @-) (insert "/") (shift shor_state))
-					)					
+					)
 				)
 				((= FuserID 4)
 					(cond
