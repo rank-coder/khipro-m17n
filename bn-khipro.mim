@@ -395,7 +395,14 @@
 	(shor_state
 		(t (set CmpdCnstFlag 0) (set Fflag 0) (set Cnst2 0) (set ALTERNATE 0) (set Cnst1 0) (set Cnst3 0) (set Cnst4 0) (set CnstID 0) (set SLASH 0) (set KAR 0) (set CnstBufr 0))
 		(diacritic  )
-		(fuser (delete @-) (insert "ঁ"))
+		(fuser
+			(cond
+				((= FuserID 2) (commit))
+				((= FuserID 1) (delete @-) (insert "ঁ") (shift shor_state))
+				((= FuserID 3) (insert "/") (commit))
+				((= FuserID 4) (commit))
+			)
+		)
 		(shor )
 		(fkar )
 		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
