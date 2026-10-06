@@ -625,7 +625,7 @@
 				)
 				((& (= CnstBufr 1) (= FuserID 2))
 					(cond
-						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188)) 
+						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188))
 							(shift init)
 						)
 						(1
@@ -635,7 +635,7 @@
 				)
 				((& (= CnstBufr 1) (= FuserID 3))
 					(cond
-						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188)) 
+						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188))
 							(insert "/") (shift init)
 						)
 						(1
@@ -645,14 +645,14 @@
 				)
 				((& (= CnstBufr 1) (= FuserID 5))
 					(cond
-						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188)) 
+						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188))
 							(insert "//") (shift slash_state)
 						)
 						(1
 							(insert "///") (shift slash_state)
 						)
 					)
-				)	
+				)
 				((& (= CnstBufr 2) (= FuserID 2))
 					(shift init)
 				)
