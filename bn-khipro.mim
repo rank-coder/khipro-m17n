@@ -247,7 +247,7 @@
 		("....." "....")
 		("......" ".....")
 		("......." "......")
-		
+
 		("$" "৳")
 		("$f" "₹")
 		(",,," ",,")
@@ -351,7 +351,7 @@
 		("!" "!")
 		("@" "@")
 		("#" "#")
-		
+
 		("%" "%")
 		("^" "^")
 		("&" "&")
@@ -375,10 +375,10 @@
 		("<" "<")
 		(">" ">")
 		("/" "/")
-		
+
 		("`" "`")
 		("~" "~")
-		
+
 		("|" "|")
 	)
 	(symbolsNoIdentity
@@ -860,14 +860,14 @@
 				((= CmpdCnstFlag 0) (delete @-) (insert "ঁ") (shift shor_state))
 			)
 		)
-		(slicer3 
-			(cond 
+		(slicer3
+			(cond
 				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-2) (insert "ঁ") (shift shor_state))
 				(1 (shift init))
 			)
 		)
 		(slicer4
-			(cond 
+			(cond
 				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-) (shift slash_state))
 				(1 (shift slash_state))
 			)
