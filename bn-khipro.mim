@@ -465,7 +465,8 @@
 			)
 
 			(cond
-				((& (= Cnst2 187) (> Cnst1 0) ) (move @-) (delete @-) (insert ?্) (move @>)  (reset_cnst_buffer_after_cnjnct)) ;; রর এর পরে কোনো ব্যঞ্জনবর্ণ লিখলে সেটা রেফ তৈরি করবে কোনো মডিফায়ার ছাড়াই
+				((& (= Cnst2 187)(= Cnst1 187)) (delete cstm2) (delete @-2) (insert "রররর") (reset_cnst_buffer_after_cnjnct))
+				((& (= Cnst2 187) (> Cnst1 0) ) (move cstm2) (delete @-) (insert ?্) (move @>)  (reset_cnst_buffer_after_cnjnct)) ;; রর এর পরে কোনো ব্যঞ্জনবর্ণ লিখলে সেটা রেফ তৈরি করবে কোনো মডিফায়ার ছাড়াই
 				((& (= Cnst2 27) (= Cnst1 190)) (form_jo_phola) (reset_cnst_buffer_after_cnjnct))
 			)
 		)
