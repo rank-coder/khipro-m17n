@@ -378,6 +378,9 @@
 		("\\" "\\")
 		("?" "?")
 	)
+	(slash5
+		("/" "/")
+	)
 )
 
 (state
@@ -390,6 +393,7 @@
 				((= FuserID 2) (delete @-) (insert "ঁ") (shift shor_state))
 				((= FuserID 3) (insert "/") (commit))
 				((= FuserID 4) (commit))
+				((= FuserID 5) (insert "//") (commit) (shift slash_state))
 			)
 		)
 		(shor (shift shor_state))
@@ -413,6 +417,7 @@
 				((= FuserID 1) (delete @-) (insert "ঁ") (shift shor_state))
 				((= FuserID 3) (insert "/") (commit))
 				((= FuserID 4) (commit))
+				((= FuserID 5) (insert "//") (commit) (shift slash_state))
 			)
 		)
 		(shor )
@@ -641,10 +646,10 @@
 				((& (= CnstBufr 1) (= FuserID 5))
 					(cond
 						((| (= CnstID 16) (= CnstID 2) (= CnstID 4) (= CnstID 5) (= CnstID 7) (= CnstID 9) (= CnstID 22) (= CnstID 29) (= CnstID 188)) 
-							(insert "//") (shift init)
+							(insert "//") (shift slash_state)
 						)
 						(1
-							(insert "///") (shift init)
+							(insert "///") (shift slash_state)
 						)
 					)
 				)	
@@ -655,16 +660,16 @@
 					(insert "/") (shift init)
 				)
 				((& (= CnstBufr 2) (= FuserID 5))
-					(insert "//") (shift init)
+					(insert "//") (shift slash_state)
 				)
 				((& (= CnstBufr 3) (= FuserID 3))
 					(shift init)
 				)
 				((& (= CnstBufr 3) (= FuserID 5))
-					(insert "/") (shift init)
+					(insert "/") (shift slash_state)
 				)
 				((& (= CnstBufr 4) (= FuserID 5))
-					(shift init)
+					(shift slash_state)
 				)
 			)
 		)
@@ -685,6 +690,9 @@
 		(digitsIdentity)
 		(symbolsIdentity)
 		(prithayok (delete @-) (shift init))
+	)
+	(slash_state
+		(slash5)
 	)
 )
 (macro
