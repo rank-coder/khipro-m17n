@@ -604,7 +604,6 @@
 							((&(= Cnst1 22) (= Fflag 0)) (delete cstm1) (delete @-) (insert "পহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 21) (set Cnst2 32))
 							((&(= Cnst1 29) (= Fflag 0)) (delete cstm1) (delete @-) (insert "সহ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 31) (set Cnst2 32))
 							((&(= Cnst1 188) (= Fflag 0)) (delete cstm1) (delete @-3) (insert "গগ") (move @-) (mark cstm2) (move @>) (mark cstm1) (set CnstBufr 2) (set Cnst2 3) (set Cnst2 3))
-							;; এখানে খ, ঘ, শ, ইত্যাদির জন্য স্লাইসার লজিক আনা হবে।
 							(1 (delete @-) (insert "/") (shift shor_state))
 						)
 				)
