@@ -175,7 +175,17 @@
 
 	)
 	(ongko
-		;; Not needed for touchscreen
+		;; Physical keypad support; touchscreen keyboards do not send these key events.
+		((KP_0) "০") ; U+09E6 BENGALI DIGIT ZERO
+		((KP_1) "১") ; U+09E7 BENGALI DIGIT ONE
+		((KP_2) "২") ; U+09E8 BENGALI DIGIT TWO
+		((KP_3) "৩") ; U+09E9 BENGALI DIGIT THREE
+		((KP_4) "৪") ; U+09EA BENGALI DIGIT FOUR
+		((KP_5) "৫") ; U+09EB BENGALI DIGIT FIVE
+		((KP_6) "৬") ; U+09EC BENGALI DIGIT SIX
+		((KP_7) "৭") ; U+09ED BENGALI DIGIT SEVEN
+		((KP_8) "৮") ; U+09EE BENGALI DIGIT EIGHT
+		((KP_9) "৯") ; U+09EF BENGALI DIGIT NINE
 	)
 	(diacritic
 		("qq" "্")
@@ -184,11 +194,9 @@
 		
 	)
 	(biram
-		
 		(",,," ",,") ;; Not changed even for touchscreen
 		("।f" "॥") ;; Changed for touchscreen
 		("।ff" "৺") ;; Changed for touchscreen
-		
 	)
 	(prithayok
 		(";" ";")
@@ -201,6 +209,9 @@
 	)
 	(slicer3
 		("///" "//")
+	)
+	(slicer4
+		("////" "///")
 	)
 	(backspace
 		( (BackSpace)  (undo) )
@@ -277,7 +288,7 @@
 		("!" "!")
 		("@" "@")
 		("#" "#")
-		("$" "$")
+
 		("%" "%")
 		("^" "^")
 		("&" "&")
@@ -292,7 +303,7 @@
 		("]" "]")
 		("{" "{")
 		("}" "}")
-
+		(";;" ";")
 		(":" ":")
 		("'" "'")
 		("\"" "\"")
@@ -301,11 +312,14 @@
 		("<" "<")
 		(">" ">")
 		("/" "/")
-		("?" "?")
+
 		("`" "`")
 		("~" "~")
-		("\\" "\\")
+
 		("|" "|")
+	)
+	(symbolsNoIdentity
+		("$" "$")
 	)
 	(blinder
 		("\\" "\\")
@@ -319,6 +333,7 @@
 		(diacritic (commit)  (shift shor_state))
 		(slicer (commit))
 		(slicer3 (commit))
+		(slicer4 (commit) (shift slash_state))
 		(slicer2 (delete @-) (insert "ঁ") (shift shor_state))
 		(shor (shift shor_state))
 		(fkar (commit)  (shift shor_state))
@@ -342,6 +357,7 @@
 		(slicer (delete @-) (insert "ঁ"))
 		(slicer2 (shift init))
 		(slicer3 (shift init))
+		(slicer4 (shift slash_state))
 		(shor )
 		(fkar )
 		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
@@ -781,7 +797,18 @@
 				((= CmpdCnstFlag 0) (delete @-) (insert "ঁ") (shift shor_state))
 			)
 		)
-		(slicer3 (shift init))
+		(slicer3
+			(cond
+				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-2) (insert "ঁ") (shift shor_state))
+				(1 (shift init))
+			)
+		)
+		(slicer4
+			(cond
+				((| (= CmpdCnstFlag 1)(= FrstCnstID 16) ) (delete @-) (shift slash_state))
+				(1 (shift slash_state))
+			)
+		)
 		(diacritic  (shift shor_state))
 		(blinder (shift blind_state))
 		(backspace)
@@ -821,7 +848,8 @@
 		)
 		(diacritic  (shift shor_state))
 		(slicer2 (shift init))
-		(slicer3 (shift init))
+		(slicer3 (delete @-2) (insert "ঁ") (shift shor_state))
+		(slicer4 (delete @-) (shift slash_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
 		(biram  (shift shor_state))
@@ -944,14 +972,21 @@
 		(lowercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 		(uppercaseIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 		(digitsIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
-		(symbolsIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
+		(symbolsIdentity)
 		(prithayok (move @-) (delete @-) (move @>) (shift blind_state2))
+		(blinder)
+		(symbolsNoIdentity (move @-) (delete @-) (move @>) (shift blind_state2))
 	)
 	(blind_state2
 		(lowercaseIdentity)
 		(uppercaseIdentity)
 		(digitsIdentity)
 		(symbolsIdentity)
+		(blinder)
+		(symbolsNoIdentity)
 		(prithayok (delete @-) (shift init))
+	)
+	(slash_state
+		(slicer (commit))
 	)
 )
