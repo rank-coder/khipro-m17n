@@ -5,6 +5,10 @@
 
 set -e  # Exit on any error
 
+REPO_URL="https://github.com/KhiproTeam/khipro-dark-m17n.git"
+LAYOUT_NAME="bn-khipro-dark"
+LAYOUT_INPUT_METHOD="bn khipro-dark"
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -329,7 +333,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     # Fetch available release tags for preview
     print_status "Fetching recent release tags..."
     # Using awk to handle formatting more reliably across platforms
-    recent_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
+    recent_tags=$(git ls-remote --tags --refs "$REPO_URL" 2>/dev/null | cut -d/ -f3 | sort -V -r | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
     
     if [ -z "$recent_tags" ]; then
         recent_tags="e.g. v34.0.0-beta, v33.1.0, etc."
@@ -338,14 +342,14 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     print_status "Fetching available branches from GitHub..."
     
     # Get list of branches from remote repository
-    branches=$(git ls-remote --heads https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | \
+    branches=$(git ls-remote --heads "$REPO_URL" 2>/dev/null | \
                awk '{print $2}' | \
                sed 's#refs/heads/##' | \
                sort)
     
     if [ -z "$branches" ]; then
         print_warning "Could not fetch branch list. Please check your internet connection."
-        print_status "You can view branches at: https://github.com/rank-coder/khipro-m17n/branches"
+        print_status "You can view branches at: https://github.com/KhiproTeam/khipro-dark-m17n/branches"
         exit 1
     fi
     
@@ -370,7 +374,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     if [ "$input_ver" -eq 1 ]; then
         # Show tags with pagination
         print_status "Fetching available release tags..."
-        all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r)
+        all_tags=$(git ls-remote --tags --refs "$REPO_URL" 2>/dev/null | cut -d/ -f3 | sort -V -r)
         
         if [ -z "$all_tags" ]; then
             print_error "No release tags found."
@@ -494,20 +498,20 @@ print_status "Starting KhiproKeyboard installation..."
 
 # Remove existing files
 print_status "Cleaning up previous installations..."
-rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.mim 2>/dev/null || true
-rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.png 2>/dev/null || true
-rm -rf /tmp/khipro-m17n 2>/dev/null || true
+rm -f "$INSTALL_DIR"/${LAYOUT_NAME}${FILE_SUFFIX}*.mim 2>/dev/null || true
+rm -f "$INSTALL_DIR"/${LAYOUT_NAME}${FILE_SUFFIX}*.png 2>/dev/null || true
+rm -rf /tmp/khipro-dark-m17n 2>/dev/null || true
 
 # Clone repository
 print_status "Downloading KhiproKeyboard from GitHub..."
 if [ "$branch_name" = "main" ]; then
-    git clone https://github.com/rank-coder/khipro-m17n.git /tmp/khipro-m17n
+    git clone "$REPO_URL" /tmp/khipro-dark-m17n
 else
-    git clone --branch "$branch_name" https://github.com/rank-coder/khipro-m17n.git /tmp/khipro-m17n
+    git clone --branch "$branch_name" "$REPO_URL" /tmp/khipro-dark-m17n
 fi
 
 # Check if clone was successful
-if [ ! -d /tmp/khipro-m17n ]; then
+if [ ! -d /tmp/khipro-dark-m17n ]; then
     print_error "Failed to clone repository. Please check your internet connection and branch name."
     exit 1
 fi
@@ -516,37 +520,35 @@ print_success "Repository cloned successfully!"
 
 # Copy files
 print_status "Installing keyboard files..."
-cd /tmp/khipro-m17n
-
+cd /tmp/khipro-dark-m17n
 # Check if the required files exist
-if [ ! -f bn-khipro.mim ]; then
-    print_error "Required file bn-khipro.mim not found in the repository!"
+if [ ! -f "${LAYOUT_NAME}.mim" ]; then
+    print_error "Required file ${LAYOUT_NAME}.mim not found in the repository!"
     exit 1
 fi
 
-TARGET_MIM="$INSTALL_DIR/bn-khipro${FILE_SUFFIX}.mim"
-cp bn-khipro.mim "$TARGET_MIM"
+TARGET_MIM="$INSTALL_DIR/${LAYOUT_NAME}${FILE_SUFFIX}.mim"
+cp "${LAYOUT_NAME}.mim" "$TARGET_MIM"
 
 # If installing locally or from a branch, modify the internal name and title
 if [ -n "$FILE_SUFFIX" ]; then
     print_status "Modifying internal name for installation (Suffix: $FILE_SUFFIX)..."
-    sed -i "s/(input-method bn khipro)/(input-method bn khipro${FILE_SUFFIX})/" "$TARGET_MIM"
+    sed -i "s/(input-method ${LAYOUT_INPUT_METHOD})/(input-method ${LAYOUT_INPUT_METHOD}${FILE_SUFFIX})/" "$TARGET_MIM"
 fi
 
 # Copy icon if it exists
-if [ -f bn-khipro.png ]; then
+if [ -f "${LAYOUT_NAME}.png" ]; then
     print_status "Installing icon..."
     mkdir -p "$ICON_DIR/"
-    cp bn-khipro.png "$ICON_DIR/bn-khipro${FILE_SUFFIX}.png"
+    cp "${LAYOUT_NAME}.png" "$ICON_DIR/${LAYOUT_NAME}${FILE_SUFFIX}.png"
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
 fi
-
 print_success "Keyboard files installed successfully!"
 
 # Clean up
-rm -rf /tmp/khipro-m17n
+rm -rf /tmp/khipro-dark-m17n
 
 # Final instructions
 echo ""
