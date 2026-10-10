@@ -33,7 +33,7 @@ That is, by pressing slash 1, 2, or 3 times, you can form conjuncts of 2, 3, or 
 Previously, to prevent conjunct formation, one had to use a *separator* or a *slicer* or *o-kar*. For example:  
 `lag;be` -> `লাগবে` (separator placed in between)   
 `lagb/e` -> `লাগবে` (slicer used after the conjunct to split it)  
-`lagobe` -> `লাগবে` (o-kar)
+`lagobe` -> `লাগবে` (অ-kar)
 
 In everyday writing and on touchscreen devices, this causes slight annoyance because complex spellings with conjuncts are relatively infrequent in ordinary daily writing.  
 For this reason, conjunct formation has now been made manual. Based on how many slashes you press, the last few consonants will be conjoined.  
