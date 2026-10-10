@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# KhiproKeyboard Installer Script
-# This script installs KhiproKeyboard for IBus and Fcitx5
+# Khipro Classic Installer Script
+# This script installs Khipro Classic for IBus and Fcitx5
 
 set -e  # Exit on any error
+
+LAYOUT_ID="khipro-classic"
+LAYOUT_FILE="bn-${LAYOUT_ID}"
 
 # Colors for output
 RED='\033[0;31m'
@@ -63,7 +66,7 @@ check_package_arch() {
 
 # Welcome message
 echo "=========================================="
-echo "    KhiproKeyboard Installer"
+echo "    Khipro Classic"
 echo "=========================================="
 echo ""
 
@@ -89,7 +92,7 @@ fi
 # Check if Git is installed
 print_status "Checking for Git..."
 if ! command_exists git; then
-    print_error "Git is not installed but required to download KhiproKeyboard."
+    print_error "Git is not installed but required to download Khipro Classic."
     distro=$(detect_distro)
     case $distro in
         ubuntu|debian)
@@ -116,8 +119,8 @@ fi
 # Main Menu: Install or Uninstall
 echo ""
 echo "What would you like to do?"
-echo "1. Install KhiproKeyboard (Default)"
-echo "2. Uninstall KhiproKeyboard"
+echo "1. Install Khipro Classic (Default)"
+echo "2. Uninstall Khipro Classic"
 read -p "Enter choice [1/2]: " main_choice
 
 main_choice=${main_choice:-1}
@@ -240,7 +243,7 @@ fi
 # Logic Flow
 if [ "$ibus_ready" = true ] && [ "$fcitx_ready" = true ]; then
     print_success "Both IBus and Fcitx5 are fully installed and supported."
-    print_status "Suggestion: We recommend using IBus for KhiproKeyboard."
+    print_status "Suggestion: We recommend using IBus for Khipro Classic."
 
 elif [ "$ibus_ready" = true ]; then
     print_success "IBus (with m17n support) is ready."
@@ -490,16 +493,16 @@ fi
 FILE_SUFFIX="${BRANCH_SUFFIX}${PRIV_SUFFIX}"
 
 # Installation process begins
-print_status "Starting KhiproKeyboard installation..."
+print_status "Starting Khipro Classic installation..."
 
 # Remove existing files
 print_status "Cleaning up previous installations..."
-rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.mim 2>/dev/null || true
-rm -f "$INSTALL_DIR"/bn-khipro${FILE_SUFFIX}*.png 2>/dev/null || true
+rm -f "$INSTALL_DIR"/${LAYOUT_FILE}${FILE_SUFFIX}*.mim 2>/dev/null || true
+rm -f "$INSTALL_DIR"/${LAYOUT_FILE}${FILE_SUFFIX}*.png 2>/dev/null || true
 rm -rf /tmp/khipro-m17n 2>/dev/null || true
 
 # Clone repository
-print_status "Downloading KhiproKeyboard from GitHub..."
+print_status "Downloading Khipro Classic from GitHub..."
 if [ "$branch_name" = "main" ]; then
     git clone https://github.com/rank-coder/khipro-m17n.git /tmp/khipro-m17n
 else
@@ -519,25 +522,25 @@ print_status "Installing keyboard files..."
 cd /tmp/khipro-m17n
 
 # Check if the required files exist
-if [ ! -f bn-khipro.mim ]; then
-    print_error "Required file bn-khipro.mim not found in the repository!"
+if [ ! -f "${LAYOUT_FILE}.mim" ]; then
+    print_error "Required file ${LAYOUT_FILE}.mim not found in the repository!"
     exit 1
 fi
 
-TARGET_MIM="$INSTALL_DIR/bn-khipro${FILE_SUFFIX}.mim"
-cp bn-khipro.mim "$TARGET_MIM"
+TARGET_MIM="$INSTALL_DIR/${LAYOUT_FILE}${FILE_SUFFIX}.mim"
+cp "${LAYOUT_FILE}.mim" "$TARGET_MIM"
 
 # If installing locally or from a branch, modify the internal name and title
 if [ -n "$FILE_SUFFIX" ]; then
     print_status "Modifying internal name for installation (Suffix: $FILE_SUFFIX)..."
-    sed -i "s/(input-method bn khipro)/(input-method bn khipro${FILE_SUFFIX})/" "$TARGET_MIM"
+    sed -i "s/(input-method bn ${LAYOUT_ID})/(input-method bn ${LAYOUT_ID}${FILE_SUFFIX})/" "$TARGET_MIM"
 fi
 
 # Copy icon if it exists
-if [ -f bn-khipro.png ]; then
+if [ -f "${LAYOUT_FILE}.png" ]; then
     print_status "Installing icon..."
     mkdir -p "$ICON_DIR/"
-    cp bn-khipro.png "$ICON_DIR/bn-khipro${FILE_SUFFIX}.png"
+    cp "${LAYOUT_FILE}.png" "$ICON_DIR/${LAYOUT_FILE}${FILE_SUFFIX}.png"
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
@@ -550,24 +553,24 @@ rm -rf /tmp/khipro-m17n
 
 # Final instructions
 echo ""
-print_success "KhiproKeyboard installation completed!"
+print_success "Khipro Classic installation completed!"
 echo ""
 print_status "Next steps:"
 echo "1. Log out and log back in to restart your input method framework"
-echo "2. Add KhiproKeyboard to your input method:"
+echo "2. Add Khipro Classic to your input method:"
 
 if [ "$ibus_installed" = true ]; then
-    echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro"
+    echo "   - For IBus: Open IBus Preferences → Add input method: Bengali → Khipro Classic"
 fi
 
 if [ "$fcitx_installed" = true ]; then
-    echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro keyboard"
+    echo "   - For Fcitx5: Open Fcitx5 Configuration → Add Khipro Classic keyboard"
 fi
 
 # Show missing packages reminder if any
 if [ ${#missing_packages[@]} -gt 0 ]; then
     echo ""
-    print_warning "REMEMBER: You need to install these packages for KhiproKeyboard to work:"
+    print_warning "REMEMBER: You need to install these packages for Khipro Classic to work:"
     for pkg in "${missing_packages[@]}"; do
         echo "   - $pkg"
     done
