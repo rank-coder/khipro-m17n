@@ -7,6 +7,7 @@ set -e  # Exit on any error
 
 LAYOUT_ID="khipro-classic"
 LAYOUT_FILE="bn-${LAYOUT_ID}"
+LEGACY_LAYOUT_FILES=("bn-khipro")
 
 # Colors for output
 RED='\033[0;31m'
@@ -522,25 +523,36 @@ print_status "Installing keyboard files..."
 cd /tmp/khipro-m17n
 
 # Check if the required files exist
-if [ ! -f "${LAYOUT_FILE}.mim" ]; then
-    print_error "Required file ${LAYOUT_FILE}.mim not found in the repository!"
+SOURCE_LAYOUT_FILE=""
+for candidate in "$LAYOUT_FILE" "${LEGACY_LAYOUT_FILES[@]}"; do
+    if [ -f "${candidate}.mim" ]; then
+        SOURCE_LAYOUT_FILE="$candidate"
+        break
+    fi
+done
+
+if [ -z "$SOURCE_LAYOUT_FILE" ]; then
+    print_error "Required layout file not found. Expected ${LAYOUT_FILE}.mim or a supported legacy file (${LEGACY_LAYOUT_FILES[*]})."
+    exit 1
+fi
+
+if ! grep -Eq '^[[:space:]]*\(input-method[[:space:]]+bn[[:space:]]+[^)]+\)' "${SOURCE_LAYOUT_FILE}.mim"; then
+    print_error "No Bengali input-method declaration found in ${SOURCE_LAYOUT_FILE}.mim!"
     exit 1
 fi
 
 TARGET_MIM="$INSTALL_DIR/${LAYOUT_FILE}${FILE_SUFFIX}.mim"
-cp "${LAYOUT_FILE}.mim" "$TARGET_MIM"
+cp "${SOURCE_LAYOUT_FILE}.mim" "$TARGET_MIM"
 
-# If installing locally or from a branch, modify the internal name and title
-if [ -n "$FILE_SUFFIX" ]; then
-    print_status "Modifying internal name for installation (Suffix: $FILE_SUFFIX)..."
-    sed -i "s/(input-method bn ${LAYOUT_ID})/(input-method bn ${LAYOUT_ID}${FILE_SUFFIX})/" "$TARGET_MIM"
-fi
+# Normalize historical input-method IDs and add the branch/local suffix when needed.
+print_status "Setting input-method name for installation (Suffix: $FILE_SUFFIX)..."
+sed -i -E "s/\\(input-method[[:space:]]+bn[[:space:]]+[^)]+\\)/(input-method bn ${LAYOUT_ID}${FILE_SUFFIX})/" "$TARGET_MIM"
 
 # Copy icon if it exists
-if [ -f "${LAYOUT_FILE}.png" ]; then
+if [ -f "${SOURCE_LAYOUT_FILE}.png" ]; then
     print_status "Installing icon..."
     mkdir -p "$ICON_DIR/"
-    cp "${LAYOUT_FILE}.png" "$ICON_DIR/${LAYOUT_FILE}${FILE_SUFFIX}.png"
+    cp "${SOURCE_LAYOUT_FILE}.png" "$ICON_DIR/${LAYOUT_FILE}${FILE_SUFFIX}.png"
     print_success "Icon installed!"
 else
     print_warning "Icon file not found, skipping icon installation."
