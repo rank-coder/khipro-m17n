@@ -50,6 +50,17 @@ command_exists() {
     command -v "$1" &> /dev/null
 }
 
+# Sort tags by their numeric version, independent of the naming prefix.
+sort_release_tags() {
+    awk '{
+        tag = $0
+        version = tag
+        sub(/^[^0-9]*/, "", version)
+        classic_priority = (tag ~ /^clsc-v/ ? 1 : 0)
+        printf "%s\t%d\t%s\n", version, classic_priority, tag
+    }' | sort -s -t "$(printf '\t')" -k1,1Vr -k2,2nr | cut -f3-
+}
+
 # Function to check if package is installed (for Debian/Ubuntu)
 check_package_debian() {
     dpkg -l "$1" 2>/dev/null | grep -q '^ii'
@@ -333,7 +344,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     # Fetch available release tags for preview
     print_status "Fetching recent release tags..."
     # Using awk to handle formatting more reliably across platforms
-    recent_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
+    recent_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort_release_tags | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
     
     if [ -z "$recent_tags" ]; then
         recent_tags="e.g. v34.0.0-beta, v33.1.0, etc."
@@ -374,7 +385,7 @@ if [[ $branch_choice =~ ^[Nn]$ ]]; then
     if [ "$input_ver" -eq 1 ]; then
         # Show tags with pagination
         print_status "Fetching available release tags..."
-        all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort -V -r)
+        all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort_release_tags)
         
         if [ -z "$all_tags" ]; then
             print_error "No release tags found."
