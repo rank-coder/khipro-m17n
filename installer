@@ -7,7 +7,7 @@ set -e  # Exit on any error
 
 LAYOUT_ID="khipro-classic"
 LAYOUT_FILE="bn-${LAYOUT_ID}"
-LEGACY_LAYOUT_FILES=("bn-khipro")
+LEGACY_LAYOUT_FILES=("bn-khipro-dark" "bn-khipro")
 
 # Colors for output
 RED='\033[0;31m'
