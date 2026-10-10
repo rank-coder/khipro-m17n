@@ -66,7 +66,7 @@ check_package_arch() {
 
 # Welcome message
 echo "=========================================="
-echo "    Khipro Classic"
+echo "        Khipro Classic Installer"
 echo "=========================================="
 echo ""
 
