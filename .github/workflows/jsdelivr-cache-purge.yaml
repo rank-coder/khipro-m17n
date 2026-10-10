@@ -15,4 +15,4 @@ jobs:
       - uses: egad13/purge-jsdelivr-cache@v1
         with:
           url: |
-            https://cdn.jsdelivr.net/gh/rank-coder/khipro-m17n/bn-khipro.mim
+            https://cdn.jsdelivr.net/gh/KhiproTeam/khipro-dark-m17n/bn-khipro-dark.mim

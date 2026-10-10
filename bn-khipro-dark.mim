@@ -1,4 +1,4 @@
-;; bn-khipro.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
+;; bn-khipro-dark.mim | A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 ;;	MIT License
 ;;
 ;;	Copyright (c) 2024 rank_coder
@@ -21,7 +21,7 @@
 ;;	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;;	SOFTWARE.
 
-(input-method bn khipro)
+(input-method bn khipro-dark)
 (description "
 	A compositional keyboard layout or input method concept for Bengali, aiming to be the fastest typing method available for the language.
 
@@ -33,7 +33,7 @@
 		4. Houses all necessary characters, and even some less-used ones, directly at the fingertips within the central keyboard area.
 		5. Uses a *modifier technique* to type all characters without using SHIFT.
 		6. Utilizes *key sequences* to incorporate various extra characters that would otherwise be impossible on fixed layouts.
-		7. Utilizes *function keys* like slicer (/) to break readily formed conjuncts.
+		7. Utilizes *function keys* like fuser (/) to form conjuncts.
 
 
 	PLEASE use it with *TYPING BOOSTER* <https://mike-fabian.github.io/ibus-typing-booster/> for the best and a steady experience.
@@ -42,7 +42,7 @@
 		* Author: Nafee [<https://github.com/rank-coder>]
 		* Team: Contributors of the GitHub repository [<https://github.com/rank-coder/khipro-m17n>] and members of the [<https://github.com/khiproteam>] GitHub organization.
 ")
-(title "Khipro Compositional")
+(title "Khipro Dark Compositional")
 (map
 	(shor
 		("o" "অ")
