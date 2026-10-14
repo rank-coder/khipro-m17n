@@ -341,152 +341,96 @@ read -p "Install stable release from the main branch? (Y/n): " branch_choice
 branch_choice=${branch_choice:-Y}
 
 if [[ $branch_choice =~ ^[Nn]$ ]]; then
-    # Fetch available release tags for preview
-    print_status "Fetching recent release tags..."
-    # Using awk to handle formatting more reliably across platforms
-    recent_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort_release_tags | head -n 3 | awk -v ORS=', ' '{print $0}' | sed 's/, $/ etc./')
-    
-    if [ -z "$recent_tags" ]; then
-        recent_tags="e.g. v34.0.0-beta, v33.1.0, etc."
-    fi
+    print_status "Fetching available release tags..."
+    all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort_release_tags)
 
-    print_status "Fetching available branches from GitHub..."
-    
-    # Get list of branches from remote repository
-    branches=$(git ls-remote --heads https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | \
-               awk '{print $2}' | \
-               sed 's#refs/heads/##' | \
-               sort)
-    
-    if [ -z "$branches" ]; then
-        print_warning "Could not fetch branch list. Please check your internet connection."
-        print_status "You can view branches at: https://github.com/rank-coder/khipro-m17n/branches"
+    if [ -z "$all_tags" ]; then
+        print_error "No release tags found. Check your internet connection and try again."
         exit 1
     fi
-    
-    echo ""
-    print_success "Available installation options:"
-    
-    echo " 1. Install by Release Number (Version Number) ($recent_tags) [DEFAULT]"
-    
-    # Store branches in an array for number selection
-    branches_array=()
-    counter=2
-    while IFS= read -r branch; do
-        echo " $counter. Install from branch: $branch"
-        branches_array+=("$branch")
-        ((counter++))
-    done <<< "$branches"
-    
-    echo ""
-    read -p "Enter number [Default: 1]: " input_ver
-    input_ver=${input_ver:-1}
-    
-    if [ "$input_ver" -eq 1 ]; then
-        # Show tags with pagination
-        print_status "Fetching available release tags..."
-        all_tags=$(git ls-remote --tags --refs https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | cut -d/ -f3 | sort_release_tags)
-        
-        if [ -z "$all_tags" ]; then
-            print_error "No release tags found."
-            exit 1
+
+    mapfile -t tags_array <<< "$all_tags"
+    total_tags=${#tags_array[@]}
+    current_page=0
+    items_per_page=5
+
+    while true; do
+        start_index=$((current_page * items_per_page))
+
+        echo ""
+        print_success "Release Tags (Page $((current_page + 1))):"
+
+        current_items=()
+        for ((i=0; i<items_per_page && start_index+i<total_tags; i++)); do
+            tag="${tags_array[$((start_index + i))]}"
+            echo " $((i+1)). $tag"
+            current_items+=("$tag")
+        done
+
+        if [ $((start_index + items_per_page)) -lt $total_tags ]; then
+            echo " 6. Show next 5 releases"
         fi
-        
-        mapfile -t tags_array <<< "$all_tags"
-        total_tags=${#tags_array[@]}
-        current_page=0
-        items_per_page=5
-        
-        while true; do
-            start_index=$((current_page * items_per_page))
-            
-            if [ $start_index -ge $total_tags ]; then
-                print_warning "No more release tags found."
-                # If we run out of tags, what to do? Exit or loop? 
-                # Let's just exit for safety or allow re-selection? 
-                # The user looped here previously. Let's just break and exit logic if forced.
-                # However, cleaner UI is to just say no more tags.
-                break
-            fi
-            
-            echo ""
-            print_success "Release Tags (Page $((current_page + 1))):"
-            
-            current_items=()
-            for ((i=0; i<items_per_page; i++)); do
-                idx=$((start_index + i))
-                if [ $idx -lt $total_tags ]; then
-                    tag="${tags_array[$idx]}"
-                    echo " $((i+1)). $tag"
-                    current_items+=("$tag")
-                fi
-            done
-            
-            option_next=$((items_per_page + 1))
-            user_options="1-${#current_items[@]}"
-            
-            if [ $((start_index + items_per_page)) -lt $total_tags ]; then
-                echo " $option_next. Show next 5 releases"
-                user_options="$user_options, $option_next"
-            fi
-            
-            echo ""
-            # Default choice is 1 (newest on page)
-            read -p "Select release ($user_options) [Default: 1]: " tag_choice
-            tag_choice=${tag_choice:-1}
-            
-            # Check for "Next Page" option
-            if [[ "$tag_choice" -eq "$option_next" ]]; then
-                if [ $((start_index + items_per_page)) -lt $total_tags ]; then
-                    current_page=$((current_page + 1))
-                    continue
-                else
-                    print_warning "No more release tags found."
-                    continue
-                fi
-            elif [[ "$tag_choice" =~ ^[1-5]$ ]]; then
-                # Map 1-5 to array index
-                selected_idx=$((tag_choice - 1))
-                if [ $selected_idx -lt ${#current_items[@]} ]; then
-                    branch_name="${current_items[$selected_idx]}"
-                    print_success "Selected release: $branch_name"
-                    break
-                else
-                     print_error "Invalid selection. Please try again."
-                     continue
-                fi
-            else
-                print_error "Invalid input. Please enter a valid number."
+        echo " 7. Install from a branch"
+
+        echo ""
+        read -p "Select a release or installation option [Default: 1]: " tag_choice
+        tag_choice=${tag_choice:-1}
+
+        if [[ "$tag_choice" == "7" ]]; then
+            print_status "Fetching available branches from GitHub..."
+            branches=$(git ls-remote --heads https://github.com/rank-coder/khipro-m17n.git 2>/dev/null | \
+                       awk '{print $2}' | \
+                       sed 's#refs/heads/##' | \
+                       sort)
+
+            if [ -z "$branches" ]; then
+                print_warning "Could not fetch branch list. Please check your internet connection."
+                print_status "You can view branches at: https://github.com/rank-coder/khipro-m17n/branches"
                 continue
             fi
-        done
-        
-        # If we broke out of the loop without selecting (e.g. no more tags), ensure we handle it?
-        # If branch_name is not set (empty), defaulting to main or erroring is wise.
-        if [ -z "$branch_name" ]; then
-             print_warning "No release selected. Defaulting to 'main'."
-             branch_name="main"
+
+            mapfile -t branches_array <<< "$branches"
+            echo ""
+            print_success "Available branches:"
+            for i in "${!branches_array[@]}"; do
+                echo " $((i+1)). ${branches_array[$i]}"
+            done
+
+            while true; do
+                echo ""
+                read -p "Select a branch by number or name: " branch_selection
+                if [[ "$branch_selection" =~ ^[0-9]+$ ]]; then
+                    branch_index=$((10#$branch_selection))
+                    if [ "$branch_index" -ge 1 ] &&
+                       [ "$branch_index" -le "${#branches_array[@]}" ]; then
+                        branch_name="${branches_array[$((branch_index-1))]}"
+                        break
+                    fi
+                fi
+
+                if printf '%s\n' "${branches_array[@]}" | grep -Fxq -- "$branch_selection"; then
+                    branch_name="$branch_selection"
+                    break
+                fi
+
+                print_error "Invalid branch selection. Please choose a listed number or branch name."
+            done
+
+            print_success "Selected branch: $branch_name"
+            break
+        elif [[ "$tag_choice" == "6" ]] &&
+             [ $((start_index + items_per_page)) -lt $total_tags ]; then
+            current_page=$((current_page + 1))
+            continue
+        elif [[ "$tag_choice" =~ ^[1-5]$ ]] &&
+             [ "$tag_choice" -le "${#current_items[@]}" ]; then
+            branch_name="${current_items[$((tag_choice-1))]}"
+            print_success "Selected release: $branch_name"
+            break
         fi
 
-    elif [[ "$input_ver" =~ ^[0-9]+$ ]]; then
-        # User selected a branch number (offset by 2)
-        index=$((input_ver - 2))
-        if [ $index -ge 0 ] && [ $index -lt ${#branches_array[@]} ]; then
-            branch_name="${branches_array[$index]}"
-            print_success "Selected branch: $branch_name"
-        else
-            print_error "Invalid number. Please select a valid option."
-            exit 1
-        fi
-    else
-        # Fallback if they typed a name directly
-        branch_name="$input_ver"
-        if echo "$branches" | grep -q "^${branch_name}$"; then
-            print_success "Branch '$branch_name' found!"
-        else
-            print_warning "Branch '$branch_name' not found in the list. Defaulting to 'main' if failure occurs."
-        fi
-    fi
+        print_error "Invalid selection. Please choose a listed option."
+    done
 else
     # User chose Yes (or default) for stable release
     branch_name="main"
