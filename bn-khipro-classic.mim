@@ -243,14 +243,12 @@
 		("." "।")
 		(".." ".")
 		("..." "..")
-		("...." "...")
-		("....." "....")
-		("......" ".....")
-		("......." "......")
+		("...." (set overflow 1) "...")
+
 
 		("$" "৳")
 		("$f" "₹")
-		(",,," ",,")
+		(",,," (set overflow 2) ",,")
 		(".f" "॥")
 		(".ff" "৺")
 		("+" "+")
@@ -260,6 +258,12 @@
 		("$$" "$")
 		("=" "=")
 		("=f" "≠")
+	)
+	(dot
+		("." ".")
+	)
+	(comma
+		("," ",")
 	)
 	(prithayok
 		(";" ";")
@@ -402,7 +406,14 @@
 		(fkar (commit)  (shift shor_state))
 		(prithayok (commit) )
 		(ongko )
-		(biram (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram 
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(byanjon
 			(set PrvCnstID FrstCnstID) (set FrstCnstID CnstID)
 			(shift byanjon_state)
@@ -424,7 +435,14 @@
 		(slicer4 (shift slash_state))
 		(shor )
 		(fkar )
-		(biram ) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram 
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(prithayok (delete @-)  (shift init) )
 		(ongko (shift init))
 		(byanjon
@@ -440,7 +458,14 @@
 	(byanjon_state
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor_state)) ;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
+		(biram 
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
+		;; কারণ, যাতে বিরামের মাঝে পৃথায়ক ব্যবহার করা যায়।
 		(kar
 			(cond
 				( (& (| (= FrstCnstID 27) (= FrstCnstID 187)) (= KAR 1)) (move @-) (move @-) (move @-) (insert "‍") (move @>) (set KAR 0) )  ;; র, রর
@@ -916,7 +941,13 @@
 		(slicer4 (delete @-) (shift slash_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram  (shift shor_state))
+		(biram 
+			(cond
+				((= overflow 1) (shift dot_state))
+				((= overflow 2) (shift comma_state))
+				(1 (shift init))
+			)
+		)
 		(kar (shift shor_state))
 		(phola
 			(cond
@@ -1054,6 +1085,14 @@
 	)
 	(slash_state
 		(slicer (commit))
+		(backspace)
+	)
+	(dot_state
+		(dot (commit))
+		(backspace)
+	)
+	(comma_state
+		(comma (commit))
 		(backspace)
 	)
 )
