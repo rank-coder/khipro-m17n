@@ -406,7 +406,7 @@
 		(fkar (commit)  (shift shor_state))
 		(prithayok (commit) )
 		(ongko )
-		(biram 
+		(biram
 			(cond
 				((= overflow 1) (shift dot_state))
 				((= overflow 2) (shift comma_state))
@@ -435,7 +435,7 @@
 		(slicer4 (shift slash_state))
 		(shor )
 		(fkar )
-		(biram 
+		(biram
 			(cond
 				((= overflow 1) (shift dot_state))
 				((= overflow 2) (shift comma_state))
@@ -458,7 +458,7 @@
 	(byanjon_state
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram 
+		(biram
 			(cond
 				((= overflow 1) (shift dot_state))
 				((= overflow 2) (shift comma_state))
@@ -941,7 +941,7 @@
 		(slicer4 (delete @-) (shift slash_state))
 		(prithayok (delete @-)  (shift init))
 		(ongko  (shift init))
-		(biram 
+		(biram
 			(cond
 				((= overflow 1) (shift dot_state))
 				((= overflow 2) (shift comma_state))
